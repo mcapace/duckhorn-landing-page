@@ -30,7 +30,7 @@ export const FeaturedWines = () => {
         </motion.div>
 
         {/* 5 clickable wine bottles in a row - wireframe */}
-        <div className="flex flex-wrap justify-center items-end gap-10 md:gap-16 lg:gap-20">
+        <div className="flex flex-wrap justify-center items-end gap-12 md:gap-20 lg:gap-24">
           {featuredWines.map((wine, index) => (
             <motion.div
               key={wine.id}
@@ -49,14 +49,14 @@ export const FeaturedWines = () => {
                   y: activeWine === wine.id ? -12 : 0,
                 }}
                 transition={{ duration: 0.3 }}
-                className="relative w-44 md:w-56 lg:w-72 h-64 md:h-80 lg:h-[420px]"
+                className="relative w-52 md:w-64 lg:w-80 h-72 md:h-96 lg:h-[480px]"
               >
                 <Image
                   src={wine.image}
                   alt={wine.name}
                   fill
                   className="object-contain drop-shadow-xl"
-                  sizes="(max-width: 768px) 176px, (max-width: 1024px) 224px, 288px"
+                  sizes="(max-width: 768px) 208px, (max-width: 1024px) 256px, 320px"
                 />
               </motion.div>
               <h3

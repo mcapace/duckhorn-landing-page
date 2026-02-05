@@ -8,8 +8,6 @@ const navItems = [
   { label: "Featured Wines", href: "#featured-wines" },
   { label: "Meet the Makers", href: "#meet-the-makers" },
   { label: "Milestones", href: "#milestones" },
-  { label: "The Collection", href: "#wineries" },
-  { label: "Ratings", href: "#ratings" },
 ];
 
 export const Navigation = () => {

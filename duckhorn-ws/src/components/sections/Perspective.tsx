@@ -5,20 +5,20 @@ import Image from "next/image";
 import { perspectiveContent, perspectiveImages } from "@/lib/data";
 
 export const Perspective = () => {
-  const gridImages = perspectiveImages.slice(0, 4);
+  const [leftTop, leftBottom, ...rightImages] = perspectiveImages;
 
   return (
     <section
       id="perspective"
       className="py-24 bg-white scroll-mt-20"
     >
-      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16">
         {/* Title + Subtitle - wireframe */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <h2
             className="text-3xl md:text-4xl lg:text-5xl text-[#2A2A2A] mb-4"
@@ -37,28 +37,52 @@ export const Perspective = () => {
           </p>
         </motion.div>
 
-        {/* 2x2 image grid - wireframe */}
+        {/* 5-image grid: 2 stacked left, 3 horizontal right - wireframe */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="grid grid-cols-2 gap-5 md:gap-6 mb-12"
+          className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 mb-16"
         >
-          {gridImages.map((img, i) => (
-            <div
-              key={img.src}
-              className="relative aspect-square min-h-[220px] md:min-h-[300px] overflow-hidden rounded-lg"
-            >
+          {/* Left column: 2 stacked */}
+          <div className="md:col-span-2 grid grid-rows-2 gap-6 md:gap-8">
+            <div className="relative aspect-square min-h-[280px] md:min-h-[360px] overflow-hidden rounded-lg">
               <Image
-                src={img.src}
-                alt={img.alt}
+                src={leftTop.src}
+                alt={leftTop.alt}
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 50vw, 550px"
+                sizes="(max-width: 768px) 100vw, 45vw"
               />
             </div>
-          ))}
+            <div className="relative aspect-square min-h-[280px] md:min-h-[360px] overflow-hidden rounded-lg">
+              <Image
+                src={leftBottom.src}
+                alt={leftBottom.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 45vw"
+              />
+            </div>
+          </div>
+          {/* Right column: 3 horizontal */}
+          <div className="md:col-span-3 grid grid-cols-3 gap-6 md:gap-8">
+            {rightImages.map((img) => (
+              <div
+                key={img.src}
+                className="relative aspect-[4/3] min-h-[200px] md:min-h-[280px] overflow-hidden rounded-lg"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 33vw, 350px"
+                />
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         {/* CEO letter text - wireframe */}

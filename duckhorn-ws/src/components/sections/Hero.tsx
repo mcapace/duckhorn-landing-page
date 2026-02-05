@@ -14,14 +14,14 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
           className="flex-1 relative min-h-[50vh] lg:min-h-[calc(100vh-6rem)] flex items-center justify-center p-6 lg:p-12 bg-[#F8F6F1]"
         >
-          <div className="relative w-full max-w-2xl lg:max-w-4xl h-[500px] lg:h-[80vh]">
+          <div className="relative w-full max-w-3xl lg:max-w-5xl h-[550px] lg:h-[85vh]">
             <Image
               src="/images/FRONT_COVER_0428-flat-edit1.jpg"
               alt="The Duckhorn Collection Wines"
               fill
               className="object-contain"
               priority
-              sizes="(max-width: 1024px) 100vw, 60vw"
+              sizes="(max-width: 1024px) 100vw, 70vw"
             />
           </div>
         </motion.div>

@@ -28,7 +28,7 @@ export const MeetTheMakers = () => {
           </h2>
           <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#B8956A] to-transparent mx-auto mt-4" />
           <p className="text-[#3D3D3D] mt-6 max-w-2xl mx-auto">
-            A Q&A with the winemakers who shape the wines
+            A Q&A with the winemakers who shape the wines.
           </p>
         </motion.div>
 
@@ -48,13 +48,13 @@ export const MeetTheMakers = () => {
                 transition={{ duration: 0.3 }}
                 className="relative"
               >
-                <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto mb-4 rounded-full overflow-hidden ring-2 ring-transparent group-hover:ring-[#B8956A] transition-all duration-300">
+                <div className="relative w-52 h-52 md:w-64 md:h-64 mx-auto mb-4 rounded-full overflow-hidden ring-2 ring-transparent group-hover:ring-[#B8956A] transition-all duration-300">
                   <Image
                     src={maker.image}
                     alt={maker.name}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 176px, 224px"
+                    sizes="(max-width: 768px) 208px, 256px"
                   />
                 </div>
 
@@ -90,7 +90,7 @@ export const MeetTheMakers = () => {
                 {selectedMaker !== null && (
                   <>
                     {/* Prominent winemaker image */}
-                    <div className="relative w-full aspect-[16/10] md:aspect-[2/1] min-h-[200px]">
+                    <div className="relative w-full aspect-[16/10] md:aspect-[2/1] min-h-[280px] md:min-h-[360px]">
                       <button
                         onClick={() => setSelectedMaker(null)}
                         className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-colors"
