@@ -38,13 +38,13 @@ export const RobSorenson = () => {
           viewport={{ once: true }}
           className="flex flex-col md:flex-row gap-8 mb-12"
         >
-          <div className="relative w-full md:w-64 h-64 md:h-80 rounded-2xl overflow-hidden flex-shrink-0">
+          <div className="relative w-full md:w-80 h-64 md:h-96 rounded-2xl overflow-hidden flex-shrink-0">
             <Image
               src={robSorensonData.image}
               alt={robSorensonData.name}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 256px"
+              sizes="(max-width: 768px) 100vw, 320px"
             />
           </div>
           <div className="flex-1">

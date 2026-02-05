@@ -48,13 +48,13 @@ export const WineryDetail = () => {
                 }
                 className="w-full text-left p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-6 hover:bg-[#F8F6F1]/50 transition-colors"
               >
-                <div className="relative w-full md:w-48 h-32 md:h-28 rounded-xl overflow-hidden flex-shrink-0">
+                <div className="relative w-full md:w-56 h-40 md:h-36 rounded-xl overflow-hidden flex-shrink-0">
                   <Image
                     src={winery.image}
                     alt={winery.name}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 192px"
+                    sizes="(max-width: 768px) 100vw, 224px"
                   />
                 </div>
                 <div className="flex-1">

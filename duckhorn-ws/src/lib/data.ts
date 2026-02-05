@@ -40,6 +40,7 @@ export const featuredWines = [
 
 export const winemakers = [
   {
+    slug: "renee-ary",
     name: "Renée Ary",
     title: "Vice President of Winemaking",
     winery: "Duckhorn Vineyards",
@@ -80,10 +81,11 @@ export const winemakers = [
     ],
   },
   {
+    slug: "julien-howsepian",
     name: "Julien Howsepian",
     title: "Winemaker",
     winery: "Kosta Browne",
-    image: "/images/Kosta-Browne-Winery2.jpg",
+    image: "/images/250115_WS_Headshots_DawnHeumann47.jpg",
     quote:
       "Great Pinot Noir doesn't shout—it reveals. Its beauty lies in precision, in purity, and in the way it captures landscape with effortless clarity. Few varietals connect place and emotion so completely.",
     qAndA: [
@@ -120,10 +122,11 @@ export const winemakers = [
     ],
   },
   {
+    slug: "kristen-mcmahan",
     name: "Kristen McMahan",
     title: "Winemaker",
     winery: "Goldeneye",
-    image: "/images/250115_WS_Headshots_DawnHeumann47.jpg",
+    image: "/images/250115_WS_Headshots_DawnHeumann74.jpg",
     quote:
       "Goldeneye Pinot Noir carries the imprint of Anderson Valley—wild, aromatic, and resonant. It's a region defined by patience, precision, and coastal character.",
     qAndA: [
@@ -160,10 +163,11 @@ export const winemakers = [
     ],
   },
   {
+    slug: "mike-waller",
     name: "Mike Waller",
     title: "Winemaker",
     winery: "Calera",
-    image: "/images/BarrelRoomWithGalleryView_DSC4738_25pct-(1).jpg",
+    image: "/images/250115_WS_Headshots_DawnHeumann94.jpg",
     quote:
       "Calera Pinot Noir reflects a landscape as much as a grape. Limestone, altitude, and discipline converge to create wines of rare clarity and soul.",
     qAndA: [
@@ -195,10 +199,11 @@ export const winemakers = [
     ],
   },
   {
+    slug: "cara-morrison",
     name: "Cara Morrison",
     title: "Winemaker",
     winery: "Sonoma-Cutrer",
-    image: "/images/250115_WS_Headshots_DawnHeumann94.jpg",
+    image: "/images/250115_WS_Headshots_DawnHeumann13.jpg",
     quote:
       "Sonoma-Cutrer has spent forty years refining one philosophy—Chardonnay shaped by balance, place, and precision. The result is elegance in every glass.",
     qAndA: [

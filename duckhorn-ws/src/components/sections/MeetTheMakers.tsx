@@ -48,13 +48,13 @@ export const MeetTheMakers = () => {
                 transition={{ duration: 0.3 }}
                 className="relative"
               >
-                <div className="relative w-28 h-28 md:w-32 md:h-32 mx-auto mb-4 rounded-full overflow-hidden ring-2 ring-transparent group-hover:ring-[#B8956A] transition-all duration-300">
+                <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto mb-4 rounded-full overflow-hidden ring-2 ring-transparent group-hover:ring-[#B8956A] transition-all duration-300">
                   <Image
                     src={maker.image}
                     alt={maker.name}
                     fill
                     className="object-cover"
-                    sizes="128px"
+                    sizes="(max-width: 768px) 176px, 224px"
                   />
                 </div>
 
@@ -85,36 +85,51 @@ export const MeetTheMakers = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white rounded-2xl p-8 max-w-2xl max-h-[85vh] overflow-y-auto shadow-2xl"
+                className="bg-white rounded-2xl overflow-hidden max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl"
               >
                 {selectedMaker !== null && (
                   <>
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
-                        <Image
-                          src={winemakers[selectedMaker].image}
-                          alt={winemakers[selectedMaker].name}
-                          fill
-                          className="object-cover"
-                          sizes="80px"
-                        />
-                      </div>
-                      <div>
+                    {/* Prominent winemaker image */}
+                    <div className="relative w-full aspect-[16/10] md:aspect-[2/1] min-h-[200px]">
+                      <button
+                        onClick={() => setSelectedMaker(null)}
+                        className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-colors"
+                        aria-label="Close"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                      <Image
+                        src={winemakers[selectedMaker].image}
+                        alt={winemakers[selectedMaker].name}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 768px"
+                        priority
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                         <h3
-                          className="text-xl text-[#2A2A2A]"
+                          className="text-2xl md:text-3xl"
                           style={{ fontFamily: "var(--font-serif)" }}
                         >
                           {winemakers[selectedMaker].name}
                         </h3>
-                        <p className="text-sm text-[#A07D4E]">
+                        <p className="text-[#C5A572] font-medium">
                           {winemakers[selectedMaker].winery}
+                        </p>
+                        <p className="text-white/80 text-sm">
+                          {winemakers[selectedMaker].title}
                         </p>
                       </div>
                     </div>
-                    <p className="text-[#3D3D3D] italic mb-6">
-                      &ldquo;{winemakers[selectedMaker].quote}&rdquo;
-                    </p>
-                    <div className="space-y-6 border-t border-[#E8E4DC] pt-6">
+
+                    <div className="p-8">
+                      <p className="text-[#3D3D3D] italic text-lg mb-6">
+                        &ldquo;{winemakers[selectedMaker].quote}&rdquo;
+                      </p>
+                      <div className="space-y-6 border-t border-[#E8E4DC] pt-6">
                       {winemakers[selectedMaker].qAndA.map((qa, i) => (
                         <div key={i} className="border-b border-[#E8E4DC]/50 last:border-0 last:pb-0 pb-6">
                           <p className="text-sm font-medium text-[#3D5636] mb-2">
@@ -125,6 +140,7 @@ export const MeetTheMakers = () => {
                           </p>
                         </div>
                       ))}
+                      </div>
                     </div>
                   </>
                 )}

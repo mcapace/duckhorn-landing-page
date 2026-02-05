@@ -12,7 +12,7 @@ export const Perspective = () => {
       id="perspective"
       className="py-24 bg-white scroll-mt-20"
     >
-      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
         {/* Title + Subtitle - wireframe */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,19 +43,19 @@ export const Perspective = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="grid grid-cols-2 gap-4 mb-12"
+          className="grid grid-cols-2 gap-5 md:gap-6 mb-12"
         >
           {gridImages.map((img, i) => (
             <div
               key={img.src}
-              className="relative aspect-square overflow-hidden rounded-lg"
+              className="relative aspect-square min-h-[220px] md:min-h-[300px] overflow-hidden rounded-lg"
             >
               <Image
                 src={img.src}
                 alt={img.alt}
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 50vw, 300px"
+                sizes="(max-width: 768px) 50vw, 550px"
               />
             </div>
           ))}
