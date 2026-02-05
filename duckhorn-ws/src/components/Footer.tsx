@@ -39,12 +39,6 @@ export const Footer = () => {
             <a href="#perspective" className="hover:text-[#B8956A] transition-colors">
               The Duckhorn Perspective
             </a>
-            <a href="#vineyard-stewardship" className="hover:text-[#B8956A] transition-colors">
-              Vineyard Stewardship
-            </a>
-            <a href="#the-collection-map" className="hover:text-[#B8956A] transition-colors">
-              The Collection Map
-            </a>
             <a href="#featured-wines" className="hover:text-[#B8956A] transition-colors">
               Featured Wines
             </a>

@@ -16,17 +16,11 @@ export const Video = () => {
           className="text-center mb-12"
         >
           <h2
-            className="text-3xl md:text-4xl text-white"
+            className="text-3xl md:text-4xl lg:text-5xl text-white"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            THE DUCKHORN COLLECTION
+            VIDEO
           </h2>
-          <p
-            className="italic text-[#B8956A] mt-2"
-            style={{ fontFamily: "var(--font-script)" }}
-          >
-            Experience the Story
-          </p>
         </motion.div>
 
         <motion.div

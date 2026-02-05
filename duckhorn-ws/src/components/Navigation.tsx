@@ -4,11 +4,9 @@ import { motion } from "framer-motion";
 
 const navItems = [
   { label: "The Duckhorn Perspective", href: "#perspective" },
-  { label: "Vineyard Stewardship", href: "#vineyard-stewardship" },
-  { label: "The Collection Map", href: "#the-collection-map" },
+  { label: "Video", href: "#video" },
   { label: "Featured Wines", href: "#featured-wines" },
   { label: "Meet the Makers", href: "#meet-the-makers" },
-  { label: "Video", href: "#video" },
   { label: "Milestones", href: "#milestones" },
   { label: "The Collection", href: "#wineries" },
   { label: "Ratings", href: "#ratings" },

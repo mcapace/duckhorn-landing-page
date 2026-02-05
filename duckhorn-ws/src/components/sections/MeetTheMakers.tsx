@@ -28,8 +28,7 @@ export const MeetTheMakers = () => {
           </h2>
           <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#B8956A] to-transparent mx-auto mt-4" />
           <p className="text-[#3D3D3D] mt-6 max-w-2xl mx-auto">
-            The growers, winemakers, and stewards whose craft and commitment
-            elevate every bottle
+            A Q&A with the winemakers who shape the wines
           </p>
         </motion.div>
 
