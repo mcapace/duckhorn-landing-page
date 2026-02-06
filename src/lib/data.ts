@@ -1,12 +1,12 @@
 // Content data from CURSOR_IMPLEMENTATION_GUIDE.md
 
-// Bottle images from /images/bottles (NoBG for creative layouts, Full for fallback)
+// Bottle images from /images/bottles (NoBG for Featured Wines cards, BG for winery pages, Full for fallback)
 export const featuredWines = [
-  { id: "duckhorn", name: "Duckhorn", brand: "DUCKHORN VINEYARDS", tagline: "Five Decades In. Still Defining What's Next.", image: "/images/bottles/Duckhorn-NoBG.png", imageFull: "/images/bottles/Duckhorn-Full.jpg" },
-  { id: "kosta-browne", name: "Kosta Browne", brand: "KOSTA BROWNE", tagline: "The Art of Site", image: "/images/bottles/Kostabrowne-NoBG.png", imageFull: "/images/bottles/KostaBrowne-Full.jpg" },
-  { id: "calera", name: "Calera", brand: "CALERA", tagline: "Mountain Purity & Limestone Precision", image: "/images/bottles/Calera-NoBG.png", imageFull: "/images/bottles/Calera-Full.jpg" },
-  { id: "goldeneye", name: "Goldeneye", brand: "GOLDENEYE", tagline: "The Voice of Anderson Valley", image: "/images/bottles/Goldeneye-NoBG.png", imageFull: "/images/bottles/Goldeneye-Full.jpg" },
-  { id: "sonoma-cutrer", name: "Sonoma-Cutrer", brand: "SONOMA-CUTRER", tagline: "Crisp by Design", image: "/images/bottles/Sonoma-NoBG.png", imageFull: "/images/bottles/SonomaCutrer-Full.jpg" },
+  { id: "duckhorn", name: "Duckhorn", brand: "DUCKHORN VINEYARDS", tagline: "Five Decades In. Still Defining What's Next.", image: "/images/bottles/Duckhorn-NoBG.png", imageFull: "/images/bottles/Duckhorn-Full.jpg", imageBG: "/images/bottles/Duckhorn-BG.png" },
+  { id: "kosta-browne", name: "Kosta Browne", brand: "KOSTA BROWNE", tagline: "The Art of Site", image: "/images/bottles/Kostabrowne-NoBG.png", imageFull: "/images/bottles/KostaBrowne-Full.jpg", imageBG: "/images/bottles/KostaBrowne-BG.png" },
+  { id: "calera", name: "Calera", brand: "CALERA", tagline: "Mountain Purity & Limestone Precision", image: "/images/bottles/Calera-NoBG.png", imageFull: "/images/bottles/Calera-Full.jpg", imageBG: "/images/bottles/Calera-BG.png" },
+  { id: "goldeneye", name: "Goldeneye", brand: "GOLDENEYE", tagline: "The Voice of Anderson Valley", image: "/images/bottles/Goldeneye-NoBG.png", imageFull: "/images/bottles/Goldeneye-Full.jpg", imageBG: "/images/bottles/Goldeneye-BG.png" },
+  { id: "sonoma-cutrer", name: "Sonoma-Cutrer", brand: "SONOMA-CUTRER", tagline: "Crisp by Design", image: "/images/bottles/Sonoma-NoBG.png", imageFull: "/images/bottles/SonomaCutrer-Full.jpg", imageBG: "/images/bottles/Sonoma-BG.png" },
 ];
 
 // Winemaker headshots per reference: Renée=Duckhorn28217; Julien=47; Kristen=74; Mike=94; Cara=13 (Dawn Heumann series)
@@ -483,7 +483,7 @@ export const wineryChapters = wineries.map((winery) => {
   const maker = winemakers.find((m) => m.winery === wineryToMaker[winery.id]);
   return {
     ...winery,
-    bottleImage: wine?.imageFull ?? wine?.image ?? winery.image,
+    bottleImage: wine?.imageBG ?? wine?.imageFull ?? wine?.image ?? winery.image,
     winemaker: maker!,
   };
 });

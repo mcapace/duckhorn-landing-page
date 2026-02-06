@@ -57,11 +57,11 @@ export const FeaturedWines = () => {
                 <motion.div
                   whileHover={{ y: -8 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className={`relative rounded-2xl overflow-hidden bg-gradient-to-b ${gradients[index]} min-h-[440px] md:min-h-[500px] flex flex-col items-center justify-end pb-6 pt-10 shadow-xl`}
+                  className={`relative rounded-2xl overflow-hidden bg-gradient-to-b ${gradients[index]} min-h-[440px] md:min-h-[500px] flex flex-col items-center justify-end pb-6 pt-14 shadow-xl`}
                 >
 
                   {/* Bottle - positioned higher with clearance above text */}
-                  <div className="relative w-44 h-64 md:w-52 md:h-76 lg:w-60 lg:h-88 flex-shrink-0 mb-14">
+                  <div className="relative w-44 h-64 md:w-52 md:h-76 lg:w-60 lg:h-88 flex-shrink-0 mb-20">
                     <Image
                       src={wine.image}
                       alt={wine.name}
@@ -72,7 +72,7 @@ export const FeaturedWines = () => {
                   </div>
 
                   {/* Text overlay - centered, clear of bottle */}
-                  <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 pt-24 bg-gradient-to-t from-black/85 via-black/50 to-transparent text-center">
+                  <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 pt-28 bg-gradient-to-t from-black/85 via-black/50 to-transparent text-center">
                     <h3
                       className="text-xl md:text-2xl text-white font-medium"
                       style={{ fontFamily: "var(--font-serif)" }}
