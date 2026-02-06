@@ -100,36 +100,37 @@ export const WineryChapter = ({
           {heroDescription}
         </motion.p>
 
-        {/* Wine + Winemaker - symmetrical alternating layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-24 md:mb-32">
+        {/* Wine + Winemaker - refined alternating layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-28 items-center mb-28 md:mb-36">
           {/* Wine bottle + tasting notes */}
           <motion.div
-            initial={{ opacity: 0, x: isEven ? -24 : 24 }}
+            initial={{ opacity: 0, x: isEven ? -20 : 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className={`flex flex-col items-center ${isEven ? "lg:items-start lg:order-1" : "lg:items-end lg:order-2"}`}
+            transition={{ duration: 0.5 }}
+            className={`flex flex-col items-center ${isEven ? "lg:order-1" : "lg:order-2"}`}
           >
-            <div className="relative w-full max-w-[280px] aspect-[3/4] mx-auto lg:mx-0">
+            <div className="relative w-full max-w-[220px] md:max-w-[260px] aspect-[3/4]">
               <Image
                 src={bottleImage}
                 alt={name}
                 fill
-                className="object-contain drop-shadow-2xl"
-                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-contain drop-shadow-xl"
+                sizes="(max-width: 768px) 220px, 260px"
               />
             </div>
-            <div className="mt-10 w-full max-w-md">
+            <div className="mt-12 w-full max-w-sm">
               <h3
-                className="text-xs uppercase tracking-[0.25em] text-[#B8956A] mb-5"
+                className="text-[11px] uppercase tracking-[0.3em] text-[#B8956A] mb-6"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 Tasting Notes
               </h3>
-              <ul className="space-y-5">
+              <ul className="space-y-6">
                 {wines.map((wine, i) => (
-                  <li key={i} className="border-l-2 border-[#E8E4DC] pl-5">
+                  <li key={i} className="border-l border-[#E8E4DC] pl-5">
                     <span className="font-medium text-[#2A2A2A] text-sm">{wine.name}</span>
-                    <p className="text-[#3D3D3D] text-sm mt-1.5 leading-relaxed">{wine.description}</p>
+                    <p className="text-[#3D3D3D]/90 text-sm mt-1.5 leading-relaxed">{wine.description}</p>
                   </li>
                 ))}
               </ul>
@@ -138,31 +139,32 @@ export const WineryChapter = ({
 
           {/* Winemaker portrait + quote */}
           <motion.div
-            initial={{ opacity: 0, x: isEven ? 24 : -24 }}
+            initial={{ opacity: 0, x: isEven ? 20 : -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className={`flex flex-col items-center lg:items-start ${isEven ? "lg:order-2" : "lg:order-1"}`}
+            transition={{ duration: 0.5 }}
+            className={`flex flex-col items-center ${isEven ? "lg:order-2" : "lg:order-1"}`}
           >
-            <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden ring-4 ring-white shadow-xl flex-shrink-0">
+            <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden ring-2 ring-white shadow-lg flex-shrink-0">
               <Image
                 src={winemaker.image}
                 alt={winemaker.name}
                 fill
                 className="object-cover"
-                sizes="256px"
+                sizes="(max-width: 768px) 192px, 224px"
               />
             </div>
-            <div className={`mt-8 w-full max-w-md text-center ${isEven ? "lg:text-left lg:ml-0" : "lg:text-right lg:ml-auto"}`}>
+            <div className={`mt-8 w-full max-w-md text-center ${isEven ? "lg:text-left" : "lg:text-right"}`}>
               <h3
-                className="text-xl md:text-2xl text-[#2A2A2A]"
+                className="text-lg md:text-xl text-[#2A2A2A] font-medium"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 {winemaker.name}
               </h3>
-              <p className="text-[#A07D4E] font-medium mt-1 text-sm">{winemaker.title}</p>
-              <p className="text-[#3D5636] text-sm mt-0.5">{winemaker.winery}</p>
+              <p className="text-[#3D5636] text-sm mt-1">{winemaker.winery}</p>
+              <p className="text-[#A07D4E] text-xs mt-0.5 uppercase tracking-wider">{winemaker.title}</p>
               <blockquote
-                className="mt-5 text-base md:text-lg text-[#3D3D3D] italic leading-relaxed"
+                className="mt-6 text-[15px] md:text-base text-[#3D3D3D] italic leading-relaxed"
                 style={{ fontFamily: "var(--font-script)" }}
               >
                 &ldquo;{winemaker.quote}&rdquo;
@@ -171,38 +173,38 @@ export const WineryChapter = ({
           </motion.div>
         </div>
 
-        {/* Q&A - inline, expandable */}
+        {/* Q&A - refined accordion */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="border-t border-[#E8E4DC] pt-16"
+          className="border-t border-[#E8E4DC] pt-14"
         >
           <h3
-            className="text-sm uppercase tracking-[0.2em] text-[#B8956A] mb-8"
+            className="text-[11px] uppercase tracking-[0.25em] text-[#B8956A] mb-6"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             Q&A with {winemaker.name}
           </h3>
-          <div className="space-y-2">
+          <div className="space-y-0">
             {winemaker.qAndA.slice(0, 5).map((qa, i) => (
               <motion.div
                 key={i}
                 initial={false}
-                className="border-b border-[#E8E4DC]/50 last:border-0"
+                className="border-b border-[#E8E4DC]/60 last:border-0"
               >
                 <button
                   onClick={() => setExpandedQa(expandedQa === i ? null : i)}
-                  className="w-full py-6 text-left flex items-start justify-between gap-4 group"
+                  className="w-full py-5 md:py-6 text-left flex items-start justify-between gap-6 group"
                 >
-                  <span className="font-medium text-[#2A2A2A] group-hover:text-[#B8956A] transition-colors pr-4">
+                  <span className="text-sm md:text-base font-medium text-[#2A2A2A] group-hover:text-[#B8956A] transition-colors pr-4 leading-snug">
                     {qa.question}
                   </span>
                   <motion.span
                     animate={{ rotate: expandedQa === i ? 180 : 0 }}
-                    className="flex-shrink-0 text-[#B8956A]"
+                    className="flex-shrink-0 text-[#B8956A]/80 group-hover:text-[#B8956A] transition-colors"
                   >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </motion.span>
@@ -213,7 +215,7 @@ export const WineryChapter = ({
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <p className="pb-6 pl-0 text-[#3D3D3D] leading-relaxed">
+                  <p className="pb-5 md:pb-6 text-[#3D3D3D]/90 text-sm md:text-base leading-relaxed">
                     {qa.answer}
                   </p>
                 </motion.div>

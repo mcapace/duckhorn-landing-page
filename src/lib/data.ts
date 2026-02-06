@@ -9,7 +9,7 @@ export const featuredWines = [
   { id: "sonoma-cutrer", name: "Sonoma-Cutrer", brand: "SONOMA-CUTRER", tagline: "Crisp by Design", image: "/images/INSERTS_0494.jpg" },
 ];
 
-// Winemaker headshots: Renée=Duckhorn28217; Julien=13; Kristen=47; Mike=74; Cara=94 (Dawn Heumann series)
+// Winemaker headshots per reference: Renée=Duckhorn28217; Julien=47; Kristen=74; Mike=94; Cara=13 (Dawn Heumann series)
 export const winemakers = [
   {
     slug: "renee-ary",
@@ -57,7 +57,7 @@ export const winemakers = [
     name: "Julien Howsepian",
     title: "Winemaker",
     winery: "Kosta Browne",
-    image: "/images/250115_WS_Headshots_DawnHeumann13.jpg",
+    image: "/images/250115_WS_Headshots_DawnHeumann47.jpg",
     quote:
       "Great Pinot Noir doesn't shout—it reveals. Its beauty lies in precision, in purity, and in the way it captures landscape with effortless clarity. Few varietals connect place and emotion so completely.",
     qAndA: [
@@ -98,7 +98,7 @@ export const winemakers = [
     name: "Kristen McMahan",
     title: "Winemaker",
     winery: "Goldeneye",
-    image: "/images/250115_WS_Headshots_DawnHeumann47.jpg",
+    image: "/images/250115_WS_Headshots_DawnHeumann74.jpg",
     quote:
       "Goldeneye Pinot Noir carries the imprint of Anderson Valley—wild, aromatic, and resonant. It's a region defined by patience, precision, and coastal character.",
     qAndA: [
@@ -139,7 +139,7 @@ export const winemakers = [
     name: "Mike Waller",
     title: "Winemaker",
     winery: "Calera",
-    image: "/images/250115_WS_Headshots_DawnHeumann74.jpg",
+    image: "/images/250115_WS_Headshots_DawnHeumann94.jpg",
     quote:
       "Calera Pinot Noir reflects a landscape as much as a grape. Limestone, altitude, and discipline converge to create wines of rare clarity and soul.",
     qAndA: [
@@ -175,7 +175,7 @@ export const winemakers = [
     name: "Cara Morrison",
     title: "Winemaker",
     winery: "Sonoma-Cutrer",
-    image: "/images/250115_WS_Headshots_DawnHeumann94.jpg",
+    image: "/images/250115_WS_Headshots_DawnHeumann13.jpg",
     quote:
       "Sonoma-Cutrer has spent forty years refining one philosophy—Chardonnay shaped by balance, place, and precision. The result is elegance in every glass.",
     qAndA: [

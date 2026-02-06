@@ -21,51 +21,51 @@ export const MeetTheMakers = () => {
           className="text-center mb-16"
         >
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl text-[#2A2A2A]"
+            className="text-3xl md:text-4xl lg:text-5xl text-[#2A2A2A] tracking-tight"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             MEET THE MAKERS
           </h2>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#B8956A] to-transparent mx-auto mt-4" />
-          <p className="text-[#3D3D3D] mt-6 max-w-2xl mx-auto">
+          <div className="w-20 h-px bg-[#E8E4DC] mx-auto mt-5" />
+          <p className="text-[#3D3D3D] mt-5 max-w-xl mx-auto text-[15px] md:text-base">
             A Q&A with the winemakers who shape the wines.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="flex flex-wrap justify-center gap-x-16 gap-y-12 md:gap-x-20 md:gap-y-16 lg:gap-x-24 lg:gap-y-20">
           {winemakers.map((maker, index) => (
             <motion.div
               key={maker.name}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.08 }}
               onClick={() => setSelectedMaker(selectedMaker === index ? null : index)}
-              className="cursor-pointer group text-center"
+              className="cursor-pointer group flex flex-col items-center"
             >
               <motion.div
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.3 }}
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.25 }}
                 className="relative"
               >
-                <div className="relative w-52 h-52 md:w-64 md:h-64 mx-auto mb-4 rounded-full overflow-hidden ring-2 ring-transparent group-hover:ring-[#B8956A] transition-all duration-300">
+                <div className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden ring-1 ring-[#E8E4DC] group-hover:ring-[#B8956A] transition-all duration-300 group-hover:shadow-lg">
                   <Image
                     src={maker.image}
                     alt={maker.name}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 208px, 256px"
+                    sizes="(max-width: 640px) 160px, (max-width: 768px) 176px, (max-width: 1024px) 192px, 224px"
                   />
                 </div>
 
                 <h3
-                  className="text-lg text-[#2A2A2A]"
+                  className="mt-5 text-base md:text-lg font-medium text-[#2A2A2A] tracking-tight"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
                   {maker.name}
                 </h3>
-                <p className="text-sm text-[#A07D4E]">{maker.winery}</p>
-                <p className="text-xs text-[#3D3D3D] mt-1">{maker.title}</p>
+                <p className="text-sm text-[#3D5636] mt-1">{maker.winery}</p>
+                <p className="text-xs text-[#3D3D3D]/80 mt-0.5 uppercase tracking-wider">{maker.title}</p>
               </motion.div>
             </motion.div>
           ))}
