@@ -29,7 +29,7 @@ export const MeetTheMakers = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-x-20 gap-y-16 md:gap-x-24 lg:gap-x-32">
+        <div className="flex flex-nowrap justify-center gap-8 md:gap-12 lg:gap-16 overflow-x-auto overflow-y-visible pb-4 scrollbar-hide">
           {winemakers.map((maker, index) => (
             <motion.div
               key={maker.name}
@@ -38,20 +38,20 @@ export const MeetTheMakers = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.06, duration: 0.5 }}
               onClick={() => setSelectedMaker(selectedMaker === index ? null : index)}
-              className="cursor-pointer group flex flex-col items-center"
+              className="cursor-pointer group flex flex-col items-center flex-shrink-0"
             >
               <motion.div
                 whileHover={{ y: -8 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
                 className="relative"
               >
-                <div className="relative w-44 h-44 sm:w-52 sm:h-52 md:w-56 md:h-56 lg:w-60 lg:h-60 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] group-hover:ring-[#B8956A] transition-all duration-300 group-hover:shadow-xl">
+                <div className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:w-48 lg:h-48 xl:w-52 xl:h-52 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] group-hover:ring-[#B8956A] transition-all duration-300 group-hover:shadow-xl flex-shrink-0">
                   <Image
                     src={maker.image}
                     alt={maker.name}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 640px) 208px, (max-width: 768px) 224px, (max-width: 1024px) 256px, 288px"
+                    sizes="(max-width: 768px) 176px, (max-width: 1024px) 192px, 224px"
                   />
                 </div>
 
