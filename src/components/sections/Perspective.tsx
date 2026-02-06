@@ -77,29 +77,17 @@ export const Perspective = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pt-12 mt-12 border-t border-[#E8E4DC]"
+            className="pt-12 mt-12 border-t border-[#E8E4DC]"
           >
-            <div>
-              <p
-                className="text-lg font-medium text-[#2A2A2A]"
-                style={{ fontFamily: "var(--font-serif)" }}
-              >
-                {perspectiveContent.signature}
-              </p>
-              <p className="text-sm text-[#A07D4E] mt-1">
-                {perspectiveContent.title_line}
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-6 md:gap-10">
-              {["DUCKHORN VINEYARDS", "KOSTA BROWNE", "CALERA", "GOLDENEYE", "SONOMA-CUTRER"].map((brand) => (
-                <span
-                  key={brand}
-                  className="text-xs uppercase tracking-[0.2em] text-[#3D5636] font-medium"
-                >
-                  {brand}
-                </span>
-              ))}
-            </div>
+            <p
+              className="text-lg font-medium text-[#2A2A2A]"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              {perspectiveContent.signature}
+            </p>
+            <p className="text-sm text-[#A07D4E] mt-1">
+              {perspectiveContent.title_line}
+            </p>
           </motion.div>
         </motion.div>
       </div>

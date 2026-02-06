@@ -57,22 +57,22 @@ export const FeaturedWines = () => {
                 <motion.div
                   whileHover={{ y: -8 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className={`relative rounded-2xl overflow-hidden bg-gradient-to-b ${gradients[index]} min-h-[360px] md:min-h-[400px] flex flex-col items-center justify-end pb-6 pt-12 shadow-xl`}
+                  className={`relative rounded-2xl overflow-hidden bg-gradient-to-b ${gradients[index]} min-h-[380px] md:min-h-[420px] flex flex-col items-center justify-end pb-6 pt-8 shadow-xl`}
                 >
 
                   {/* Bottle - positioned to feel like it's emerging from the card */}
-                  <div className="relative w-24 h-36 md:w-28 md:h-40 flex-shrink-0 -mb-2">
+                  <div className="relative w-32 h-48 md:w-40 md:h-56 lg:w-44 lg:h-64 flex-shrink-0 -mb-2">
                     <Image
                       src={wine.image}
                       alt={wine.name}
                       fill
                       className="object-contain object-bottom drop-shadow-[0_30px_60px_rgba(0,0,0,0.4)] group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 128px, 176px"
+                      sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 176px"
                     />
                   </div>
 
                   {/* Text overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 pt-16 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 pt-20 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
                     <h3
                       className="text-lg md:text-xl text-white font-medium"
                       style={{ fontFamily: "var(--font-serif)" }}

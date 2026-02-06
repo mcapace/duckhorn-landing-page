@@ -67,14 +67,16 @@ export const MeetTheMakers = () => {
                   />
                 </div>
 
-                <h3
-                  className="mt-3 md:mt-4 text-sm md:text-base font-medium text-[#2A2A2A] tracking-tight text-center"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  {maker.name}
-                </h3>
-                <p className="text-xs text-[#3D5636] mt-1 font-medium text-center">{maker.winery}</p>
-                <p className="text-[10px] md:text-xs text-[#3D3D3D]/70 mt-0.5 uppercase tracking-widest text-center">{maker.title}</p>
+                <div className="mt-3 md:mt-4 min-h-[88px] md:min-h-[96px] flex flex-col items-center justify-start">
+                  <h3
+                    className="text-sm md:text-base font-medium text-[#2A2A2A] tracking-tight text-center leading-tight"
+                    style={{ fontFamily: "var(--font-serif)" }}
+                  >
+                    {maker.name}
+                  </h3>
+                  <p className="text-xs text-[#3D5636] mt-1 font-medium text-center leading-tight">{maker.winery}</p>
+                  <p className="text-[10px] md:text-xs text-[#3D3D3D]/70 mt-0.5 uppercase tracking-widest text-center leading-tight">{maker.title}</p>
+                </div>
               </motion.div>
             </motion.div>
           ))}
