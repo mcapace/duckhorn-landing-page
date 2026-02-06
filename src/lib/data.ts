@@ -483,7 +483,7 @@ export const wineryChapters = wineries.map((winery) => {
   const maker = winemakers.find((m) => m.winery === wineryToMaker[winery.id]);
   return {
     ...winery,
-    bottleImage: wine?.image ?? winery.image,
+    bottleImage: wine?.imageFull ?? wine?.image ?? winery.image,
     winemaker: maker!,
   };
 });
