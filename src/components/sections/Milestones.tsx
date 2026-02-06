@@ -110,10 +110,10 @@ export const Milestones = () => {
                   }`}
                 >
                   <div className="flex flex-col md:flex-row flex-1 min-h-0">
-                    {(milestone.image || milestone.awardImage) && (
+                    {milestone.image && (
                       <div className="relative w-full md:w-64 lg:w-72 flex-shrink-0 aspect-[4/3] md:aspect-square overflow-hidden">
                         <Image
-                          src={milestone.awardImage || milestone.image!}
+                          src={milestone.image}
                           alt={milestone.title}
                           fill
                           className="object-cover object-center"
@@ -135,7 +135,7 @@ export const Milestones = () => {
                       <p className="text-white/70 text-sm md:text-base leading-relaxed mt-3">
                         {milestone.description}
                       </p>
-                      {milestone.awardLabel && !milestone.awardImage && (
+                      {milestone.awardLabel && (
                         <div className="mt-4 text-[#C5A572] text-sm font-medium uppercase tracking-wider">
                           {milestone.awardLabel}
                         </div>
