@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { milestones, milestonesIntro, portraitOfPlace } from "@/lib/data";
@@ -70,15 +71,12 @@ export const Milestones = () => {
           </div>
         </motion.div>
 
-        {/* Vertical timeline */}
+        {/* Vertical timeline - line segments only between bubbles */}
         <div className="relative">
-          {/* Vertical line - centered in year column, runs through middle of bubbles */}
-          <div className="absolute left-[60px] md:left-[70px] top-0 bottom-0 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#B8956A]/50 to-transparent" />
-
           <div className="space-y-0">
             {milestones.map((milestone, index) => (
+              <Fragment key={index}>
               <motion.div
-                key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
@@ -160,6 +158,15 @@ export const Milestones = () => {
                   </div>
                 </div>
               </motion.div>
+              {index < milestones.length - 1 && (
+                <div className="flex gap-6 md:gap-10 -my-6 md:-my-8">
+                  <div className="w-[120px] md:w-[140px] flex justify-center flex-shrink-0">
+                    <div className="w-px h-12 md:h-16 bg-[#B8956A]/50" />
+                  </div>
+                  <div className="flex-1 min-w-0" />
+                </div>
+              )}
+              </Fragment>
             ))}
           </div>
         </div>
