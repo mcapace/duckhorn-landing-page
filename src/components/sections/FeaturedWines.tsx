@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { featuredWines } from "@/lib/data";
 
 export const FeaturedWines = () => {
@@ -28,17 +29,17 @@ export const FeaturedWines = () => {
 
         <div className="flex flex-wrap justify-center items-end gap-14 md:gap-20 lg:gap-28">
           {featuredWines.map((wine, index) => (
-            <motion.a
+            <motion.div
               key={wine.id}
-              href={`#${wine.id}`}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.5 }}
               onMouseEnter={() => setActiveWine(wine.id)}
               onMouseLeave={() => setActiveWine(null)}
-              className="cursor-pointer flex flex-col items-center group"
+              className="flex flex-col items-center group"
             >
+              <Link href={`/wineries/${wine.id}`} className="flex flex-col items-center">
               <motion.div
                 animate={{
                   scale: activeWine === wine.id ? 1.03 : 1,
@@ -75,7 +76,8 @@ export const FeaturedWines = () => {
                   </motion.p>
                 )}
               </AnimatePresence>
-            </motion.a>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>

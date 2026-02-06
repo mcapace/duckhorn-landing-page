@@ -3,17 +3,12 @@
 import { motion } from "framer-motion";
 
 const navItems = [
-  { label: "Perspective", href: "#perspective" },
-  { label: "Featured Wines", href: "#featured-wines" },
-  { label: "Meet the Makers", href: "#meet-the-makers" },
-  { label: "Duckhorn", href: "#duckhorn" },
-  { label: "Kosta Browne", href: "#kosta-browne" },
-  { label: "Calera", href: "#calera" },
-  { label: "Goldeneye", href: "#goldeneye" },
-  { label: "Sonoma-Cutrer", href: "#sonoma-cutrer" },
-  { label: "Vineyard", href: "#vineyard-stewardship" },
-  { label: "Video", href: "#video" },
-  { label: "Milestones", href: "#milestones" },
+  { label: "Perspective", href: "/#perspective" },
+  { label: "Meet the Makers", href: "/#meet-the-makers" },
+  { label: "Featured Wines", href: "/#featured-wines" },
+  { label: "Vineyard", href: "/#vineyard-stewardship" },
+  { label: "Video", href: "/#video" },
+  { label: "Milestones", href: "/#milestones" },
 ];
 
 export const Navigation = () => {

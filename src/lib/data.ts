@@ -208,13 +208,36 @@ export const winemakers = [
   },
 ];
 
+export const milestonesIntro = {
+  headline: "50 YEARS OF THE DUCKHORN COLLECTION",
+  title: "THE MILESTONES THAT BUILT A COLLECTION",
+  subtitle: "And Helped Define American Fine Wine.",
+  paragraph:
+    "Dan and Margaret Duckhorn founded Duckhorn Vineyards in 1976 with a conviction that restraint, balance, and long-term thinking could define American fine wine. Fifty years later, that vision has grown into a collection of world-class estates—each with its own story, each united by a shared commitment to excellence.",
+};
+
+export const portraitOfPlace = {
+  title: "A Portrait of Place",
+  description:
+    "California's great wine regions form the foundation of the Collection. From the valley floor to coastal ridgelines and mountain slopes, each estate reflects a different facet of California terroir—Napa warmth, Sonoma precision, Anderson Valley intensity, and the singular character of Mt. Harlan.",
+  regions: ["Duckhorn Vineyards", "Kosta Browne", "Calera", "Goldeneye", "Sonoma-Cutrer"],
+};
+
 export const milestones = [
+  {
+    year: "1975",
+    title: "Calera: A Pinot Pioneer on Mt. Harlan",
+    description:
+      "Josh Jensen plants the first vines on Mt. Harlan, establishing Calera as one of California's earliest and most distinctive Pinot Noir estates, drawn to the rare limestone soils.",
+    winery: "Calera",
+  },
   {
     year: "1976",
     title: "A Vineyard-First Vision Takes Root",
     description:
       "Duckhorn Vineyards is established in Napa Valley with an early, defining commitment to Merlot—setting a house style centered on balance and elegance at a time when Cabernet Sauvignon dominated much of the valley.",
     winery: "Duckhorn",
+    image: "/images/Dan-Duckhorn-during-harvest.jpg",
   },
   {
     year: "Early 1980s",
@@ -229,6 +252,7 @@ export const milestones = [
     description:
       "THREE PALMS VINEYARD reveals itself early as a singular Merlot site—delivering grapes with exceptional structure and depth. Decades of dedication culminate in Duckhorn's acquisition of the vineyard in 2015, securing long-term stewardship of America's most important Merlot site.",
     winery: "Duckhorn",
+    image: "/images/Three-Palms-Vineyard.jpg",
   },
   {
     year: "1996",
@@ -236,6 +260,14 @@ export const milestones = [
     description:
       "Duckhorn expands beyond Napa, establishing Goldeneye and signaling an early, deliberate commitment to cool-climate Pinot Noir.",
     winery: "Goldeneye",
+    image: "/images/CeriseNov18_Drone_9.jpg",
+  },
+  {
+    year: "1997",
+    title: "Kosta Browne Is Born",
+    description:
+      "Dan Kosta and Michael Browne produce their first Pinot Noir from a borrowed stemmer-crusher, launching what would become one of America's most sought-after Pinot estates.",
+    winery: "Kosta Browne",
   },
   {
     year: "2011",
@@ -244,6 +276,8 @@ export const milestones = [
       "THE 2009 KOSTA BROWNE Sonoma Coast Pinot Noir is named Wine Spectator Wine of the Year, recognizing Pinot Noir of rare precision and cementing Kosta Browne's place among America's most influential fine-wine estates.",
     winery: "Kosta Browne",
     highlight: true,
+    awardLabel: "WS Wine of the Year 2011",
+    awardImage: "/images/INSERTS_0482.jpg",
   },
   {
     year: "2013",
@@ -251,6 +285,16 @@ export const milestones = [
     description:
       "Calera founder Josh Jensen is recognized as a defining voice in American Pinot Noir, reinforcing the Collection's role in shaping Pinot's evolution.",
     winery: "Calera",
+    highlight: true,
+    awardLabel: "Wine Spectator Pinot Pioneer",
+  },
+  {
+    year: "2015",
+    title: "Three Palms & Kosta Browne Join the Collection",
+    description:
+      "Duckhorn acquires full ownership of Three Palms Vineyard, securing America's most iconic Merlot site. Kosta Browne joins The Duckhorn Portfolio, uniting exceptional Pinot Noir estates.",
+    winery: "Collection",
+    highlight: true,
   },
   {
     year: "2017",
@@ -259,6 +303,8 @@ export const milestones = [
       "THE 2014 THREE PALMS VINEYARD earns Wine Spectator Wine of the Year, marking Renée Ary's first vintage and affirming the wine's enduring excellence and the lasting distinction of its vineyard.",
     winery: "Duckhorn",
     highlight: true,
+    awardLabel: "WS Wine of the Year 2017",
+    awardImage: "/images/INSERTS_0478.jpg",
   },
   {
     year: "2025",
@@ -266,6 +312,7 @@ export const milestones = [
     description:
       "A new Napa Valley destination opens on Silverado Trail, where expanded tastings and culinary experiences allow guests to experience the full Duckhorn Collection within a beautiful vineyard setting.",
     winery: "Collection",
+    image: "/images/Duckhorn_2023-9.jpg",
   },
 ];
 

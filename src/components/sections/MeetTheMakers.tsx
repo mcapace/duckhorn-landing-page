@@ -74,20 +74,20 @@ export const MeetTheMakers = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-6"
+              className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 sm:p-6"
               onClick={() => setSelectedMaker(null)}
             >
               <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
+                initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
+                exit={{ scale: 0.95, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white rounded-2xl overflow-hidden max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl"
+                className="bg-white rounded-xl sm:rounded-2xl overflow-hidden w-full max-w-2xl sm:max-w-4xl lg:max-w-5xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl"
               >
                 {selectedMaker !== null && (
                   <>
                     {/* Prominent winemaker image */}
-                    <div className="relative w-full aspect-[16/10] md:aspect-[2/1] min-h-[280px] md:min-h-[360px]">
+                    <div className="relative w-full aspect-[16/10] md:aspect-[2/1] min-h-[220px] sm:min-h-[280px] md:min-h-[360px]">
                       <button
                         onClick={() => setSelectedMaker(null)}
                         className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-colors"
@@ -122,14 +122,14 @@ export const MeetTheMakers = () => {
                       </div>
                     </div>
 
-                    <div className="p-8">
-                      <p className="text-[#3D3D3D] italic text-lg mb-6">
+                    <div className="p-6 sm:p-8 md:p-10">
+                      <p className="text-[#3D3D3D] italic text-base sm:text-lg mb-6">
                         &ldquo;{winemakers[selectedMaker].quote}&rdquo;
                       </p>
-                      <div className="space-y-6 border-t border-[#E8E4DC] pt-6">
+                      <div className="space-y-5 sm:space-y-6 border-t border-[#E8E4DC] pt-6">
                       {winemakers[selectedMaker].qAndA.map((qa, i) => (
-                        <div key={i} className="border-b border-[#E8E4DC]/50 last:border-0 last:pb-0 pb-6">
-                          <p className="text-sm font-medium text-[#3D5636] mb-2">
+                        <div key={i} className="border-b border-[#E8E4DC]/50 last:border-0 last:pb-0 pb-5 sm:pb-6">
+                          <p className="text-sm font-medium text-[#3D5636] mb-2 leading-snug">
                             {qa.question}
                           </p>
                           <p className="text-[#3D3D3D] text-sm leading-relaxed">
