@@ -225,14 +225,6 @@ export const portraitOfPlace = {
 
 export const milestones = [
   {
-    year: "1975",
-    title: "Calera: A Pinot Pioneer on Mt. Harlan",
-    description:
-      "Josh Jensen plants the first vines on Mt. Harlan, establishing Calera as one of California's earliest and most distinctive Pinot Noir estates, drawn to the rare limestone soils.",
-    winery: "Calera",
-    image: "/images/TOP1_123111.jpg",
-  },
-  {
     year: "1976",
     title: "A Vineyard-First Vision Takes Root",
     description:
@@ -246,7 +238,7 @@ export const milestones = [
     description:
       "Sonoma-Cutrer emerges as an early leader in Russian River Valley Chardonnay, establishing a Burgundian-influenced model built on site specificity, crisp acidity and balance—helping shape America's modern love affair with fine Chardonnay.",
     winery: "Sonoma-Cutrer",
-    image: "/images/TopLede1_123117.jpg",
+    image: "/images/DUCKHORN-US-1200-e1550307961298-removebg-preview.png",
   },
   {
     year: "Mid-1980s–Today",
@@ -262,15 +254,15 @@ export const milestones = [
     description:
       "Duckhorn expands beyond Napa, establishing Goldeneye and signaling an early, deliberate commitment to cool-climate Pinot Noir.",
     winery: "Goldeneye",
-    image: "/images/NatandCody_Paraduxx_250610_0532.jpg",
+    image: "/images/Screenshot-2025-11-24-at-5.29.03 PM.jpg",
   },
   {
     year: "1997",
-    title: "Kosta Browne Is Born",
+    title: "A Portrait of Place",
     description:
-      "Dan Kosta and Michael Browne produce their first Pinot Noir from a borrowed stemmer-crusher, launching what would become one of America's most sought-after Pinot estates.",
-    winery: "Kosta Browne",
-    image: "/images/cover.jpg",
+      "California's great wine regions form the foundation of the Collection. From the valley floor to coastal ridgelines and mountain slopes, each estate reflects a different facet of California terroir—Napa warmth, Sonoma precision, Anderson Valley intensity, and the singular character of Mt. Harlan.",
+    winery: "Collection",
+    image: "/images/Screenshot 2026-01-22 at 10.53.30 AM.png",
   },
   {
     year: "2011",
@@ -283,14 +275,14 @@ export const milestones = [
     image: "/images/TOP1_123111.jpg",
   },
   {
-    year: "2013",
-    title: "Josh Jensen: Pinot Pioneer",
+    year: "2014",
+    title: "Wine Spectator Wine of the Year",
     description:
-      "Calera founder Josh Jensen is recognized as a defining voice in American Pinot Noir, reinforcing the Collection's role in shaping Pinot's evolution.",
-    winery: "Calera",
+      "THE 2014 THREE PALMS VINEYARD earns Wine Spectator Wine of the Year, marking Renée Ary's first vintage and affirming the wine's enduring excellence and the lasting distinction of its vineyard.",
+    winery: "Duckhorn",
     highlight: true,
-    awardLabel: "Wine Spectator Pinot Pioneer",
-    image: "/images/cover.jpg",
+    awardLabel: "WS Wine of the Year 2017",
+    image: "/images/TopLede1_123117.jpg",
   },
   {
     year: "2015",
@@ -317,7 +309,7 @@ export const milestones = [
     description:
       "A new Napa Valley destination opens on Silverado Trail, where expanded tastings and culinary experiences allow guests to experience the full Duckhorn Collection within a beautiful vineyard setting.",
     winery: "Collection",
-    image: "/images/cover.jpg",
+    image: "/images/NatandCody_Paraduxx_250610_0532.jpg",
   },
 ];
 
