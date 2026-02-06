@@ -9,7 +9,7 @@ export const Intro = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="max-w-3xl mx-auto px-6 md:px-12 text-center"
+        className="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 text-center"
       >
         <p
           className="text-2xl md:text-3xl text-[#2A2A2A] leading-relaxed italic"

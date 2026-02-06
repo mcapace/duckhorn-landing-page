@@ -71,7 +71,7 @@ export const WineryChapter = ({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-10 md:p-14 pb-12 md:pb-16">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
             <h2
               className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white drop-shadow-lg"
               style={{ fontFamily: "var(--font-serif)" }}
@@ -89,7 +89,7 @@ export const WineryChapter = ({
       </motion.div>
 
       {/* Content block - wine + winemaker + Q&A */}
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
         {/* Description */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -100,34 +100,34 @@ export const WineryChapter = ({
           {heroDescription}
         </motion.p>
 
-        {/* Unified block: bottle + portrait + tasting notes + Q&A */}
+        {/* Unified block: bottle + portrait + tasting notes + Q&A - wider, symmetrical */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="border border-[#E8E4DC] rounded-sm overflow-hidden bg-white/50"
         >
-          {/* Top row: bottle + winemaker portrait */}
+          {/* Top row: bottle + winemaker portrait - equal visual weight */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-            <div className={`flex flex-col items-center justify-end p-10 md:p-14 ${isEven ? "lg:order-1 lg:items-end" : "lg:order-2 lg:items-start"}`}>
-              <div className="relative w-[140px] h-[200px] md:w-[180px] md:h-[260px] lg:w-[200px] lg:h-[280px]">
+            <div className={`flex flex-col items-center justify-center p-12 md:p-16 lg:p-20 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+              <div className="relative w-[220px] h-[300px] md:w-[280px] md:h-[380px] lg:w-[320px] lg:h-[420px]">
                 <Image
                   src={bottleImage}
                   alt={name}
                   fill
-                  className="object-contain object-bottom drop-shadow-xl"
-                  sizes="(max-width: 768px) 180px, 200px"
+                  className="object-contain object-center drop-shadow-2xl"
+                  sizes="(max-width: 768px) 280px, 320px"
                 />
               </div>
             </div>
-            <div className={`flex flex-col items-center justify-center p-10 md:p-14 ${isEven ? "lg:order-2 lg:items-start lg:pl-0" : "lg:order-1 lg:items-end lg:pr-0"}`}>
-              <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] flex-shrink-0">
+            <div className={`flex flex-col items-center justify-center p-12 md:p-16 lg:p-20 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
+              <div className="relative w-44 h-44 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] flex-shrink-0">
                 <Image
                   src={winemaker.image}
                   alt={winemaker.name}
                   fill
                   className="object-cover"
-                  sizes="160px"
+                  sizes="(max-width: 768px) 224px, (max-width: 1024px) 256px, 320px"
                 />
               </div>
               <div className={`mt-6 text-center ${isEven ? "lg:text-left" : "lg:text-right"}`}>
@@ -145,7 +145,7 @@ export const WineryChapter = ({
           {/* Bottom row: tasting notes + Q&A side by side */}
           <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-[#E8E4DC]">
             {/* Tasting notes */}
-            <div className="p-8 md:p-10 lg:border-r border-[#E8E4DC]">
+            <div className="p-10 md:p-12 lg:p-16 lg:border-r border-[#E8E4DC]">
               <h3 className="text-[11px] uppercase tracking-[0.3em] text-[#B8956A] mb-5" style={{ fontFamily: "var(--font-serif)" }}>
                 Tasting Notes
               </h3>
@@ -160,7 +160,7 @@ export const WineryChapter = ({
             </div>
 
             {/* Q&A accordion */}
-            <div className="p-8 md:p-10">
+            <div className="p-10 md:p-12 lg:p-16">
               <h3 className="text-[11px] uppercase tracking-[0.25em] text-[#B8956A] mb-5" style={{ fontFamily: "var(--font-serif)" }}>
                 Q&A with {winemaker.name}
               </h3>

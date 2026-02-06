@@ -29,7 +29,7 @@ export const RobSorenson = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-10 md:p-14 pb-12 md:pb-16">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
             <h2
               className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white drop-shadow-lg"
               style={{ fontFamily: "var(--font-serif)" }}
@@ -47,7 +47,7 @@ export const RobSorenson = () => {
       </motion.div>
 
       {/* Content - same layout as winemaker chapters */}
-      <div className="w-full max-w-6xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
