@@ -3,7 +3,19 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
-import { winemakers } from "@/lib/data";
+import { winemakers, robSorensonData } from "@/lib/data";
+
+const makers = [
+  ...winemakers,
+  {
+    name: "Rob Sorenson",
+    title: robSorensonData.title,
+    winery: "The Duckhorn Collection",
+    image: robSorensonData.image,
+    quote: robSorensonData.intro,
+    qAndA: robSorensonData.qAndA,
+  },
+];
 
 export const MeetTheMakers = () => {
   const [selectedMaker, setSelectedMaker] = useState<number | null>(null);
@@ -30,7 +42,7 @@ export const MeetTheMakers = () => {
         </motion.div>
 
         <div className="flex flex-nowrap justify-center gap-8 md:gap-12 lg:gap-16 overflow-x-auto overflow-y-visible pb-4 scrollbar-hide">
-          {winemakers.map((maker, index) => (
+          {makers.map((maker, index) => (
             <motion.div
               key={maker.name}
               initial={{ opacity: 0, y: 32 }}
@@ -98,8 +110,8 @@ export const MeetTheMakers = () => {
                         </svg>
                       </button>
                       <Image
-                        src={winemakers[selectedMaker].image}
-                        alt={winemakers[selectedMaker].name}
+                        src={makers[selectedMaker].image}
+                        alt={makers[selectedMaker].name}
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 768px"
@@ -111,23 +123,23 @@ export const MeetTheMakers = () => {
                           className="text-2xl md:text-3xl"
                           style={{ fontFamily: "var(--font-serif)" }}
                         >
-                          {winemakers[selectedMaker].name}
+                          {makers[selectedMaker].name}
                         </h3>
                         <p className="text-[#C5A572] font-medium">
-                          {winemakers[selectedMaker].winery}
+                          {makers[selectedMaker].winery}
                         </p>
                         <p className="text-white/80 text-sm">
-                          {winemakers[selectedMaker].title}
+                          {makers[selectedMaker].title}
                         </p>
                       </div>
                     </div>
 
                     <div className="p-6 sm:p-8 md:p-10">
                       <p className="text-[#3D3D3D] italic text-base sm:text-lg mb-6">
-                        &ldquo;{winemakers[selectedMaker].quote}&rdquo;
+                        &ldquo;{makers[selectedMaker].quote}&rdquo;
                       </p>
                       <div className="space-y-5 sm:space-y-6 border-t border-[#E8E4DC] pt-6">
-                      {winemakers[selectedMaker].qAndA.map((qa, i) => (
+                      {makers[selectedMaker].qAndA.map((qa, i) => (
                         <div key={i} className="border-b border-[#E8E4DC]/50 last:border-0 last:pb-0 pb-5 sm:pb-6">
                           <p className="text-sm font-medium text-[#3D5636] mb-2 leading-snug">
                             {qa.question}
