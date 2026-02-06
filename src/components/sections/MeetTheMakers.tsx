@@ -41,7 +41,7 @@ export const MeetTheMakers = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-nowrap justify-center gap-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-6 gap-4 md:gap-6 lg:gap-8">
           {makers.map((maker, index) => (
             <motion.div
               key={maker.name}
@@ -50,32 +50,32 @@ export const MeetTheMakers = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.06, duration: 0.5 }}
               onClick={() => setSelectedMaker(selectedMaker === index ? null : index)}
-              className="cursor-pointer group flex flex-col items-center flex-1 min-w-0 max-w-[140px] md:max-w-[160px] lg:max-w-[180px]"
+              className="cursor-pointer group flex flex-col items-center justify-start"
             >
               <motion.div
                 whileHover={{ y: -8 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                className="relative"
+                className="relative w-full flex flex-col items-center"
               >
-                <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] group-hover:ring-[#B8956A] transition-all duration-300 group-hover:shadow-xl">
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] group-hover:ring-[#B8956A] transition-all duration-300 group-hover:shadow-xl flex-shrink-0">
                   <Image
                     src={maker.image}
                     alt={maker.name}
                     fill
-                    className="object-cover"
+                    className="object-cover object-center"
                     sizes="(max-width: 768px) 176px, (max-width: 1024px) 192px, 224px"
                   />
                 </div>
 
-                <div className="mt-3 md:mt-4 min-h-[88px] md:min-h-[96px] flex flex-col items-center justify-start">
+                <div className="mt-3 md:mt-4 min-h-[88px] md:min-h-[96px] w-full flex flex-col items-center justify-start text-center">
                   <h3
-                    className="text-sm md:text-base font-medium text-[#2A2A2A] tracking-tight text-center leading-tight"
+                    className="text-sm md:text-base font-medium text-[#2A2A2A] tracking-tight leading-tight w-full"
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
                     {maker.name}
                   </h3>
-                  <p className="text-xs text-[#3D5636] mt-1 font-medium text-center leading-tight">{maker.winery}</p>
-                  <p className="text-[10px] md:text-xs text-[#3D3D3D]/70 mt-0.5 uppercase tracking-widest text-center leading-tight">{maker.title}</p>
+                  <p className="text-xs text-[#3D5636] mt-1 font-medium leading-tight w-full">{maker.winery}</p>
+                  <p className="text-[10px] md:text-xs text-[#3D3D3D]/70 mt-0.5 uppercase tracking-widest leading-tight w-full">{maker.title}</p>
                 </div>
               </motion.div>
             </motion.div>

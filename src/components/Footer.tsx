@@ -26,7 +26,7 @@ export const Footer = () => {
               alt="The Duckhorn Collection"
               width={200}
               height={60}
-              className="h-12 md:h-14 w-auto object-contain opacity-95"
+              className="h-10 md:h-12 w-auto object-contain opacity-95 brightness-0 invert"
             />
           </div>
           <p
