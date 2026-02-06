@@ -72,8 +72,8 @@ export const Milestones = () => {
 
         {/* Vertical timeline */}
         <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-[27px] md:left-[35px] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#B8956A]/40 to-transparent" />
+          {/* Vertical line - centered in year column, runs through middle of bubbles */}
+          <div className="absolute left-[60px] md:left-[70px] top-0 bottom-0 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#B8956A]/50 to-transparent" />
 
           <div className="space-y-0">
             {milestones.map((milestone, index) => (
@@ -85,12 +85,12 @@ export const Milestones = () => {
                 transition={{ duration: 0.5, delay: index * 0.04 }}
                 className="relative flex gap-6 md:gap-10 py-6 md:py-8 first:pt-0 last:pb-0"
               >
-                {/* Year node */}
-                <div className="flex-shrink-0 flex flex-col items-center w-16 md:w-20">
+                {/* Year node - bubble centered on line */}
+                <div className="flex-shrink-0 flex flex-col items-center justify-center w-[120px] md:w-[140px]">
                   <div
-                    className={`relative z-10 w-14 h-14 md:w-18 md:h-18 rounded-full flex items-center justify-center text-sm md:text-base font-semibold tabular-nums ${
+                    className={`relative z-10 w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center text-sm md:text-base font-semibold tabular-nums ${
                       milestone.highlight
-                        ? "bg-[#B8956A] text-[#2D1216] ring-4 ring-[#B8956A]/30"
+                        ? "bg-[#B8956A] text-[#2D1216] ring-4 ring-[#B8956A]/40"
                         : "bg-white/10 text-white/90 ring-2 ring-white/20"
                     }`}
                     style={{ fontFamily: "var(--font-serif)" }}
@@ -103,15 +103,15 @@ export const Milestones = () => {
                   </div>
                 </div>
 
-                {/* Content */}
+                {/* Content - fixed min-height for uniform card size */}
                 <div
-                  className={`flex-1 min-w-0 rounded-xl overflow-hidden transition-all duration-300 hover:bg-white/[0.08] ${
+                  className={`flex-1 min-w-0 min-h-[200px] md:min-h-[240px] rounded-xl overflow-hidden transition-all duration-300 hover:bg-white/[0.08] flex flex-col ${
                     milestone.highlight
                       ? "bg-[#B8956A]/10 border border-[#B8956A]/30"
                       : "bg-white/5 border border-white/10"
                   }`}
                 >
-                  <div className="flex flex-col md:flex-row">
+                  <div className="flex flex-col md:flex-row flex-1 min-h-0">
                     {(milestone.image || milestone.awardImage) && (
                       <div className="relative w-full md:w-64 lg:w-72 flex-shrink-0 aspect-[4/3] md:aspect-square">
                         {milestone.awardImage ? (

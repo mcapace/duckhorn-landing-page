@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 interface Wine {
   name: string;
@@ -31,6 +32,7 @@ interface WineryChapter {
 
 export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
   const { name, tagline, image, heroDescription, bottleImage, wines, winemaker } = chapter;
+  const [showQaModal, setShowQaModal] = useState(false);
 
   return (
     <section className="scroll-mt-20 min-h-screen bg-white">
@@ -201,19 +203,89 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               >
                 &ldquo;{winemaker.quote}&rdquo;
               </blockquote>
-              <Link
-                href="/#meet-the-makers"
+              <button
+                type="button"
+                onClick={() => setShowQaModal(true)}
                 className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#3D5636] text-white text-sm font-medium uppercase tracking-wider hover:bg-[#2D4636] transition-colors rounded-sm w-fit"
               >
                 Read Full Q&A
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </Link>
+              </button>
             </div>
           </div>
         </motion.div>
       </div>
+
+      {/* Q&A Modal - same style as Meet the Makers */}
+      <AnimatePresence>
+        {showQaModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 sm:p-6"
+            onClick={() => setShowQaModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white rounded-xl sm:rounded-2xl overflow-hidden w-full max-w-2xl sm:max-w-4xl lg:max-w-5xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl"
+            >
+              <div className="relative w-full aspect-[16/10] md:aspect-[2/1] min-h-[220px] sm:min-h-[280px] md:min-h-[360px]">
+                <button
+                  onClick={() => setShowQaModal(false)}
+                  className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-colors"
+                  aria-label="Close"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                <Image
+                  src={winemaker.image}
+                  alt={winemaker.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3
+                    className="text-2xl md:text-3xl"
+                    style={{ fontFamily: "var(--font-serif)" }}
+                  >
+                    {winemaker.name}
+                  </h3>
+                  <p className="text-[#C5A572] font-medium">{winemaker.winery}</p>
+                  <p className="text-white/80 text-sm">{winemaker.title}</p>
+                </div>
+              </div>
+
+              <div className="p-6 sm:p-8 md:p-10">
+                <p className="text-[#3D3D3D] italic text-base sm:text-lg mb-6">
+                  &ldquo;{winemaker.quote}&rdquo;
+                </p>
+                <div className="space-y-5 sm:space-y-6 border-t border-[#E8E4DC] pt-6">
+                  {winemaker.qAndA.map((qa, i) => (
+                    <div key={i} className="border-b border-[#E8E4DC]/50 last:border-0 last:pb-0 pb-5 sm:pb-6">
+                      <p className="text-sm font-medium text-[#3D5636] mb-2 leading-snug">
+                        {qa.question}
+                      </p>
+                      <p className="text-[#3D3D3D] text-sm leading-relaxed">
+                        {qa.answer}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
