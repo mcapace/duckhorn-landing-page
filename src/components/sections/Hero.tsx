@@ -55,12 +55,12 @@ export const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Taglines at bottom - wireframe */}
+      {/* Taglines at bottom */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="absolute bottom-8 left-0 right-0 flex flex-col md:flex-row justify-center items-center gap-2 md:gap-8 text-sm text-[#3D3D3D] px-4 z-20"
+        className="absolute bottom-10 left-0 right-0 flex flex-col md:flex-row justify-center items-center gap-3 md:gap-10 text-sm text-[#3D3D3D] px-6 z-20"
       >
         <span
           className="italic text-center"
