@@ -111,29 +111,15 @@ export const Milestones = () => {
                 >
                   <div className="flex flex-col md:flex-row flex-1 min-h-0">
                     {(milestone.image || milestone.awardImage) && (
-                      <div className="relative w-full md:w-64 lg:w-72 flex-shrink-0 aspect-[4/3] md:aspect-square">
-                        {milestone.awardImage ? (
-                          <div className="absolute inset-0 flex items-center justify-center p-6 bg-[#1a0a0e]">
-                            <div className="relative w-16 h-24 md:w-20 md:h-28">
-                              <Image
-                                src={milestone.awardImage}
-                                alt={milestone.title}
-                                fill
-                                className="object-contain"
-                                sizes="80px"
-                              />
-                            </div>
-                          </div>
-                        ) : milestone.image ? (
-                          <Image
-                            src={milestone.image}
-                            alt={milestone.title}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, 288px"
-                          />
-                        ) : null}
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#2D1216] md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#2D1216]/80" />
+                      <div className="relative w-full md:w-64 lg:w-72 flex-shrink-0 aspect-[4/3] md:aspect-square overflow-hidden">
+                        <Image
+                          src={milestone.awardImage || milestone.image!}
+                          alt={milestone.title}
+                          fill
+                          className="object-cover object-center"
+                          sizes="(max-width: 768px) 100vw, 288px"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#2D1216] md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#2D1216]/80" aria-hidden />
                       </div>
                     )}
                     <div className="p-5 md:p-6 flex-1">

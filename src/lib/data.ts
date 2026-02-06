@@ -230,6 +230,7 @@ export const milestones = [
     description:
       "Josh Jensen plants the first vines on Mt. Harlan, establishing Calera as one of California's earliest and most distinctive Pinot Noir estates, drawn to the rare limestone soils.",
     winery: "Calera",
+    image: "/images/Three-Palms-9.jpg",
   },
   {
     year: "1976",
@@ -245,6 +246,7 @@ export const milestones = [
     description:
       "Sonoma-Cutrer emerges as an early leader in Russian River Valley Chardonnay, establishing a Burgundian-influenced model built on site specificity, crisp acidity and balance—helping shape America's modern love affair with fine Chardonnay.",
     winery: "Sonoma-Cutrer",
+    image: "/images/Duckhorn-Vineyards---Paraduxx-Fermentation-Building.jpg",
   },
   {
     year: "Mid-1980s–Today",
@@ -268,6 +270,7 @@ export const milestones = [
     description:
       "Dan Kosta and Michael Browne produce their first Pinot Noir from a borrowed stemmer-crusher, launching what would become one of America's most sought-after Pinot estates.",
     winery: "Kosta Browne",
+    image: "/images/Kosta-Browne-Winery2.jpg",
   },
   {
     year: "2011",
@@ -287,6 +290,7 @@ export const milestones = [
     winery: "Calera",
     highlight: true,
     awardLabel: "Wine Spectator Pinot Pioneer",
+    awardImage: "/images/INSERTS_0486.jpg",
   },
   {
     year: "2015",
@@ -295,6 +299,7 @@ export const milestones = [
       "Duckhorn acquires full ownership of Three Palms Vineyard, securing America's most iconic Merlot site. Kosta Browne joins The Duckhorn Portfolio, uniting exceptional Pinot Noir estates.",
     winery: "Collection",
     highlight: true,
+    image: "/images/BarrelRoomWithGalleryView_DSC4738_25pct-(1).jpg",
   },
   {
     year: "2017",
