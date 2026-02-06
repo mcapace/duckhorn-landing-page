@@ -91,7 +91,7 @@ export const Milestones = () => {
                     className={`relative z-10 w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center text-sm md:text-base font-semibold tabular-nums ${
                       milestone.highlight
                         ? "bg-[#B8956A] text-[#2D1216] ring-4 ring-[#B8956A]/40"
-                        : "bg-white/10 text-white/90 ring-2 ring-white/20"
+                        : "bg-[#2D1216] text-white/90 ring-2 ring-white/20"
                     }`}
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
