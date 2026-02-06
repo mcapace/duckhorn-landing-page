@@ -3,10 +3,13 @@
 import { motion } from "framer-motion";
 
 const navItems = [
-  { label: "The Duckhorn Perspective", href: "#perspective" },
+  { label: "Duckhorn", href: "#duckhorn" },
+  { label: "Kosta Browne", href: "#kosta-browne" },
+  { label: "Calera", href: "#calera" },
+  { label: "Goldeneye", href: "#goldeneye" },
+  { label: "Sonoma-Cutrer", href: "#sonoma-cutrer" },
+  { label: "Vineyard", href: "#vineyard-stewardship" },
   { label: "Video", href: "#video" },
-  { label: "Featured Wines", href: "#featured-wines" },
-  { label: "Meet the Makers", href: "#meet-the-makers" },
   { label: "Milestones", href: "#milestones" },
 ];
 

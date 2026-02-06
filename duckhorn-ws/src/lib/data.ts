@@ -448,6 +448,26 @@ export const wineries = [
   },
 ];
 
+// Winery id to winemaker mapping
+const wineryToMaker: Record<string, string> = {
+  "duckhorn": "Duckhorn Vineyards",
+  "kosta-browne": "Kosta Browne",
+  "calera": "Calera",
+  "goldeneye": "Goldeneye",
+  "sonoma-cutrer": "Sonoma-Cutrer",
+};
+
+// Unified winery chapters for continuous scroll (wine + winemaker + tasting notes)
+export const wineryChapters = wineries.map((winery) => {
+  const wine = featuredWines.find((w) => w.id === winery.id);
+  const maker = winemakers.find((m) => m.winery === wineryToMaker[winery.id]);
+  return {
+    ...winery,
+    bottleImage: wine?.image ?? winery.image,
+    winemaker: maker!,
+  };
+});
+
 export const wineRatings = {
   duckhornVineyards: [
     { wine: "Merlot Napa Valley Three Palms Vineyard 2022", score: 94 },
