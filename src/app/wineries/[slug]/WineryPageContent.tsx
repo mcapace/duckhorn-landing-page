@@ -62,7 +62,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14 pb-16 md:pb-24">
+        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14 pb-28 md:pb-36">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -95,7 +95,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
       </motion.div>
 
       {/* Intro - editorial flow */}
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 -mt-16 md:-mt-24 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 -mt-10 md:-mt-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -120,13 +120,13 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 flex justify-center lg:justify-end"
           >
-            <div className="relative w-[280px] h-[380px] sm:w-[340px] sm:h-[440px] md:w-[400px] md:h-[520px]">
+            <div className="relative w-[320px] h-[420px] sm:w-[400px] sm:h-[520px] md:w-[480px] md:h-[620px]">
               <Image
                 src={bottleImage}
                 alt={name}
                 fill
                 className="object-contain object-center drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)]"
-                sizes="(max-width: 768px) 280px, (max-width: 1024px) 340px, 400px"
+                sizes="(max-width: 768px) 320px, (max-width: 1024px) 400px, 480px"
               />
             </div>
           </motion.div>

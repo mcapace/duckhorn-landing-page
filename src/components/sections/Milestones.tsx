@@ -73,7 +73,7 @@ export const Milestones = () => {
         {/* Vertical timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-[19px] md:left-[27px] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#B8956A]/40 to-transparent" />
+          <div className="absolute left-[27px] md:left-[35px] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#B8956A]/40 to-transparent" />
 
           <div className="space-y-0">
             {milestones.map((milestone, index) => (
@@ -86,9 +86,9 @@ export const Milestones = () => {
                 className="relative flex gap-8 md:gap-12 py-8 md:py-10 first:pt-0 last:pb-0"
               >
                 {/* Year node */}
-                <div className="flex-shrink-0 flex flex-col items-center w-12 md:w-14">
+                <div className="flex-shrink-0 flex flex-col items-center w-16 md:w-20">
                   <div
-                    className={`relative z-10 w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center text-xs md:text-sm font-semibold tabular-nums ${
+                    className={`relative z-10 w-14 h-14 md:w-18 md:h-18 rounded-full flex items-center justify-center text-sm md:text-base font-semibold tabular-nums ${
                       milestone.highlight
                         ? "bg-[#B8956A] text-[#2D1216] ring-4 ring-[#B8956A]/30"
                         : "bg-white/10 text-white/90 ring-2 ring-white/20"
@@ -96,7 +96,7 @@ export const Milestones = () => {
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
                     {milestone.year.length <= 4 ? milestone.year : (
-                      <span className="text-[10px] md:text-xs leading-tight text-center px-1">
+                      <span className="text-xs md:text-sm leading-tight text-center px-1">
                         {milestone.year}
                       </span>
                     )}
