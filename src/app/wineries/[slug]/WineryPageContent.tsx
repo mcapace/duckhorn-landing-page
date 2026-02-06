@@ -120,13 +120,13 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 flex justify-center lg:justify-end"
           >
-            <div className="relative w-[200px] h-[280px] sm:w-[240px] sm:h-[320px] md:w-[280px] md:h-[360px]">
+            <div className="relative w-[280px] h-[380px] sm:w-[340px] sm:h-[440px] md:w-[400px] md:h-[520px]">
               <Image
                 src={bottleImage}
                 alt={name}
                 fill
                 className="object-contain object-center drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)]"
-                sizes="(max-width: 768px) 200px, 280px"
+                sizes="(max-width: 768px) 280px, (max-width: 1024px) 340px, 400px"
               />
             </div>
           </motion.div>
