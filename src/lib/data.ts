@@ -230,7 +230,7 @@ export const milestones = [
     description:
       "Josh Jensen plants the first vines on Mt. Harlan, establishing Calera as one of California's earliest and most distinctive Pinot Noir estates, drawn to the rare limestone soils.",
     winery: "Calera",
-    image: "/images/Three-Palms-9.jpg",
+    image: "/images/Timeline/TOP1_123111.jpg",
   },
   {
     year: "1976",
@@ -238,7 +238,7 @@ export const milestones = [
     description:
       "Duckhorn Vineyards is established in Napa Valley with an early, defining commitment to Merlot—setting a house style centered on balance and elegance at a time when Cabernet Sauvignon dominated much of the valley.",
     winery: "Duckhorn",
-    image: "/images/Dan-Duckhorn-during-harvest.jpg",
+    image: "/images/Timeline/Dan-Duckhorn-during-harvest.jpg",
   },
   {
     year: "Early 1980s",
@@ -246,7 +246,7 @@ export const milestones = [
     description:
       "Sonoma-Cutrer emerges as an early leader in Russian River Valley Chardonnay, establishing a Burgundian-influenced model built on site specificity, crisp acidity and balance—helping shape America's modern love affair with fine Chardonnay.",
     winery: "Sonoma-Cutrer",
-    image: "/images/Duckhorn-Vineyards---Paraduxx-Fermentation-Building.jpg",
+    image: "/images/Timeline/TopLede1_123117.jpg",
   },
   {
     year: "Mid-1980s–Today",
@@ -254,7 +254,7 @@ export const milestones = [
     description:
       "THREE PALMS VINEYARD reveals itself early as a singular Merlot site—delivering grapes with exceptional structure and depth. Decades of dedication culminate in Duckhorn's acquisition of the vineyard in 2015, securing long-term stewardship of America's most important Merlot site.",
     winery: "Duckhorn",
-    image: "/images/Three-Palms-Vineyard.jpg",
+    image: "/images/Timeline/Three-Palms-Vineyard.jpg",
   },
   {
     year: "1996",
@@ -262,7 +262,7 @@ export const milestones = [
     description:
       "Duckhorn expands beyond Napa, establishing Goldeneye and signaling an early, deliberate commitment to cool-climate Pinot Noir.",
     winery: "Goldeneye",
-    image: "/images/CeriseNov18_Drone_9.jpg",
+    image: "/images/Timeline/NatandCody_Paraduxx_250610_0532.jpg",
   },
   {
     year: "1997",
@@ -270,7 +270,7 @@ export const milestones = [
     description:
       "Dan Kosta and Michael Browne produce their first Pinot Noir from a borrowed stemmer-crusher, launching what would become one of America's most sought-after Pinot estates.",
     winery: "Kosta Browne",
-    image: "/images/Kosta-Browne-Winery2.jpg",
+    image: "/images/Timeline/cover.jpg",
   },
   {
     year: "2011",
@@ -280,7 +280,7 @@ export const milestones = [
     winery: "Kosta Browne",
     highlight: true,
     awardLabel: "WS Wine of the Year 2011",
-    awardImage: "/images/INSERTS_0482.jpg",
+    image: "/images/Timeline/TOP1_123111.jpg",
   },
   {
     year: "2013",
@@ -290,7 +290,7 @@ export const milestones = [
     winery: "Calera",
     highlight: true,
     awardLabel: "Wine Spectator Pinot Pioneer",
-    awardImage: "/images/INSERTS_0486.jpg",
+    image: "/images/Timeline/cover.jpg",
   },
   {
     year: "2015",
@@ -299,7 +299,7 @@ export const milestones = [
       "Duckhorn acquires full ownership of Three Palms Vineyard, securing America's most iconic Merlot site. Kosta Browne joins The Duckhorn Portfolio, uniting exceptional Pinot Noir estates.",
     winery: "Collection",
     highlight: true,
-    image: "/images/BarrelRoomWithGalleryView_DSC4738_25pct-(1).jpg",
+    image: "/images/Timeline/NatandCody_Paraduxx_250610_0532.jpg",
   },
   {
     year: "2017",
@@ -309,7 +309,7 @@ export const milestones = [
     winery: "Duckhorn",
     highlight: true,
     awardLabel: "WS Wine of the Year 2017",
-    awardImage: "/images/INSERTS_0478.jpg",
+    image: "/images/Timeline/TopLede1_123117.jpg",
   },
   {
     year: "2025",
@@ -317,7 +317,7 @@ export const milestones = [
     description:
       "A new Napa Valley destination opens on Silverado Trail, where expanded tastings and culinary experiences allow guests to experience the full Duckhorn Collection within a beautiful vineyard setting.",
     winery: "Collection",
-    image: "/images/Duckhorn_2023-9.jpg",
+    image: "/images/Timeline/cover.jpg",
   },
 ];
 
