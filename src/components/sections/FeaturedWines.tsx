@@ -21,14 +21,14 @@ export const FeaturedWines = () => {
     <section
       id="featured-wines"
       ref={containerRef}
-      className="relative py-28 md:py-36 overflow-hidden bg-[#FAFAF8]"
+      className="relative py-20 md:py-28 overflow-hidden bg-[#FAFAF8]"
     >
       {/* Section header - fixed position, fades as you scroll into carousel */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 mb-16"
+        className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 mb-12"
       >
         <h2
           className="text-4xl md:text-5xl lg:text-6xl text-[#2A2A2A] tracking-tight"

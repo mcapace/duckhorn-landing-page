@@ -6,16 +6,16 @@ import { milestones, milestonesIntro, portraitOfPlace } from "@/lib/data";
 
 export const Milestones = () => {
   return (
-    <section id="milestones" className="py-28 md:py-36 bg-[#2D1216] scroll-mt-20">
+    <section id="milestones" className="py-20 md:py-28 bg-[#2D1216] scroll-mt-20">
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
         {/* 50 Years header + intro */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 md:mb-20"
+          className="mb-12 md:mb-16"
         >
-          <div className="flex flex-col md:flex-row md:items-end gap-6 md:gap-10 mb-8">
+          <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-8 mb-6">
             <span
               className="text-6xl md:text-8xl lg:text-9xl text-[#B8956A]/90 font-bold tabular-nums leading-none"
               style={{ fontFamily: "var(--font-serif)" }}
@@ -26,7 +26,7 @@ export const Milestones = () => {
               Years of the Duckhorn Collection
             </span>
           </div>
-          <div className="border border-[#3D5636] rounded-sm px-6 py-5 md:px-10 md:py-6 inline-block mb-8">
+          <div className="border border-[#3D5636] rounded-sm px-6 py-5 md:px-10 md:py-6 inline-block mb-6">
             <h2
               className="text-2xl md:text-3xl lg:text-4xl text-[#3D5636] tracking-tight"
               style={{ fontFamily: "var(--font-serif)" }}
@@ -47,7 +47,7 @@ export const Milestones = () => {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20 rounded-xl overflow-hidden bg-white/5 border border-white/10 p-8 md:p-12"
+          className="mb-16 rounded-xl overflow-hidden bg-white/5 border border-white/10 p-6 md:p-10"
         >
           <h3
             className="text-xl md:text-2xl text-white mb-4"
@@ -83,7 +83,7 @@ export const Milestones = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: index * 0.04 }}
-                className="relative flex gap-8 md:gap-12 py-8 md:py-10 first:pt-0 last:pb-0"
+                className="relative flex gap-6 md:gap-10 py-6 md:py-8 first:pt-0 last:pb-0"
               >
                 {/* Year node */}
                 <div className="flex-shrink-0 flex flex-col items-center w-16 md:w-20">
@@ -138,7 +138,7 @@ export const Milestones = () => {
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#2D1216] md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#2D1216]/80" />
                       </div>
                     )}
-                    <div className="p-6 md:p-8 flex-1">
+                    <div className="p-5 md:p-6 flex-1">
                       <span className="text-xs text-[#B8956A] uppercase tracking-wider">
                         {milestone.winery}
                       </span>

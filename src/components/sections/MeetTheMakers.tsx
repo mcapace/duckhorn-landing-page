@@ -21,13 +21,13 @@ export const MeetTheMakers = () => {
   const [selectedMaker, setSelectedMaker] = useState<number | null>(null);
 
   return (
-    <section id="meet-the-makers" className="py-28 md:py-36 bg-white scroll-mt-20">
+    <section id="meet-the-makers" className="py-20 md:py-28 bg-white scroll-mt-20">
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-14"
         >
           <h2
             className="text-4xl md:text-5xl lg:text-6xl text-[#2A2A2A] tracking-tight"

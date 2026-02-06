@@ -101,7 +101,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl shadow-xl shadow-black/5 p-8 md:p-12 lg:p-16 max-w-3xl"
+          className="bg-white rounded-2xl shadow-xl shadow-black/5 p-6 md:p-10 lg:p-12 max-w-3xl"
         >
           <p className="text-lg md:text-xl text-[#3D3D3D] leading-[1.8]">
             {heroDescription}
@@ -110,8 +110,8 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
       </div>
 
       {/* Bottle + Tasting Notes - flowing layout */}
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           {/* Bottle - prominent, clear of text */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -140,12 +140,12 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             className="lg:col-span-7"
           >
             <h3
-              className="text-xs uppercase tracking-[0.35em] text-[#B8956A] mb-8"
+              className="text-xs uppercase tracking-[0.35em] text-[#B8956A] mb-6"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               Tasting Notes
             </h3>
-            <ul className="space-y-8">
+            <ul className="space-y-6">
               {wines.map((wine, i) => (
                 <li key={i} className="group">
                   <h4 className="font-medium text-[#2A2A2A] text-base md:text-lg group-hover:text-[#3D5636] transition-colors">
@@ -155,7 +155,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                     {wine.description}
                   </p>
                   {i < wines.length - 1 && (
-                    <div className="mt-6 h-px bg-gradient-to-r from-[#E8E4DC] to-transparent" />
+                    <div className="mt-5 h-px bg-gradient-to-r from-[#E8E4DC] to-transparent" />
                   )}
                 </li>
               ))}
@@ -169,10 +169,10 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          className="mt-24 md:mt-32 rounded-2xl overflow-hidden bg-[#FAFAF8] border border-[#E8E4DC]/60"
+          className="mt-20 md:mt-24 rounded-2xl overflow-hidden bg-[#FAFAF8] border border-[#E8E4DC]/60"
         >
           <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
-            <div className="md:col-span-2 flex flex-col items-center justify-center p-12 md:p-16">
+            <div className="md:col-span-2 flex flex-col items-center justify-center p-10 md:p-12">
               <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden ring-2 ring-white shadow-lg">
                 <Image
                   src={winemaker.image}
@@ -183,7 +183,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                 />
               </div>
             </div>
-            <div className="md:col-span-3 flex flex-col justify-center p-8 md:p-16 md:pl-12">
+            <div className="md:col-span-3 flex flex-col justify-center p-8 md:p-12 md:pl-10">
               <p className="text-xs uppercase tracking-widest text-[#B8956A] mb-2">
                 Winemaker
               </p>

@@ -5,14 +5,14 @@ import Script from "next/script";
 
 export const Video = () => {
   return (
-    <section id="video" className="py-28 md:py-36 bg-[#2D1216] scroll-mt-20">
+    <section id="video" className="py-20 md:py-28 bg-[#2D1216] scroll-mt-20">
       <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2
             className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"

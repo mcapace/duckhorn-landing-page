@@ -6,13 +6,13 @@ import { perspectiveContent, perspectiveImages } from "@/lib/data";
 
 export const Perspective = () => {
   return (
-    <section id="perspective" className="py-28 md:py-36 bg-white scroll-mt-20">
+    <section id="perspective" className="py-20 md:py-28 bg-white scroll-mt-20">
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          className="text-center mb-20"
+          className="text-center mb-14"
         >
           <h2
             className="text-4xl md:text-5xl lg:text-6xl text-[#2A2A2A] tracking-tight mb-5"
@@ -37,7 +37,7 @@ export const Perspective = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ delay: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-20"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-16"
         >
           {perspectiveImages.map((img, i) => (
             <motion.div
@@ -67,7 +67,7 @@ export const Perspective = () => {
           transition={{ delay: 0.15 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="space-y-6 text-[#3D3D3D] text-base md:text-lg leading-relaxed">
+          <div className="space-y-5 text-[#3D3D3D] text-base md:text-lg leading-relaxed">
             {perspectiveContent.letter.split("\n\n").map((para, i) => (
               <p key={i}>{para}</p>
             ))}
@@ -77,7 +77,7 @@ export const Perspective = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="pt-12 mt-12 border-t border-[#E8E4DC]"
+            className="pt-10 mt-10 border-t border-[#E8E4DC]"
           >
             <p
               className="text-lg font-medium text-[#2A2A2A]"

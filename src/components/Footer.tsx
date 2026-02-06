@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <footer className="py-16 bg-[#2D1216] text-white/80">
+    <footer className="py-12 md:py-14 bg-[#2D1216] text-white/80">
       <div className="w-full max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -13,7 +13,7 @@ export const Footer = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 mb-8">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-6">
             <Image
               src="/images/WSlogoWhite-stroke (2) (4) (5).png"
               alt="Wine Spectator"
@@ -55,7 +55,7 @@ export const Footer = () => {
               Wine Spectator Ratings
             </a>
           </div>
-          <p className="mt-12 text-xs text-white/50">
+          <p className="mt-10 text-xs text-white/50">
             Wine Spectator Sponsored Special Feature
           </p>
           <p className="mt-2 text-xs text-white/40">
