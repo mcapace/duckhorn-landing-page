@@ -1,12 +1,12 @@
 // Content data from CURSOR_IMPLEMENTATION_GUIDE.md
 
-// Bottle images: 0478=Duckhorn, 0482=Kosta Browne, 0486=Calera, 0489=Goldeneye, 0494=Sonoma-Cutrer (per layout)
+// Bottle images from /images/bottles (NoBG for creative layouts, Full for fallback)
 export const featuredWines = [
-  { id: "duckhorn", name: "Duckhorn", brand: "DUCKHORN VINEYARDS", tagline: "Five Decades In. Still Defining What's Next.", image: "/images/INSERTS_0478.jpg" },
-  { id: "kosta-browne", name: "Kosta Browne", brand: "KOSTA BROWNE", tagline: "The Art of Site", image: "/images/INSERTS_0482.jpg" },
-  { id: "calera", name: "Calera", brand: "CALERA", tagline: "Mountain Purity & Limestone Precision", image: "/images/INSERTS_0486.jpg" },
-  { id: "goldeneye", name: "Goldeneye", brand: "GOLDENEYE", tagline: "The Voice of Anderson Valley", image: "/images/INSERTS_0489.jpg" },
-  { id: "sonoma-cutrer", name: "Sonoma-Cutrer", brand: "SONOMA-CUTRER", tagline: "Crisp by Design", image: "/images/INSERTS_0494.jpg" },
+  { id: "duckhorn", name: "Duckhorn", brand: "DUCKHORN VINEYARDS", tagline: "Five Decades In. Still Defining What's Next.", image: "/images/bottles/Duckhorn-NoBG.png", imageFull: "/images/bottles/Duckhorn-Full.jpg" },
+  { id: "kosta-browne", name: "Kosta Browne", brand: "KOSTA BROWNE", tagline: "The Art of Site", image: "/images/bottles/Kostabrowne-NoBG.png", imageFull: "/images/bottles/KostaBrowne-Full.jpg" },
+  { id: "calera", name: "Calera", brand: "CALERA", tagline: "Mountain Purity & Limestone Precision", image: "/images/bottles/Calera-NoBG.png", imageFull: "/images/bottles/Calera-Full.jpg" },
+  { id: "goldeneye", name: "Goldeneye", brand: "GOLDENEYE", tagline: "The Voice of Anderson Valley", image: "/images/bottles/Goldeneye-NoBG.png", imageFull: "/images/bottles/Goldeneye-Full.jpg" },
+  { id: "sonoma-cutrer", name: "Sonoma-Cutrer", brand: "SONOMA-CUTRER", tagline: "Crisp by Design", image: "/images/bottles/Sonoma-NoBG.png", imageFull: "/images/bottles/SonomaCutrer-Full.jpg" },
 ];
 
 // Winemaker headshots per reference: Renée=Duckhorn28217; Julien=47; Kristen=74; Mike=94; Cara=13 (Dawn Heumann series)
