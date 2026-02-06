@@ -52,14 +52,14 @@ export const WineryChapter = ({
   return (
     <section
       id={id}
-      className={`scroll-mt-20 min-h-screen ${index % 2 === 1 ? "bg-[#F8F6F1]" : "bg-white"}`}
+      className={`scroll-mt-20 min-h-screen ${index % 2 === 1 ? "bg-[#FAFAF8]" : "bg-white"}`}
     >
-      {/* Hero image - full bleed */}
+      {/* Hero image - cinematic, full bleed */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="relative w-full h-[55vh] min-h-[380px] overflow-hidden"
+        className="relative w-full h-[60vh] min-h-[420px] md:min-h-[500px] overflow-hidden"
       >
         <Image
           src={image}
@@ -69,7 +69,7 @@ export const WineryChapter = ({
           sizes="100vw"
           priority={index === 0}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-10 md:p-14 pb-12 md:pb-16">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
             <h2
@@ -88,40 +88,40 @@ export const WineryChapter = ({
         </div>
       </motion.div>
 
-      {/* Content block - wine + winemaker + Q&A */}
-      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
-        {/* Description */}
+      {/* Content block - premium layout */}
+      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-24 md:py-32">
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-base md:text-lg text-[#3D3D3D] leading-relaxed max-w-3xl mb-16 md:mb-24"
+          className="text-base md:text-lg text-[#3D3D3D] leading-relaxed max-w-3xl mb-20 md:mb-28"
         >
           {heroDescription}
         </motion.p>
 
-        {/* Unified block: bottle + portrait + tasting notes + Q&A - wider, symmetrical */}
+        {/* Premium content card */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="border border-[#E8E4DC] rounded-sm overflow-hidden bg-white/50"
+          transition={{ duration: 0.5 }}
+          className="overflow-hidden shadow-[0_4px_40px_-8px_rgba(0,0,0,0.08)] rounded-sm"
         >
-          {/* Top row: bottle + winemaker portrait - equal visual weight */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-            <div className={`flex flex-col items-center justify-center p-12 md:p-16 lg:p-20 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
-              <div className="relative w-[220px] h-[300px] md:w-[280px] md:h-[380px] lg:w-[320px] lg:h-[420px]">
+          {/* Top row: bottle + winemaker - equal visual weight */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white">
+            <div className={`flex flex-col items-center justify-center p-14 md:p-20 lg:p-24 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+              <div className="relative w-[240px] h-[320px] md:w-[300px] md:h-[400px] lg:w-[360px] lg:h-[460px]">
                 <Image
                   src={bottleImage}
                   alt={name}
                   fill
                   className="object-contain object-center drop-shadow-2xl"
-                  sizes="(max-width: 768px) 280px, 320px"
+                  sizes="(max-width: 768px) 300px, 360px"
                 />
               </div>
             </div>
-            <div className={`flex flex-col items-center justify-center p-12 md:p-16 lg:p-20 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
-              <div className="relative w-44 h-44 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] flex-shrink-0">
+            <div className={`flex flex-col items-center justify-center p-14 md:p-20 lg:p-24 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
+              <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] flex-shrink-0">
                 <Image
                   src={winemaker.image}
                   alt={winemaker.name}
@@ -142,11 +142,10 @@ export const WineryChapter = ({
             </div>
           </div>
 
-          {/* Bottom row: tasting notes + Q&A side by side */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-[#E8E4DC]">
-            {/* Tasting notes */}
-            <div className="p-10 md:p-12 lg:p-16 lg:border-r border-[#E8E4DC]">
-              <h3 className="text-[11px] uppercase tracking-[0.3em] text-[#B8956A] mb-5" style={{ fontFamily: "var(--font-serif)" }}>
+          {/* Bottom row: tasting notes + Q&A */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-[#E8E4DC] bg-white">
+            <div className="p-12 md:p-16 lg:p-20 lg:border-r border-[#E8E4DC]">
+              <h3 className="text-[11px] uppercase tracking-[0.3em] text-[#B8956A] mb-6" style={{ fontFamily: "var(--font-serif)" }}>
                 Tasting Notes
               </h3>
               <ul className="space-y-5">
@@ -159,8 +158,7 @@ export const WineryChapter = ({
               </ul>
             </div>
 
-            {/* Q&A accordion */}
-            <div className="p-10 md:p-12 lg:p-16">
+            <div className="p-12 md:p-16 lg:p-20">
               <h3 className="text-[11px] uppercase tracking-[0.25em] text-[#B8956A] mb-5" style={{ fontFamily: "var(--font-serif)" }}>
                 Q&A with {winemaker.name}
               </h3>

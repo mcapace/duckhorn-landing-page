@@ -5,28 +5,26 @@ import { milestones } from "@/lib/data";
 
 export const Milestones = () => {
   return (
-    <section
-      id="milestones"
-      className="py-24 bg-[#2D1216] scroll-mt-20"
-    >
-      <div className="w-full max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16 mb-12">
+    <section id="milestones" className="py-28 md:py-36 bg-[#2D1216] scroll-mt-20">
+      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 mb-16">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center"
         >
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl text-white"
+            className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             MILESTONES THAT BUILT A COLLECTION
           </h2>
+          <div className="w-16 h-px bg-white/20 mx-auto mt-6" />
         </motion.div>
       </div>
 
-      <div className="w-full max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {milestones.slice(0, 3).map((milestone, index) => (
           <motion.div
             key={index}

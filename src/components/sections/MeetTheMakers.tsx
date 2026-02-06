@@ -9,63 +9,60 @@ export const MeetTheMakers = () => {
   const [selectedMaker, setSelectedMaker] = useState<number | null>(null);
 
   return (
-    <section
-      id="meet-the-makers"
-      className="py-24 bg-white scroll-mt-20"
-    >
-      <div className="w-full max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16">
+    <section id="meet-the-makers" className="py-28 md:py-36 bg-white scroll-mt-20">
+      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl text-[#2A2A2A] tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl text-[#2A2A2A] tracking-tight"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             MEET THE MAKERS
           </h2>
-          <div className="w-20 h-px bg-[#E8E4DC] mx-auto mt-5" />
-          <p className="text-[#3D3D3D] mt-5 max-w-xl mx-auto text-[15px] md:text-base">
+          <div className="w-16 h-px bg-[#E8E4DC] mx-auto mt-6" />
+          <p className="text-[#3D3D3D] mt-6 max-w-xl mx-auto text-base md:text-lg">
             A Q&A with the winemakers who shape the wines.
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-x-16 gap-y-12 md:gap-x-20 md:gap-y-16 lg:gap-x-24 lg:gap-y-20">
+        <div className="flex flex-wrap justify-center gap-x-20 gap-y-16 md:gap-x-24 lg:gap-x-32">
           {winemakers.map((maker, index) => (
             <motion.div
               key={maker.name}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.08 }}
+              transition={{ delay: index * 0.06, duration: 0.5 }}
               onClick={() => setSelectedMaker(selectedMaker === index ? null : index)}
               className="cursor-pointer group flex flex-col items-center"
             >
               <motion.div
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.25 }}
+                whileHover={{ y: -8 }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
                 className="relative"
               >
-                <div className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden ring-1 ring-[#E8E4DC] group-hover:ring-[#B8956A] transition-all duration-300 group-hover:shadow-lg">
+                <div className="relative w-44 h-44 sm:w-52 sm:h-52 md:w-56 md:h-56 lg:w-60 lg:h-60 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] group-hover:ring-[#B8956A] transition-all duration-300 group-hover:shadow-xl">
                   <Image
                     src={maker.image}
                     alt={maker.name}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 640px) 160px, (max-width: 768px) 176px, (max-width: 1024px) 192px, 224px"
+                    sizes="(max-width: 640px) 208px, (max-width: 768px) 224px, (max-width: 1024px) 256px, 288px"
                   />
                 </div>
 
                 <h3
-                  className="mt-5 text-base md:text-lg font-medium text-[#2A2A2A] tracking-tight"
+                  className="mt-6 text-lg md:text-xl font-medium text-[#2A2A2A] tracking-tight"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
                   {maker.name}
                 </h3>
-                <p className="text-sm text-[#3D5636] mt-1">{maker.winery}</p>
-                <p className="text-xs text-[#3D3D3D]/80 mt-0.5 uppercase tracking-wider">{maker.title}</p>
+                <p className="text-sm text-[#3D5636] mt-2 font-medium">{maker.winery}</p>
+                <p className="text-xs text-[#3D3D3D]/70 mt-1 uppercase tracking-widest">{maker.title}</p>
               </motion.div>
             </motion.div>
           ))}

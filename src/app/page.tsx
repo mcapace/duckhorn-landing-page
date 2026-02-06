@@ -1,6 +1,8 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/sections/Hero";
-import { Intro } from "@/components/sections/Intro";
+import { Perspective } from "@/components/sections/Perspective";
+import { FeaturedWines } from "@/components/sections/FeaturedWines";
+import { MeetTheMakers } from "@/components/sections/MeetTheMakers";
 import { WineryChapter } from "@/components/sections/WineryChapter";
 import { RobSorenson } from "@/components/sections/RobSorenson";
 import { Video } from "@/components/sections/Video";
@@ -13,7 +15,9 @@ export default function Home() {
     <main className="relative">
       <Navigation />
       <Hero />
-      <Intro />
+      <Perspective />
+      <FeaturedWines />
+      <MeetTheMakers />
       {wineryChapters.map((chapter, index) => (
         <WineryChapter
           key={chapter.id}

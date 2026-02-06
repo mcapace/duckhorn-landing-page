@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 
 const navItems = [
+  { label: "Perspective", href: "#perspective" },
+  { label: "Featured Wines", href: "#featured-wines" },
+  { label: "Meet the Makers", href: "#meet-the-makers" },
   { label: "Duckhorn", href: "#duckhorn" },
   { label: "Kosta Browne", href: "#kosta-browne" },
   { label: "Calera", href: "#calera" },

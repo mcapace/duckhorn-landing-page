@@ -4,30 +4,29 @@ import { motion } from "framer-motion";
 
 export const Video = () => {
   return (
-    <section
-      id="video"
-      className="py-24 bg-[#2D1216] scroll-mt-20"
-    >
-      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16">
+    <section id="video" className="py-28 md:py-36 bg-[#2D1216] scroll-mt-20">
+      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl text-white"
+            className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             VIDEO
           </h2>
+          <div className="w-16 h-px bg-white/20 mx-auto mt-6" />
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative aspect-video rounded-2xl overflow-hidden bg-[#4A1D23]"
+          transition={{ duration: 0.5 }}
+          className="relative aspect-video rounded-lg overflow-hidden bg-[#4A1D23] shadow-2xl"
         >
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-white/80">

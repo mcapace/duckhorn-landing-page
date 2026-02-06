@@ -291,6 +291,7 @@ export const perspectiveImages = [
   { src: "/images/Three-Palms-Vineyard.jpg", alt: "Three Palms Vineyard" },
   { src: "/images/pd-courtyard-new.jpg", alt: "Courtyard" },
   { src: "/images/CeriseNov18_Drone_9.jpg", alt: "Vineyard drone shot" },
+  { src: "/images/DV-Harvest---9.25.25-29.jpg", alt: "Vineyard harvest" },
 ];
 
 export const robSorensonData = {
