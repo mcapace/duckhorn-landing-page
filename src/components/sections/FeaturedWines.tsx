@@ -42,9 +42,8 @@ export const FeaturedWines = () => {
         <div className="w-16 h-px bg-[#E8E4DC] mt-6" />
       </motion.div>
 
-      {/* Horizontal scroll carousel */}
-      <div className="relative">
-        <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 md:gap-10 pb-8 px-6 md:px-12 lg:px-20 scrollbar-hide">
+      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
+        <div className="flex flex-nowrap justify-center gap-4 md:gap-6">
           {featuredWines.map((wine, index) => (
             <motion.div
               key={wine.id}
@@ -52,17 +51,17 @@ export const FeaturedWines = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.1 }}
-              className="flex-shrink-0 w-[85vw] sm:w-[70vw] md:w-[calc(50%-1rem)] lg:w-[calc(40%-1rem)] xl:w-[380px] snap-center"
+              className="flex-1 min-w-0 max-w-[240px] md:max-w-[260px]"
             >
               <Link href={`/wineries/${wine.id}`} className="block group">
                 <motion.div
                   whileHover={{ y: -8 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className={`relative rounded-2xl overflow-hidden bg-gradient-to-b ${gradients[index]} min-h-[420px] md:min-h-[480px] flex flex-col items-center justify-end pb-10 pt-16 shadow-xl`}
+                  className={`relative rounded-2xl overflow-hidden bg-gradient-to-b ${gradients[index]} min-h-[360px] md:min-h-[400px] flex flex-col items-center justify-end pb-6 pt-12 shadow-xl`}
                 >
 
                   {/* Bottle - positioned to feel like it's emerging from the card */}
-                  <div className="relative w-32 h-44 md:w-40 md:h-56 lg:w-44 lg:h-60 flex-shrink-0 -mb-4">
+                  <div className="relative w-24 h-36 md:w-28 md:h-40 flex-shrink-0 -mb-2">
                     <Image
                       src={wine.image}
                       alt={wine.name}
@@ -73,20 +72,20 @@ export const FeaturedWines = () => {
                   </div>
 
                   {/* Text overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 pt-24 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 pt-16 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
                     <h3
-                      className="text-2xl md:text-3xl text-white font-medium"
+                      className="text-lg md:text-xl text-white font-medium"
                       style={{ fontFamily: "var(--font-serif)" }}
                     >
                       {wine.name}
                     </h3>
                     <p
-                      className="text-[#C5A572] italic mt-2 text-sm md:text-base"
+                      className="text-[#C5A572] italic mt-1 text-xs md:text-sm line-clamp-2"
                       style={{ fontFamily: "var(--font-script)" }}
                     >
                       {wine.tagline}
                     </p>
-                    <span className="inline-flex items-center gap-2 mt-4 text-[#B8956A] text-sm uppercase tracking-wider group-hover:gap-4 transition-all">
+                    <span className="inline-flex items-center gap-2 mt-2 text-[#B8956A] text-xs uppercase tracking-wider group-hover:gap-4 transition-all">
                       Explore
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -96,17 +95,6 @@ export const FeaturedWines = () => {
                 </motion.div>
               </Link>
             </motion.div>
-          ))}
-        </div>
-
-        {/* Scroll hint dots */}
-        <div className="flex justify-center gap-2 mt-8">
-          {featuredWines.map((_, i) => (
-            <div
-              key={i}
-              className="w-2 h-2 rounded-full bg-[#E8E4DC]"
-              aria-hidden
-            />
           ))}
         </div>
       </div>

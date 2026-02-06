@@ -41,7 +41,7 @@ export const MeetTheMakers = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-nowrap justify-center gap-8 md:gap-12 lg:gap-16 overflow-x-auto overflow-y-visible pb-4 scrollbar-hide">
+        <div className="flex flex-nowrap justify-center gap-4 md:gap-6 lg:gap-8">
           {makers.map((maker, index) => (
             <motion.div
               key={maker.name}
@@ -50,14 +50,14 @@ export const MeetTheMakers = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.06, duration: 0.5 }}
               onClick={() => setSelectedMaker(selectedMaker === index ? null : index)}
-              className="cursor-pointer group flex flex-col items-center flex-shrink-0"
+              className="cursor-pointer group flex flex-col items-center flex-1 min-w-0 max-w-[140px] md:max-w-[160px] lg:max-w-[180px]"
             >
               <motion.div
                 whileHover={{ y: -8 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
                 className="relative"
               >
-                <div className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:w-48 lg:h-48 xl:w-52 xl:h-52 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] group-hover:ring-[#B8956A] transition-all duration-300 group-hover:shadow-xl flex-shrink-0">
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] group-hover:ring-[#B8956A] transition-all duration-300 group-hover:shadow-xl">
                   <Image
                     src={maker.image}
                     alt={maker.name}
@@ -68,13 +68,13 @@ export const MeetTheMakers = () => {
                 </div>
 
                 <h3
-                  className="mt-6 text-lg md:text-xl font-medium text-[#2A2A2A] tracking-tight"
+                  className="mt-3 md:mt-4 text-sm md:text-base font-medium text-[#2A2A2A] tracking-tight text-center"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
                   {maker.name}
                 </h3>
-                <p className="text-sm text-[#3D5636] mt-2 font-medium">{maker.winery}</p>
-                <p className="text-xs text-[#3D3D3D]/70 mt-1 uppercase tracking-widest">{maker.title}</p>
+                <p className="text-xs text-[#3D5636] mt-1 font-medium text-center">{maker.winery}</p>
+                <p className="text-[10px] md:text-xs text-[#3D3D3D]/70 mt-0.5 uppercase tracking-widest text-center">{maker.title}</p>
               </motion.div>
             </motion.div>
           ))}
