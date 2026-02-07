@@ -41,7 +41,7 @@ export const MeetTheMakers = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-6 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 sm:gap-4 md:gap-6 lg:gap-8">
           {makers.map((maker, index) => (
             <motion.div
               key={maker.name}
@@ -57,7 +57,7 @@ export const MeetTheMakers = () => {
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
                 className="relative w-full flex flex-col items-center"
               >
-                <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] group-hover:ring-[#B8956A] transition-all duration-300 group-hover:shadow-xl flex-shrink-0">
+                <div className="relative w-28 h-28 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] group-hover:ring-[#B8956A] transition-all duration-300 group-hover:shadow-xl flex-shrink-0">
                   <Image
                     src={maker.image}
                     alt={maker.name}
@@ -67,15 +67,15 @@ export const MeetTheMakers = () => {
                   />
                 </div>
 
-                <div className="mt-3 md:mt-4 min-h-[88px] md:min-h-[96px] w-full flex flex-col items-center justify-start text-center">
+                <div className="mt-4 md:mt-4 min-h-[80px] sm:min-h-[88px] md:min-h-[96px] w-full flex flex-col items-center justify-start text-center px-1">
                   <h3
-                    className="text-sm md:text-base font-medium text-[#2A2A2A] tracking-tight leading-tight w-full"
+                    className="text-base sm:text-sm md:text-base font-medium text-[#2A2A2A] tracking-tight leading-tight w-full"
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
                     {maker.name}
                   </h3>
-                  <p className="text-xs text-[#3D5636] mt-1 font-medium leading-tight w-full">{maker.winery}</p>
-                  <p className="text-[10px] md:text-xs text-[#3D3D3D]/70 mt-0.5 uppercase tracking-widest leading-tight w-full">{maker.title}</p>
+                  <p className="text-sm sm:text-xs text-[#3D5636] mt-1 font-medium leading-tight w-full">{maker.winery}</p>
+                  <p className="text-xs sm:text-[10px] md:text-xs text-[#3D3D3D]/70 mt-0.5 uppercase tracking-widest leading-tight w-full line-clamp-2">{maker.title}</p>
                 </div>
               </motion.div>
             </motion.div>

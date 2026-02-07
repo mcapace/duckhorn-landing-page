@@ -43,7 +43,7 @@ export const FeaturedWines = () => {
       </motion.div>
 
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
-        <div className="flex flex-nowrap justify-center gap-4 md:gap-6">
+        <div className="grid grid-cols-2 gap-4 sm:gap-5 md:flex md:flex-nowrap md:justify-center md:gap-6 [&>*:last-child]:col-span-2 [&>*:last-child]:max-w-[180px] [&>*:last-child]:justify-self-center md:[&>*:last-child]:max-w-[280px] md:[&>*:last-child]:col-span-auto">
           {featuredWines.map((wine, index) => (
             <motion.div
               key={wine.id}
@@ -51,17 +51,17 @@ export const FeaturedWines = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.1 }}
-              className="flex-1 min-w-0 max-w-[260px] md:max-w-[280px] lg:max-w-[300px]"
+              className="flex-1 min-w-0 max-w-full md:max-w-[280px] lg:max-w-[300px]"
             >
               <Link href={`/wineries/${wine.id}`} className="block group">
                 <motion.div
                   whileHover={{ y: -8 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className={`relative rounded-2xl overflow-hidden bg-gradient-to-b ${gradients[index]} min-h-[440px] md:min-h-[500px] flex flex-col items-center justify-end pb-6 pt-14 shadow-xl`}
+                  className={`relative rounded-2xl overflow-hidden bg-gradient-to-b ${gradients[index]} min-h-[340px] sm:min-h-[380px] md:min-h-[500px] flex flex-col items-center justify-end pb-5 pt-10 md:pb-6 md:pt-14 shadow-xl`}
                 >
 
                   {/* Bottle - positioned higher with clearance above text */}
-                  <div className="relative w-44 h-64 md:w-52 md:h-76 lg:w-60 lg:h-88 flex-shrink-0 mb-20">
+                  <div className="relative w-28 h-40 sm:w-36 sm:h-52 md:w-52 md:h-76 lg:w-60 lg:h-88 flex-shrink-0 mb-12 md:mb-20">
                     <Image
                       src={wine.image}
                       alt={wine.name}
@@ -72,20 +72,20 @@ export const FeaturedWines = () => {
                   </div>
 
                   {/* Text overlay - centered, clear of bottle */}
-                  <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 pt-28 bg-gradient-to-t from-black/85 via-black/50 to-transparent text-center">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 pt-20 md:pt-28 bg-gradient-to-t from-black/85 via-black/50 to-transparent text-center">
                     <h3
-                      className="text-xl md:text-2xl text-white font-medium"
+                      className="text-base sm:text-lg md:text-2xl text-white font-medium"
                       style={{ fontFamily: "var(--font-serif)" }}
                     >
                       {wine.name}
                     </h3>
                     <p
-                      className="text-[#C5A572] italic mt-2 text-sm md:text-base line-clamp-2"
+                      className="text-[#C5A572] italic mt-1 md:mt-2 text-xs sm:text-sm md:text-base line-clamp-2"
                       style={{ fontFamily: "var(--font-script)" }}
                     >
                       {wine.tagline}
                     </p>
-                    <span className="inline-flex items-center justify-center gap-2 mt-3 text-[#B8956A] text-xs uppercase tracking-wider group-hover:gap-4 transition-all">
+                    <span className="inline-flex items-center justify-center gap-2 mt-2 md:mt-3 text-[#B8956A] text-[10px] sm:text-xs uppercase tracking-wider group-hover:gap-4 transition-all">
                       Explore
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
