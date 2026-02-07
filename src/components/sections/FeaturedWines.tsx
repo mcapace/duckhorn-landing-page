@@ -43,7 +43,7 @@ export const FeaturedWines = () => {
       </motion.div>
 
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
-        <div className="grid grid-cols-2 gap-4 sm:gap-5 md:flex md:flex-nowrap md:justify-center md:gap-6 [&>*:last-child]:col-span-2 [&>*:last-child]:max-w-[180px] [&>*:last-child]:justify-self-center md:[&>*:last-child]:max-w-[280px] md:[&>*:last-child]:col-span-auto">
+        <div className="grid grid-cols-2 gap-4 sm:gap-5 md:flex md:flex-nowrap md:justify-center md:gap-6 [&>*:last-child]:col-span-2 [&>*:last-child]:w-[calc((100%-1rem)/2)] [&>*:last-child]:sm:w-[calc((100%-1.25rem)/2)] [&>*:last-child]:justify-self-center md:[&>*:last-child]:w-auto md:[&>*:last-child]:max-w-[280px] md:[&>*:last-child]:col-span-auto">
           {featuredWines.map((wine, index) => (
             <motion.div
               key={wine.id}
