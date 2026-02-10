@@ -6,14 +6,6 @@ import Link from "next/link";
 import { useRef } from "react";
 import { featuredWines } from "@/lib/data";
 
-const gradients = [
-  "from-[#2D1216] via-[#3D1A20] to-[#2D1216]",
-  "from-[#2A2A2A] via-[#3D3D3D] to-[#2A2A2A]",
-  "from-[#1E2E1C] via-[#2A3D28] to-[#1E2E1C]",
-  "from-[#2C1F2A] via-[#3D2A38] to-[#2C1F2A]",
-  "from-[#2A2E2A] via-[#3A403A] to-[#2A2E2A]",
-];
-
 export const FeaturedWines = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -23,7 +15,6 @@ export const FeaturedWines = () => {
       ref={containerRef}
       className="relative py-20 md:py-28 overflow-hidden bg-[#FAFAF8]"
     >
-      {/* Section header - fixed position, fades as you scroll into carousel */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -55,41 +46,28 @@ export const FeaturedWines = () => {
             >
               <Link href={`/wineries/${wine.id}`} className="block group">
                 <motion.div
-                  whileHover={{ y: -8 }}
+                  whileHover={{ y: -6 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className={`relative rounded-2xl overflow-hidden bg-gradient-to-b ${gradients[index]} min-h-[340px] sm:min-h-[380px] md:min-h-[500px] flex flex-col items-center justify-end pb-5 pt-10 md:pb-6 md:pt-14 shadow-xl`}
+                  className="relative rounded-2xl overflow-hidden bg-[#F0EDE8] min-h-[320px] sm:min-h-[380px] md:min-h-[520px] flex flex-col shadow-lg"
                 >
-
-                  {/* Bottle - positioned higher with clearance above text */}
-                  <div className="relative w-28 h-40 sm:w-36 sm:h-52 md:w-52 md:h-76 lg:w-60 lg:h-88 flex-shrink-0 mb-12 md:mb-20">
-                    <Image
-                      src={wine.image}
-                      alt={wine.name}
-                      fill
-                      className="object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 176px, (max-width: 1024px) 208px, 240px"
-                    />
+                  {/* Bottle area: flex-1 so it takes space; full bottle visible, no crop */}
+                  <div className="flex-1 min-h-0 flex items-center justify-center px-3 pt-6 pb-4 md:px-4 md:pt-8 md:pb-6">
+                    <div className="relative w-full h-full min-h-[180px] sm:min-h-[220px] md:min-h-[320px] max-h-[280px] sm:max-h-[340px] md:max-h-[400px]">
+                      <Image
+                        src={wine.imageBG}
+                        alt={wine.name}
+                        fill
+                        className="object-contain object-center group-hover:scale-[1.03] transition-transform duration-500"
+                        sizes="(max-width: 768px) 140px, (max-width: 1024px) 200px, 240px"
+                      />
+                    </div>
                   </div>
 
-                  {/* Text overlay - centered, clear of bottle */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 pt-20 md:pt-28 bg-gradient-to-t from-black/85 via-black/50 to-transparent text-center">
-                    <h3
-                      className="text-base sm:text-lg md:text-2xl text-white font-medium"
-                      style={{ fontFamily: "var(--font-serif)" }}
-                    >
-                      {wine.name}
-                    </h3>
-                    <p
-                      className="text-[#C5A572] italic mt-1 md:mt-2 text-xs sm:text-sm md:text-base line-clamp-2"
-                      style={{ fontFamily: "var(--font-script)" }}
-                    >
-                      {wine.tagline}
-                    </p>
-                    <span className="inline-flex items-center justify-center gap-2 mt-2 md:mt-3 text-[#B8956A] text-[10px] sm:text-xs uppercase tracking-wider group-hover:gap-4 transition-all">
+                  {/* CTA only - clear space below bottle, never overlapping */}
+                  <div className="flex-shrink-0 py-5 md:py-6 text-center">
+                    <span className="text-[#8B7355] text-sm md:text-base uppercase tracking-wider group-hover:text-[#6B5344] transition-colors inline-flex items-center gap-1">
                       Explore
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
+                      <span className="group-hover:translate-x-0.5 transition-transform">→</span>
                     </span>
                   </div>
                 </motion.div>

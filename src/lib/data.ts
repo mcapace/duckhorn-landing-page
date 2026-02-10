@@ -1,6 +1,6 @@
 // Content data from CURSOR_IMPLEMENTATION_GUIDE.md
 
-// Bottle images from /images/bottles (NoBG for Featured Wines cards, BG for winery pages, Full for fallback)
+// Bottle images from /images/bottles (BG for Featured Wines cards + winery pages, Full for fallback)
 export const featuredWines = [
   { id: "duckhorn", name: "Duckhorn", brand: "DUCKHORN VINEYARDS", tagline: "Five Decades In. Still Defining What's Next.", image: "/images/bottles/Duckhorn-NoBG.png", imageFull: "/images/bottles/Duckhorn-Full.jpg", imageBG: "/images/bottles/Duckhorn-BG.png" },
   { id: "kosta-browne", name: "Kosta Browne", brand: "KOSTA BROWNE", tagline: "The Art of Site", image: "/images/bottles/Kostabrowne-NoBG.png", imageFull: "/images/bottles/KostaBrowne-Full.jpg", imageBG: "/images/bottles/KostaBrowne-BG.png" },

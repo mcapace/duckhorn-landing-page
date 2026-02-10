@@ -31,14 +31,16 @@ export const Hero = () => {
           transition={{ duration: 0.9, delay: 0.2 }}
           className="flex-1 min-h-[45vh] lg:min-h-[calc(100vh-6rem)] flex flex-col items-center justify-center px-8 md:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 bg-white"
         >
-          <div className="flex flex-col items-center text-center w-full max-w-md">
-            <Image
-              src="/images/WS logo (5).png"
-              alt="Wine Spectator"
-              width={200}
-              height={80}
-              className="h-14 md:h-16 w-auto mb-6 object-contain"
-            />
+          <div className="flex flex-col items-center text-center w-full max-w-lg">
+            <div className="w-full flex justify-center mb-6">
+              <Image
+                src="/images/WS logo (5).png"
+                alt="Wine Spectator"
+                width={280}
+                height={112}
+                className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto max-w-full object-contain object-center"
+              />
+            </div>
             <div className="w-24 border-t border-[#3D5636]/40 pt-6 mb-4" />
             <h1
               className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-[#3D5636] leading-tight"
