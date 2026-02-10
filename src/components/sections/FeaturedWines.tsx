@@ -48,17 +48,17 @@ export const FeaturedWines = () => {
                 <motion.div
                   whileHover={{ y: -6 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className="relative rounded-2xl overflow-hidden aspect-[3/4] min-h-[320px] sm:min-h-[400px] md:min-h-[480px] shadow-lg"
+                  className="relative rounded-2xl overflow-hidden aspect-[3/4] min-h-[320px] sm:min-h-[400px] md:min-h-[480px] shadow-lg bg-[#E8E6E2]"
                 >
-                  {/* Card = full -BG image only. Extend each -BG asset at the bottom (generative fill) so CTA sits on matching background; bottle stays large via object-cover. */}
+                  {/* Full -BG image visible (no crop). Extend each -BG at bottom with generative fill; object-contain shows whole bottle + extended area. */}
                   <Image
                     src={wine.imageBG}
                     alt={wine.name}
                     fill
-                    className="object-cover object-[center_top] group-hover:scale-[1.02] transition-transform duration-500"
+                    className="object-contain object-center group-hover:scale-[1.02] transition-transform duration-500"
                     sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 280px"
                   />
-                  {/* CTA on top of image (sits on extended bottom of -BG image) */}
+                  {/* CTA at bottom of card (on extended area of -BG image) */}
                   <div className="absolute bottom-0 left-0 right-0 py-5 md:py-6 text-center">
                     <span className="text-[#8B7355] text-sm md:text-base uppercase tracking-wider group-hover:text-[#6B5344] transition-colors inline-flex items-center gap-1 drop-shadow-sm">
                       Explore
