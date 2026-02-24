@@ -21,15 +21,16 @@ export const Perspective = () => {
             {perspectiveContent.title}
           </h2>
           <div className="flex items-center justify-center gap-3 mt-4 mb-5 w-full max-w-sm mx-auto" aria-hidden>
-            <span className="flex-1 h-px bg-[#D4CFC4] min-w-[60px]" />
-            <Image
-              src="/images/bottles/Duckhorn-Digital-Edits-Duck Outline.png"
+            <span className="flex-1 h-[1px] min-h-[1px] bg-[#9CA3AF] min-w-[60px]" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/bottles/Duckhorn-Digital-Edits-Duck%20Outline.png"
               alt=""
               width={56}
               height={40}
               className="w-14 h-10 object-contain flex-shrink-0"
             />
-            <span className="flex-1 h-px bg-[#D4CFC4] min-w-[60px]" />
+            <span className="flex-1 h-[1px] min-h-[1px] bg-[#9CA3AF] min-w-[60px]" />
           </div>
           <p className="text-[#2A2A2A] italic text-base md:text-lg max-w-2xl mx-auto">
             {perspectiveContent.subtitle}
@@ -86,7 +87,7 @@ export const Perspective = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="pt-10 mt-10 border-t border-[#E8E4DC] flex flex-col sm:flex-row items-start gap-6"
+            className="pt-10 mt-10 flex flex-col sm:flex-row items-start gap-6"
           >
             <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0 bg-[#E8E4DC]">
               <Image
