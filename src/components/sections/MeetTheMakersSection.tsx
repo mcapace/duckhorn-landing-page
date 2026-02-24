@@ -17,7 +17,7 @@ export const MeetTheMakersSection = () => {
         >
           {/* Rounded image container with gold border */}
           <div className="relative w-full max-w-5xl rounded-3xl overflow-hidden border border-[#B8956A] shadow-lg">
-            <div className="relative aspect-[21/9] sm:aspect-[3/1] min-h-[220px]">
+            <div className="relative aspect-[3/2] min-h-[280px] sm:min-h-[360px]">
               <Image
                 src={meetTheMakersImage}
                 alt="Meet the Makers"
