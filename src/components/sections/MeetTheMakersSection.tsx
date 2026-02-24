@@ -225,7 +225,7 @@ export const MeetTheMakersSection = () => {
                 style={{ minWidth: "140px", maxWidth: "220px" }}
               >
                 <Link
-                  href={`/wineries#${estate.id}`}
+                  href={`/wineries/${estate.id}`}
                   className="group flex flex-col items-center w-full"
                 >
                   <div className="relative w-full h-[340px] sm:h-[400px] rounded-2xl overflow-hidden bg-[#E8E4DC] shadow-md group-hover:shadow-lg transition-shadow">
