@@ -3,51 +3,17 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { winemakers } from "@/lib/data";
 
-// JW Player: use the script URL from your dashboard (Players → embed). License is included in that script.
-const JW_PLAYER_SCRIPT = "https://cdn.jwplayer.com/players/DMQTriWg-O0V5rBgo.js";
-const JW_MEDIA_ID = "DMQTriWg";
-const PLAYER_DIV_ID = "meet-the-makers-jw-player";
-
-declare global {
-  interface Window {
-    jwplayer?: (id: string) => { setup: (config: Record<string, unknown>) => void };
-  }
-}
+// Self-hosted winemaker video (in public folder — no JW license needed)
+const MEET_THE_MAKERS_VIDEO_SRC = "/images/bottles/WS%20TDC-Winemaker%20Video.mp4";
 
 export const MeetTheMakersSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [scriptReady, setScriptReady] = useState(false);
-
-  useEffect(() => {
-    if (!scriptReady || typeof window === "undefined" || !window.jwplayer) return;
-    const el = document.getElementById(PLAYER_DIV_ID);
-    if (!el) return;
-    // Defer setup so the container is in the DOM and laid out
-    const t = setTimeout(() => {
-      try {
-        window.jwplayer?.(PLAYER_DIV_ID).setup({
-          playlist: `https://cdn.jwplayer.com/v2/media/${JW_MEDIA_ID}`,
-          autostart: true,
-          mute: true,
-          repeat: true,
-          controls: false,
-          displaytitle: false,
-          displaydescription: false,
-        });
-      } catch (_) {
-        // Player may already be setup or container missing
-      }
-    }, 100);
-    return () => clearTimeout(t);
-  }, [scriptReady]);
 
   return (
     <section id="meet-the-makers" className="py-20 md:py-28 bg-white scroll-mt-20">
-      <Script src={JW_PLAYER_SCRIPT} strategy="afterInteractive" onLoad={() => setScriptReady(true)} />
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -58,12 +24,24 @@ export const MeetTheMakersSection = () => {
           {/* Same-size box as original image hero: fixed height, video plays inside. Fallback image when video doesn’t load. */}
           <div ref={containerRef} className="relative w-full max-w-5xl rounded-3xl overflow-hidden border border-[#B8956A] shadow-lg h-[400px] md:h-[500px]">
             {/* Fallback when video doesn’t load — add /images/meet-the-makers-hero.jpg for same look as before */}
-            <div className="absolute inset-0 bg-black">
+            <div className="absolute inset-0 z-0 bg-black">
+              <video
+                src={MEET_THE_MAKERS_VIDEO_SRC}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+                aria-hidden
+              />
+            </div>
+            {/* Fallback image if video fails to load */}
+            <div className="absolute inset-0 z-[5]">
               <Image
                 src="/images/meet-the-makers-hero.jpg"
                 alt=""
                 fill
-                className="object-cover"
+                className="object-cover opacity-0"
                 sizes="(max-width: 1024px) 100vw, 1024px"
                 priority={false}
                 onError={(e) => {
@@ -71,12 +49,8 @@ export const MeetTheMakersSection = () => {
                 }}
               />
             </div>
-            <div
-              id={PLAYER_DIV_ID}
-              className="absolute inset-0 w-full h-full [&_iframe]:!w-full [&_iframe]:!h-full"
-            />
-            <div className="absolute inset-0 bg-black/30 pointer-events-none" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
+            <div className="absolute inset-0 z-20 bg-black/30 pointer-events-none" />
+            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6 pointer-events-none" aria-hidden>
               <h2
                 className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
                 style={{ fontFamily: "var(--font-serif)" }}
