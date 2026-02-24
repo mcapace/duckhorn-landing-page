@@ -260,9 +260,9 @@ export const milestones = [
     year: "1997",
     title: "A Portrait of Place",
     description:
-      "California's great wine regions form the foundation of the Collection. From the valley floor to coastal ridgelines and mountain slopes, each estate reflects a different facet of California terroir—Napa warmth, Sonoma precision, Anderson Valley intensity, and the singular character of Mt. Harlan.",
+      "California's great wine regions form the foundation of the Collection. From the valley floor to coastal ridgelines and mountain slopes, each estate reflects a different facet of California terroir, connected through a shared standard of excellence.",
     winery: "Collection",
-    image: "/images/Screenshot 2026-01-22 at 10.53.30 AM.png",
+    image: "/images/Timeline/Screenshot 2026-01-22 at 10.53.30 AM.png",
   },
   {
     year: "2011",
@@ -272,7 +272,15 @@ export const milestones = [
     winery: "Kosta Browne",
     highlight: true,
     awardLabel: "WS Wine of the Year 2011",
-    image: "/images/TOP1_123111.jpg",
+    image: "/images/Timeline/TOP1_123111.jpg",
+  },
+  {
+    year: "2013",
+    title: "Josh Jensen Pinot Pioneer",
+    description:
+      "Calera founder Josh Jensen is recognized as a defining voice in American Pinot Noir, reinforcing the Collection's role in shaping Pinot's evolution.",
+    winery: "Calera",
+    image: "/images/Timeline/cover.jpg",
   },
   {
     year: "2014",
@@ -282,7 +290,7 @@ export const milestones = [
     winery: "Duckhorn",
     highlight: true,
     awardLabel: "WS Wine of the Year 2017",
-    image: "/images/TopLede1_123117.jpg",
+    image: "/images/Timeline/TopLede1_123117.jpg",
   },
   {
     year: "2015",
@@ -301,7 +309,7 @@ export const milestones = [
     winery: "Duckhorn",
     highlight: true,
     awardLabel: "WS Wine of the Year 2017",
-    image: "/images/TopLede1_123117.jpg",
+    image: "/images/Timeline/TopLede1_123117.jpg",
   },
   {
     year: "2025",
