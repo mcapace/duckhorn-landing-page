@@ -3,7 +3,7 @@
 import { Fragment } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { milestones, milestonesIntro, portraitOfPlace } from "@/lib/data";
+import { milestones } from "@/lib/data";
 
 export const Milestones = () => {
   return (
@@ -68,34 +68,6 @@ export const Milestones = () => {
           <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-full">
             <strong className="font-bold uppercase">DAN AND MARGARET DUCKHORN</strong> set out to make wines of lasting distinction in Napa Valley. Inspired by the great wines of Bordeaux and guided by a belief in restraint, balance, and long-term thinking, they committed themselves to the vineyards and to letting place take the lead. Over time, Duckhorn became a benchmark, and the Collection it inspired reflects a shared pursuit of excellence across California&apos;s great wine-growing regions.
           </p>
-        </motion.div>
-
-        {/* Portrait of Place */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16 rounded-xl overflow-hidden bg-white/5 border border-white/10 p-6 md:p-10"
-        >
-          <h3
-            className="text-xl md:text-2xl text-white mb-4"
-            style={{ fontFamily: "var(--font-serif)" }}
-          >
-            {portraitOfPlace.title}
-          </h3>
-          <p className="text-white/70 text-base leading-relaxed mb-6 max-w-3xl">
-            {portraitOfPlace.description}
-          </p>
-          <div className="flex flex-wrap gap-4">
-            {portraitOfPlace.regions.map((region) => (
-              <span
-                key={region}
-                className="text-sm text-[#B8956A] uppercase tracking-wider"
-              >
-                {region}
-              </span>
-            ))}
-          </div>
         </motion.div>
 
         {/* Vertical timeline - line segments only between bubbles */}
