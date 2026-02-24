@@ -254,7 +254,7 @@ export const milestones = [
     description:
       "Duckhorn expands beyond Napa, establishing Goldeneye and signaling an early, deliberate commitment to cool-climate Pinot Noir.",
     winery: "Goldeneye",
-    image: "/images/Timeline/Screenshot-2025-11-24-at-5.29.03%20PM.jpg",
+    image: "/images/Timeline/Screenshot-2025-11-24-at-5.29.03 PM.jpg",
   },
   {
     year: "2011",
@@ -291,7 +291,7 @@ export const milestones = [
     description:
       "California's great wine regions form the foundation of the Collection. From the valley floor to coastal ridgelines and mountain slopes, each estate reflects a different facet of California terroir, connected through a shared standard of excellence.",
     winery: "Collection",
-    image: "/images/Timeline/Screenshot%202026-01-22%20at%2010.53.30%20AM.png",
+    image: "/images/Timeline/Screenshot 2026-01-22 at 10.53.30 AM.png",
   },
   {
     year: "2025",

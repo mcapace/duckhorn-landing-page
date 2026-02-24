@@ -117,12 +117,11 @@ export const Milestones = () => {
                   <div className="flex flex-col md:flex-row flex-1 min-h-0">
                     {milestone.image && (
                       <div className="relative w-full md:w-64 lg:w-72 flex-shrink-0 aspect-[4/3] md:aspect-square overflow-hidden">
-                        <Image
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
                           src={milestone.image}
                           alt={milestone.title}
-                          fill
-                          className="object-cover object-center"
-                          sizes="(max-width: 768px) 100vw, 288px"
+                          className="absolute inset-0 w-full h-full object-cover object-center"
                         />
                       </div>
                     )}
