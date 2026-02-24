@@ -220,7 +220,7 @@ export const MeetTheMakersSection = () => {
           </div>
 
           {/* Five estate bottle cards — same width as video box above (max-w-5xl) */}
-          <div className="mt-12 md:mt-16 w-full max-w-5xl flex flex-wrap justify-between gap-4 sm:gap-6">
+          <div id="wines" className="mt-12 md:mt-16 w-full max-w-5xl flex flex-wrap justify-between gap-4 sm:gap-6 scroll-mt-24">
             {ESTATE_BOTTLES.map((estate, index) => (
               <motion.div
                 key={estate.id}
