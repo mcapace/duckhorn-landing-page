@@ -50,7 +50,7 @@ export const MeetTheMakersSection = () => {
                 }}
               />
             </div>
-            <div className="absolute inset-0 z-20 bg-black/30 pointer-events-none" />
+            <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/35 via-black/15 to-black/40 pointer-events-none" />
             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6 pointer-events-none" aria-hidden>
               <h2
                 className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
@@ -126,7 +126,7 @@ export const MeetTheMakersSection = () => {
                   aria-hidden
                 />
               </div>
-              <div className="absolute inset-0 z-20 bg-black/30 pointer-events-none" />
+              <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/35 via-black/15 to-black/40 pointer-events-none" />
               <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6 pointer-events-none" aria-hidden>
                 <h2
                   className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
