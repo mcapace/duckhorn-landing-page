@@ -40,7 +40,7 @@ export const Milestones = () => {
                   <span className="block mt-1">BUILT A COLLECTION</span>
                 </h2>
                 <p
-                  className="text-[#B8956A] italic text-xl md:text-2xl mt-3"
+                  className="text-[#D4B896] italic text-xl md:text-2xl mt-3"
                   style={{ fontFamily: "var(--font-script)" }}
                 >
                   And Helped Define American Fine Wine
@@ -57,7 +57,7 @@ export const Milestones = () => {
                 <span className="block mt-1">BUILT A COLLECTION</span>
               </h2>
               <p
-                className="text-[#B8956A] italic text-xl mt-3"
+                className="text-[#D4B896] italic text-xl mt-3"
                 style={{ fontFamily: "var(--font-script)" }}
               >
                 And Helped Define American Fine Wine
