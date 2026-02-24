@@ -299,7 +299,7 @@ export const milestones = [
     description:
       "A new Napa Valley destination opens on Silverado Trail, where expanded tastings and culinary experiences allow guests to experience the full Duckhorn Collection within a beautiful vineyard setting.",
     winery: "Collection",
-    image: "/images/NatandCody_Paraduxx_250610_0532.jpg",
+    image: "/images/Timeline/Duckhorn-Milestones-2025.jpg",
   },
 ];
 
