@@ -1,9 +1,10 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/sections/Hero";
 import { Perspective } from "@/components/sections/Perspective";
-import { MeetTheMakers } from "@/components/sections/MeetTheMakers";
+import { VisitTheVineyards } from "@/components/sections/VisitTheVineyards";
+import { ExploreTheBrands } from "@/components/sections/ExploreTheBrands";
 import { FeaturedWines } from "@/components/sections/FeaturedWines";
-import { Video } from "@/components/sections/Video";
+import { DedicatedToExcellence } from "@/components/sections/DedicatedToExcellence";
 import { Milestones } from "@/components/sections/Milestones";
 import { Footer } from "@/components/Footer";
 
@@ -13,9 +14,10 @@ export default function Home() {
       <Navigation />
       <Hero />
       <Perspective />
-      <MeetTheMakers />
+      <VisitTheVineyards />
+      <ExploreTheBrands />
       <FeaturedWines />
-      <Video />
+      <DedicatedToExcellence />
       <Milestones />
       <Footer />
     </main>

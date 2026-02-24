@@ -3,12 +3,11 @@
 import { motion } from "framer-motion";
 
 const navItems = [
-  { label: "Perspective", href: "/#perspective" },
-  { label: "Meet the Makers", href: "/#meet-the-makers" },
-  { label: "Featured Wines", href: "/#featured-wines" },
-  { label: "Vineyard", href: "/#vineyard-stewardship" },
-  { label: "Video", href: "/#video" },
-  { label: "Milestones", href: "/#milestones" },
+  { label: "Wines", href: "/#featured-wines" },
+  { label: "Visit", href: "/#visit" },
+  { label: "Story", href: "/#perspective" },
+  { label: "Club", href: "#" },
+  { label: "Shop", href: "#" },
 ];
 
 export const Navigation = () => {

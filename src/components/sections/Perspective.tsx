@@ -20,18 +20,15 @@ export const Perspective = () => {
           >
             {perspectiveContent.title}
           </h2>
-          <p className="text-xl text-[#3D3D3D] max-w-2xl mx-auto mb-4">
-            {perspectiveContent.subtitle}
-          </p>
           <p
-            className="italic text-xl text-[#B8956A]"
+            className="italic text-xl md:text-2xl text-[#B8956A]"
             style={{ fontFamily: "var(--font-script)" }}
           >
             {perspectiveContent.tagline}
           </p>
         </motion.div>
 
-        {/* 2x3 image grid - mock style */}
+        {/* 3 images - vineyard, landscape, barrel room */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +36,7 @@ export const Perspective = () => {
           transition={{ delay: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-16"
         >
-          {perspectiveImages.map((img, i) => (
+          {perspectiveImages.slice(0, 3).map((img, i) => (
             <motion.div
               key={img.src}
               initial={{ opacity: 0, y: 16 }}
@@ -77,17 +74,31 @@ export const Perspective = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="pt-10 mt-10 border-t border-[#E8E4DC]"
+            className="pt-10 mt-10 border-t border-[#E8E4DC] flex flex-col sm:flex-row items-start gap-6"
           >
-            <p
-              className="text-lg font-medium text-[#2A2A2A]"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              {perspectiveContent.signature}
-            </p>
-            <p className="text-sm text-[#A07D4E] mt-1">
-              {perspectiveContent.title_line}
-            </p>
+            <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0 bg-[#E8E4DC]">
+              <Image
+                src={perspectiveContent.founderImage}
+                alt={perspectiveContent.founderName}
+                fill
+                className="object-cover"
+                sizes="96px"
+              />
+            </div>
+            <div>
+              <p className="text-[#3D3D3D] text-base md:text-lg leading-relaxed italic">
+                {perspectiveContent.founderQuote}
+              </p>
+              <p
+                className="text-lg font-medium text-[#2A2A2A] mt-3"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                {perspectiveContent.founderName}
+              </p>
+              <p className="text-sm text-[#A07D4E] uppercase tracking-wider">
+                {perspectiveContent.founderTitle}
+              </p>
+            </div>
           </motion.div>
         </motion.div>
       </div>

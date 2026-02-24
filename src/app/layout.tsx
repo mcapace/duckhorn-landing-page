@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Fira_Sans } from "next/font/google";
 import "./globals.css";
-
-const playfair = Playfair_Display({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-script",
@@ -16,9 +10,10 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-const inter = Inter({
+const firaSans = Fira_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -35,8 +30,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/kls5ojz.css" />
+      </head>
       <body
-        className={`${playfair.variable} ${cormorant.variable} ${inter.variable} font-sans antialiased`}
+        className={`${cormorant.variable} ${firaSans.variable} font-sans antialiased`}
       >
         {children}
       </body>

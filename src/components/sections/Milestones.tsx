@@ -16,28 +16,28 @@ export const Milestones = () => {
           viewport={{ once: true }}
           className="mb-12 md:mb-16"
         >
-          <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-8 mb-6">
-            <span
-              className="text-6xl md:text-8xl lg:text-9xl text-[#B8956A]/90 font-bold tabular-nums leading-none"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              50
-            </span>
-            <span className="text-xl md:text-2xl text-white/80 uppercase tracking-widest md:pb-3">
-              Years of the Duckhorn Collection
-            </span>
+          <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-6 mb-6">
+            <div className="flex items-end gap-2 md:gap-3">
+              <span
+                className="text-6xl md:text-8xl lg:text-9xl text-[#B8956A] font-bold tabular-nums leading-none"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                50
+              </span>
+              <span className="text-2xl md:text-3xl lg:text-4xl text-[#B8956A] font-bold uppercase tracking-wider leading-tight pb-1 md:pb-2">
+                Years
+              </span>
+            </div>
           </div>
-          <div className="border border-[#3D5636] rounded-sm px-6 py-5 md:px-10 md:py-6 inline-block mb-6">
-            <h2
-              className="text-2xl md:text-3xl lg:text-4xl text-[#3D5636] tracking-tight"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              {milestonesIntro.title}
-            </h2>
-            <p className="text-[#3D5636]/80 mt-2 text-lg">
-              {milestonesIntro.subtitle}
-            </p>
-          </div>
+          <h2
+            className="text-2xl md:text-3xl lg:text-4xl text-white tracking-tight mb-2"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            {milestonesIntro.title}
+          </h2>
+          <p className="text-white/70 text-base md:text-lg mb-6">
+            {milestonesIntro.subtitle}
+          </p>
           <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-3xl">
             {milestonesIntro.paragraph}
           </p>

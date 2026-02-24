@@ -210,8 +210,8 @@ export const winemakers = [
 
 export const milestonesIntro = {
   headline: "50 YEARS OF THE DUCKHORN COLLECTION",
-  title: "THE MILESTONES THAT BUILT A COLLECTION",
-  subtitle: "And Helped Define American Fine Wine.",
+  title: "A MILESTONE THAT BUILT A COLLECTION",
+  subtitle: "Napa Valley, Columbia Valley & Anderson Valley",
   paragraph:
     "Dan and Margaret Duckhorn founded Duckhorn Vineyards in 1976 with a conviction that restraint, balance, and long-term thinking could define American fine wine. Fifty years later, that vision has grown into a collection of world-class estates—each with its own story, each united by a shared commitment to excellence.",
 };
@@ -317,7 +317,7 @@ export const perspectiveContent = {
   title: "THE DUCKHORN PERSPECTIVE",
   subtitle:
     "A family of world-class wineries united by a singular pursuit of excellence",
-  tagline: "Crafted by Place. Defined by Hospitality.",
+  tagline: "A Legacy of Excellence and Innovation",
   letter: `FOR FIFTY YEARS, The Duckhorn Collection has stood at the center of American fine wine— rooted in vineyard integrity, generational stewardship, and the belief that exceptional wines begin with exceptional sites. Ours is a distinctly American story, shaped by landscape, craftsmanship, and a hospitality that is both timeless and modern.
 
 This philosophy comes fully to life in our new Napa Valley home on the Silverado Trail. Here, guests experience our portfolio through thoughtful tastings, seasonal pairings from our world-class culinary team, and an atmosphere defined by warmth, ease, and a remarkable sense of place. It is a setting that reflects the spirit of our founders— welcoming, refined, and deeply connected to the vineyards that shape our wines.
@@ -327,6 +327,11 @@ The wineries featured in the Collection each carry forward our shared vision: wi
 This feature highlights five of our wineries and the people and philosophies behind the wines—the growers, winemakers, and stewards whose craft and commitment elevate every bottle. Their work reflects what American fine wine can be today—and where we are headed next.`,
   signature: "Robert Hanson",
   title_line: "CEO, The Duckhorn Collection",
+  founderQuote:
+    "We believed from the start that great wine begins with great vineyards—and that hospitality and quality could define American fine wine.",
+  founderName: "Dan Duckhorn",
+  founderTitle: "Founder",
+  founderImage: "/images/Dan-Duckhorn-during-harvest.jpg",
 };
 
 export const perspectiveImages = [

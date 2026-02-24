@@ -19,8 +19,8 @@
   --color-warm-gray-800: #3D3D3D;
   --color-warm-gray-900: #2A2A2A;
 
-  /* Typography */
-  --font-serif: 'Playfair Display', Georgia, serif;
+  /* Typography - Ivyora (Typekit) for serif, Fira Sans (Google) for sans */
+  --font-serif: ivyora, Georgia, serif;
   --font-script: 'Cormorant Garamond', Georgia, serif;
 }
 
