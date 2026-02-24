@@ -82,7 +82,7 @@ export const Milestones = () => {
                 transition={{ duration: 0.5, delay: index * 0.04 }}
                 className="relative flex w-full gap-6 md:gap-10 py-6 md:py-8 first:pt-0 last:pb-0"
               >
-                {/* Year node - bigger golden circle with white text */}
+                {/* Year node or map icon - bigger golden circle */}
                 <div className="flex-shrink-0 flex flex-col items-center justify-center w-[160px] md:w-[180px]">
                   <div
                     className={`relative z-10 w-28 h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center text-lg md:text-xl font-semibold tabular-nums ${
@@ -92,7 +92,13 @@ export const Milestones = () => {
                     }`}
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
-                    {milestone.year.length <= 4 ? milestone.year : (
+                    {"bubbleIcon" in milestone && milestone.bubbleIcon === "map" ? (
+                      <svg className="w-10 h-10 md:w-12 md:h-12 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" />
+                      </svg>
+                    ) : milestone.year.length <= 4 ? (
+                      milestone.year
+                    ) : (
                       <span className="text-base md:text-lg leading-tight text-center px-1">
                         {milestone.year}
                       </span>

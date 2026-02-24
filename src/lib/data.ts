@@ -257,14 +257,6 @@ export const milestones = [
     image: "/images/Timeline/Screenshot-2025-11-24-at-5.29.03 PM.jpg",
   },
   {
-    year: "1997",
-    title: "A Portrait of Place",
-    description:
-      "California's great wine regions form the foundation of the Collection. From the valley floor to coastal ridgelines and mountain slopes, each estate reflects a different facet of California terroir, connected through a shared standard of excellence.",
-    winery: "Collection",
-    image: "/images/Timeline/Screenshot 2026-01-22 at 10.53.30 AM.png",
-  },
-  {
     year: "2011",
     title: "Wine Spectator Wine of the Year",
     description:
@@ -283,25 +275,6 @@ export const milestones = [
     image: "/images/Timeline/cover.jpg",
   },
   {
-    year: "2014",
-    title: "Wine Spectator Wine of the Year",
-    description:
-      "THE 2014 THREE PALMS VINEYARD earns Wine Spectator Wine of the Year, marking Renée Ary's first vintage and affirming the wine's enduring excellence and the lasting distinction of its vineyard.",
-    winery: "Duckhorn",
-    highlight: true,
-    awardLabel: "WS Wine of the Year 2017",
-    image: "/images/Timeline/TopLede1_123117.jpg",
-  },
-  {
-    year: "2015",
-    title: "Three Palms & Kosta Browne Join the Collection",
-    description:
-      "Duckhorn acquires full ownership of Three Palms Vineyard, securing America's most iconic Merlot site. Kosta Browne joins The Duckhorn Portfolio, uniting exceptional Pinot Noir estates.",
-    winery: "Collection",
-    highlight: true,
-    image: "/images/NatandCody_Paraduxx_250610_0532.jpg",
-  },
-  {
     year: "2017",
     title: "Wine Spectator Wine of the Year",
     description:
@@ -310,6 +283,15 @@ export const milestones = [
     highlight: true,
     awardLabel: "WS Wine of the Year 2017",
     image: "/images/Timeline/TopLede1_123117.jpg",
+  },
+  {
+    bubbleIcon: "map",
+    year: "",
+    title: "A Portrait of Place",
+    description:
+      "California's great wine regions form the foundation of the Collection. From the valley floor to coastal ridgelines and mountain slopes, each estate reflects a different facet of California terroir, connected through a shared standard of excellence.",
+    winery: "Collection",
+    image: "/images/Timeline/Screenshot 2026-01-22 at 10.53.30 AM.png",
   },
   {
     year: "2025",
