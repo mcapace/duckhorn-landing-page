@@ -5,7 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { winemakers } from "@/lib/data";
 
-const meetTheMakersImage = "/images/260115_WS_Duckhorn28217.jpg";
+const MEET_THE_MAKERS_JW_EMBED_URL =
+  process.env.NEXT_PUBLIC_MEET_THE_MAKERS_VIDEO_URL ||
+  "https://cdn.jwplayer.com/players/DMQTriWg-O0V5rBgo.html";
 
 export const MeetTheMakersSection = () => {
   return (
@@ -17,18 +19,18 @@ export const MeetTheMakersSection = () => {
           viewport={{ once: true, margin: "-60px" }}
           className="flex flex-col items-center"
         >
-          {/* Rounded image container with gold border */}
+          {/* JW Player embed — WS TDC Winemaker Video */}
           <div className="relative w-full max-w-5xl rounded-3xl overflow-hidden border border-[#B8956A] shadow-lg">
-            <div className="relative aspect-[3/2] min-h-[280px] sm:min-h-[360px]">
-              <Image
-                src={meetTheMakersImage}
-                alt="Meet the Makers"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 1200px"
+            <div className="relative overflow-hidden" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                src={MEET_THE_MAKERS_JW_EMBED_URL}
+                title="WS TDC Winemaker Video"
+                className="absolute inset-0 w-full h-full"
+                allowFullScreen
+                allow="autoplay; fullscreen; picture-in-picture"
               />
-              <div className="absolute inset-0 bg-black/30" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+              <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
                 <h2
                   className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
                   style={{ fontFamily: "var(--font-serif)" }}
