@@ -7,7 +7,7 @@ import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { winemakers } from "@/lib/data";
 
-// JW Player: video hosted on JW, not on Vercel. Replace with your player script + media ID from dashboard.
+// JW Player: use the script URL from your dashboard (Players → embed). License is included in that script.
 const JW_PLAYER_SCRIPT = "https://cdn.jwplayer.com/players/DMQTriWg-O0V5rBgo.js";
 const JW_MEDIA_ID = "DMQTriWg";
 const PLAYER_DIV_ID = "meet-the-makers-jw-player";
