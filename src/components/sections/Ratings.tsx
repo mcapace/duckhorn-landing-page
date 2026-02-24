@@ -59,7 +59,7 @@ export const Ratings = () => {
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[400px]">
                   <thead>
-                    <tr className="text-left text-xs uppercase tracking-wider text-[#435a4d]">
+                    <tr className="text-left text-xs uppercase tracking-wider text-[#425a4d]">
                       <th className="pb-3">Wine</th>
                       <th className="pb-3 text-right w-20">Score</th>
                     </tr>

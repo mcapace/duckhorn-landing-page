@@ -154,7 +154,7 @@ export const MeetTheMakersSection = () => {
                   >
                     {maker.name}
                   </p>
-                  <p className="text-[#435a4d] text-xs md:text-sm mt-0.5">
+                  <p className="text-[#425a4d] text-xs md:text-sm mt-0.5">
                     {maker.winery}
                   </p>
                 </Link>
@@ -278,7 +278,7 @@ export const MeetTheMakersSection = () => {
                   Great wine starts in the vineyard. Slope and sun exposure, soil composition, and even the clones planted shape every decision in the cellar—and define the character in the glass. Guided by Rob Sorenson, The Duckhorn Collection stewards exceptional sites with intention and care.
                 </p>
                 <Link
-                  href="#vineyard-stewardship"
+                  href="/vineyard-stewardship"
                   className="inline-flex items-center gap-2 mt-6 text-[#B8956A] text-sm font-medium uppercase tracking-wider hover:underline"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >

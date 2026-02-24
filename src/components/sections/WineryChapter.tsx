@@ -134,7 +134,7 @@ export const WineryChapter = ({
                 <h3 className="text-lg text-[#2A2A2A] font-medium" style={{ fontFamily: "var(--font-serif)" }}>
                   {winemaker.name}
                 </h3>
-                <p className="text-[#435a4d] text-sm mt-1">{winemaker.winery}</p>
+                <p className="text-[#425a4d] text-sm mt-1">{winemaker.winery}</p>
                 <blockquote className="mt-4 text-sm text-[#3D3D3D] italic leading-relaxed" style={{ fontFamily: "var(--font-script)" }}>
                   &ldquo;{winemaker.quote}&rdquo;
                 </blockquote>
