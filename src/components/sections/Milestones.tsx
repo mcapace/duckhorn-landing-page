@@ -70,9 +70,9 @@ export const Milestones = () => {
           </p>
         </motion.div>
 
-        {/* Vertical timeline - line segments only between bubbles */}
-        <div className="relative">
-          <div className="space-y-0">
+        {/* Vertical timeline - line segments only between bubbles; full width of content for alignment */}
+        <div className="relative w-full">
+          <div className="space-y-0 w-full">
             {milestones.map((milestone, index) => (
               <Fragment key={index}>
               <motion.div
@@ -80,7 +80,7 @@ export const Milestones = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: index * 0.04 }}
-                className="relative flex gap-6 md:gap-10 py-6 md:py-8 first:pt-0 last:pb-0"
+                className="relative flex w-full gap-6 md:gap-10 py-6 md:py-8 first:pt-0 last:pb-0"
               >
                 {/* Year node - bigger golden circle with white text */}
                 <div className="flex-shrink-0 flex flex-col items-center justify-center w-[160px] md:w-[180px]">
@@ -140,7 +140,7 @@ export const Milestones = () => {
                 </div>
               </motion.div>
               {index < milestones.length - 1 && (
-                <div className="flex gap-6 md:gap-10 -my-6 md:-my-8">
+                <div className="flex w-full gap-6 md:gap-10 -my-6 md:-my-8">
                   <div className="w-[160px] md:w-[180px] flex justify-center flex-shrink-0">
                     <div className="w-px h-12 md:h-16 bg-[#B8956A]/50" />
                   </div>
