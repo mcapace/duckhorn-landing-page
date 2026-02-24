@@ -254,7 +254,7 @@ export const milestones = [
     description:
       "Duckhorn expands beyond Napa, establishing Goldeneye and signaling an early, deliberate commitment to cool-climate Pinot Noir.",
     winery: "Goldeneye",
-    image: "/images/Screenshot-2025-11-24-at-5.29.03 PM.jpg",
+    image: "/images/Timeline/Screenshot-2025-11-24-at-5.29.03 PM.jpg",
   },
   {
     year: "1997",
