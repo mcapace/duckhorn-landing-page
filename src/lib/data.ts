@@ -241,12 +241,12 @@ export const milestones = [
     image: "/images/DUCKHORN-US-1200-e1550307961298-removebg-preview.png",
   },
   {
-    year: "Mid-1980s–Today",
+    year: "1980s to today",
     title: "Three Palms Vineyard",
     description:
-      "THREE PALMS VINEYARD reveals itself early as a singular Merlot site—delivering grapes with exceptional structure and depth. Decades of dedication culminate in Duckhorn's acquisition of the vineyard in 2015, securing long-term stewardship of America's most important Merlot site.",
+      "Three Palms Vineyard revealed itself early as a singular Merlot site—delivering grapes with exceptional structure and depth. Decades of dedication culminate in Duckhorn's acquisition of the vineyard in 2015, securing long-term stewardship of America's most important Merlot site.",
     winery: "Duckhorn",
-    image: "/images/Three-Palms-Vineyard.jpg",
+    image: "/images/Timeline/Three-Palms-Vineyard.jpg",
   },
   {
     year: "1996",
