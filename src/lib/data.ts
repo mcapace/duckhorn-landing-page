@@ -238,7 +238,7 @@ export const milestones = [
     description:
       "Sonoma-Cutrer emerges as an early leader in Russian River Valley Chardonnay, establishing a Burgundian-influenced model built on site specificity, crisp acidity, and balance,",
     winery: "Sonoma-Cutrer",
-    image: "/images/DUCKHORN-US-1200-e1550307961298-removebg-preview.png",
+    image: "/images/Timeline/Duckhorn-Milestones-1980s.jpg",
   },
   {
     year: "1980s to today",
