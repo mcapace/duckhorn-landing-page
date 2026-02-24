@@ -8,6 +8,7 @@ import { winemakers } from "@/lib/data";
 
 // Self-hosted winemaker video (in public folder — no JW license needed)
 const MEET_THE_MAKERS_VIDEO_SRC = "/images/bottles/WS%20TDC-Winemaker%20Video.mp4";
+const THE_COLLECTION_VIDEO_SRC = "/images/bottles/WS%20Bottle%20Pan.mp4";
 
 export const MeetTheMakersSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -105,6 +106,38 @@ export const MeetTheMakersSection = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* THE COLLECTION video box — same style as Meet the Makers */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            className="mt-12 md:mt-20 w-full max-w-5xl"
+          >
+            <div className="relative w-full rounded-3xl overflow-hidden border border-[#B8956A] shadow-lg h-[400px] md:h-[500px]">
+              <div className="absolute inset-0 z-0 bg-black">
+                <video
+                  src={THE_COLLECTION_VIDEO_SRC}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                  aria-hidden
+                />
+              </div>
+              <div className="absolute inset-0 z-20 bg-black/30 pointer-events-none" />
+              <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6 pointer-events-none" aria-hidden>
+                <h2
+                  className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  THE COLLECTION
+                </h2>
+                <div className="w-24 h-px bg-[#B8956A] mt-4" aria-hidden />
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
