@@ -191,6 +191,16 @@ export const MeetTheMakersSection = () => {
               </div>
             </div>
           </motion.div>
+
+          {/* Tagline below The Collection */}
+          <div className="mt-8 md:mt-10 w-full max-w-5xl border-t border-[#B8956A] pt-8 md:pt-10 text-center">
+            <p
+              className="text-[#2A2A2A] italic text-lg md:text-xl"
+              style={{ fontFamily: "var(--font-script)" }}
+            >
+              Five Estates. One pursuit of excellence.
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>
