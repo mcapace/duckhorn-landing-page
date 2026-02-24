@@ -24,9 +24,9 @@ export const Perspective = () => {
             <Image
               src="/images/bottles/Duckhorn-Digital-Edits-Duck-Outline.png"
               alt=""
-              width={192}
-              height={64}
-              className="w-36 h-12 sm:w-44 sm:h-14 md:w-52 md:h-16 object-contain"
+              width={288}
+              height={96}
+              className="w-48 h-16 sm:w-56 sm:h-[4.5rem] md:w-64 md:h-20 lg:w-72 lg:h-24 object-contain"
             />
           </div>
           <p className="text-[#2A2A2A] italic text-base md:text-lg max-w-2xl mx-auto">
