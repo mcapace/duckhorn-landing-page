@@ -15,7 +15,7 @@ export const Perspective = () => {
           className="text-center mb-10"
         >
           <h2
-            className="text-4xl md:text-5xl lg:text-6xl text-[#596F33] tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl text-[#425a4d] tracking-tight"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             {perspectiveContent.title}
