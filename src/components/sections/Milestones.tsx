@@ -7,7 +7,7 @@ import { milestones, milestonesIntro, portraitOfPlace } from "@/lib/data";
 
 export const Milestones = () => {
   return (
-    <section id="milestones" className="py-20 md:py-28 bg-[#2D1216] scroll-mt-20">
+    <section id="milestones" className="py-20 md:py-28 bg-[#425a4d] scroll-mt-20">
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
         {/* 50 Years header + intro */}
         <motion.div
@@ -89,7 +89,7 @@ export const Milestones = () => {
                     className={`relative z-10 w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center text-sm md:text-base font-semibold tabular-nums ${
                       milestone.highlight
                         ? "bg-[#B8956A] text-[#2D1216] ring-4 ring-[#B8956A]/40"
-                        : "bg-[#2D1216] text-white/90 ring-2 ring-white/20"
+                        : "bg-[#364d42] text-white/90 ring-2 ring-white/20"
                     }`}
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
@@ -119,7 +119,7 @@ export const Milestones = () => {
                           className="object-cover object-center"
                           sizes="(max-width: 768px) 100vw, 288px"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#2D1216] md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#2D1216]/80" aria-hidden />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#425a4d] md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#425a4d]/90" aria-hidden />
                       </div>
                     )}
                     <div className="p-5 md:p-6 flex-1">
