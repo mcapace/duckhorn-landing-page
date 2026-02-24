@@ -82,13 +82,13 @@ export const Milestones = () => {
                 transition={{ duration: 0.5, delay: index * 0.04 }}
                 className="relative flex gap-6 md:gap-10 py-6 md:py-8 first:pt-0 last:pb-0"
               >
-                {/* Year node - bubble centered on line */}
+                {/* Year node - golden-brown circle with white text (match mock) */}
                 <div className="flex-shrink-0 flex flex-col items-center justify-center w-[120px] md:w-[140px]">
                   <div
                     className={`relative z-10 w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center text-sm md:text-base font-semibold tabular-nums ${
                       milestone.highlight
-                        ? "bg-[#B8956A] text-[#2D1216] ring-4 ring-[#B8956A]/40"
-                        : "bg-[#364d42] text-white/90 ring-2 ring-white/20"
+                        ? "bg-[#B8956A] text-white ring-4 ring-[#B8956A]/40"
+                        : "bg-[#B8956A] text-white ring-2 ring-white/20"
                     }`}
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
@@ -100,12 +100,12 @@ export const Milestones = () => {
                   </div>
                 </div>
 
-                {/* Content - fixed min-height for uniform card size */}
+                {/* Content box - lighter green background, image left, headline (italic darker green), body (white) */}
                 <div
-                  className={`flex-1 min-w-0 min-h-[200px] md:min-h-[240px] rounded-xl overflow-hidden transition-all duration-300 hover:bg-white/[0.08] flex flex-col ${
+                  className={`flex-1 min-w-0 min-h-[200px] md:min-h-[240px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col ${
                     milestone.highlight
-                      ? "bg-[#B8956A]/10 border border-[#B8956A]/30"
-                      : "bg-white/5 border border-white/10"
+                      ? "bg-[#4d6a55] border border-[#B8956A]/30"
+                      : "bg-[#4d6a55] border border-white/10"
                   }`}
                 >
                   <div className="flex flex-col md:flex-row flex-1 min-h-0">
@@ -118,24 +118,24 @@ export const Milestones = () => {
                           className="object-cover object-center"
                           sizes="(max-width: 768px) 100vw, 288px"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#425a4d] md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#425a4d]/90" aria-hidden />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#4d6a55] md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#4d6a55]/95" aria-hidden />
                       </div>
                     )}
-                    <div className="p-5 md:p-6 flex-1">
+                    <div className="p-5 md:p-6 flex-1 flex flex-col justify-center">
                       <span className="text-xs text-[#B8956A] uppercase tracking-wider">
                         {milestone.winery}
                       </span>
                       <h3
-                        className="text-lg md:text-xl text-white font-medium mt-2"
+                        className="text-lg md:text-xl text-[#2d3d32] italic mt-2"
                         style={{ fontFamily: "var(--font-serif)" }}
                       >
                         {milestone.title}
                       </h3>
-                      <p className="text-white/70 text-sm md:text-base leading-relaxed mt-3">
+                      <p className="text-white/95 text-sm md:text-base leading-relaxed mt-3">
                         {milestone.description}
                       </p>
                       {milestone.awardLabel && (
-                        <div className="mt-4 text-[#C5A572] text-sm font-medium uppercase tracking-wider">
+                        <div className="mt-4 text-[#D4B896] text-sm font-medium uppercase tracking-wider">
                           {milestone.awardLabel}
                         </div>
                       )}

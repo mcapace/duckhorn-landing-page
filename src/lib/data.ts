@@ -228,7 +228,7 @@ export const milestones = [
     year: "1976",
     title: "A Vineyard-First Vision Takes Root",
     description:
-      "Duckhorn Vineyards is established in Napa Valley with an early, defining commitment to Merlot—setting a house style centered on balance and elegance at a time when Cabernet Sauvignon dominated much of the valley.",
+      "Duckhorn Vineyards is established in Napa Valley with an early, defining commitment to Merlot, setting a house style centered on balance and elegance at a time when Cabernet Sauvignon dominated much of the valley.",
     winery: "Duckhorn",
     image: "/images/Dan-Duckhorn-during-harvest.jpg",
   },
