@@ -28,7 +28,7 @@ export const MeetTheMakersSection = () => {
               <div className="absolute inset-0 bg-black/30" />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
                 <h2
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold tracking-tight"
+                  className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
                   MEET THE MAKERS
