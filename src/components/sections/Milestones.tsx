@@ -18,55 +18,55 @@ export const Milestones = () => {
           className="mb-12 md:mb-16"
         >
           <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-8 md:gap-10 mb-8">
-            {/* Logo - 50th Lockup */}
+            {/* Logo - 50th Lockup - larger */}
             <div className="flex-shrink-0 flex justify-center w-full md:w-auto">
               <Image
                 src="/images/Duckhorn-Digital-Edits-50th-Lockup.png"
                 alt="50 Years of the Duckhorn Collection"
-                width={300}
-                height={150}
-                className="max-w-[260px] md:max-w-[300px] w-full h-auto object-contain"
+                width={380}
+                height={190}
+                className="max-w-[320px] md:max-w-[380px] w-full h-auto object-contain"
               />
             </div>
             {/* Vertical divider + headline block: line height matches headline height */}
-            <div className="hidden md:flex flex-1 max-w-xl items-stretch gap-8">
+            <div className="hidden md:flex flex-1 max-w-2xl items-stretch gap-8">
               <div className="w-px bg-white flex-shrink-0 self-stretch min-h-[1px]" aria-hidden />
               <div className="flex flex-col justify-center py-1 text-left">
                 <h2
-                  className="text-2xl md:text-3xl lg:text-4xl text-white tracking-tight uppercase font-medium leading-tight"
+                  className="text-3xl md:text-4xl lg:text-5xl text-white tracking-tight uppercase font-medium leading-tight"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
                   <span className="block">THE MILESTONES THAT</span>
-                  <span className="block text-xl md:text-2xl lg:text-3xl mt-0.5">BUILT A COLLECTION</span>
+                  <span className="block text-2xl md:text-3xl lg:text-4xl mt-1">BUILT A COLLECTION</span>
                 </h2>
                 <p
-                  className="text-[#B8956A] italic text-base md:text-lg mt-2"
+                  className="text-[#B8956A] italic text-lg md:text-xl mt-3"
                   style={{ fontFamily: "var(--font-script)" }}
                 >
                   And Helped Define American Fine Wine
                 </p>
               </div>
             </div>
-            {/* Mobile: headline below logo, centered */}
+            {/* Mobile: headline below logo, centered - larger */}
             <div className="flex flex-col md:hidden text-center">
               <h2
-                className="text-2xl text-white tracking-tight uppercase font-medium leading-tight"
+                className="text-3xl text-white tracking-tight uppercase font-medium leading-tight"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 <span className="block">THE MILESTONES THAT</span>
-                <span className="block text-xl mt-0.5">BUILT A COLLECTION</span>
+                <span className="block text-2xl mt-1">BUILT A COLLECTION</span>
               </h2>
               <p
-                className="text-[#B8956A] italic text-base mt-2"
+                className="text-[#B8956A] italic text-lg mt-3"
                 style={{ fontFamily: "var(--font-script)" }}
               >
                 And Helped Define American Fine Wine
               </p>
             </div>
           </div>
-          {/* Body paragraph - full width below */}
+          {/* Body paragraph - from attachment; DAN AND MARGARET DUCKHORN bold uppercase */}
           <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-full">
-            {milestonesIntro.paragraph}
+            <strong className="font-bold uppercase">DAN AND MARGARET DUCKHORN</strong> set out to make wines of lasting distinction in Napa Valley. Inspired by the great wines of Bordeaux and guided by a belief in restraint, balance, and long-term thinking, they committed themselves to the vineyards and to letting place take the lead. Over time, Duckhorn became a benchmark, and the Collection it inspired reflects a shared pursuit of excellence across California&apos;s great wine-growing regions.
           </p>
         </motion.div>
 
