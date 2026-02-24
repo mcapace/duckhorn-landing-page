@@ -237,7 +237,7 @@ export const MeetTheMakersSection = () => {
                       sizes="(max-width: 640px) 140px, 220px"
                     />
                     <span
-                      className="absolute bottom-0 left-0 right-0 py-3 text-center text-[#425a4d] font-medium text-sm tracking-wide group-hover:underline bg-white/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.1)]"
+                      className="absolute bottom-0 left-0 right-0 py-3 text-center text-[#B8956A] font-medium text-sm tracking-wide group-hover:underline bg-black/70 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
                       style={{ fontFamily: "var(--font-serif)" }}
                     >
                       EXPLORE →
