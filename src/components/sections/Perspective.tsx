@@ -26,7 +26,7 @@ export const Perspective = () => {
           </p>
         </motion.div>
 
-        {/* 3 images - same width as title, no gap, landscape crop */}
+        {/* 3 images - spacing between, landscape crop; third image framed to show more barrels */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ export const Perspective = () => {
           transition={{ delay: 0.1 }}
           className="flex justify-center mb-16"
         >
-          <div className="w-full max-w-3xl grid grid-cols-3 gap-0 overflow-hidden rounded-sm">
+          <div className="w-full max-w-3xl grid grid-cols-3 gap-3 md:gap-4 overflow-hidden rounded-sm">
             {perspectiveImages.map((img, i) => (
               <motion.div
                 key={img.src}
@@ -42,13 +42,15 @@ export const Perspective = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.05 * i }}
-                className="relative aspect-[4/3] overflow-hidden"
+                className="relative aspect-[4/3] overflow-hidden rounded-sm"
               >
                 <Image
                   src={img.src}
                   alt={img.alt}
                   fill
-                  className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                  className={`object-cover transition-transform duration-700 hover:scale-105 ${
+                    i === 2 ? "object-[center_75%]" : "object-center"
+                  }`}
                   sizes="(max-width: 768px) 33vw, 280px"
                 />
               </motion.div>
