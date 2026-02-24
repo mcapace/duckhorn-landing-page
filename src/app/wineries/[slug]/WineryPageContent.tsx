@@ -150,7 +150,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             <ul className="space-y-6">
               {wines.map((wine, i) => (
                 <li key={i} className="group">
-                  <h4 className="font-medium text-[#2A2A2A] text-base md:text-lg group-hover:text-[#3D5636] transition-colors">
+                  <h4 className="font-medium text-[#2A2A2A] text-base md:text-lg group-hover:text-[#435a4d] transition-colors">
                     {wine.name}
                   </h4>
                   <p className="text-[#3D3D3D]/85 text-sm md:text-base mt-2 leading-relaxed max-w-xl">
@@ -195,7 +195,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               >
                 {winemaker.name}
               </h3>
-              <p className="text-[#3D5636] text-sm mt-1">{winemaker.winery}</p>
+              <p className="text-[#435a4d] text-sm mt-1">{winemaker.winery}</p>
               <p className="text-[#A07D4E] text-xs mt-0.5 uppercase tracking-wider">{winemaker.title}</p>
               <blockquote
                 className="mt-6 text-base md:text-lg text-[#3D3D3D] italic leading-relaxed max-w-xl"
@@ -206,7 +206,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               <button
                 type="button"
                 onClick={() => setShowQaModal(true)}
-                className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#3D5636] text-white text-sm font-medium uppercase tracking-wider hover:bg-[#2D4636] transition-colors rounded-sm w-fit"
+                className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#435a4d] text-white text-sm font-medium uppercase tracking-wider hover:bg-[#2D4636] transition-colors rounded-sm w-fit"
               >
                 Read Full Q&A
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -272,7 +272,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                 <div className="space-y-5 sm:space-y-6 border-t border-[#E8E4DC] pt-6">
                   {winemaker.qAndA.map((qa, i) => (
                     <div key={i} className="border-b border-[#E8E4DC]/50 last:border-0 last:pb-0 pb-5 sm:pb-6">
-                      <p className="text-sm font-medium text-[#3D5636] mb-2 leading-snug">
+                      <p className="text-sm font-medium text-[#435a4d] mb-2 leading-snug">
                         {qa.question}
                       </p>
                       <p className="text-[#3D3D3D] text-sm leading-relaxed">

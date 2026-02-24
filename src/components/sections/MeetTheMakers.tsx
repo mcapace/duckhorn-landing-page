@@ -74,7 +74,7 @@ export const MeetTheMakers = () => {
                   >
                     {maker.name}
                   </h3>
-                  <p className="text-sm sm:text-xs text-[#3D5636] mt-1 font-medium leading-tight w-full">{maker.winery}</p>
+                  <p className="text-sm sm:text-xs text-[#435a4d] mt-1 font-medium leading-tight w-full">{maker.winery}</p>
                   <p className="text-xs sm:text-[10px] md:text-xs text-[#3D3D3D]/70 mt-0.5 uppercase tracking-widest leading-tight w-full line-clamp-2">{maker.title}</p>
                 </div>
               </motion.div>
@@ -143,7 +143,7 @@ export const MeetTheMakers = () => {
                       <div className="space-y-5 sm:space-y-6 border-t border-[#E8E4DC] pt-6">
                       {makers[selectedMaker].qAndA.map((qa, i) => (
                         <div key={i} className="border-b border-[#E8E4DC]/50 last:border-0 last:pb-0 pb-5 sm:pb-6">
-                          <p className="text-sm font-medium text-[#3D5636] mb-2 leading-snug">
+                          <p className="text-sm font-medium text-[#435a4d] mb-2 leading-snug">
                             {qa.question}
                           </p>
                           <p className="text-[#3D3D3D] text-sm leading-relaxed">

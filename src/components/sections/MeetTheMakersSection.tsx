@@ -154,7 +154,7 @@ export const MeetTheMakersSection = () => {
                   >
                     {maker.name}
                   </p>
-                  <p className="text-[#3D5636] text-xs md:text-sm mt-0.5">
+                  <p className="text-[#435a4d] text-xs md:text-sm mt-0.5">
                     {maker.winery}
                   </p>
                 </Link>

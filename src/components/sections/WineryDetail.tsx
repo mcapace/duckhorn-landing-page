@@ -106,7 +106,7 @@ export const WineryDetail = () => {
                       </p>
                       <div>
                         <h4
-                          className="text-lg text-[#3D5636] mb-4"
+                          className="text-lg text-[#435a4d] mb-4"
                           style={{ fontFamily: "var(--font-serif)" }}
                         >
                           Featured Wines

@@ -41,7 +41,7 @@ export const DedicatedToExcellence = () => {
             >
               {featuredMaker.name}
             </p>
-            <p className="text-sm text-[#3D5636] uppercase tracking-wider">
+            <p className="text-sm text-[#435a4d] uppercase tracking-wider">
               {featuredMaker.title}
             </p>
           </div>
