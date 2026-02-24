@@ -25,14 +25,13 @@ export const Footer = () => {
               height={60}
               className="h-8 md:h-10 w-auto object-contain"
             />
-            <span className="flex flex-col items-center text-left">
-              <span className="text-xl md:text-2xl font-medium tracking-tight uppercase text-white">
-                DUCKHORN
-              </span>
-              <span className="text-sm md:text-base uppercase tracking-[0.2em] text-white">
-                VINEYARDS
-              </span>
-            </span>
+            <Image
+              src="/images/DuckhornWordmark_logo_white.png"
+              alt="Duckhorn Vineyards"
+              width={200}
+              height={56}
+              className="h-8 md:h-10 w-auto object-contain"
+            />
           </div>
 
           {/* Tagline */}
