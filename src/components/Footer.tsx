@@ -25,11 +25,10 @@ export const Footer = () => {
               height={60}
               className="h-8 md:h-10 w-auto object-contain"
             />
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/images/DuckhornWordmark_logo_white.png"
               alt="Duckhorn Vineyards"
-              width={200}
-              height={56}
               className="h-8 md:h-10 w-auto object-contain"
             />
           </div>
