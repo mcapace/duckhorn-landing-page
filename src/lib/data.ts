@@ -233,10 +233,10 @@ export const milestones = [
     image: "/images/Dan-Duckhorn-during-harvest.jpg",
   },
   {
-    year: "Early 1980s",
+    year: "1980s",
     title: "Defining Cool-Climate California Chardonnay",
     description:
-      "Sonoma-Cutrer emerges as an early leader in Russian River Valley Chardonnay, establishing a Burgundian-influenced model built on site specificity, crisp acidity and balance—helping shape America's modern love affair with fine Chardonnay.",
+      "Sonoma-Cutrer emerges as an early leader in Russian River Valley Chardonnay, establishing a Burgundian-influenced model built on site specificity, crisp acidity, and balance,",
     winery: "Sonoma-Cutrer",
     image: "/images/DUCKHORN-US-1200-e1550307961298-removebg-preview.png",
   },
