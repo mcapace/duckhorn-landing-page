@@ -11,13 +11,14 @@ const MEET_THE_MAKERS_VIDEO_SRC = "/images/bottles/WS%20TDC-Winemaker%20Video.mp
 const THE_COLLECTION_VIDEO_SRC = "/images/bottles/WS%20Bottle%20Pan.mp4";
 const OVERLAY_HIDE_LAST_SECONDS = 7;
 
-// Five estates bottle cards (order matches mock); images in public/images/estate-bottles
+// Five estates bottle cards (order matches mock); images in public/images/bottles new
+// URL-encode space (%20) and parentheses (%28 %29) so the path resolves correctly
 const ESTATE_BOTTLES = [
-  { id: "duckhorn", name: "Duckhorn", image: "/images/estate-bottles/Duckhorn.jpg" },
-  { id: "kosta-browne", name: "Kosta Browne", image: "/images/estate-bottles/KostaBrowne.jpg" },
-  { id: "goldeneye", name: "Goldeneye", image: "/images/estate-bottles/Goldeneye.jpg" },
-  { id: "calera", name: "Calera", image: "/images/estate-bottles/Calera.jpg" },
-  { id: "sonoma-cutrer", name: "Sonoma-Cutrer", image: "/images/estate-bottles/SonomaCutrer.jpg" },
+  { id: "duckhorn", name: "Duckhorn", image: "/images/bottles%20new/Duckhorn-Bottle-Edit%20%281%29.jpg" },
+  { id: "kosta-browne", name: "Kosta Browne", image: "/images/bottles%20new/KostaBrowne-Bottle-Edit%20%281%29.jpg" },
+  { id: "goldeneye", name: "Goldeneye", image: "/images/bottles%20new/Goldeneye-Bottle-Edit%20%281%29.jpg" },
+  { id: "calera", name: "Calera", image: "/images/bottles%20new/Calera-Bottle-Edit%20%281%29.jpg" },
+  { id: "sonoma-cutrer", name: "Sonoma-Cutrer", image: "/images/bottles%20new/SonomaCutrer-Bottle-Edit%20%281%29.jpg" },
 ] as const;
 
 export const MeetTheMakersSection = () => {
