@@ -37,10 +37,10 @@ export const Milestones = () => {
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
                   <span className="block">THE MILESTONES THAT</span>
-                  <span className="block text-2xl md:text-3xl lg:text-4xl mt-1">BUILT A COLLECTION</span>
+                  <span className="block mt-1">BUILT A COLLECTION</span>
                 </h2>
                 <p
-                  className="text-[#B8956A] italic text-lg md:text-xl mt-3"
+                  className="text-[#B8956A] italic text-xl md:text-2xl mt-3"
                   style={{ fontFamily: "var(--font-script)" }}
                 >
                   And Helped Define American Fine Wine
@@ -54,10 +54,10 @@ export const Milestones = () => {
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 <span className="block">THE MILESTONES THAT</span>
-                <span className="block text-2xl mt-1">BUILT A COLLECTION</span>
+                <span className="block mt-1">BUILT A COLLECTION</span>
               </h2>
               <p
-                className="text-[#B8956A] italic text-lg mt-3"
+                className="text-[#B8956A] italic text-xl mt-3"
                 style={{ fontFamily: "var(--font-script)" }}
               >
                 And Helped Define American Fine Wine
