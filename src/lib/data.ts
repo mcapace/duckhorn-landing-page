@@ -327,6 +327,8 @@ The wineries featured in the Collection each carry forward our shared vision: wi
 This feature highlights five of our wineries and the people and philosophies behind the wines—the growers, winemakers, and stewards whose craft and commitment elevate every bottle. Their work reflects what American fine wine can be today—and where we are headed next.`,
   signature: "Robert Hanson",
   title_line: "CEO, The Duckhorn Collection",
+  ceoHeadshot: "/images/bottles/RobertHansonHeadshot.png",
+  ceoSignatureImage: "/images/bottles/RobertHansonSignature.png",
   founderQuote:
     "We believed from the start that great wine begins with great vineyards—and that hospitality and quality could define American fine wine.",
   founderName: "Dan Duckhorn",

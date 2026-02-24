@@ -84,29 +84,33 @@ export const Perspective = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="pt-10 mt-10 flex flex-col sm:flex-row items-start gap-6"
+            className="pt-10 mt-10 flex flex-col sm:flex-row items-end justify-end gap-6"
           >
-            <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0 bg-[#E8E4DC]">
+            <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden flex-shrink-0 bg-[#E8E4DC]">
               <Image
-                src={perspectiveContent.founderImage}
-                alt={perspectiveContent.founderName}
+                src={perspectiveContent.ceoHeadshot}
+                alt={perspectiveContent.signature}
                 fill
-                className="object-cover"
-                sizes="96px"
+                className="object-cover object-top"
+                sizes="112px"
               />
             </div>
-            <div>
-              <p className="text-[#3D3D3D] text-base md:text-lg leading-relaxed italic">
-                {perspectiveContent.founderQuote}
-              </p>
+            <div className="flex flex-col items-start text-left">
+              <Image
+                src={perspectiveContent.ceoSignatureImage}
+                alt=""
+                width={160}
+                height={48}
+                className="h-10 w-auto object-contain object-left"
+              />
               <p
-                className="text-lg font-medium text-[#2A2A2A] mt-3"
+                className="text-lg font-medium text-[#2A2A2A] mt-2"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                {perspectiveContent.founderName}
+                {perspectiveContent.signature}
               </p>
-              <p className="text-sm text-[#A07D4E] uppercase tracking-wider">
-                {perspectiveContent.founderTitle}
+              <p className="text-sm text-[#A07D4E]">
+                {perspectiveContent.title_line}
               </p>
             </div>
           </motion.div>
