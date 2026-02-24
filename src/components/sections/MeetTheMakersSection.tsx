@@ -228,16 +228,14 @@ export const MeetTheMakersSection = () => {
                   href={`/wineries#${estate.id}`}
                   className="group flex flex-col items-center w-full"
                 >
-                  <div className="relative w-full h-[280px] sm:h-[300px] rounded-2xl overflow-hidden bg-[#E8E4DC] shadow-md group-hover:shadow-lg transition-shadow flex flex-col items-center justify-end pb-6 pt-4">
-                    <div className="relative w-full flex-1 min-h-0 min-w-0 flex items-end justify-center">
-                      <Image
-                        src={estate.image}
-                        alt={estate.name}
-                        width={160}
-                        height={240}
-                        className="w-auto max-h-full object-contain object-bottom"
-                      />
-                    </div>
+                  <div className="relative w-full h-[340px] sm:h-[400px] rounded-2xl overflow-hidden bg-[#E8E4DC] shadow-md group-hover:shadow-lg transition-shadow">
+                    <Image
+                      src={estate.image}
+                      alt={estate.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 140px, 220px"
+                    />
                   </div>
                   <span
                     className="mt-4 text-[#B8956A] font-medium text-sm tracking-wide group-hover:underline"
