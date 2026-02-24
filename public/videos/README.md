@@ -6,3 +6,5 @@ To change the video, update the JW player script URL and media ID in `src/compon
 
 - `JW_PLAYER_SCRIPT` — from your JW Player dashboard (embed code)
 - `JW_MEDIA_ID` — your media/video ID in JW
+
+When the video doesn’t load, the section shows a fallback image. Add your hero image at **`public/images/meet-the-makers-hero.jpg`** so the box doesn’t appear black.

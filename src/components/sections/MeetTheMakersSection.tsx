@@ -55,23 +55,35 @@ export const MeetTheMakersSection = () => {
           viewport={{ once: true, margin: "-60px" }}
           className="flex flex-col items-center"
         >
-          {/* JW Player — video hosted on JW; autoplay, muted, loop, no controls */}
-          <div ref={containerRef} className="relative w-full max-w-5xl rounded-3xl overflow-hidden border border-[#B8956A] shadow-lg">
-            <div className="relative overflow-hidden bg-black" style={{ paddingBottom: "56.25%" }}>
-              <div
-                id={PLAYER_DIV_ID}
-                className="absolute inset-0 w-full h-full [&_iframe]:!w-full [&_iframe]:!h-full"
+          {/* Same-size box as original image hero: fixed height, video plays inside. Fallback image when video doesn’t load. */}
+          <div ref={containerRef} className="relative w-full max-w-5xl rounded-3xl overflow-hidden border border-[#B8956A] shadow-lg h-[400px] md:h-[500px]">
+            {/* Fallback when video doesn’t load — add /images/meet-the-makers-hero.jpg for same look as before */}
+            <div className="absolute inset-0 bg-black">
+              <Image
+                src="/images/meet-the-makers-hero.jpg"
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                priority={false}
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
               />
-              <div className="absolute inset-0 bg-black/30 pointer-events-none" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
-                <h2
-                  className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  MEET THE MAKERS
-                </h2>
-                <div className="w-24 h-px bg-[#B8956A] mt-4" aria-hidden />
-              </div>
+            </div>
+            <div
+              id={PLAYER_DIV_ID}
+              className="absolute inset-0 w-full h-full [&_iframe]:!w-full [&_iframe]:!h-full"
+            />
+            <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
+              <h2
+                className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                MEET THE MAKERS
+              </h2>
+              <div className="w-24 h-px bg-[#B8956A] mt-4" aria-hidden />
             </div>
           </div>
 
