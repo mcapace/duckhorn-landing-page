@@ -8,7 +8,8 @@ import { milestones, milestonesIntro, portraitOfPlace } from "@/lib/data";
 export const Milestones = () => {
   return (
     <section id="milestones" className="py-20 md:py-28 bg-[#425a4d] scroll-mt-20">
-      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
+      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+        <div className="w-full max-w-5xl mx-auto">
         {/* 50 Years header: logo left, divider, headline right (match lockup design) */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -16,9 +17,9 @@ export const Milestones = () => {
           viewport={{ once: true }}
           className="mb-12 md:mb-16"
         >
-          <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-10 mb-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-8 md:gap-10 mb-8">
             {/* Logo - 50th Lockup */}
-            <div className="flex-shrink-0 flex justify-center md:justify-start w-full md:w-auto">
+            <div className="flex-shrink-0 flex justify-center w-full md:w-auto">
               <Image
                 src="/images/Duckhorn-Digital-Edits-50th-Lockup.png"
                 alt="50 Years of the Duckhorn Collection"
@@ -27,19 +28,36 @@ export const Milestones = () => {
                 className="max-w-[260px] md:max-w-[300px] w-full h-auto object-contain"
               />
             </div>
-            {/* Vertical divider - white line */}
-            <div className="hidden md:block w-px self-stretch min-h-[100px] bg-white flex-shrink-0" aria-hidden />
-            {/* Headline right: two lines + gold subhead */}
-            <div className="flex-1 min-w-0 text-center md:text-left">
+            {/* Vertical divider + headline block: line height matches headline height */}
+            <div className="hidden md:flex flex-1 max-w-xl items-stretch gap-8">
+              <div className="w-px bg-white flex-shrink-0 self-stretch min-h-[1px]" aria-hidden />
+              <div className="flex flex-col justify-center py-1 text-left">
+                <h2
+                  className="text-2xl md:text-3xl lg:text-4xl text-white tracking-tight uppercase font-medium leading-tight"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  <span className="block">THE MILESTONES THAT</span>
+                  <span className="block text-xl md:text-2xl lg:text-3xl mt-0.5">BUILT A COLLECTION</span>
+                </h2>
+                <p
+                  className="text-[#B8956A] italic text-base md:text-lg mt-2"
+                  style={{ fontFamily: "var(--font-script)" }}
+                >
+                  And Helped Define American Fine Wine
+                </p>
+              </div>
+            </div>
+            {/* Mobile: headline below logo, centered */}
+            <div className="flex flex-col md:hidden text-center">
               <h2
-                className="text-2xl md:text-3xl lg:text-4xl text-white tracking-tight uppercase font-medium leading-tight"
+                className="text-2xl text-white tracking-tight uppercase font-medium leading-tight"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 <span className="block">THE MILESTONES THAT</span>
-                <span className="block text-xl md:text-2xl lg:text-3xl mt-0.5">BUILT A COLLECTION</span>
+                <span className="block text-xl mt-0.5">BUILT A COLLECTION</span>
               </h2>
               <p
-                className="text-[#B8956A] italic text-base md:text-lg mt-3"
+                className="text-[#B8956A] italic text-base mt-2"
                 style={{ fontFamily: "var(--font-script)" }}
               >
                 And Helped Define American Fine Wine
@@ -164,6 +182,7 @@ export const Milestones = () => {
               </Fragment>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </section>
