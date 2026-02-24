@@ -121,10 +121,12 @@ export const Milestones = () => {
                         <img
                           src={milestone.image}
                           alt={milestone.title}
-                          className={`absolute inset-0 w-full h-full object-cover ${
-                            "imagePosition" in milestone && milestone.imagePosition === "top"
-                              ? "object-top"
-                              : "object-center"
+                          className={`absolute inset-0 w-full h-full ${
+                            "imageFit" in milestone && milestone.imageFit === "contain"
+                              ? "object-contain object-top"
+                              : "imagePosition" in milestone && milestone.imagePosition === "top"
+                                ? "object-cover object-top"
+                                : "object-cover object-center"
                           }`}
                         />
                       </div>

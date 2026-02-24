@@ -274,6 +274,7 @@ export const milestones = [
     winery: "Calera",
     image: "/images/Timeline/cover.jpg",
     imagePosition: "top",
+    imageFit: "contain",
   },
   {
     year: "2017",
