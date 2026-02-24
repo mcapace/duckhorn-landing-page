@@ -1,0 +1,14 @@
+---
+description: Always commit and push changes after making edits
+alwaysApply: true
+---
+
+# Git: Always Push After Changes
+
+After completing code changes in this project:
+
+1. **Stage** the modified files (only the files you changed for the task—do not add unrelated untracked assets unless the user asked).
+2. **Commit** with a clear, concise message describing what was done.
+3. **Push** to the current branch (`git push`).
+
+Do this at the end of every task that modifies files, unless the user explicitly says not to push.
