@@ -236,13 +236,13 @@ export const MeetTheMakersSection = () => {
                       className="object-cover"
                       sizes="(max-width: 640px) 140px, 220px"
                     />
+                    <span
+                      className="absolute bottom-0 left-0 right-0 py-3 text-center text-[#B8956A] font-medium text-sm tracking-wide group-hover:underline bg-gradient-to-t from-black/50 to-transparent"
+                      style={{ fontFamily: "var(--font-serif)" }}
+                    >
+                      EXPLORE →
+                    </span>
                   </div>
-                  <span
-                    className="mt-4 text-[#B8956A] font-medium text-sm tracking-wide group-hover:underline"
-                    style={{ fontFamily: "var(--font-serif)" }}
-                  >
-                    EXPLORE →
-                  </span>
                 </Link>
               </motion.div>
             ))}
