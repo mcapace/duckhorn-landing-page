@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export const Footer = () => {
   return (
@@ -16,13 +17,14 @@ export const Footer = () => {
           <div className="w-full max-w-3xl h-px bg-[#B8956A] mx-auto mb-12 md:mb-14" aria-hidden />
 
           {/* Two logos side by side */}
-          <div className="flex flex-wrap items-baseline justify-center gap-6 md:gap-10 mb-6">
-            <span
-              className="text-xl md:text-2xl text-white whitespace-nowrap"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              Wine Spectator
-            </span>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-6">
+            <Image
+              src="/images/WSlogoWhite-stroke (2) (4) (5).png"
+              alt="Wine Spectator"
+              width={180}
+              height={60}
+              className="h-8 md:h-10 w-auto object-contain"
+            />
             <span className="flex flex-col items-center text-left">
               <span className="text-xl md:text-2xl font-medium tracking-tight uppercase text-white">
                 DUCKHORN
