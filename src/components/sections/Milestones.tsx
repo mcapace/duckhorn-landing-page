@@ -85,7 +85,7 @@ export const Milestones = () => {
                 {/* Year node - bigger golden circle with white text */}
                 <div className="flex-shrink-0 flex flex-col items-center justify-center w-[160px] md:w-[180px]">
                   <div
-                    className={`relative z-10 w-28 h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center text-base md:text-lg font-semibold tabular-nums ${
+                    className={`relative z-10 w-28 h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center text-lg md:text-xl font-semibold tabular-nums ${
                       milestone.highlight
                         ? "bg-[#B8956A] text-white ring-4 ring-[#B8956A]/40"
                         : "bg-[#B8956A] text-white ring-2 ring-white/20"
@@ -93,7 +93,7 @@ export const Milestones = () => {
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
                     {milestone.year.length <= 4 ? milestone.year : (
-                      <span className="text-sm md:text-base leading-tight text-center px-1">
+                      <span className="text-base md:text-lg leading-tight text-center px-1">
                         {milestone.year}
                       </span>
                     )}
