@@ -3,15 +3,52 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { winemakers } from "@/lib/data";
 
 // Self-hosted winemaker video (in public folder — no JW license needed)
 const MEET_THE_MAKERS_VIDEO_SRC = "/images/bottles/WS%20TDC-Winemaker%20Video.mp4";
 const THE_COLLECTION_VIDEO_SRC = "/images/bottles/WS%20Bottle%20Pan.mp4";
+const OVERLAY_HIDE_LAST_SECONDS = 7;
 
 export const MeetTheMakersSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const makersVideoRef = useRef<HTMLVideoElement>(null);
+  const collectionVideoRef = useRef<HTMLVideoElement>(null);
+  const [showMakersOverlay, setShowMakersOverlay] = useState(true);
+  const [showCollectionOverlay, setShowCollectionOverlay] = useState(true);
+
+  useEffect(() => {
+    const video = makersVideoRef.current;
+    if (!video) return;
+    const onTimeUpdate = () => {
+      const { currentTime, duration } = video;
+      if (!Number.isFinite(duration) || duration <= 0) return;
+      setShowMakersOverlay(currentTime < duration - OVERLAY_HIDE_LAST_SECONDS);
+    };
+    video.addEventListener("timeupdate", onTimeUpdate);
+    video.addEventListener("loadedmetadata", onTimeUpdate);
+    return () => {
+      video.removeEventListener("timeupdate", onTimeUpdate);
+      video.removeEventListener("loadedmetadata", onTimeUpdate);
+    };
+  }, []);
+
+  useEffect(() => {
+    const video = collectionVideoRef.current;
+    if (!video) return;
+    const onTimeUpdate = () => {
+      const { currentTime, duration } = video;
+      if (!Number.isFinite(duration) || duration <= 0) return;
+      setShowCollectionOverlay(currentTime < duration - OVERLAY_HIDE_LAST_SECONDS);
+    };
+    video.addEventListener("timeupdate", onTimeUpdate);
+    video.addEventListener("loadedmetadata", onTimeUpdate);
+    return () => {
+      video.removeEventListener("timeupdate", onTimeUpdate);
+      video.removeEventListener("loadedmetadata", onTimeUpdate);
+    };
+  }, []);
 
   return (
     <section id="meet-the-makers" className="py-20 md:py-28 bg-white scroll-mt-20">
@@ -27,6 +64,7 @@ export const MeetTheMakersSection = () => {
             {/* Fallback when video doesn’t load — add /images/meet-the-makers-hero.jpg for same look as before */}
             <div className="absolute inset-0 z-0 bg-black">
               <video
+                ref={makersVideoRef}
                 src={MEET_THE_MAKERS_VIDEO_SRC}
                 autoPlay
                 muted
@@ -50,15 +88,22 @@ export const MeetTheMakersSection = () => {
                 }}
               />
             </div>
-            <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/35 via-black/15 to-black/40 pointer-events-none" />
-            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6 pointer-events-none" aria-hidden>
-              <h2
-                className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
-                style={{ fontFamily: "var(--font-serif)" }}
-              >
-                MEET THE MAKERS
-              </h2>
-              <div className="w-24 h-px bg-[#B8956A] mt-4" aria-hidden />
+            <div
+              className={`absolute inset-0 z-20 pointer-events-none transition-opacity duration-700 ${
+                showMakersOverlay ? "opacity-100" : "opacity-0"
+              }`}
+              aria-hidden
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/40" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                <h2
+                  className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  MEET THE MAKERS
+                </h2>
+                <div className="w-24 h-px bg-[#B8956A] mt-4" aria-hidden />
+              </div>
             </div>
           </div>
 
@@ -117,6 +162,7 @@ export const MeetTheMakersSection = () => {
             <div className="relative w-full rounded-3xl overflow-hidden border border-[#B8956A] shadow-lg h-[400px] md:h-[500px]">
               <div className="absolute inset-0 z-0 bg-black">
                 <video
+                  ref={collectionVideoRef}
                   src={THE_COLLECTION_VIDEO_SRC}
                   autoPlay
                   muted
@@ -126,15 +172,22 @@ export const MeetTheMakersSection = () => {
                   aria-hidden
                 />
               </div>
-              <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/35 via-black/15 to-black/40 pointer-events-none" />
-              <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6 pointer-events-none" aria-hidden>
-                <h2
-                  className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  THE COLLECTION
-                </h2>
-                <div className="w-24 h-px bg-[#B8956A] mt-4" aria-hidden />
+              <div
+                className={`absolute inset-0 z-20 pointer-events-none transition-opacity duration-700 ${
+                  showCollectionOverlay ? "opacity-100" : "opacity-0"
+                }`}
+                aria-hidden
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/40" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                  <h2
+                    className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
+                    style={{ fontFamily: "var(--font-serif)" }}
+                  >
+                    THE COLLECTION
+                  </h2>
+                  <div className="w-24 h-px bg-[#B8956A] mt-4" aria-hidden />
+                </div>
               </div>
             </div>
           </motion.div>
