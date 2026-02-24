@@ -82,10 +82,10 @@ export const Milestones = () => {
                 transition={{ duration: 0.5, delay: index * 0.04 }}
                 className="relative flex gap-6 md:gap-10 py-6 md:py-8 first:pt-0 last:pb-0"
               >
-                {/* Year node - larger golden circle with white text */}
-                <div className="flex-shrink-0 flex flex-col items-center justify-center w-[140px] md:w-[160px]">
+                {/* Year node - bigger golden circle with white text */}
+                <div className="flex-shrink-0 flex flex-col items-center justify-center w-[160px] md:w-[180px]">
                   <div
-                    className={`relative z-10 w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center text-sm md:text-base font-semibold tabular-nums ${
+                    className={`relative z-10 w-28 h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center text-base md:text-lg font-semibold tabular-nums ${
                       milestone.highlight
                         ? "bg-[#B8956A] text-white ring-4 ring-[#B8956A]/40"
                         : "bg-[#B8956A] text-white ring-2 ring-white/20"
@@ -93,14 +93,14 @@ export const Milestones = () => {
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
                     {milestone.year.length <= 4 ? milestone.year : (
-                      <span className="text-xs md:text-sm leading-tight text-center px-1">
+                      <span className="text-sm md:text-base leading-tight text-center px-1">
                         {milestone.year}
                       </span>
                     )}
                   </div>
                 </div>
 
-                {/* Content box - no vignette on image; headline and body light off-white like attached */}
+                {/* Content box - same width constraint as site (max-w-5xl); no brand name; larger headline */}
                 <div
                   className={`flex-1 min-w-0 min-h-[200px] md:min-h-[240px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col ${
                     milestone.highlight
@@ -121,11 +121,8 @@ export const Milestones = () => {
                       </div>
                     )}
                     <div className="p-5 md:p-6 flex-1 flex flex-col justify-center">
-                      <span className="text-xs text-[#B8956A] uppercase tracking-wider">
-                        {milestone.winery}
-                      </span>
                       <h3
-                        className="text-lg md:text-xl text-white/95 italic mt-2"
+                        className="text-xl md:text-2xl text-white/95 italic"
                         style={{ fontFamily: "var(--font-serif)" }}
                       >
                         {milestone.title}
@@ -144,7 +141,7 @@ export const Milestones = () => {
               </motion.div>
               {index < milestones.length - 1 && (
                 <div className="flex gap-6 md:gap-10 -my-6 md:-my-8">
-                  <div className="w-[140px] md:w-[160px] flex justify-center flex-shrink-0">
+                  <div className="w-[160px] md:w-[180px] flex justify-center flex-shrink-0">
                     <div className="w-px h-12 md:h-16 bg-[#B8956A]/50" />
                   </div>
                   <div className="flex-1 min-w-0" />
