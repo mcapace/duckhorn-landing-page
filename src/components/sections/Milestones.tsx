@@ -9,36 +9,43 @@ export const Milestones = () => {
   return (
     <section id="milestones" className="py-20 md:py-28 bg-[#425a4d] scroll-mt-20">
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
-        {/* 50 Years header + intro */}
+        {/* 50 Years header: logo + divider + headline (match lockup design) */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-12 md:mb-16"
         >
-          <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-6 mb-6">
-            <div className="flex items-end gap-2 md:gap-3">
-              <span
-                className="text-6xl md:text-8xl lg:text-9xl text-[#B8956A] font-bold tabular-nums leading-none"
+          <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 mb-8">
+            {/* Logo - 50th Lockup */}
+            <div className="flex-shrink-0 flex justify-center md:justify-start">
+              <Image
+                src="/images/Duckhorn-Digital-Edits-50th%20Lockup.png"
+                alt="50 Years of the Duckhorn Collection"
+                width={320}
+                height={160}
+                className="w-full max-w-[280px] md:max-w-[320px] h-auto object-contain"
+              />
+            </div>
+            {/* Vertical divider */}
+            <div className="hidden md:block w-px h-24 lg:h-28 bg-white/40 flex-shrink-0" aria-hidden />
+            {/* Headline + sub-headline */}
+            <div className="flex-1 min-w-0 text-center md:text-left">
+              <h2
+                className="text-2xl md:text-3xl lg:text-4xl text-white tracking-tight uppercase font-medium mb-2"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                50
-              </span>
-              <span className="text-2xl md:text-3xl lg:text-4xl text-[#B8956A] font-bold uppercase tracking-wider leading-tight pb-1 md:pb-2">
-                Years
-              </span>
+                THE MILESTONES THAT BUILT A COLLECTION
+              </h2>
+              <p
+                className="text-[#B8956A] italic text-base md:text-lg"
+                style={{ fontFamily: "var(--font-script)" }}
+              >
+                And Helped Define American Fine Wine
+              </p>
             </div>
           </div>
-          <h2
-            className="text-2xl md:text-3xl lg:text-4xl text-white tracking-tight mb-2"
-            style={{ fontFamily: "var(--font-serif)" }}
-          >
-            {milestonesIntro.title}
-          </h2>
-          <p className="text-white/70 text-base md:text-lg mb-6">
-            {milestonesIntro.subtitle}
-          </p>
-          <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-3xl">
+          <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-3xl">
             {milestonesIntro.paragraph}
           </p>
         </motion.div>
