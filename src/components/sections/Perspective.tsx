@@ -20,7 +20,15 @@ export const Perspective = () => {
           >
             {perspectiveContent.title}
           </h2>
-          <div className="w-16 h-px bg-[#596F33] mx-auto mt-4 mb-5" aria-hidden />
+          <div className="flex justify-center mt-4 mb-5" aria-hidden>
+            <Image
+              src="/images/bottles/Duckhorn-Digital-Edits-Duck Outline.png"
+              alt=""
+              width={48}
+              height={32}
+              className="w-12 h-8 object-contain"
+            />
+          </div>
           <p className="text-[#2A2A2A] italic text-base md:text-lg max-w-2xl mx-auto">
             {perspectiveContent.subtitle}
           </p>
