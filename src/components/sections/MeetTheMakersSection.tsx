@@ -7,6 +7,7 @@ import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { winemakers } from "@/lib/data";
 
+// JW Player: video hosted on JW, not on Vercel. Replace with your player script + media ID from dashboard.
 const JW_PLAYER_SCRIPT = "https://cdn.jwplayer.com/players/DMQTriWg-O0V5rBgo.js";
 const JW_MEDIA_ID = "DMQTriWg";
 const PLAYER_DIV_ID = "meet-the-makers-jw-player";
@@ -18,27 +19,35 @@ declare global {
 }
 
 export const MeetTheMakersSection = () => {
-  const playerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [scriptReady, setScriptReady] = useState(false);
 
   useEffect(() => {
     if (!scriptReady || typeof window === "undefined" || !window.jwplayer) return;
     const el = document.getElementById(PLAYER_DIV_ID);
     if (!el) return;
-    window.jwplayer(PLAYER_DIV_ID).setup({
-      playlist: `https://cdn.jwplayer.com/v2/media/${JW_MEDIA_ID}`,
-      autostart: true,
-      mute: true,
-      repeat: true,
-      controls: false,
-      displaytitle: false,
-      displaydescription: false,
-    });
+    // Defer setup so the container is in the DOM and laid out
+    const t = setTimeout(() => {
+      try {
+        window.jwplayer?.(PLAYER_DIV_ID).setup({
+          playlist: `https://cdn.jwplayer.com/v2/media/${JW_MEDIA_ID}`,
+          autostart: true,
+          mute: true,
+          repeat: true,
+          controls: false,
+          displaytitle: false,
+          displaydescription: false,
+        });
+      } catch (_) {
+        // Player may already be setup or container missing
+      }
+    }, 100);
+    return () => clearTimeout(t);
   }, [scriptReady]);
 
   return (
     <section id="meet-the-makers" className="py-20 md:py-28 bg-white scroll-mt-20">
-      <Script src={JW_PLAYER_SCRIPT} strategy="lazyOnload" onLoad={() => setScriptReady(true)} />
+      <Script src={JW_PLAYER_SCRIPT} strategy="afterInteractive" onLoad={() => setScriptReady(true)} />
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -46,12 +55,11 @@ export const MeetTheMakersSection = () => {
           viewport={{ once: true, margin: "-60px" }}
           className="flex flex-col items-center"
         >
-          {/* JW Player — autoplay, muted, loop, no controls */}
-          <div className="relative w-full max-w-5xl rounded-3xl overflow-hidden border border-[#B8956A] shadow-lg">
-            <div className="relative overflow-hidden" style={{ paddingBottom: "56.25%" }}>
+          {/* JW Player — video hosted on JW; autoplay, muted, loop, no controls */}
+          <div ref={containerRef} className="relative w-full max-w-5xl rounded-3xl overflow-hidden border border-[#B8956A] shadow-lg">
+            <div className="relative overflow-hidden bg-black" style={{ paddingBottom: "56.25%" }}>
               <div
                 id={PLAYER_DIV_ID}
-                ref={playerRef}
                 className="absolute inset-0 w-full h-full [&_iframe]:!w-full [&_iframe]:!h-full"
               />
               <div className="absolute inset-0 bg-black/30 pointer-events-none" />

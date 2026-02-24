@@ -48,11 +48,11 @@ export const FeaturedWines = () => {
                 <motion.div
                   whileHover={{ y: -8 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className="relative rounded-2xl overflow-hidden bg-[#F5F3EF] min-h-[360px] sm:min-h-[400px] md:min-h-[540px] flex flex-col shadow-lg"
+                  className="relative rounded-2xl overflow-hidden bg-[#F5F3EF] min-h-[380px] sm:min-h-[420px] md:min-h-[560px] flex flex-col shadow-lg"
                 >
-                  {/* Bottle area - flex-1, object-contain + object-bottom so full bottle visible and never cropped; extra space above */}
-                  <div className="flex-1 min-h-0 flex items-end justify-center px-4 pt-6 pb-2 md:pt-8 md:pb-3">
-                    <div className="relative w-full h-full min-h-[220px] sm:min-h-[260px] md:min-h-[340px] max-h-[300px] sm:max-h-[340px] md:max-h-[420px]">
+                  {/* Bottle area: full bottle visible (object-contain), no crop; generous bottom gap so CTA never overlaps */}
+                  <div className="flex-1 min-h-0 flex items-end justify-center px-4 pt-6 pb-6 md:pt-8 md:pb-8">
+                    <div className="relative w-full h-full min-h-[200px] sm:min-h-[240px] md:min-h-[300px]">
                       <Image
                         src={wine.imageBG}
                         alt={wine.name}
@@ -63,7 +63,7 @@ export const FeaturedWines = () => {
                     </div>
                   </div>
 
-                  {/* CTA strip - fixed at bottom, never overlaps bottle; left-aligned per design */}
+                  {/* CTA strip - always below bottle with clear separation */}
                   <div className="flex-shrink-0 py-4 md:py-5 pl-5 pr-4 text-left border-t border-[#E8E4DC]">
                     <span className="inline-flex items-center gap-2 text-[#8B7355] text-xs sm:text-sm uppercase tracking-wider group-hover:gap-3 transition-all">
                       EXPLORE

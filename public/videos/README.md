@@ -1,5 +1,8 @@
 # Meet the Makers video
 
-Place **meet-the-makers.mp4** in this folder so the Meet the Makers section hero plays the video instead of showing a static image.
+The Meet the Makers section uses **JW Player** for video. The video is hosted on JW’s CDN, not in this repo or on Vercel.
 
-The section is configured to use: `/videos/meet-the-makers.mp4`
+To change the video, update the JW player script URL and media ID in `src/components/sections/MeetTheMakersSection.tsx`:
+
+- `JW_PLAYER_SCRIPT` — from your JW Player dashboard (embed code)
+- `JW_MEDIA_ID` — your media/video ID in JW
