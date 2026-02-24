@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { winemakers } from "@/lib/data";
+import { winemakers, robSorensonData } from "@/lib/data";
 
 // Self-hosted winemaker video (in public folder — no JW license needed)
 const MEET_THE_MAKERS_VIDEO_SRC = "/images/bottles/WS%20TDC-Winemaker%20Video.mp4";
@@ -246,6 +246,46 @@ export const MeetTheMakersSection = () => {
                 </Link>
               </motion.div>
             ))}
+          </div>
+
+          {/* Line + Rob Sorenson vineyard quality block */}
+          <div className="mt-16 md:mt-20 w-full max-w-5xl border-t border-[#B8956A] pt-10 md:pt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row items-center sm:items-start gap-8 md:gap-10"
+            >
+              <div className="flex-shrink-0">
+                <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full overflow-hidden ring-2 ring-[#E8E4DC]">
+                  <Image
+                    src={robSorensonData.image}
+                    alt={robSorensonData.name}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 640px) 160px, 224px"
+                  />
+                </div>
+              </div>
+              <div className="flex-1 min-w-0 text-center sm:text-left">
+                <h3
+                  className="text-2xl md:text-3xl text-[#2A2A2A] italic"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  The Importance of Vineyard Quality
+                </h3>
+                <p className="mt-4 text-[#3D3D3D] text-base md:text-lg leading-relaxed">
+                  Great wine starts in the vineyard. Slope and sun exposure, soil composition, and even the clones planted shape every decision in the cellar—and define the character in the glass. Guided by Rob Sorenson, The Duckhorn Collection stewards exceptional sites with intention and care.
+                </p>
+                <Link
+                  href="#vineyard-stewardship"
+                  className="inline-flex items-center gap-2 mt-6 text-[#B8956A] text-sm font-medium uppercase tracking-wider hover:underline"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  READ THE FULL STORY →
+                </Link>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
