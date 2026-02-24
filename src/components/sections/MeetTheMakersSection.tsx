@@ -3,15 +3,42 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
+import { useEffect, useRef, useState } from "react";
 import { winemakers } from "@/lib/data";
 
-const MEET_THE_MAKERS_JW_EMBED_URL =
-  process.env.NEXT_PUBLIC_MEET_THE_MAKERS_VIDEO_URL ||
-  "https://cdn.jwplayer.com/players/DMQTriWg-O0V5rBgo.html";
+const JW_PLAYER_SCRIPT = "https://cdn.jwplayer.com/players/DMQTriWg-O0V5rBgo.js";
+const JW_MEDIA_ID = "DMQTriWg";
+const PLAYER_DIV_ID = "meet-the-makers-jw-player";
+
+declare global {
+  interface Window {
+    jwplayer?: (id: string) => { setup: (config: Record<string, unknown>) => void };
+  }
+}
 
 export const MeetTheMakersSection = () => {
+  const playerRef = useRef<HTMLDivElement>(null);
+  const [scriptReady, setScriptReady] = useState(false);
+
+  useEffect(() => {
+    if (!scriptReady || typeof window === "undefined" || !window.jwplayer) return;
+    const el = document.getElementById(PLAYER_DIV_ID);
+    if (!el) return;
+    window.jwplayer(PLAYER_DIV_ID).setup({
+      playlist: `https://cdn.jwplayer.com/v2/media/${JW_MEDIA_ID}`,
+      autostart: true,
+      mute: true,
+      repeat: true,
+      controls: false,
+      displaytitle: false,
+      displaydescription: false,
+    });
+  }, [scriptReady]);
+
   return (
     <section id="meet-the-makers" className="py-20 md:py-28 bg-white scroll-mt-20">
+      <Script src={JW_PLAYER_SCRIPT} strategy="lazyOnload" onLoad={() => setScriptReady(true)} />
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -19,15 +46,13 @@ export const MeetTheMakersSection = () => {
           viewport={{ once: true, margin: "-60px" }}
           className="flex flex-col items-center"
         >
-          {/* JW Player embed — WS TDC Winemaker Video */}
+          {/* JW Player — autoplay, muted, loop, no controls */}
           <div className="relative w-full max-w-5xl rounded-3xl overflow-hidden border border-[#B8956A] shadow-lg">
             <div className="relative overflow-hidden" style={{ paddingBottom: "56.25%" }}>
-              <iframe
-                src={MEET_THE_MAKERS_JW_EMBED_URL}
-                title="WS TDC Winemaker Video"
-                className="absolute inset-0 w-full h-full"
-                allowFullScreen
-                allow="autoplay; fullscreen; picture-in-picture"
+              <div
+                id={PLAYER_DIV_ID}
+                ref={playerRef}
+                className="absolute inset-0 w-full h-full [&_iframe]:!w-full [&_iframe]:!h-full"
               />
               <div className="absolute inset-0 bg-black/30 pointer-events-none" />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
