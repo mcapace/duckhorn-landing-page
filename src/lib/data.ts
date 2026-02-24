@@ -334,13 +334,11 @@ This feature highlights five of our wineries and the people and philosophies beh
   founderImage: "/images/Dan-Duckhorn-during-harvest.jpg",
 };
 
+// Three images below "The Duckhorn Perspective" title (order: harvest, vineyard, winery)
 export const perspectiveImages = [
-  { src: "/images/DV-Harvest---9.25.25-27.jpg", alt: "Harvest at Duckhorn" },
-  { src: "/images/BarrelRoomWithGalleryView_DSC4738_25pct-(1).jpg", alt: "Barrel room" },
-  { src: "/images/Three-Palms-Vineyard.jpg", alt: "Three Palms Vineyard" },
-  { src: "/images/pd-courtyard-new.jpg", alt: "Courtyard" },
-  { src: "/images/CeriseNov18_Drone_9.jpg", alt: "Vineyard drone shot" },
-  { src: "/images/DV-Harvest---9.25.25-29.jpg", alt: "Vineyard harvest" },
+  { src: "/images/DV-Harvest---9.25.25-29.jpg", alt: "Harvest at Duckhorn" },
+  { src: "/images/Computers-027.jpg", alt: "Vineyard landscape" },
+  { src: "/images/Duckhorn-Vineyards---Paraduxx-Fermentation-Building.jpg", alt: "Paraduxx fermentation building" },
 ];
 
 export const robSorensonData = {

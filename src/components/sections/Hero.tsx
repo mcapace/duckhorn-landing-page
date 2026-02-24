@@ -27,25 +27,23 @@ export const Hero = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="relative z-10 min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-16 xl:px-24 max-w-2xl"
       >
+        <div className="mb-6 md:mb-8 max-w-[280px] md:max-w-[340px]">
+          <Image
+            src="/images/bottles/Duckhorn-Digital-Edits-Hero Copy.png"
+            alt="The Duckhorn Portfolio"
+            width={340}
+            height={120}
+            className="w-full h-auto object-contain object-left"
+            priority
+          />
+        </div>
         <p
-          className="text-[#B8956A] text-xl md:text-2xl mb-2"
+          className="text-[#B8956A] text-xl md:text-2xl mb-4"
           style={{ fontFamily: "var(--font-script)" }}
         >
           Wine Spectator
         </p>
-        <h1
-          className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-[#2A2A2A] leading-tight"
-          style={{ fontFamily: "var(--font-serif)" }}
-        >
-          THE DUCKHORN
-        </h1>
-        <p
-          className="text-2xl md:text-3xl lg:text-4xl text-[#2A2A2A]/80 font-light tracking-tight mt-1"
-          style={{ fontFamily: "var(--font-serif)" }}
-        >
-          PORTFOLIO
-        </p>
-        <p className="mt-6 text-base md:text-lg text-[#3D3D3D] max-w-md">
+        <p className="mt-2 text-base md:text-lg text-[#3D3D3D] max-w-md">
           Pioneering quality in world-class wine
         </p>
         <div className="mt-10 md:mt-14">

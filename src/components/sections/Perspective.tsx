@@ -12,48 +12,48 @@ export const Perspective = () => {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          className="text-center mb-14"
+          className="text-center mb-10"
         >
           <h2
-            className="text-4xl md:text-5xl lg:text-6xl text-[#2A2A2A] tracking-tight mb-5"
+            className="text-4xl md:text-5xl lg:text-6xl text-[#596F33] tracking-tight"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             {perspectiveContent.title}
           </h2>
-          <p
-            className="italic text-xl md:text-2xl text-[#B8956A]"
-            style={{ fontFamily: "var(--font-script)" }}
-          >
-            {perspectiveContent.tagline}
+          <div className="w-16 h-px bg-[#596F33] mx-auto mt-4 mb-5" aria-hidden />
+          <p className="text-[#2A2A2A] italic text-base md:text-lg max-w-2xl mx-auto">
+            {perspectiveContent.subtitle}
           </p>
         </motion.div>
 
-        {/* 3 images - vineyard, landscape, barrel room */}
+        {/* 3 images - same width as title, no gap, landscape crop */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ delay: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-16"
+          className="flex justify-center mb-16"
         >
-          {perspectiveImages.slice(0, 3).map((img, i) => (
-            <motion.div
-              key={img.src}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.05 * i }}
-              className="relative aspect-[4/3] min-h-[220px] md:min-h-[280px] overflow-hidden"
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover transition-transform duration-700 hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-            </motion.div>
-          ))}
+          <div className="w-full max-w-3xl grid grid-cols-3 gap-0 overflow-hidden rounded-sm">
+            {perspectiveImages.map((img, i) => (
+              <motion.div
+                key={img.src}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.05 * i }}
+                className="relative aspect-[4/3] overflow-hidden"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                  sizes="(max-width: 768px) 33vw, 280px"
+                />
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         {/* CEO letter */}
