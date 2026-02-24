@@ -9,43 +9,45 @@ export const Milestones = () => {
   return (
     <section id="milestones" className="py-20 md:py-28 bg-[#425a4d] scroll-mt-20">
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
-        {/* 50 Years header: logo + divider + headline (match lockup design) */}
+        {/* 50 Years header: logo left, divider, headline right (match lockup design) */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-12 md:mb-16"
         >
-          <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 mb-8">
+          <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-10 mb-8">
             {/* Logo - 50th Lockup */}
-            <div className="flex-shrink-0 flex justify-center md:justify-start">
+            <div className="flex-shrink-0 flex justify-center md:justify-start w-full md:w-auto">
               <Image
-                src="/images/Duckhorn-Digital-Edits-50th%20Lockup.png"
+                src="/images/Duckhorn-Digital-Edits-50th-Lockup.png"
                 alt="50 Years of the Duckhorn Collection"
-                width={320}
-                height={160}
-                className="w-full max-w-[280px] md:max-w-[320px] h-auto object-contain"
+                width={300}
+                height={150}
+                className="max-w-[260px] md:max-w-[300px] w-full h-auto object-contain"
               />
             </div>
-            {/* Vertical divider */}
-            <div className="hidden md:block w-px h-24 lg:h-28 bg-white/40 flex-shrink-0" aria-hidden />
-            {/* Headline + sub-headline */}
+            {/* Vertical divider - white line */}
+            <div className="hidden md:block w-px self-stretch min-h-[100px] bg-white flex-shrink-0" aria-hidden />
+            {/* Headline right: two lines + gold subhead */}
             <div className="flex-1 min-w-0 text-center md:text-left">
               <h2
-                className="text-2xl md:text-3xl lg:text-4xl text-white tracking-tight uppercase font-medium mb-2"
+                className="text-2xl md:text-3xl lg:text-4xl text-white tracking-tight uppercase font-medium leading-tight"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                THE MILESTONES THAT BUILT A COLLECTION
+                <span className="block">THE MILESTONES THAT</span>
+                <span className="block text-xl md:text-2xl lg:text-3xl mt-0.5">BUILT A COLLECTION</span>
               </h2>
               <p
-                className="text-[#B8956A] italic text-base md:text-lg"
+                className="text-[#B8956A] italic text-base md:text-lg mt-3"
                 style={{ fontFamily: "var(--font-script)" }}
               >
                 And Helped Define American Fine Wine
               </p>
             </div>
           </div>
-          <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-3xl">
+          {/* Body paragraph - full width below */}
+          <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-full">
             {milestonesIntro.paragraph}
           </p>
         </motion.div>
