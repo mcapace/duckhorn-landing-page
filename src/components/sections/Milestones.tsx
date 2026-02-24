@@ -82,10 +82,10 @@ export const Milestones = () => {
                 transition={{ duration: 0.5, delay: index * 0.04 }}
                 className="relative flex gap-6 md:gap-10 py-6 md:py-8 first:pt-0 last:pb-0"
               >
-                {/* Year node - golden-brown circle with white text (match mock) */}
-                <div className="flex-shrink-0 flex flex-col items-center justify-center w-[120px] md:w-[140px]">
+                {/* Year node - larger golden circle with white text */}
+                <div className="flex-shrink-0 flex flex-col items-center justify-center w-[140px] md:w-[160px]">
                   <div
-                    className={`relative z-10 w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center text-sm md:text-base font-semibold tabular-nums ${
+                    className={`relative z-10 w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center text-sm md:text-base font-semibold tabular-nums ${
                       milestone.highlight
                         ? "bg-[#B8956A] text-white ring-4 ring-[#B8956A]/40"
                         : "bg-[#B8956A] text-white ring-2 ring-white/20"
@@ -100,7 +100,7 @@ export const Milestones = () => {
                   </div>
                 </div>
 
-                {/* Content box - lighter green background, image left, headline (italic darker green), body (white) */}
+                {/* Content box - no vignette on image; headline and body light off-white like attached */}
                 <div
                   className={`flex-1 min-w-0 min-h-[200px] md:min-h-[240px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col ${
                     milestone.highlight
@@ -118,7 +118,6 @@ export const Milestones = () => {
                           className="object-cover object-center"
                           sizes="(max-width: 768px) 100vw, 288px"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#4d6a55] md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#4d6a55]/95" aria-hidden />
                       </div>
                     )}
                     <div className="p-5 md:p-6 flex-1 flex flex-col justify-center">
@@ -126,12 +125,12 @@ export const Milestones = () => {
                         {milestone.winery}
                       </span>
                       <h3
-                        className="text-lg md:text-xl text-[#2d3d32] italic mt-2"
+                        className="text-lg md:text-xl text-white/95 italic mt-2"
                         style={{ fontFamily: "var(--font-serif)" }}
                       >
                         {milestone.title}
                       </h3>
-                      <p className="text-white/95 text-sm md:text-base leading-relaxed mt-3">
+                      <p className="text-white/90 text-sm md:text-base leading-relaxed mt-3">
                         {milestone.description}
                       </p>
                       {milestone.awardLabel && (
@@ -145,7 +144,7 @@ export const Milestones = () => {
               </motion.div>
               {index < milestones.length - 1 && (
                 <div className="flex gap-6 md:gap-10 -my-6 md:-my-8">
-                  <div className="w-[120px] md:w-[140px] flex justify-center flex-shrink-0">
+                  <div className="w-[140px] md:w-[160px] flex justify-center flex-shrink-0">
                     <div className="w-px h-12 md:h-16 bg-[#B8956A]/50" />
                   </div>
                   <div className="flex-1 min-w-0" />
