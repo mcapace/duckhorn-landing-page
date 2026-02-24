@@ -20,13 +20,13 @@ export const Perspective = () => {
           >
             {perspectiveContent.title}
           </h2>
-          <div className="flex justify-center mt-4 mb-5" aria-hidden>
+          <div className="flex justify-center mt-5 mb-6" aria-hidden>
             <Image
               src="/images/bottles/Duckhorn-Digital-Edits-Duck-Outline.png"
               alt=""
-              width={80}
-              height={48}
-              className="w-20 h-12 object-contain"
+              width={192}
+              height={64}
+              className="w-36 h-12 sm:w-44 sm:h-14 md:w-52 md:h-16 object-contain"
             />
           </div>
           <p className="text-[#2A2A2A] italic text-base md:text-lg max-w-2xl mx-auto">
