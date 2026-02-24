@@ -11,13 +11,13 @@ const MEET_THE_MAKERS_VIDEO_SRC = "/images/bottles/WS%20TDC-Winemaker%20Video.mp
 const THE_COLLECTION_VIDEO_SRC = "/images/bottles/WS%20Bottle%20Pan.mp4";
 const OVERLAY_HIDE_LAST_SECONDS = 7;
 
-// Five estates bottle cards (order matches mock); images in public/images/bottles new/
+// Five estates bottle cards (order matches mock); images in public/images/estate-bottles
 const ESTATE_BOTTLES = [
-  { id: "duckhorn", name: "Duckhorn", image: "/images/bottles%20new/Duckhorn-Bottle-Edit%20(1).jpg" },
-  { id: "kosta-browne", name: "Kosta Browne", image: "/images/bottles%20new/KostaBrowne-Bottle-Edit%20(1).jpg" },
-  { id: "goldeneye", name: "Goldeneye", image: "/images/bottles%20new/Goldeneye-Bottle-Edit%20(1).jpg" },
-  { id: "calera", name: "Calera", image: "/images/bottles%20new/Calera-Bottle-Edit%20(1).jpg" },
-  { id: "sonoma-cutrer", name: "Sonoma-Cutrer", image: "/images/bottles%20new/SonomaCutrer-Bottle-Edit%20(1).jpg" },
+  { id: "duckhorn", name: "Duckhorn", image: "/images/estate-bottles/Duckhorn.jpg" },
+  { id: "kosta-browne", name: "Kosta Browne", image: "/images/estate-bottles/KostaBrowne.jpg" },
+  { id: "goldeneye", name: "Goldeneye", image: "/images/estate-bottles/Goldeneye.jpg" },
+  { id: "calera", name: "Calera", image: "/images/estate-bottles/Calera.jpg" },
+  { id: "sonoma-cutrer", name: "Sonoma-Cutrer", image: "/images/estate-bottles/SonomaCutrer.jpg" },
 ] as const;
 
 export const MeetTheMakersSection = () => {
@@ -211,8 +211,8 @@ export const MeetTheMakersSection = () => {
             </p>
           </div>
 
-          {/* Five estate bottle cards */}
-          <div className="mt-12 md:mt-16 w-full flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
+          {/* Five estate bottle cards — same width as video box above (max-w-5xl) */}
+          <div className="mt-12 md:mt-16 w-full max-w-5xl flex flex-wrap justify-between gap-4 sm:gap-6">
             {ESTATE_BOTTLES.map((estate, index) => (
               <motion.div
                 key={estate.id}
@@ -220,20 +220,21 @@ export const MeetTheMakersSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.06 }}
-                className="flex flex-col items-center"
+                className="flex flex-col items-center flex-1 min-w-0"
+                style={{ minWidth: "140px", maxWidth: "220px" }}
               >
                 <Link
                   href={`/wineries#${estate.id}`}
-                  className="group flex flex-col items-center w-full max-w-[180px] sm:max-w-[200px]"
+                  className="group flex flex-col items-center w-full"
                 >
                   <div className="relative w-full h-[280px] sm:h-[300px] rounded-2xl overflow-hidden bg-[#E8E4DC] shadow-md group-hover:shadow-lg transition-shadow flex flex-col items-center justify-end pb-6 pt-4">
-                    <div className="relative w-[120px] sm:w-[140px] flex-1 min-h-0">
+                    <div className="relative w-full flex-1 min-h-0 min-w-0 flex items-end justify-center">
                       <Image
                         src={estate.image}
                         alt={estate.name}
-                        fill
-                        className="object-contain object-bottom"
-                        sizes="(max-width: 640px) 120px, 140px"
+                        width={160}
+                        height={240}
+                        className="w-auto max-h-full object-contain object-bottom"
                       />
                     </div>
                   </div>
