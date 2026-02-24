@@ -20,14 +20,16 @@ export const Perspective = () => {
           >
             {perspectiveContent.title}
           </h2>
-          <div className="flex justify-center mt-4 mb-5" aria-hidden>
+          <div className="flex items-center justify-center gap-3 mt-4 mb-5 w-full max-w-sm mx-auto" aria-hidden>
+            <span className="flex-1 h-px bg-[#D4CFC4] min-w-[60px]" />
             <Image
               src="/images/bottles/Duckhorn-Digital-Edits-Duck Outline.png"
               alt=""
-              width={48}
-              height={32}
-              className="w-12 h-8 object-contain"
+              width={56}
+              height={40}
+              className="w-14 h-10 object-contain flex-shrink-0"
             />
+            <span className="flex-1 h-px bg-[#D4CFC4] min-w-[60px]" />
           </div>
           <p className="text-[#2A2A2A] italic text-base md:text-lg max-w-2xl mx-auto">
             {perspectiveContent.subtitle}
@@ -42,7 +44,7 @@ export const Perspective = () => {
           transition={{ delay: 0.1 }}
           className="flex justify-center mb-16"
         >
-          <div className="w-full max-w-3xl grid grid-cols-3 gap-3 md:gap-4 overflow-hidden rounded-sm">
+          <div className="w-full max-w-5xl grid grid-cols-3 gap-3 md:gap-4 overflow-hidden rounded-sm">
             {perspectiveImages.map((img, i) => (
               <motion.div
                 key={img.src}
