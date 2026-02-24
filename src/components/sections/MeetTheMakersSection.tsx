@@ -39,7 +39,7 @@ export const MeetTheMakersSection = () => {
           </div>
 
           <p
-            className="mt-6 text-[#2A2A2A] italic text-base md:text-lg text-center max-w-xl mx-auto"
+            className="mt-6 text-[#2A2A2A] italic text-lg md:text-xl text-center max-w-2xl mx-auto"
             style={{ fontFamily: "var(--font-script)" }}
           >
             A conversation with the winemakers who shape the wines
