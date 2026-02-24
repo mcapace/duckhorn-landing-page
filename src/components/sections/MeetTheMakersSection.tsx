@@ -248,13 +248,13 @@ export const MeetTheMakersSection = () => {
             ))}
           </div>
 
-          {/* Line + Rob Sorenson vineyard quality block */}
-          <div className="mt-16 md:mt-20 w-full max-w-5xl border-t border-[#B8956A] pt-10 md:pt-12">
+          {/* Line + Rob Sorenson vineyard quality block — centered like example */}
+          <div className="mt-16 md:mt-20 w-full max-w-5xl border-t border-[#B8956A] pt-10 md:pt-12 flex justify-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex flex-col sm:flex-row items-center sm:items-start gap-8 md:gap-10"
+              className="flex flex-col sm:flex-row items-center gap-8 md:gap-10 max-w-3xl"
             >
               <div className="flex-shrink-0">
                 <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full overflow-hidden ring-2 ring-[#E8E4DC]">
@@ -267,7 +267,7 @@ export const MeetTheMakersSection = () => {
                   />
                 </div>
               </div>
-              <div className="flex-1 min-w-0 text-center sm:text-left">
+              <div className="flex-1 min-w-0 text-left max-w-xl mx-auto sm:mx-0">
                 <h3
                   className="text-2xl md:text-3xl text-[#2A2A2A] italic"
                   style={{ fontFamily: "var(--font-serif)" }}
