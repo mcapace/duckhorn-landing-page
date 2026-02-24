@@ -1,12 +1,22 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
 import { perspectiveContent, perspectiveImages } from "@/lib/data";
 
 export const Perspective = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const img0Y = useTransform(scrollYProgress, [0, 0.4], [24, -8]);
+  const img1Y = useTransform(scrollYProgress, [0.1, 0.5], [32, -12]);
+  const img2Y = useTransform(scrollYProgress, [0.2, 0.6], [40, -16]);
+
   return (
-    <section id="perspective" className="py-20 md:py-28 bg-white scroll-mt-20">
+    <section ref={sectionRef} id="perspective" className="pt-20 md:pt-28 pb-12 md:pb-16 bg-white scroll-mt-20">
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -43,26 +53,30 @@ export const Perspective = () => {
           className="flex justify-center mb-16"
         >
           <div className="w-full max-w-5xl grid grid-cols-3 gap-3 md:gap-4 overflow-hidden rounded-sm">
-            {perspectiveImages.map((img, i) => (
-              <motion.div
-                key={img.src}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.05 * i }}
-                className="relative aspect-[4/3] overflow-hidden rounded-sm"
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className={`object-cover transition-transform duration-700 hover:scale-105 ${
-                    i === 2 ? "object-[center_75%]" : "object-center"
-                  }`}
-                  sizes="(max-width: 768px) 33vw, 280px"
-                />
-              </motion.div>
-            ))}
+            {perspectiveImages.map((img, i) => {
+              const y = [img0Y, img1Y, img2Y][i];
+              return (
+                <motion.div
+                  key={img.src}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.05 * i }}
+                  style={{ y }}
+                  className="relative aspect-[4/3] overflow-hidden rounded-sm"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className={`object-cover transition-transform duration-700 hover:scale-105 ${
+                      i === 2 ? "object-[center_75%]" : "object-center"
+                    }`}
+                    sizes="(max-width: 768px) 33vw, 280px"
+                  />
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
 

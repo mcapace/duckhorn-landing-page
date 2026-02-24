@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -22,11 +22,18 @@ const ESTATE_BOTTLES = [
 ] as const;
 
 export const MeetTheMakersSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const makersVideoRef = useRef<HTMLVideoElement>(null);
   const collectionVideoRef = useRef<HTMLVideoElement>(null);
   const [showMakersOverlay, setShowMakersOverlay] = useState(true);
   const [showCollectionOverlay, setShowCollectionOverlay] = useState(true);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "center start"],
+  });
+  const videoParallaxY = useTransform(scrollYProgress, [0, 0.5], [40, -20]);
 
   useEffect(() => {
     const video = makersVideoRef.current;
@@ -61,7 +68,7 @@ export const MeetTheMakersSection = () => {
   }, []);
 
   return (
-    <section id="meet-the-makers" className="py-20 md:py-28 bg-white scroll-mt-20">
+    <section ref={sectionRef} id="meet-the-makers" className="pt-12 md:pt-16 pb-20 md:pb-28 bg-white scroll-mt-20">
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -69,8 +76,8 @@ export const MeetTheMakersSection = () => {
           viewport={{ once: true, margin: "-60px" }}
           className="flex flex-col items-center"
         >
-          {/* Same-size box as original image hero: fixed height, video plays inside. Fallback image when video doesn’t load. */}
-          <div ref={containerRef} className="relative w-full max-w-5xl rounded-3xl overflow-hidden border border-[#B8956A] shadow-lg h-[400px] md:h-[500px]">
+          {/* Same-size box as original image hero: fixed height, video plays inside. Parallax on scroll. */}
+          <motion.div ref={containerRef} style={{ y: videoParallaxY }} className="relative w-full max-w-5xl rounded-3xl overflow-hidden border border-[#B8956A] shadow-lg h-[400px] md:h-[500px]">
             {/* Fallback when video doesn’t load — add /images/meet-the-makers-hero.jpg for same look as before */}
             <div className="absolute inset-0 z-0 bg-black">
               <video
@@ -115,7 +122,7 @@ export const MeetTheMakersSection = () => {
                 <div className="w-24 h-px bg-[#B8956A] mt-4" aria-hidden />
               </div>
             </div>
-          </div>
+          </motion.div>
 
           <p
             className="mt-6 text-[#2A2A2A] italic text-lg md:text-xl text-center max-w-2xl mx-auto"
