@@ -175,30 +175,14 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               transition={{ duration: 0.6 }}
               className="rounded-2xl overflow-hidden bg-[#F5F2ED] border border-[#E8E4DC]/50 mb-20 md:mb-24"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch min-h-[320px] md:min-h-[380px]">
-                <div className="lg:col-span-6 flex items-center justify-center lg:justify-end p-6 md:p-8 lg:p-10 bg-[#FAFAF8]">
-                  <div className="relative w-full max-w-md aspect-[3/4]">
-                    <Image
-                      src={bottleImage}
-                      alt={name}
-                      fill
-                      className="object-contain object-center"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
-                  </div>
-                </div>
-                <div className="lg:col-span-6 flex flex-col justify-center p-6 md:p-8 lg:p-10">
-                  <div className="space-y-6">
-                    {wines.map((wine, i) => (
-                      <div key={i}>
-                        <h4 className="text-base md:text-lg font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
-                          {wine.name}
-                        </h4>
-                        <p className="text-[#2A2A2A] text-sm md:text-base mt-1.5 leading-relaxed">{wine.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              <div className="relative w-full h-[240px] md:h-[288px]">
+                <Image
+                  src={bottleImage}
+                  alt={name}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 1400px"
+                />
               </div>
             </motion.div>
           ) : (
