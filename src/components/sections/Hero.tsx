@@ -22,6 +22,7 @@ export const Hero = () => {
           className="object-contain object-top"
           priority
           sizes="100vw"
+          unoptimized
         />
       </motion.div>
     </section>
