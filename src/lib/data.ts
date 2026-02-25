@@ -404,14 +404,14 @@ export const wineries = [
     id: "duckhorn",
     name: "DUCKHORN VINEYARDS",
     tagline: "Five Decades In. Still Defining What's Next.",
-    image: "/images/New%20Downloads/Duckhorn1.jpg",
+    image: "/images/new-downloads/Duckhorn1.jpg",
     heroDescription:
       "DUCKHORN VINEYARDS has shaped Napa Valley's modern identity for half a century. Its approach unites estate rigor, an unbroken winemaking lineage, and a hospitality culture defined by genuine warmth—shaped early on by Dan and Margaret Duckhorn's admiration for Bordeaux and their conviction that Merlot could thrive in Napa. From Merlot to Sauvignon Blanc and Cabernet, the wines reflect intention, balance, and a respect for detail that begins in the vineyard and carries through every touchpoint of the guest experience.",
-    bottleImage: "/images/New%20Downloads/Duckhorn-Full.jpg",
+    bottleImage: "/images/new-downloads/Duckhorn-Full.jpg",
     galleryImages: [
-      "/images/New%20Downloads/Duckhorn4.jpg",
-      "/images/New%20Downloads/Duckhorn2.jpg",
-      "/images/New%20Downloads/Duckhorn3.jpg",
+      "/images/new-downloads/Duckhorn4.jpg",
+      "/images/new-downloads/Duckhorn2.jpg",
+      "/images/new-downloads/Duckhorn3.jpg",
     ],
     section1: {
       heading: "A House Built on Hospitality",
