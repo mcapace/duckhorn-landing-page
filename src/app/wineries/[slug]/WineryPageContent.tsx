@@ -173,29 +173,31 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6 }}
-              className="mb-20 md:mb-24 rounded-2xl overflow-hidden bg-[#F0EDE8] border border-[#E8E4DC]/60 p-6 md:p-10 lg:p-12"
+              className="mb-20 md:mb-24"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                <div className="lg:col-span-5 flex justify-center lg:justify-end">
-                  <div className="relative w-full max-w-sm aspect-[3/4]">
-                    <Image
-                      src={bottleImage}
-                      alt={name}
-                      fill
-                      className="object-contain object-center drop-shadow-[0_12px_24px_rgba(0,0,0,0.06)]"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
-                  </div>
-                </div>
-                <div className="lg:col-span-7 flex flex-col justify-center space-y-6">
-                  {wines.map((wine, i) => (
-                    <div key={i}>
-                      <h4 className="text-base md:text-lg font-bold text-[#2A2A2A] font-sans">
-                        {wine.name}
-                      </h4>
-                      <p className="text-[#3D3D3D] text-sm md:text-base mt-1.5 leading-relaxed font-sans">{wine.description}</p>
+              <div className="relative w-full max-w-4xl mx-auto">
+                <div className="relative w-full">
+                  <Image
+                    src={bottleImage}
+                    alt={name}
+                    width={1200}
+                    height={720}
+                    className="w-full h-auto block object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
+                    sizes="(max-width: 1024px) 100vw, 896px"
+                  />
+                  {/* Text overlay: three blocks over lower part of image */}
+                  <div className="absolute inset-x-0 bottom-0 min-h-[40%] pt-[22%] pb-4 px-4 sm:px-6 flex flex-col justify-end bg-gradient-to-t from-white via-white/90 to-transparent">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-2 max-w-4xl mx-auto w-full">
+                      {wines.map((wine, i) => (
+                        <div key={i} className="text-center">
+                          <h4 className="text-sm sm:text-base font-bold text-[#2A2A2A] font-sans">
+                            {wine.name}
+                          </h4>
+                          <p className="text-[#3D3D3D] text-xs sm:text-sm mt-1.5 leading-relaxed font-sans">{wine.description}</p>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
