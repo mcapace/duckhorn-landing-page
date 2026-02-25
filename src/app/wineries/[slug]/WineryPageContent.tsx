@@ -147,10 +147,10 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               transition={{ duration: 0.6 }}
               className="mb-12 md:mb-16"
             >
-              <h2 className="text-2xl md:text-3xl text-[#A07D4E] italic font-semibold mb-6" style={{ fontFamily: "var(--font-serif)" }}>
+              <h2 className={`text-2xl md:text-3xl italic font-semibold mb-6 ${isKostaBrowne ? "text-[#2A2A2A]" : "text-[#A07D4E]"}`} style={{ fontFamily: "var(--font-serif)" }}>
                 {section1.heading}
               </h2>
-              <p className="text-[#3D3D3D] text-base md:text-lg leading-[1.75] max-w-3xl">{section1.body}</p>
+              <p className="text-[#3D3D3D] text-base md:text-lg leading-[1.75] max-w-3xl" style={isKostaBrowne ? { fontFamily: "var(--font-serif)" } : undefined}>{section1.body}</p>
             </motion.section>
           )}
           {section2 && (
@@ -173,27 +173,27 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6 }}
-              className="mb-20 md:mb-24"
+              className="mb-20 md:mb-24 rounded-2xl overflow-hidden bg-[#F0EDE8] border border-[#E8E4DC]/60 p-6 md:p-10 lg:p-12"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div className="lg:col-span-5 flex justify-center lg:justify-end">
-                  <div className="relative w-full max-w-md aspect-[3/4]">
+                  <div className="relative w-full max-w-sm aspect-[3/4]">
                     <Image
                       src={bottleImage}
                       alt={name}
                       fill
-                      className="object-contain object-center drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
+                      className="object-contain object-center drop-shadow-[0_12px_24px_rgba(0,0,0,0.06)]"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                   </div>
                 </div>
-                <div className="lg:col-span-7 flex flex-col justify-center space-y-8">
+                <div className="lg:col-span-7 flex flex-col justify-center space-y-6">
                   {wines.map((wine, i) => (
                     <div key={i}>
-                      <h4 className="text-base md:text-lg font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
+                      <h4 className="text-base md:text-lg font-bold text-[#2A2A2A] font-sans">
                         {wine.name}
                       </h4>
-                      <p className="text-[#3D3D3D] text-sm md:text-base mt-2 leading-relaxed">{wine.description}</p>
+                      <p className="text-[#3D3D3D] text-sm md:text-base mt-1.5 leading-relaxed font-sans">{wine.description}</p>
                     </div>
                   ))}
                 </div>

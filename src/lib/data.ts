@@ -444,7 +444,7 @@ export const wineries = [
     ],
     section1: {
       heading: "Craft Without Compromise",
-      body: "Kosta Browne's winemaking is built on micro-fermentations, careful extraction, and thoughtful élevage—balancing intuition with technical rigor. The result is a disciplined approach to site-specific Pinot Noir and Chardonnay expressions that honor both place and craft.",
+      body: "Every detail in Kosta Browne's cellar is built around honoring delicacy. Micro-fermentations, careful extraction, and thoughtful élevage preserve the grape's natural energy while refining texture and depth. The team balances intuition with technical rigor, shaping wines that are expressive without heaviness and structured without austerity. It is a modern, disciplined approach supporting a portfolio of roughly a dozen rare, site-specific Pinot Noir and Chardonnay expressions, widely renowned and sought after by collectors and wine lovers.",
     },
     wines: [
       { name: "4-Barrel California Pinot Noir", description: "Created as a thank you to our earliest collectors, produced from just four barrels each vintage." },
