@@ -338,7 +338,8 @@ export const perspectiveImages = [
 export const robSorensonData = {
   name: "Rob Sorenson",
   title: "Director of North Coast Estate Vineyards",
-  image: "/images/Rob.jpg",
+  image: "/images/Computers-027.jpg",
+  portraitImage: "/images/Rob.jpg",
   intro:
     "Rob Sorenson oversees a far-reaching estate portfolio—mountain Cabernet, benchmark Merlot, and cool-climate Pinot Noir and Chardonnay—built on one conviction: the character of the wine is decided long before the cellar.",
   context: "This conversation takes place at Stout Vineyard on Howell Mountain, one of the estate's highest-elevation sites.",
@@ -431,7 +432,7 @@ export const wineries = [
     id: "calera",
     name: "CALERA",
     tagline: "Mountain Purity & Limestone Precision",
-    image: "/images/CeriseNov18_Drone_9.jpg",
+    image: "/images/Calera.jpg",
     heroDescription:
       "Calera remains one of California's most distinctive expressions of Pinot Noir. Perched high on Mt. Harlan, the vineyards rise from rare limestone soils, fierce diurnal shifts, and conditions that challenge the vines at every turn. The wines are shaped by altitude and austerity—native fermentations, whole-cluster structure, gravity-fed handling, and long, patient aging that preserves purity and lift.",
     wines: [
@@ -442,7 +443,7 @@ export const wineries = [
     id: "goldeneye",
     name: "GOLDENEYE",
     tagline: "The Voice of Anderson Valley",
-    image: "/images/pd-courtyard-new.jpg",
+    image: "/images/Goldeneye.jpg",
     heroDescription:
       "Goldeneye channels the coastal intensity of Anderson Valley into Pinot Noirs defined by depth, tone, and a vivid sense of place. Its estate vineyards, ranging from warm mid-valley slopes to wind-swept deep-end ridges, offer a dramatic palette of textures. Sustainable farming, measured extraction, and a modernized oak program allow the valley's natural signatures—redwoods, ocean breezes, Pennyroyal herbs—to find clear expression in the wines.",
     wines: [
@@ -453,7 +454,7 @@ export const wineries = [
     id: "sonoma-cutrer",
     name: "SONOMA-CUTRER",
     tagline: "Crisp by Design",
-    image: "/images/Three-Palms-9.jpg",
+    image: "/images/SonomaCutrer.jpg",
     heroDescription:
       "Sonoma-Cutrer was founded on one idea: perfecting Chardonnay. Four decades later, the winery remains synonymous with crisp, balanced, terroir-driven Chardonnay shaped by the Russian River Valley's cool climate. Vineyard-specific harvesting, barrel fermentation, selected French oak, and modest malolactic preserve brightness and precision.",
     wines: [

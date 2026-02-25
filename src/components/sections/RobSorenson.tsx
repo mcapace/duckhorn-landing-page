@@ -13,7 +13,7 @@ export const RobSorenson = () => {
       id="vineyard-stewardship"
       className="scroll-mt-20 min-h-screen bg-white"
     >
-      {/* Hero image - matches winery chapters */}
+      {/* Hero - vineyard image only, no copy overlay */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -27,37 +27,37 @@ export const RobSorenson = () => {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-10 md:p-14 pb-12 md:pb-16">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
-            <h2
-              className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white drop-shadow-lg"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              ROB SORENSON
-            </h2>
-            <p
-              className="mt-3 text-lg md:text-xl text-white/95 italic"
-              style={{ fontFamily: "var(--font-script)" }}
-            >
-              Director of North Coast Estate Vineyards
-            </p>
-          </div>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
       </motion.div>
 
-      {/* Content - same layout as winemaker chapters */}
+      {/* Copy below hero: intro, then name + title, then portrait + context */}
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-base md:text-lg text-[#3D3D3D] leading-relaxed max-w-3xl mb-16 md:mb-24"
+          className="text-base md:text-lg text-[#3D3D3D] leading-relaxed max-w-3xl mb-6"
         >
           {robSorensonData.intro}
         </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16 md:mb-24"
+        >
+          <h2
+            className="text-3xl md:text-4xl text-[#2A2A2A] tracking-tight"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            {robSorensonData.name}
+          </h2>
+          <p className="mt-2 text-[#A07D4E] font-medium text-lg italic" style={{ fontFamily: "var(--font-script)" }}>
+            {robSorensonData.title}
+          </p>
+        </motion.div>
 
-        {/* Portrait + intro - same as winemaker block */}
+        {/* Portrait + context */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-24 md:mb-32">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -67,7 +67,7 @@ export const RobSorenson = () => {
           >
             <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden ring-4 ring-white shadow-xl flex-shrink-0">
               <Image
-                src={robSorensonData.image}
+                src={robSorensonData.portraitImage}
                 alt={robSorensonData.name}
                 fill
                 className="object-cover"
