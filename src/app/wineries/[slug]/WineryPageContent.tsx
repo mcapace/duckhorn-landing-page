@@ -296,7 +296,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             </div>
           </motion.div>
 
-          {/* Wine copy - right: italic title, body, separator lines, wine name + notes */}
+          {/* Wine copy - right: section1 or tagline + first wine, separator, wine list */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -306,15 +306,31 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
           >
             {wines.length > 0 && (
               <>
-                <h3
-                  className="text-xl md:text-2xl text-[#A07D4E] italic mb-6"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  {tagline}
-                </h3>
-                <p className="text-[#3D3D3D] text-base md:text-lg leading-[1.75] mb-6">
-                  {wines[0].description}
-                </p>
+                {section1 ? (
+                  <>
+                    <h3
+                      className="text-xl md:text-2xl text-[#A07D4E] italic font-semibold mb-4"
+                      style={{ fontFamily: "var(--font-serif)" }}
+                    >
+                      {section1.heading}
+                    </h3>
+                    <p className="text-[#3D3D3D] text-base md:text-lg leading-[1.75] mb-6">
+                      {section1.body}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <h3
+                      className="text-xl md:text-2xl text-[#A07D4E] italic mb-6"
+                      style={{ fontFamily: "var(--font-serif)" }}
+                    >
+                      {tagline}
+                    </h3>
+                    <p className="text-[#3D3D3D] text-base md:text-lg leading-[1.75] mb-6">
+                      {wines[0].description}
+                    </p>
+                  </>
+                )}
                 <div className="flex flex-col gap-1 mb-6 w-1/3 min-w-[120px]">
                   <div className="h-px bg-[#425a4d]/60" />
                   <div className="h-px bg-[#425a4d]/40" />

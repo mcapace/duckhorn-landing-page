@@ -456,9 +456,13 @@ export const wineries = [
     id: "calera",
     name: "CALERA",
     tagline: "Mountain Purity & Limestone Precision",
-    image: "/images/Calera.jpg",
+    image: "/images/new-downloads/Calera.jpg",
     heroDescription:
       "Calera remains one of California's most distinctive expressions of Pinot Noir. Perched high on Mt. Harlan, the vineyards rise from rare limestone soils, fierce diurnal shifts, and conditions that challenge the vines at every turn. The wines are shaped by altitude and austerity—native fermentations, whole-cluster structure, gravity-fed handling, and long, patient aging that preserves purity and lift.",
+    section1: {
+      heading: "Mt. Harlan: A Singular American AVA",
+      body: "Calera's philosophy has remained unchanged since its founding: Honor the vineyard, respect the mountain, and let the site speak with clarity. The result is Pinot Noir that feels sculpted more by geology than technique—precise, mineral, and unmistakably Calera.",
+    },
     wines: [
       { name: "Calera Jensen Vineyard Pinot Noir", description: "Vibrant and expressive, with red cherry, plum, spice, supple tannins, energetic acidity, and a beautifully balanced finish." },
     ],
