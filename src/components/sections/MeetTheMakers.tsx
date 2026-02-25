@@ -11,7 +11,7 @@ const makers = [
     name: "Rob Sorenson",
     title: robSorensonData.title,
     winery: "The Duckhorn Collection",
-    image: robSorensonData.image,
+    image: robSorensonData.portraitImage,
     quote: robSorensonData.intro,
     qAndA: robSorensonData.qAndA,
   },

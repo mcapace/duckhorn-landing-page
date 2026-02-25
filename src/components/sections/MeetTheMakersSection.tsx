@@ -334,7 +334,7 @@ export const MeetTheMakersSection = () => {
               <div className="flex-shrink-0 flex flex-col items-center text-center sm:items-start sm:text-left">
                 <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full overflow-hidden ring-2 ring-[#E8E4DC]">
                   <Image
-                    src={robSorensonData.image}
+                    src={robSorensonData.portraitImage}
                     alt={robSorensonData.name}
                     fill
                     className="object-cover object-top"

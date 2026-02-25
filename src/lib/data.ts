@@ -339,7 +339,7 @@ export const robSorensonData = {
   name: "Rob Sorenson",
   title: "Director of North Coast Estate Vineyards",
   image: "/images/Computers-027.jpg",
-  portraitImage: "/images/Rob.jpg",
+  portraitImage: "/images/new-downloads/Rob.jpg",
   intro:
     "Rob Sorenson oversees a far-reaching estate portfolio—mountain Cabernet, benchmark Merlot, and cool-climate Pinot Noir and Chardonnay—built on one conviction: the character of the wine is decided long before the cellar.",
   context: "This conversation takes place at Stout Vineyard on Howell Mountain, one of the estate's highest-elevation sites.",
