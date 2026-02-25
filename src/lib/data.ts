@@ -482,9 +482,13 @@ export const wineries = [
     id: "sonoma-cutrer",
     name: "SONOMA-CUTRER",
     tagline: "Crisp by Design",
-    image: "/images/SonomaCutrer.jpg",
+    image: "/images/new-downloads/SonomaCutrer.jpg",
     heroDescription:
       "Sonoma-Cutrer was founded on one idea: perfecting Chardonnay. Four decades later, the winery remains synonymous with crisp, balanced, terroir-driven Chardonnay shaped by the Russian River Valley's cool climate. Vineyard-specific harvesting, barrel fermentation, selected French oak, and modest malolactic preserve brightness and precision.",
+    section1: {
+      heading: "A Chardonnay for the Table",
+      body: "Sonoma-Cutrer Chardonnay is built for balance—bright, crisp, and composed, with a profile that stays lively and food-friendly. The Russian River Valley's cool climate and careful winemaking yield wines that are elegant in every glass.",
+    },
     wines: [
       { name: "Sonoma-Cutrer Les Pierres", description: "Crisp and fruit-forward, with citrus, green apple, mineral notes, bright acidity, and a smooth, lingering texture." },
     ],
