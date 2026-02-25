@@ -16,7 +16,7 @@ export const Hero = () => {
     <section ref={sectionRef} className="relative min-h-[115vh] overflow-hidden bg-white pt-20">
       <motion.div className="absolute inset-0 bg-[#FAFAF8]" style={{ y: heroY }}>
         <Image
-          src="/images/bottles/Duckhorn-Digital-Edits-Hero-Overlay.jpg"
+          src="/images/Duckhorn-Digital-Edits-Hero2-Parallax.jpg"
           alt="The Duckhorn Collection"
           fill
           className="object-contain object-top"

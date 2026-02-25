@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -162,9 +162,13 @@ export const MeetTheMakersSection = () => {
             ))}
           </div>
 
-          {/* Winemaker popup modal */}
+          {/* Winemaker popup modal — full Q&A */}
+          <AnimatePresence>
           {selectedWinemaker && (
-            <div
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
               onClick={() => setSelectedWinemaker(null)}
               role="dialog"
@@ -175,51 +179,65 @@ export const MeetTheMakersSection = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="relative w-full max-w-lg rounded-2xl bg-white shadow-xl overflow-hidden"
+                transition={{ duration: 0.2 }}
+                className="relative w-full max-w-2xl sm:max-w-4xl lg:max-w-5xl max-h-[95vh] overflow-y-auto rounded-2xl bg-white shadow-xl overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="p-6 md:p-8">
-                  <div className="flex flex-col sm:flex-row gap-6">
-                    <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden flex-shrink-0 mx-auto sm:mx-0 bg-[#E8E4DC]">
-                      <Image
-                        src={selectedWinemaker.image}
-                        alt={selectedWinemaker.name}
-                        fill
-                        className="object-cover object-top"
-                        sizes="112px"
-                      />
-                    </div>
-                    <div className="flex-1 min-w-0 text-center sm:text-left">
-                      <h3 id="winemaker-modal-title" className="text-xl md:text-2xl text-[#2A2A2A]" style={{ fontFamily: "var(--font-serif)" }}>
-                        {selectedWinemaker.name}
-                      </h3>
-                      <p className="text-[#B8956A] text-sm font-medium mt-0.5">{selectedWinemaker.title}</p>
-                      <p className="text-[#425a4d] text-sm mt-1">{selectedWinemaker.winery}</p>
-                      <p className="mt-4 text-[#3D3D3D] text-sm md:text-base leading-relaxed italic">
-                        {selectedWinemaker.quote}
-                      </p>
-                      <Link
-                        href={`/wineries/${WINERY_NAME_TO_SLUG[selectedWinemaker.winery] ?? selectedWinemaker.slug}`}
-                        className="inline-flex items-center gap-2 mt-4 text-[#B8956A] text-sm font-medium uppercase tracking-wider hover:underline"
-                        style={{ fontFamily: "var(--font-serif)" }}
-                        onClick={() => setSelectedWinemaker(null)}
-                      >
-                        View profile →
-                      </Link>
-                    </div>
+                <div className="relative w-full aspect-[16/10] md:aspect-[2/1] min-h-[220px] sm:min-h-[280px] md:min-h-[360px]">
+                  <button
+                    onClick={() => setSelectedWinemaker(null)}
+                    className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-colors"
+                    aria-label="Close"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                  <Image
+                    src={selectedWinemaker.image}
+                    alt={selectedWinemaker.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 768px"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 id="winemaker-modal-title" className="text-2xl md:text-3xl" style={{ fontFamily: "var(--font-serif)" }}>
+                      {selectedWinemaker.name}
+                    </h3>
+                    <p className="text-[#C5A572] font-medium">{selectedWinemaker.winery}</p>
+                    <p className="text-white/80 text-sm">{selectedWinemaker.title}</p>
                   </div>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => setSelectedWinemaker(null)}
-                  className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full text-[#3D3D3D] hover:bg-[#E8E4DC] transition-colors"
-                  aria-label="Close"
-                >
-                  <span className="text-xl leading-none">×</span>
-                </button>
+                <div className="p-6 sm:p-8 md:p-10">
+                  <p className="text-[#3D3D3D] italic text-base sm:text-lg mb-6">
+                    &ldquo;{selectedWinemaker.quote}&rdquo;
+                  </p>
+                  <div className="space-y-5 sm:space-y-6 border-t border-[#E8E4DC] pt-6">
+                    {selectedWinemaker.qAndA.map((qa, i) => (
+                      <div key={i} className="border-b border-[#E8E4DC]/50 last:border-0 last:pb-0 pb-5 sm:pb-6">
+                        <p className="text-sm font-medium text-[#425a4d] mb-2 leading-snug">
+                          {qa.question}
+                        </p>
+                        <p className="text-[#3D3D3D] text-sm leading-relaxed">
+                          {qa.answer}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                  <Link
+                    href={`/wineries/${WINERY_NAME_TO_SLUG[selectedWinemaker.winery] ?? selectedWinemaker.slug}`}
+                    className="inline-flex items-center gap-2 mt-6 text-[#B8956A] text-sm font-medium uppercase tracking-wider hover:underline"
+                    style={{ fontFamily: "var(--font-serif)" }}
+                    onClick={() => setSelectedWinemaker(null)}
+                  >
+                    View full profile →
+                  </Link>
+                </div>
               </motion.div>
-            </div>
+            </motion.div>
           )}
+          </AnimatePresence>
 
           {/* THE COLLECTION video box — same style as Meet the Makers */}
           <motion.div
@@ -305,7 +323,7 @@ export const MeetTheMakersSection = () => {
             ))}
           </div>
 
-          {/* Line + Rob Sorenson vineyard quality block — centered like example */}
+          {/* Line + Rob Sorenson vineyard quality block — same headshot size as winemakers, name + title under circle */}
           <div className="mt-16 md:mt-20 w-full max-w-5xl border-t border-[#B8956A] pt-10 md:pt-12 flex justify-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -313,16 +331,25 @@ export const MeetTheMakersSection = () => {
               viewport={{ once: true }}
               className="flex flex-col sm:flex-row items-center gap-8 md:gap-10 max-w-3xl"
             >
-              <div className="flex-shrink-0">
-                <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full overflow-hidden ring-2 ring-[#E8E4DC]">
+              <div className="flex-shrink-0 flex flex-col items-center text-center sm:items-start sm:text-left">
+                <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full overflow-hidden ring-2 ring-[#E8E4DC]">
                   <Image
                     src={robSorensonData.image}
                     alt={robSorensonData.name}
                     fill
                     className="object-cover object-top"
-                    sizes="(max-width: 640px) 160px, 224px"
+                    sizes="(max-width: 640px) 112px, (max-width: 768px) 128px, 144px"
                   />
                 </div>
+                <p
+                  className="mt-4 text-[#2A2A2A] font-medium text-sm md:text-base"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  {robSorensonData.name}
+                </p>
+                <p className="text-[#425a4d] text-xs md:text-sm mt-0.5 uppercase tracking-wider">
+                  {robSorensonData.title}
+                </p>
               </div>
               <div className="flex-1 min-w-0 text-left max-w-xl mx-auto sm:mx-0">
                 <h3
