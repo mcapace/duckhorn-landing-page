@@ -404,13 +404,27 @@ export const wineries = [
     id: "duckhorn",
     name: "DUCKHORN VINEYARDS",
     tagline: "Five Decades In. Still Defining What's Next.",
-    image: "/images/Three-Palms-Vineyard.jpg",
+    image: "/images/New%20Downloads/Duckhorn1.jpg",
     heroDescription:
-      "DUCKHORN VINEYARDS has shaped Napa Valley's modern identity for nearly half a century. Its approach unites estate rigor, an unbroken winemaking lineage, and a hospitality culture defined by genuine warmth—shaped early on by Dan and Margaret Duckhorn's admiration for Bordeaux and their conviction that Merlot could thrive in Napa. From Merlot to Sauvignon Blanc and Cabernet, the wines reflect intention, balance, and a respect for detail that begins in the vineyard and carries through every touchpoint of the guest experience.",
+      "DUCKHORN VINEYARDS has shaped Napa Valley's modern identity for half a century. Its approach unites estate rigor, an unbroken winemaking lineage, and a hospitality culture defined by genuine warmth—shaped early on by Dan and Margaret Duckhorn's admiration for Bordeaux and their conviction that Merlot could thrive in Napa. From Merlot to Sauvignon Blanc and Cabernet, the wines reflect intention, balance, and a respect for detail that begins in the vineyard and carries through every touchpoint of the guest experience.",
+    bottleImage: "/images/New%20Downloads/Duckhorn-Full.jpg",
+    galleryImages: [
+      "/images/New%20Downloads/Duckhorn4.jpg",
+      "/images/New%20Downloads/Duckhorn2.jpg",
+      "/images/New%20Downloads/Duckhorn3.jpg",
+    ],
+    section1: {
+      heading: "A House Built on Hospitality",
+      body: "Dan and Margaret Duckhorn founded Duckhorn Vineyards on the belief that wine is best shared with others. That philosophy still guides the estate today, from the vineyard to the table. The winery welcomes guests with the same warmth and attention to detail that defines its wines—creating experiences that celebrate both place and people.",
+    },
+    section2: {
+      heading: "The Merlot Benchmark",
+      body: "Duckhorn Vineyards helped establish Merlot as a benchmark of American fine wine. The estate's commitment to the variety—exemplified by Three Palms Vineyard and other acclaimed sites—has shaped Napa Valley's identity and continues to define what world-class Merlot can be.",
+    },
     wines: [
-      { name: "Three Palms Merlot", description: "Layered and powerful, revealing Bing cherry, cocoa, slate, dusty tannins, and an earthy, mineral-driven finish." },
+      { name: "Three Palms Merlot", description: "Layered and powerful, revealing Bing cherry, cocoa, anise, dusty tannins, and an earthy, mineral-driven finish." },
       { name: "Merlot", description: "Velvety and expressive, with plum, black cherry, baking spice, lively acidity, and a polished, lingering finish." },
-      { name: "Cabernet Sauvignon", description: "Elegant yet structured, offering dark red berries, fig, boysenberry, firm tannins, and a long finish." },
+      { name: "Cabernet Sauvignon", description: "Elegant yet structured, offering dark red berries, fig, boysenberry, firm tannins, and a long, focused finish." },
       { name: "Chardonnay", description: "Rich yet balanced, showcasing pear, citrus, crème brûlée, subtle salinity, and a long, juicy finish." },
       { name: "Sauvignon Blanc", description: "Crisp and vibrant, with pineapple, guava, melon, lively acidity, silky texture, and a refined mineral finish." },
     ],
@@ -476,9 +490,10 @@ const wineryToMaker: Record<string, string> = {
 export const wineryChapters = wineries.map((winery) => {
   const wine = featuredWines.find((w) => w.id === winery.id);
   const maker = winemakers.find((m) => m.winery === wineryToMaker[winery.id]);
+  const wineryWithExtras = winery as typeof winery & { bottleImage?: string; galleryImages?: string[]; section1?: { heading: string; body: string }; section2?: { heading: string; body: string } };
   return {
     ...winery,
-    bottleImage: wine?.imageBG ?? wine?.imageFull ?? wine?.image ?? winery.image,
+    bottleImage: wineryWithExtras.bottleImage ?? wine?.imageBG ?? wine?.imageFull ?? wine?.image ?? winery.image,
     winemaker: maker!,
   };
 });

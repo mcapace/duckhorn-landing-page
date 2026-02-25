@@ -28,11 +28,15 @@ interface WineryChapter {
   bottleImage: string;
   wines: Wine[];
   winemaker: Winemaker;
+  galleryImages?: string[];
+  section1?: { heading: string; body: string };
+  section2?: { heading: string; body: string };
 }
 
 export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
-  const { name, tagline, image, heroDescription, bottleImage, wines, winemaker } = chapter;
+  const { name, tagline, image, heroDescription, bottleImage, wines, winemaker, galleryImages, section1, section2 } = chapter;
   const [showQaModal, setShowQaModal] = useState(false);
+  const isDuckhornLayout = galleryImages && galleryImages.length > 0;
 
   return (
     <section className="scroll-mt-20 min-h-screen bg-white">
@@ -111,6 +115,117 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
         </motion.div>
       </div>
 
+      {isDuckhornLayout ? (
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-16">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-16 md:mb-20"
+          >
+            {galleryImages!.map((src, i) => (
+              <div key={i} className="relative w-full aspect-[4/3] overflow-hidden rounded-xl">
+                <Image
+                  src={src}
+                  alt=""
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+            ))}
+          </motion.div>
+          {section1 && (
+            <motion.section
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6 }}
+              className="mb-12 md:mb-16"
+            >
+              <h2 className="text-2xl md:text-3xl text-[#2A2A2A] font-semibold mb-6" style={{ fontFamily: "var(--font-serif)" }}>
+                {section1.heading}
+              </h2>
+              <p className="text-[#3D3D3D] text-base md:text-lg leading-[1.75] max-w-3xl">{section1.body}</p>
+            </motion.section>
+          )}
+          {section2 && (
+            <motion.section
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6 }}
+              className="mb-16 md:mb-24"
+            >
+              <h2 className="text-2xl md:text-3xl text-[#2A2A2A] font-semibold mb-6" style={{ fontFamily: "var(--font-serif)" }}>
+                {section2.heading}
+              </h2>
+              <p className="text-[#3D3D3D] text-base md:text-lg leading-[1.75] max-w-3xl">{section2.body}</p>
+            </motion.section>
+          )}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6 mb-20 md:mb-24"
+          >
+            {wines.map((wine, i) => (
+              <div key={i} className="flex flex-col items-center text-center">
+                <div className="relative w-full aspect-[3/4] max-w-[180px] mx-auto mb-4">
+                  <Image
+                    src={bottleImage}
+                    alt={wine.name}
+                    fill
+                    className="object-contain object-center drop-shadow-[0_16px_32px_rgba(0,0,0,0.1)]"
+                    sizes="180px"
+                  />
+                </div>
+                <h4 className="text-base font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
+                  {wine.name}
+                </h4>
+                <p className="text-[#3D3D3D] text-sm mt-2 leading-relaxed">{wine.description}</p>
+              </div>
+            ))}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6 }}
+            className="rounded-2xl overflow-hidden bg-[#F5F2ED] border border-[#E8E4DC]/50"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+              <div className="md:col-span-2 flex flex-col items-center justify-center p-10 md:p-12">
+                <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden ring-2 ring-white shadow-lg">
+                  <Image src={winemaker.image} alt={winemaker.name} fill className="object-cover object-center" sizes="192px" />
+                </div>
+              </div>
+              <div className="md:col-span-3 flex flex-col justify-center p-8 md:p-12 md:pl-10">
+                <h3 className="text-2xl md:text-3xl text-[#2A2A2A] font-semibold" style={{ fontFamily: "var(--font-serif)" }}>
+                  {winemaker.name}
+                </h3>
+                <p className="text-[#425a4d] text-xs uppercase tracking-wider mt-1">{winemaker.title}</p>
+                <blockquote className="mt-6 text-base md:text-lg text-[#3D3D3D] italic leading-relaxed max-w-xl" style={{ fontFamily: "var(--font-script)" }}>
+                  &ldquo;{winemaker.quote}&rdquo;
+                </blockquote>
+                <button
+                  type="button"
+                  onClick={() => setShowQaModal(true)}
+                  className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#425a4d] text-white text-sm font-medium uppercase tracking-wider hover:bg-[#2D4636] transition-colors rounded-md w-fit"
+                >
+                  READ FULL Q&A
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      ) : (
+      <>
       {/* Bottle + wine copy - two columns, editorial style */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
@@ -221,6 +336,8 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
           </div>
         </motion.div>
       </div>
+      </>
+      )}
 
       {/* Q&A Modal - same style as Meet the Makers */}
       <AnimatePresence>
