@@ -12,8 +12,6 @@ export const Perspective = () => {
     offset: ["start end", "end start"],
   });
   const img0Y = useTransform(scrollYProgress, [0, 0.4], [24, -8]);
-  const img1Y = useTransform(scrollYProgress, [0.1, 0.5], [32, -12]);
-  const img2Y = useTransform(scrollYProgress, [0.2, 0.6], [40, -16]);
 
   return (
     <section ref={sectionRef} id="perspective" className="pt-20 md:pt-28 pb-12 md:pb-16 bg-white scroll-mt-20">
@@ -44,7 +42,7 @@ export const Perspective = () => {
           </p>
         </motion.div>
 
-        {/* 3 images - spacing between, landscape crop; third image framed to show more barrels */}
+        {/* 3 images - equal height; same parallax for all so none are clipped */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,28 +51,25 @@ export const Perspective = () => {
           className="flex justify-center mb-16"
         >
           <div className="w-full max-w-5xl grid grid-cols-3 gap-3 md:gap-4 overflow-hidden rounded-sm">
-            {perspectiveImages.map((img, i) => {
-              const y = [img0Y, img1Y, img2Y][i];
-              return (
-                <motion.div
-                  key={img.src}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.05 * i }}
-                  style={{ y }}
-                  className="relative aspect-[4/3] overflow-hidden rounded-sm"
-                >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover object-center transition-transform duration-700 hover:scale-105"
-                    sizes="(max-width: 768px) 33vw, 280px"
-                  />
-                </motion.div>
-              );
-            })}
+            {perspectiveImages.map((img, i) => (
+              <motion.div
+                key={img.src}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.05 * i }}
+                style={{ y: img0Y }}
+                className="relative aspect-[4/3] overflow-hidden rounded-sm min-h-0"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                  sizes="(max-width: 768px) 33vw, 280px"
+                />
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 
