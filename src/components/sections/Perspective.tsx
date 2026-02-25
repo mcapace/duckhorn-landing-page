@@ -65,7 +65,9 @@ export const Perspective = () => {
                   src={img.src}
                   alt={img.alt}
                   fill
-                  className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                  className={`object-cover transition-transform duration-700 hover:scale-105 ${
+                    i === 2 ? "object-[center_55%]" : "object-center"
+                  }`}
                   sizes="(max-width: 768px) 33vw, 280px"
                 />
               </motion.div>
