@@ -175,14 +175,14 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               transition={{ duration: 0.6 }}
               className="mb-20 md:mb-24"
             >
-              <div className="relative w-full max-w-4xl mx-auto">
+              <div className="relative w-full">
                 <Image
                   src={bottleImage}
                   alt={name}
                   width={1200}
                   height={1600}
                   className="w-full h-auto block object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
-                  sizes="(max-width: 1024px) 100vw, 896px"
+                  sizes="(max-width: 1024px) 100vw, 1400px"
                 />
               </div>
             </motion.div>
