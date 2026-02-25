@@ -27,7 +27,7 @@ export const VisitTheVineyards = () => {
         className="relative z-10 text-center px-6 py-16 md:py-24"
       >
         <h2
-          className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight font-bold"
+          className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight font-light uppercase"
           style={{ fontFamily: "var(--font-serif)" }}
         >
           VISIT THE VINEYARDS

@@ -27,7 +27,7 @@ export const Ratings = () => {
           className="text-center mb-16"
         >
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl text-[#2A2A2A]"
+            className="text-3xl md:text-4xl lg:text-5xl text-[#2A2A2A] font-light uppercase"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             WINE SPECTATOR RECOMMENDED RELEASES

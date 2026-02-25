@@ -73,7 +73,7 @@ export const WineryChapter = ({
         <div className="absolute bottom-0 left-0 right-0 p-10 md:p-14 pb-12 md:pb-16">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white drop-shadow-lg"
+              className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-white uppercase drop-shadow-lg"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               {name}

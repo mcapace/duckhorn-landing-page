@@ -22,7 +22,7 @@ export const FeaturedWines = () => {
         className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 mb-12"
       >
         <h2
-          className="text-4xl md:text-5xl lg:text-6xl text-[#2A2A2A] tracking-tight"
+          className="text-4xl md:text-5xl lg:text-6xl text-[#2A2A2A] tracking-tight font-light uppercase"
           style={{ fontFamily: "var(--font-serif)" }}
         >
           FEATURED WINES

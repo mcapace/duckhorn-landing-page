@@ -30,7 +30,7 @@ export const MeetTheMakers = () => {
           className="text-center mb-14"
         >
           <h2
-            className="text-4xl md:text-5xl lg:text-6xl text-[#2A2A2A] tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl text-[#2A2A2A] tracking-tight font-light uppercase"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             MEET THE MAKERS

@@ -33,7 +33,7 @@ export const Milestones = () => {
               <div className="w-px bg-white flex-shrink-0 self-stretch min-h-[1px]" aria-hidden />
               <div className="flex flex-col justify-center py-1 text-left">
                 <h2
-                  className="text-3xl md:text-4xl lg:text-5xl text-white tracking-tight uppercase font-medium leading-tight"
+                  className="text-3xl md:text-4xl lg:text-5xl text-white tracking-tight uppercase font-light leading-tight"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
                   <span className="block">THE MILESTONES THAT</span>

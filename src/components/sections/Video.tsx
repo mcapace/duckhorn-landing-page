@@ -15,7 +15,7 @@ export const Video = () => {
           className="text-center mb-12"
         >
           <h2
-            className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight font-light uppercase"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             VIDEO

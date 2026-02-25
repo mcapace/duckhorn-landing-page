@@ -27,12 +27,12 @@ export const DedicatedToExcellence = () => {
           </div>
           <div className="flex-1 text-center md:text-left">
             <h2
-              className="text-2xl md:text-3xl text-[#2A2A2A] mb-6"
+              className="text-2xl md:text-3xl text-[#2A2A2A] mb-6 font-light uppercase"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               DEDICATED TO EXCELLENCE
             </h2>
-            <blockquote className="text-[#3D3D3D] text-base md:text-lg leading-relaxed italic">
+            <blockquote className="text-[#3D3D3D] text-base md:text-lg leading-relaxed italic" style={{ fontFamily: "var(--font-script)" }}>
               {featuredMaker.quote}
             </blockquote>
             <p

@@ -25,7 +25,7 @@ export const CollectionMap = () => {
           className="text-center mb-12"
         >
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl text-[#2A2A2A]"
+            className="text-3xl md:text-4xl lg:text-5xl text-[#2A2A2A] font-light uppercase"
             style={{ fontFamily: "var(--font-serif)" }}
           >
             FIVE WINERIES, ONE COLLECTION

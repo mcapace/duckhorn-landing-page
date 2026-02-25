@@ -26,7 +26,7 @@ export const ExploreTheBrands = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl lg:text-6xl text-white text-center tracking-tight font-bold mb-12 md:mb-16"
+          className="text-4xl md:text-5xl lg:text-6xl text-white text-center tracking-tight font-light uppercase mb-12 md:mb-16"
           style={{ fontFamily: "var(--font-serif)" }}
         >
           EXPLORE THE BRANDS

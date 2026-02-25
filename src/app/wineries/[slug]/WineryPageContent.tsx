@@ -75,6 +75,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-sm uppercase tracking-[0.3em] text-white/80 mb-3"
+              style={{ fontFamily: "var(--font-serif)" }}
             >
               The Duckhorn Collection
             </motion.p>
@@ -82,7 +83,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-white uppercase"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               {name}
