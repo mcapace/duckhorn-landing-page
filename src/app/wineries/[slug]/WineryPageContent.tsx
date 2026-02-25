@@ -175,12 +175,12 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               transition={{ duration: 0.6 }}
               className="rounded-2xl overflow-hidden bg-[#F5F2ED] border border-[#E8E4DC]/50 mb-20 md:mb-24"
             >
-              <div className="relative w-full h-[240px] md:h-[288px]">
+              <div className="relative w-full aspect-[3/4]">
                 <Image
                   src={bottleImage}
                   alt={name}
                   fill
-                  className="object-cover object-center"
+                  className="object-contain object-center"
                   sizes="(max-width: 1024px) 100vw, 1400px"
                 />
               </div>
