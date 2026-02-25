@@ -147,7 +147,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               transition={{ duration: 0.6 }}
               className="mb-12 md:mb-16"
             >
-              <h2 className={`text-2xl md:text-3xl italic font-semibold mb-6 ${isKostaBrowne ? "text-[#2A2A2A]" : "text-[#A07D4E]"}`} style={{ fontFamily: "var(--font-serif)" }}>
+              <h2 className="text-2xl md:text-3xl text-[#A07D4E] italic font-semibold mb-6" style={{ fontFamily: "var(--font-serif)" }}>
                 {section1.heading}
               </h2>
               <p className="text-[#3D3D3D] text-base md:text-lg leading-[1.75] max-w-3xl" style={isKostaBrowne ? { fontFamily: "var(--font-serif)" } : undefined}>{section1.body}</p>
