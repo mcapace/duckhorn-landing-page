@@ -36,7 +36,9 @@ interface WineryChapter {
 export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
   const { name, tagline, image, heroDescription, bottleImage, wines, winemaker, galleryImages, section1, section2 } = chapter;
   const [showQaModal, setShowQaModal] = useState(false);
-  const isDuckhornLayout = galleryImages && galleryImages.length > 0;
+  const isGalleryLayout = galleryImages && galleryImages.length > 0;
+  const isDuckhorn = chapter.id === "duckhorn";
+  const isKostaBrowne = chapter.id === "kosta-browne";
 
   return (
     <section className="scroll-mt-20 min-h-screen bg-white">
@@ -116,7 +118,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
         </motion.div>
       </div>
 
-      {isDuckhornLayout ? (
+      {isGalleryLayout ? (
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -165,6 +167,39 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               <p className="text-[#3D3D3D] text-base md:text-lg leading-[1.75] max-w-3xl">{section2.body}</p>
             </motion.section>
           )}
+          {isKostaBrowne ? (
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6 }}
+              className="mb-20 md:mb-24"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+                <div className="lg:col-span-5 flex justify-center lg:justify-end">
+                  <div className="relative w-full max-w-md aspect-[3/4]">
+                    <Image
+                      src={bottleImage}
+                      alt={name}
+                      fill
+                      className="object-contain object-center drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
+                </div>
+                <div className="lg:col-span-7 flex flex-col justify-center space-y-8">
+                  {wines.map((wine, i) => (
+                    <div key={i}>
+                      <h4 className="text-base md:text-lg font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
+                        {wine.name}
+                      </h4>
+                      <p className="text-[#3D3D3D] text-sm md:text-base mt-2 leading-relaxed">{wine.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ) : (
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -199,6 +234,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               </div>
             </div>
           </motion.div>
+          )}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -433,9 +433,19 @@ export const wineries = [
     id: "kosta-browne",
     name: "KOSTA BROWNE",
     tagline: "The Art of Site",
-    image: "/images/Kosta-Browne-Winery2.jpg",
+    image: "/images/new-downloads/KostaBrowne1.jpg",
     heroDescription:
       "Kosta Browne approaches Pinot Noir as a mosaic of singular sites—each block, clone, and exposure vinified independently to preserve nuance. Native ferments and temperature-disciplined cellar work reveal the subtleties of soil, fog patterns, and coastal influence. The result is a portfolio defined by precision and depth: powerful yet balanced Pinots with luminous fruit, fine structure, and unmistakable site signatures.",
+    bottleImage: "/images/new-downloads/KostaBrowne-Full.jpg",
+    galleryImages: [
+      "/images/new-downloads/KostaBrowne2.jpg",
+      "/images/new-downloads/KostaBrowne4.jpg",
+      "/images/new-downloads/KostaBrowne3.jpg",
+    ],
+    section1: {
+      heading: "Craft Without Compromise",
+      body: "Kosta Browne's winemaking is built on micro-fermentations, careful extraction, and thoughtful élevage—balancing intuition with technical rigor. The result is a disciplined approach to site-specific Pinot Noir and Chardonnay expressions that honor both place and craft.",
+    },
     wines: [
       { name: "4-Barrel California Pinot Noir", description: "Created as a thank you to our earliest collectors, produced from just four barrels each vintage." },
       { name: "Gap's Crown Vineyard Sonoma Coast Pinot Noir", description: "Reflective of an extraordinary 20-year partnership that began shortly after the vineyard was planted, and a cherished favorite." },
