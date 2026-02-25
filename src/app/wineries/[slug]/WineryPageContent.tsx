@@ -173,15 +173,16 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6 }}
-              className="rounded-2xl overflow-hidden bg-[#F5F2ED] border border-[#E8E4DC]/50 mb-20 md:mb-24"
+              className="mb-20 md:mb-24"
             >
-              <div className="relative w-full aspect-[3/4]">
+              <div className="relative w-full max-w-4xl mx-auto">
                 <Image
                   src={bottleImage}
                   alt={name}
-                  fill
-                  className="object-contain object-center"
-                  sizes="(max-width: 1024px) 100vw, 1400px"
+                  width={1200}
+                  height={1600}
+                  className="w-full h-auto block object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
+                  sizes="(max-width: 1024px) 100vw, 896px"
                 />
               </div>
             </motion.div>
