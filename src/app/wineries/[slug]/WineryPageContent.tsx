@@ -159,7 +159,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                 {wines.map((wine, i) => (
                   <div key={i} className={i > 0 ? "mt-6" : ""}>
                     <h4
-                      className="text-lg md:text-xl font-semibold text-[#2A2A2A]"
+                      className="text-lg md:text-xl font-semibold text-[#425a4d]"
                       style={{ fontFamily: "var(--font-serif)" }}
                     >
                       {wine.name}
