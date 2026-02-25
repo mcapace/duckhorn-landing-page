@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 interface Wine {
   name: string;
@@ -39,15 +39,22 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
   const isGalleryLayout = galleryImages && galleryImages.length > 0;
   const isDuckhorn = chapter.id === "duckhorn";
   const isKostaBrowne = chapter.id === "kosta-browne";
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
     <section className="scroll-mt-20 min-h-screen bg-white">
-      {/* Hero - immersive, full bleed */}
+      {/* Hero - immersive, full bleed with parallax */}
       <motion.div
+        ref={heroRef}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative w-full min-h-[70vh] md:min-h-[75vh] overflow-hidden"
+        className="relative w-full min-h-[75vh] md:min-h-[80vh] overflow-hidden"
       >
         {/* Back link - overlays hero */}
         <div className="absolute top-0 left-0 right-0 z-20 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 pt-28">
@@ -61,14 +68,16 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             Back to Featured Wines
           </Link>
         </div>
-        <Image
-          src={image}
-          alt={name}
-          fill
-          className="object-cover object-center scale-105"
-          sizes="100vw"
-          priority
-        />
+        <motion.div className="absolute inset-0" style={{ y: heroY }}>
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-cover object-center scale-105"
+            sizes="100vw"
+            priority
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14 pb-28 md:pb-36">
           <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20">
@@ -103,13 +112,13 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
         </div>
       </motion.div>
 
-      {/* Intro - centered text bubble */}
+      {/* Intro - centered text bubble with subtle scale-in */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 -mt-10 md:-mt-16 relative z-10 flex justify-center">
         <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 32, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="bg-white rounded-2xl shadow-xl shadow-black/5 p-6 md:p-10 lg:p-12 max-w-4xl w-full"
         >
           <p className="text-lg md:text-xl text-[#3D3D3D] leading-[1.8]">
@@ -128,7 +137,14 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-16 md:mb-20"
           >
             {galleryImages!.map((src, i) => (
-              <div key={i} className="relative w-full aspect-[4/3] overflow-hidden rounded-xl">
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="relative w-full aspect-[4/3] overflow-hidden rounded-xl"
+              >
                 <Image
                   src={src}
                   alt=""
@@ -136,7 +152,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                   className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-              </div>
+              </motion.div>
             ))}
           </motion.div>
           {section1 && (
@@ -241,8 +257,8 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6 }}
-            className="rounded-2xl overflow-hidden bg-[#F5F2ED] border border-[#E8E4DC]/50"
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="rounded-2xl overflow-hidden bg-[#F5F2ED] border border-[#E8E4DC]/50 shadow-lg shadow-black/5"
           >
             <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
               <div className="md:col-span-2 flex flex-col items-center justify-center p-10 md:p-12">
@@ -277,12 +293,12 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
       {/* Bottle + wine copy - two columns, editorial style */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-          {/* Bottle - left */}
+          {/* Bottle - left with subtle reveal */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:col-span-5 flex justify-center lg:justify-end"
           >
             <div className="relative w-[280px] h-[380px] sm:w-[340px] sm:h-[460px] md:w-[400px] md:h-[520px]">
@@ -301,7 +317,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
             className="lg:col-span-7 flex flex-col justify-center"
           >
             {wines.length > 0 && (
@@ -353,13 +369,13 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
           </motion.div>
         </div>
 
-        {/* Winemaker - light beige box, circular image, name + quote + CTA */}
+        {/* Winemaker - light beige box with subtle reveal */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6 }}
-          className="mt-20 md:mt-24 rounded-2xl overflow-hidden bg-[#F5F2ED] border border-[#E8E4DC]/50"
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mt-20 md:mt-24 rounded-2xl overflow-hidden bg-[#F5F2ED] border border-[#E8E4DC]/50 shadow-lg shadow-black/5"
         >
           <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
             <div className="md:col-span-2 flex flex-col items-center justify-center p-10 md:p-12">

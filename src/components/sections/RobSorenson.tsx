@@ -1,32 +1,41 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { robSorensonData } from "@/lib/data";
 
 export const RobSorenson = () => {
   const [expandedQa, setExpandedQa] = useState<number | null>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
 
   return (
     <section
       id="vineyard-stewardship"
       className="scroll-mt-20 min-h-screen bg-white"
     >
-      {/* Hero - vineyard image only, no copy overlay */}
+      {/* Hero - vineyard image with parallax */}
       <motion.div
+        ref={heroRef}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="relative w-full h-[55vh] min-h-[380px] overflow-hidden"
+        className="relative w-full h-[60vh] min-h-[400px] overflow-hidden"
       >
-        <Image
-          src={robSorensonData.image}
-          alt="Vineyard stewardship"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+        <motion.div className="absolute inset-0" style={{ y: heroY }}>
+          <Image
+            src={robSorensonData.image}
+            alt="Vineyard stewardship"
+            fill
+            className="object-cover object-center scale-105"
+            sizes="100vw"
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
       </motion.div>
 
