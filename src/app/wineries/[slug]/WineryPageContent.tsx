@@ -209,8 +209,8 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             transition={{ duration: 0.6 }}
             className="mb-20 md:mb-24"
           >
-            {/* Single image with text overlay on top */}
-            <div className="relative w-full max-w-4xl mx-auto">
+            {/* Single image with text overlay on top — same width as winemaker section */}
+            <div className="relative w-full">
               <div className="relative w-full">
                 <Image
                   src={bottleImage}
@@ -218,11 +218,11 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                   width={1200}
                   height={720}
                   className="w-full h-auto block object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
-                  sizes="(max-width: 1024px) 100vw, 896px"
+                  sizes="(max-width: 1024px) 100vw, 1400px"
                 />
                 {/* Text overlay: five blocks over lower part of image */}
                 <div className="absolute inset-x-0 bottom-0 min-h-[38%] pt-[20%] pb-4 px-4 sm:px-6 flex flex-col justify-end bg-gradient-to-t from-white via-white/85 to-transparent">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-2 max-w-4xl mx-auto w-full">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-2 w-full">
                     {wines.map((wine, i) => (
                       <div key={i} className="text-center">
                         <h4 className="text-sm sm:text-base font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
