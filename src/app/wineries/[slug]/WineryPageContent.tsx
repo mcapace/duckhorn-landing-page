@@ -173,22 +173,18 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6 }}
-              className="mb-20 md:mb-24"
+              className="rounded-2xl overflow-hidden border border-[#E8E4DC]/50 relative min-h-[320px] md:min-h-[380px] mb-20 md:mb-24"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-                <div className="lg:col-span-6 flex justify-center lg:justify-end">
-                  <div className="relative w-full max-w-2xl">
-                    <Image
-                      src={bottleImage}
-                      alt={name}
-                      width={1200}
-                      height={800}
-                      className="w-full h-auto block object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
-                  </div>
-                </div>
-                <div className="lg:col-span-6 flex flex-col justify-center space-y-6">
+              <Image
+                src={bottleImage}
+                alt={name}
+                fill
+                className="object-contain object-left bg-[#FAFAF8]"
+                sizes="(max-width: 1024px) 100vw, 1400px"
+              />
+              {/* Text overlaid on right side of image */}
+              <div className="absolute inset-y-0 right-0 w-full md:w-[45%] min-h-[320px] md:min-h-0 flex flex-col justify-center pl-8 pr-8 py-8 md:py-12 bg-gradient-to-l from-white via-white/95 to-transparent md:from-white/95 md:via-white/80 md:to-transparent">
+                <div className="space-y-6 max-w-md ml-auto">
                   {wines.map((wine, i) => (
                     <div key={i}>
                       <h4 className="text-base md:text-lg font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
