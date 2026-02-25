@@ -96,14 +96,14 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
         </div>
       </motion.div>
 
-      {/* Intro - editorial flow */}
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 -mt-10 md:-mt-16 relative z-10">
+      {/* Intro - centered text bubble */}
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 -mt-10 md:-mt-16 relative z-10 flex justify-center">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl shadow-xl shadow-black/5 p-6 md:p-10 lg:p-12 max-w-3xl"
+          className="bg-white rounded-2xl shadow-xl shadow-black/5 p-6 md:p-10 lg:p-12 max-w-3xl w-full"
         >
           <p className="text-lg md:text-xl text-[#3D3D3D] leading-[1.8]">
             {heroDescription}
@@ -111,10 +111,10 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
         </motion.div>
       </div>
 
-      {/* Bottle + Tasting Notes - flowing layout */}
+      {/* Bottle + wine copy - two columns, editorial style */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-          {/* Bottle - prominent, clear of text */}
+          {/* Bottle - left */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -122,56 +122,65 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 flex justify-center lg:justify-end"
           >
-            <div className="relative w-[320px] h-[420px] sm:w-[400px] sm:h-[520px] md:w-[480px] md:h-[620px]">
+            <div className="relative w-[280px] h-[380px] sm:w-[340px] sm:h-[460px] md:w-[400px] md:h-[520px]">
               <Image
                 src={bottleImage}
                 alt={name}
                 fill
-                className="object-contain object-center drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)]"
-                sizes="(max-width: 768px) 320px, (max-width: 1024px) 400px, 480px"
+                className="object-contain object-center drop-shadow-[0_20px_40px_rgba(0,0,0,0.12)]"
+                sizes="(max-width: 768px) 280px, (max-width: 1024px) 340px, 400px"
               />
             </div>
           </motion.div>
 
-          {/* Tasting Notes */}
+          {/* Wine copy - right: italic title, body, separator lines, wine name + notes */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-7"
+            className="lg:col-span-7 flex flex-col justify-center"
           >
-            <h3
-              className="text-xs uppercase tracking-[0.35em] text-[#B8956A] mb-6"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              Tasting Notes
-            </h3>
-            <ul className="space-y-6">
-              {wines.map((wine, i) => (
-                <li key={i} className="group">
-                  <h4 className="font-medium text-[#2A2A2A] text-base md:text-lg group-hover:text-[#425a4d] transition-colors">
-                    {wine.name}
-                  </h4>
-                  <p className="text-[#3D3D3D]/85 text-sm md:text-base mt-2 leading-relaxed max-w-xl">
-                    {wine.description}
-                  </p>
-                  {i < wines.length - 1 && (
-                    <div className="mt-5 h-px bg-gradient-to-r from-[#E8E4DC] to-transparent" />
-                  )}
-                </li>
-              ))}
-            </ul>
+            {wines.length > 0 && (
+              <>
+                <h3
+                  className="text-xl md:text-2xl text-[#A07D4E] italic mb-6"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  {tagline}
+                </h3>
+                <p className="text-[#3D3D3D] text-base md:text-lg leading-[1.75] mb-6">
+                  {wines[0].description}
+                </p>
+                <div className="flex flex-col gap-1 mb-6 w-1/3 min-w-[120px]">
+                  <div className="h-px bg-[#425a4d]/60" />
+                  <div className="h-px bg-[#425a4d]/40" />
+                </div>
+                {wines.map((wine, i) => (
+                  <div key={i} className={i > 0 ? "mt-6" : ""}>
+                    <h4
+                      className="text-lg md:text-xl font-semibold text-[#2A2A2A]"
+                      style={{ fontFamily: "var(--font-serif)" }}
+                    >
+                      {wine.name}
+                    </h4>
+                    <p className="text-[#3D3D3D] text-sm md:text-base mt-2 leading-relaxed">
+                      {wine.description}
+                    </p>
+                  </div>
+                ))}
+              </>
+            )}
           </motion.div>
         </div>
 
-        {/* Winemaker - full-width card */}
+        {/* Winemaker - light beige box, circular image, name + quote + CTA */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          className="mt-20 md:mt-24 rounded-2xl overflow-hidden bg-[#FAFAF8] border border-[#E8E4DC]/60"
+          className="mt-20 md:mt-24 rounded-2xl overflow-hidden bg-[#F5F2ED] border border-[#E8E4DC]/50"
         >
           <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
             <div className="md:col-span-2 flex flex-col items-center justify-center p-10 md:p-12">
@@ -186,17 +195,12 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               </div>
             </div>
             <div className="md:col-span-3 flex flex-col justify-center p-8 md:p-12 md:pl-10">
-              <p className="text-xs uppercase tracking-widest text-[#B8956A] mb-2">
-                Winemaker
-              </p>
               <h3
-                className="text-2xl md:text-3xl text-[#2A2A2A] font-medium"
+                className="text-2xl md:text-3xl text-[#2A2A2A] font-semibold"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 {winemaker.name}
               </h3>
-              <p className="text-[#425a4d] text-sm mt-1">{winemaker.winery}</p>
-              <p className="text-[#A07D4E] text-xs mt-0.5 uppercase tracking-wider">{winemaker.title}</p>
               <blockquote
                 className="mt-6 text-base md:text-lg text-[#3D3D3D] italic leading-relaxed max-w-xl"
                 style={{ fontFamily: "var(--font-script)" }}
@@ -206,9 +210,9 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               <button
                 type="button"
                 onClick={() => setShowQaModal(true)}
-                className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#425a4d] text-white text-sm font-medium uppercase tracking-wider hover:bg-[#2D4636] transition-colors rounded-sm w-fit"
+                className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#425a4d] text-white text-sm font-medium uppercase tracking-wider hover:bg-[#2D4636] transition-colors rounded-md w-fit"
               >
-                READ FULL BIO
+                READ FULL Q&A
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

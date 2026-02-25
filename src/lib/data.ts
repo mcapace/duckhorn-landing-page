@@ -443,7 +443,7 @@ export const wineries = [
     id: "goldeneye",
     name: "GOLDENEYE",
     tagline: "The Voice of Anderson Valley",
-    image: "/images/Goldeneye.jpg",
+    image: "/images/Screenshot-2025-11-24-at-5.29.09 PM.jpg",
     heroDescription:
       "Goldeneye channels the coastal intensity of Anderson Valley into Pinot Noirs defined by depth, tone, and a vivid sense of place. Its estate vineyards, ranging from warm mid-valley slopes to wind-swept deep-end ridges, offer a dramatic palette of textures. Sustainable farming, measured extraction, and a modernized oak program allow the valley's natural signatures—redwoods, ocean breezes, Pennyroyal herbs—to find clear expression in the wines.",
     wines: [
