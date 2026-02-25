@@ -184,8 +184,8 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                   className="w-full h-auto block object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
                   sizes="(max-width: 1024px) 100vw, 1400px"
                 />
-                {/* Text overlay on right side of image */}
-                <div className="absolute right-0 top-0 bottom-0 w-full max-w-[90%] sm:max-w-md lg:max-w-lg flex flex-col justify-center py-8 sm:py-10 lg:py-12 pl-6 pr-6 sm:pl-8 sm:pr-10 bg-gradient-to-l from-white/95 via-white/90 to-transparent">
+                {/* Text overlay on right side — narrow strip with gradient so bottles stay visible */}
+                <div className="absolute right-0 top-0 bottom-0 w-[85%] max-w-[420px] min-w-[240px] flex flex-col justify-center py-8 sm:py-10 lg:py-12 pl-10 pr-6 sm:pl-12 sm:pr-10 bg-[linear-gradient(to_left,rgba(255,255,255,0.97)_0%,rgba(255,255,255,0.85)_40%,rgba(255,255,255,0.25)_70%,transparent_100%)]">
                   <div className="space-y-6 lg:space-y-8">
                     {wines.map((wine, i) => (
                       <div key={i}>
