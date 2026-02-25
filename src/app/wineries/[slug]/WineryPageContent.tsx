@@ -107,7 +107,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl shadow-xl shadow-black/5 p-6 md:p-10 lg:p-12 max-w-3xl w-full"
+          className="bg-white rounded-2xl shadow-xl shadow-black/5 p-6 md:p-10 lg:p-12 max-w-4xl w-full"
         >
           <p className="text-lg md:text-xl text-[#3D3D3D] leading-[1.8]">
             {heroDescription}
