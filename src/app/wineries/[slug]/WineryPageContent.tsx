@@ -175,28 +175,29 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               transition={{ duration: 0.6 }}
               className="mb-20 md:mb-24"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center w-full">
-                <div className="lg:col-span-7 relative w-full">
-                  <Image
-                    src={bottleImage}
-                    alt={name}
-                    width={1200}
-                    height={1600}
-                    className="w-full h-auto block object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
-                    sizes="(max-width: 1024px) 100vw, 58vw"
-                  />
-                </div>
-                <div className="lg:col-span-5 flex flex-col justify-center space-y-8 lg:space-y-10">
-                  {wines.map((wine, i) => (
-                    <div key={i}>
-                      <h4 className="text-base md:text-lg font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
-                        {wine.name}
-                      </h4>
-                      <p className="text-[#3D3D3D] text-sm md:text-base mt-1.5 leading-relaxed">
-                        {wine.description}
-                      </p>
-                    </div>
-                  ))}
+              <div className="relative w-full">
+                <Image
+                  src={bottleImage}
+                  alt={name}
+                  width={1200}
+                  height={1600}
+                  className="w-full h-auto block object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
+                  sizes="(max-width: 1024px) 100vw, 1400px"
+                />
+                {/* Text overlay on right side of image */}
+                <div className="absolute right-0 top-0 bottom-0 w-full max-w-[90%] sm:max-w-md lg:max-w-lg flex flex-col justify-center py-8 sm:py-10 lg:py-12 pl-6 pr-6 sm:pl-8 sm:pr-10 bg-gradient-to-l from-white/95 via-white/90 to-transparent">
+                  <div className="space-y-6 lg:space-y-8">
+                    {wines.map((wine, i) => (
+                      <div key={i}>
+                        <h4 className="text-base md:text-lg font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
+                          {wine.name}
+                        </h4>
+                        <p className="text-[#3D3D3D] text-sm md:text-base mt-1.5 leading-relaxed">
+                          {wine.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
