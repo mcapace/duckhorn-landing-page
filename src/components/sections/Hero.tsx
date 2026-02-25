@@ -10,7 +10,7 @@ export const Hero = () => {
     target: sectionRef,
     offset: ["start start", "end start"],
   });
-  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]); // A taller hero image would allow a larger range (e.g. 25–30%) for stronger effect
 
   return (
     <section ref={sectionRef} className="relative min-h-[115vh] overflow-hidden bg-white pt-20">

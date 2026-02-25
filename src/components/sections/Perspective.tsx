@@ -39,7 +39,7 @@ export const Perspective = () => {
               className="w-full h-16 sm:h-20 md:h-24 object-contain"
             />
           </div>
-          <p className="text-[#2A2A2A] italic text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-[#2A2A2A] italic text-base md:text-lg max-w-2xl mx-auto" style={{ fontFamily: "var(--font-serif)" }}>
             {perspectiveContent.subtitle}
           </p>
         </motion.div>
@@ -69,9 +69,7 @@ export const Perspective = () => {
                     src={img.src}
                     alt={img.alt}
                     fill
-                    className={`object-cover transition-transform duration-700 hover:scale-105 ${
-                      i === 2 ? "object-[center_75%]" : "object-center"
-                    }`}
+                    className="object-cover object-center transition-transform duration-700 hover:scale-105"
                     sizes="(max-width: 768px) 33vw, 280px"
                   />
                 </motion.div>

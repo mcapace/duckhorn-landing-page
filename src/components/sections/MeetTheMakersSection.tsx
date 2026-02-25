@@ -21,13 +21,21 @@ const ESTATE_BOTTLES = [
   { id: "sonoma-cutrer", name: "Sonoma-Cutrer", image: "/images/bottles%20new/SonomaCutrer-Bottle-Edit%20%281%29.jpg" },
 ] as const;
 
+const WINERY_NAME_TO_SLUG: Record<string, string> = {
+  "Duckhorn Vineyards": "duckhorn",
+  "Kosta Browne": "kosta-browne",
+  Goldeneye: "goldeneye",
+  Calera: "calera",
+  "Sonoma-Cutrer": "sonoma-cutrer",
+};
+
 export const MeetTheMakersSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const makersVideoRef = useRef<HTMLVideoElement>(null);
   const collectionVideoRef = useRef<HTMLVideoElement>(null);
   const [showMakersOverlay, setShowMakersOverlay] = useState(true);
-  const [showCollectionOverlay, setShowCollectionOverlay] = useState(true);
+  const [selectedWinemaker, setSelectedWinemaker] = useState<(typeof winemakers)[number] | null>(null);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -42,22 +50,6 @@ export const MeetTheMakersSection = () => {
       const { currentTime, duration } = video;
       if (!Number.isFinite(duration) || duration <= 0) return;
       setShowMakersOverlay(currentTime < duration - OVERLAY_HIDE_LAST_SECONDS);
-    };
-    video.addEventListener("timeupdate", onTimeUpdate);
-    video.addEventListener("loadedmetadata", onTimeUpdate);
-    return () => {
-      video.removeEventListener("timeupdate", onTimeUpdate);
-      video.removeEventListener("loadedmetadata", onTimeUpdate);
-    };
-  }, []);
-
-  useEffect(() => {
-    const video = collectionVideoRef.current;
-    if (!video) return;
-    const onTimeUpdate = () => {
-      const { currentTime, duration } = video;
-      if (!Number.isFinite(duration) || duration <= 0) return;
-      setShowCollectionOverlay(currentTime < duration - OVERLAY_HIDE_LAST_SECONDS);
     };
     video.addEventListener("timeupdate", onTimeUpdate);
     video.addEventListener("loadedmetadata", onTimeUpdate);
@@ -111,7 +103,7 @@ export const MeetTheMakersSection = () => {
               }`}
               aria-hidden
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/40" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/50" />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
                 <h2
                   className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
@@ -125,7 +117,7 @@ export const MeetTheMakersSection = () => {
           </motion.div>
 
           <p
-            className="mt-6 text-[#2A2A2A] italic text-lg md:text-xl text-center max-w-2xl mx-auto"
+            className="mt-6 text-[#2A2A2A] italic text-xl md:text-2xl text-center max-w-2xl mx-auto"
             style={{ fontFamily: "var(--font-script)" }}
           >
             A conversation with the winemakers who shape the wines
@@ -142,17 +134,18 @@ export const MeetTheMakersSection = () => {
                 transition={{ delay: index * 0.06 }}
                 className="flex flex-col items-center text-center"
               >
-                <Link
-                  href={`/wineries#${maker.slug}`}
-                  className="group flex flex-col items-center"
+                <button
+                  type="button"
+                  onClick={() => setSelectedWinemaker(maker)}
+                  className="group flex flex-col items-center cursor-pointer text-left"
                 >
-                  <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] group-hover:ring-[#B8956A] transition-all duration-300 flex-shrink-0">
+                  <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full overflow-hidden ring-2 ring-[#E8E4DC] group-hover:ring-[#B8956A] transition-all duration-300 flex-shrink-0">
                     <Image
                       src={maker.image}
                       alt={maker.name}
                       fill
                       className="object-cover object-top"
-                      sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 128px"
+                      sizes="(max-width: 640px) 112px, (max-width: 768px) 128px, 144px"
                     />
                   </div>
                   <p
@@ -164,10 +157,69 @@ export const MeetTheMakersSection = () => {
                   <p className="text-[#425a4d] text-xs md:text-sm mt-0.5">
                     {maker.winery}
                   </p>
-                </Link>
+                </button>
               </motion.div>
             ))}
           </div>
+
+          {/* Winemaker popup modal */}
+          {selectedWinemaker && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
+              onClick={() => setSelectedWinemaker(null)}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="winemaker-modal-title"
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                className="relative w-full max-w-lg rounded-2xl bg-white shadow-xl overflow-hidden"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="p-6 md:p-8">
+                  <div className="flex flex-col sm:flex-row gap-6">
+                    <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden flex-shrink-0 mx-auto sm:mx-0 bg-[#E8E4DC]">
+                      <Image
+                        src={selectedWinemaker.image}
+                        alt={selectedWinemaker.name}
+                        fill
+                        className="object-cover object-top"
+                        sizes="112px"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0 text-center sm:text-left">
+                      <h3 id="winemaker-modal-title" className="text-xl md:text-2xl text-[#2A2A2A]" style={{ fontFamily: "var(--font-serif)" }}>
+                        {selectedWinemaker.name}
+                      </h3>
+                      <p className="text-[#B8956A] text-sm font-medium mt-0.5">{selectedWinemaker.title}</p>
+                      <p className="text-[#425a4d] text-sm mt-1">{selectedWinemaker.winery}</p>
+                      <p className="mt-4 text-[#3D3D3D] text-sm md:text-base leading-relaxed italic">
+                        {selectedWinemaker.quote}
+                      </p>
+                      <Link
+                        href={`/wineries/${WINERY_NAME_TO_SLUG[selectedWinemaker.winery] ?? selectedWinemaker.slug}`}
+                        className="inline-flex items-center gap-2 mt-4 text-[#B8956A] text-sm font-medium uppercase tracking-wider hover:underline"
+                        style={{ fontFamily: "var(--font-serif)" }}
+                        onClick={() => setSelectedWinemaker(null)}
+                      >
+                        View profile →
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setSelectedWinemaker(null)}
+                  className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full text-[#3D3D3D] hover:bg-[#E8E4DC] transition-colors"
+                  aria-label="Close"
+                >
+                  <span className="text-xl leading-none">×</span>
+                </button>
+              </motion.div>
+            </div>
+          )}
 
           {/* THE COLLECTION video box — same style as Meet the Makers */}
           <motion.div
@@ -190,12 +242,10 @@ export const MeetTheMakersSection = () => {
                 />
               </div>
               <div
-                className={`absolute inset-0 z-20 pointer-events-none transition-opacity duration-700 ${
-                  showCollectionOverlay ? "opacity-100" : "opacity-0"
-                }`}
+                className="absolute inset-0 z-20 pointer-events-none transition-opacity duration-700 opacity-100"
                 aria-hidden
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/40" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/50" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
                   <h2
                     className="text-4xl md:text-5xl lg:text-6xl text-white tracking-tight"
@@ -212,7 +262,7 @@ export const MeetTheMakersSection = () => {
           {/* Tagline below The Collection — same spacing as text under Meet the Makers (mt-6) */}
           <div className="mt-6 w-full max-w-5xl text-center">
             <p
-              className="text-[#2A2A2A] italic text-lg md:text-xl"
+              className="text-[#2A2A2A] italic text-xl md:text-2xl"
               style={{ fontFamily: "var(--font-script)" }}
             >
               Five Estates. One pursuit of excellence.
