@@ -144,7 +144,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               transition={{ duration: 0.6 }}
               className="mb-12 md:mb-16"
             >
-              <h2 className="text-2xl md:text-3xl text-[#2A2A2A] font-semibold mb-6" style={{ fontFamily: "var(--font-serif)" }}>
+              <h2 className="text-2xl md:text-3xl text-[#A07D4E] italic font-semibold mb-6" style={{ fontFamily: "var(--font-serif)" }}>
                 {section1.heading}
               </h2>
               <p className="text-[#3D3D3D] text-base md:text-lg leading-[1.75] max-w-3xl">{section1.body}</p>
@@ -158,7 +158,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               transition={{ duration: 0.6 }}
               className="mb-16 md:mb-24"
             >
-              <h2 className="text-2xl md:text-3xl text-[#2A2A2A] font-semibold mb-6" style={{ fontFamily: "var(--font-serif)" }}>
+              <h2 className="text-2xl md:text-3xl text-[#A07D4E] italic font-semibold mb-6" style={{ fontFamily: "var(--font-serif)" }}>
                 {section2.heading}
               </h2>
               <p className="text-[#3D3D3D] text-base md:text-lg leading-[1.75] max-w-3xl">{section2.body}</p>
