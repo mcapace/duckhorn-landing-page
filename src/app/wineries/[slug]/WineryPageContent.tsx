@@ -169,25 +169,30 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6 mb-20 md:mb-24"
+            className="mb-20 md:mb-24"
           >
-            {wines.map((wine, i) => (
-              <div key={i} className="flex flex-col items-center text-center">
-                <div className="relative w-full aspect-[3/4] max-w-[180px] mx-auto mb-4">
-                  <Image
-                    src={bottleImage}
-                    alt={wine.name}
-                    fill
-                    className="object-contain object-center drop-shadow-[0_16px_32px_rgba(0,0,0,0.1)]"
-                    sizes="180px"
-                  />
+            {/* Single image: all five bottles in one shot */}
+            <div className="relative w-full max-w-4xl mx-auto mb-8">
+              <Image
+                src={bottleImage}
+                alt={name}
+                width={1200}
+                height={800}
+                className="w-full h-auto object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
+                sizes="(max-width: 1024px) 100vw, 896px"
+              />
+            </div>
+            {/* Text overlay row: five blocks aligned under each bottle */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4 max-w-4xl mx-auto">
+              {wines.map((wine, i) => (
+                <div key={i} className="text-center">
+                  <h4 className="text-base font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
+                    {wine.name}
+                  </h4>
+                  <p className="text-[#3D3D3D] text-sm mt-2 leading-relaxed">{wine.description}</p>
                 </div>
-                <h4 className="text-base font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
-                  {wine.name}
-                </h4>
-                <p className="text-[#3D3D3D] text-sm mt-2 leading-relaxed">{wine.description}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
