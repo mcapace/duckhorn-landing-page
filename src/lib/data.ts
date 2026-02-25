@@ -338,7 +338,7 @@ export const perspectiveImages = [
 export const robSorensonData = {
   name: "Rob Sorenson",
   title: "Director of North Coast Estate Vineyards",
-  image: "/images/Computers-027.jpg",
+  image: "/images/new-downloads/Intro.jpg",
   portraitImage: "/images/Rob.jpg",
   intro:
     "Rob Sorenson oversees a far-reaching estate portfolio—mountain Cabernet, benchmark Merlot, and cool-climate Pinot Noir and Chardonnay—built on one conviction: the character of the wine is decided long before the cellar.",
