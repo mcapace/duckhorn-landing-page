@@ -173,26 +173,29 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6 }}
-              className="rounded-2xl overflow-hidden border border-[#E8E4DC]/50 relative min-h-[320px] md:min-h-[380px] mb-20 md:mb-24"
+              className="mb-20 md:mb-24 relative w-full"
             >
-              <Image
-                src={bottleImage}
-                alt={name}
-                fill
-                className="object-contain object-left bg-[#FAFAF8]"
-                sizes="(max-width: 1024px) 100vw, 1400px"
-              />
-              {/* Text overlaid on right side of image */}
-              <div className="absolute inset-y-0 right-0 w-full md:w-[45%] min-h-[320px] md:min-h-0 flex flex-col justify-center pl-8 pr-8 py-8 md:py-12 bg-gradient-to-l from-white via-white/95 to-transparent md:from-white/95 md:via-white/80 md:to-transparent">
-                <div className="space-y-6 max-w-md ml-auto">
-                  {wines.map((wine, i) => (
-                    <div key={i}>
-                      <h4 className="text-base md:text-lg font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
-                        {wine.name}
-                      </h4>
-                      <p className="text-[#2A2A2A] text-sm md:text-base mt-1.5 leading-relaxed">{wine.description}</p>
-                    </div>
-                  ))}
+              <div className="relative w-full max-w-5xl mx-auto">
+                <Image
+                  src={bottleImage}
+                  alt={name}
+                  width={1400}
+                  height={900}
+                  className="w-full h-auto block object-contain object-left"
+                  sizes="(max-width: 1024px) 100vw, 1280px"
+                />
+                {/* Text overlaid on right-side empty space of image */}
+                <div className="absolute inset-y-0 right-0 w-[38%] min-w-[200px] max-w-[420px] flex flex-col justify-center py-8 pr-6 pl-4 md:py-12 md:pr-10 md:pl-6">
+                  <div className="space-y-5">
+                    {wines.map((wine, i) => (
+                      <div key={i}>
+                        <h4 className="text-sm md:text-base font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
+                          {wine.name}
+                        </h4>
+                        <p className="text-[#2A2A2A] text-xs md:text-sm mt-1 leading-relaxed">{wine.description}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
