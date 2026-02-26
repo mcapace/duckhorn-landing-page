@@ -248,8 +248,8 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                   className="w-full h-auto block object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
                   sizes="(max-width: 1024px) 100vw, 1400px"
                 />
-                {/* Text overlay: five blocks over lower part of image */}
-                <div className="absolute inset-x-0 bottom-0 min-h-[38%] pt-[20%] pb-4 px-4 sm:px-6 flex flex-col justify-end bg-gradient-to-t from-white via-white/85 to-transparent">
+                {/* Text overlay: five blocks over lower part of image — closer to bottle */}
+                <div className="absolute inset-x-0 bottom-0 min-h-[32%] pt-[10%] pb-4 px-4 sm:px-6 flex flex-col justify-end bg-gradient-to-t from-white via-white/85 to-transparent">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-2 w-full">
                     {wines.map((wine, i) => (
                       <motion.div
