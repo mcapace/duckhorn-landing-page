@@ -56,8 +56,13 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
         transition={{ duration: 0.8 }}
         className="relative w-full min-h-[75vh] md:min-h-[80vh] overflow-hidden"
       >
-        {/* Back link - overlays hero */}
-        <div className="absolute top-0 left-0 right-0 z-20 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 pt-28">
+        {/* Back link - overlays hero, fades in */}
+        <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.4 }}
+          className="absolute top-0 left-0 right-0 z-20 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 pt-28"
+        >
           <Link
             href="/#featured-wines"
             className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white transition-colors py-2 px-3 -ml-3 rounded-lg hover:bg-white/10"
@@ -67,7 +72,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             </svg>
             Back to Featured Wines
           </Link>
-        </div>
+        </motion.div>
         <motion.div className="absolute inset-0" style={{ y: heroY }}>
           <Image
             src={image}
@@ -185,10 +190,10 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
           )}
           {isKostaBrowne ? (
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 24, scale: 0.98 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               className="mb-20 md:mb-24"
             >
               <div className="relative w-full">
@@ -204,14 +209,20 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                 <div className="absolute right-0 top-0 bottom-0 w-[85%] max-w-[420px] min-w-[240px] flex flex-col justify-center py-8 sm:py-10 lg:py-12 pl-10 pr-6 sm:pl-12 sm:pr-10 bg-[linear-gradient(to_left,rgba(255,255,255,0.97)_0%,rgba(255,255,255,0.85)_40%,rgba(255,255,255,0.25)_70%,transparent_100%)]">
                   <div className="space-y-6 lg:space-y-8">
                     {wines.map((wine, i) => (
-                      <div key={i}>
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: 12 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: i * 0.06 }}
+                      >
                         <h4 className="text-base md:text-lg font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
                           {wine.name}
                         </h4>
                         <p className="text-[#3D3D3D] text-sm md:text-base mt-1.5 leading-relaxed">
                           {wine.description}
                         </p>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
@@ -219,10 +230,10 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             </motion.div>
           ) : (
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 24, scale: 0.98 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="mb-20 md:mb-24"
           >
             {/* Single image with text overlay on top — same width as winemaker section */}
@@ -240,12 +251,19 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                 <div className="absolute inset-x-0 bottom-0 min-h-[38%] pt-[20%] pb-4 px-4 sm:px-6 flex flex-col justify-end bg-gradient-to-t from-white via-white/85 to-transparent">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-2 w-full">
                     {wines.map((wine, i) => (
-                      <div key={i} className="text-center">
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: i * 0.05 }}
+                        className="text-center"
+                      >
                         <h4 className="text-sm sm:text-base font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
                           {wine.name}
                         </h4>
                         <p className="text-[#3D3D3D] text-xs sm:text-sm mt-1.5 leading-relaxed">{wine.description}</p>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
@@ -262,9 +280,15 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
           >
             <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
               <div className="md:col-span-2 flex flex-col items-center justify-center p-10 md:p-12">
-                <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden ring-2 ring-white shadow-lg">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.92 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden ring-2 ring-white shadow-lg"
+                >
                   <Image src={winemaker.image} alt={winemaker.name} fill className="object-cover object-center" sizes="192px" />
-                </div>
+                </motion.div>
               </div>
               <div className="md:col-span-3 flex flex-col justify-center p-8 md:p-12 md:pl-10">
                 <h3 className="text-2xl md:text-3xl text-[#2A2A2A] font-semibold" style={{ fontFamily: "var(--font-serif)" }}>
@@ -277,7 +301,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                 <button
                   type="button"
                   onClick={() => setShowQaModal(true)}
-                  className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#425a4d] text-white text-sm font-medium uppercase tracking-wider hover:bg-[#2D4636] transition-colors rounded-md w-fit"
+                  className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#425a4d] text-white text-sm font-medium uppercase tracking-wider hover:bg-[#2D4636] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] rounded-md w-fit"
                 >
                   READ FULL Q&A
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -347,12 +371,25 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                     </p>
                   </>
                 )}
-                <div className="flex flex-col gap-1 mb-6 w-1/3 min-w-[120px]">
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.15 }}
+                  className="flex flex-col gap-1 mb-6 w-1/3 min-w-[120px] origin-left"
+                >
                   <div className="h-px bg-[#425a4d]/60" />
                   <div className="h-px bg-[#425a4d]/40" />
-                </div>
+                </motion.div>
                 {wines.map((wine, i) => (
-                  <div key={i} className={i > 0 ? "mt-6" : ""}>
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.1 + i * 0.06 }}
+                    className={i > 0 ? "mt-6" : ""}
+                  >
                     <h4
                       className="text-lg md:text-xl font-semibold text-[#425a4d]"
                       style={{ fontFamily: "var(--font-serif)" }}
@@ -362,7 +399,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                     <p className="text-[#3D3D3D] text-sm md:text-base mt-2 leading-relaxed">
                       {wine.description}
                     </p>
-                  </div>
+                  </motion.div>
                 ))}
               </>
             )}
@@ -379,7 +416,13 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
         >
           <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
             <div className="md:col-span-2 flex flex-col items-center justify-center p-10 md:p-12">
-              <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden ring-2 ring-white shadow-lg">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.92 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden ring-2 ring-white shadow-lg"
+              >
                 <Image
                   src={winemaker.image}
                   alt={winemaker.name}
@@ -387,7 +430,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                   className="object-cover object-center"
                   sizes="192px"
                 />
-              </div>
+              </motion.div>
             </div>
             <div className="md:col-span-3 flex flex-col justify-center p-8 md:p-12 md:pl-10">
               <h3
@@ -405,7 +448,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               <button
                 type="button"
                 onClick={() => setShowQaModal(true)}
-                className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#425a4d] text-white text-sm font-medium uppercase tracking-wider hover:bg-[#2D4636] transition-colors rounded-md w-fit"
+                className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#425a4d] text-white text-sm font-medium uppercase tracking-wider hover:bg-[#2D4636] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] rounded-md w-fit"
               >
                 READ FULL Q&A
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -426,13 +469,15 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 sm:p-6"
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 sm:p-6"
             onClick={() => setShowQaModal(false)}
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
               className="bg-white rounded-xl sm:rounded-2xl overflow-hidden w-full max-w-2xl sm:max-w-4xl lg:max-w-5xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl"
             >
