@@ -436,7 +436,7 @@ export const wineries = [
     image: "/images/edited-images/KostaBrownePage-Hero-Edit.jpg",
     heroDescription:
       "Kosta Browne approaches Pinot Noir as a mosaic of singular sites—each block, clone, and exposure vinified independently to preserve nuance. Native ferments and temperature-disciplined cellar work reveal the subtleties of soil, fog patterns, and coastal influence. The result is a portfolio defined by precision and depth: powerful yet balanced Pinots with luminous fruit, fine structure, and unmistakable site signatures.",
-    bottleImage: "/images/new-downloads/KostaBrowne-Full.jpg",
+    bottleImage: "/images/edited-images/KostaBrownePage-Bottles-Edit.jpg",
     galleryImages: [
       "/images/new-downloads/KostaBrowne2.jpg",
       "/images/new-downloads/KostaBrowne4.jpg",
@@ -457,6 +457,7 @@ export const wineries = [
     name: "CALERA",
     tagline: "Mountain Purity & Limestone Precision",
     image: "/images/edited-images/CaleraPage-Hero-Edit.jpg",
+    bottleImage: "/images/edited-images/CaleraPage-Bottle-Edit.jpg",
     heroDescription:
       "Calera remains one of California's most distinctive expressions of Pinot Noir. Perched high on Mt. Harlan, the vineyards rise from rare limestone soils, fierce diurnal shifts, and conditions that challenge the vines at every turn. The wines are shaped by altitude and austerity—native fermentations, whole-cluster structure, gravity-fed handling, and long, patient aging that preserves purity and lift.",
     section1: {
@@ -472,6 +473,7 @@ export const wineries = [
     name: "GOLDENEYE",
     tagline: "The Voice of Anderson Valley",
     image: "/images/edited-images/GoldeneyePage-Hero-Edit.jpg",
+    bottleImage: "/images/edited-images/GoldeneyePage-Bottle-Edit.jpg",
     heroDescription:
       "Goldeneye channels the coastal intensity of Anderson Valley into Pinot Noirs defined by depth, tone, and a vivid sense of place. Its estate vineyards, ranging from warm mid-valley slopes to wind-swept deep-end ridges, offer a dramatic palette of textures. Sustainable farming, measured extraction, and a modernized oak program allow the valley's natural signatures—redwoods, ocean breezes, Pennyroyal herbs—to find clear expression in the wines.",
     wines: [
@@ -483,6 +485,7 @@ export const wineries = [
     name: "SONOMA-CUTRER",
     tagline: "Crisp by Design",
     image: "/images/edited-images/SonomaCutrer-PageHero-Edit.jpg",
+    bottleImage: "/images/edited-images/SonomaCutrerPage-Bottle-Edit.jpg",
     heroDescription:
       "Sonoma-Cutrer was founded on one idea: perfecting Chardonnay. Four decades later, the winery remains synonymous with crisp, balanced, terroir-driven Chardonnay shaped by the Russian River Valley's cool climate. Vineyard-specific harvesting, barrel fermentation, selected French oak, and modest malolactic preserve brightness and precision.",
     section1: {
