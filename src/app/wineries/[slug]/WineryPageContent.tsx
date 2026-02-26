@@ -54,7 +54,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative w-full min-h-[75vh] md:min-h-[80vh] overflow-hidden"
+        className="relative w-full min-h-[82vh] md:min-h-[88vh] overflow-hidden"
       >
         {/* Back link - overlays hero, fades in */}
         <motion.div
@@ -81,6 +81,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             className="object-cover object-center scale-105"
             sizes="100vw"
             priority
+            quality={90}
           />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
