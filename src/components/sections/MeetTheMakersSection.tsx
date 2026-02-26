@@ -145,7 +145,7 @@ export const MeetTheMakersSection = () => {
                       alt={maker.name}
                       fill
                       className="object-cover object-top"
-                      sizes="(max-width: 640px) 112px, (max-width: 768px) 128px, 144px"
+                      sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, 288px"
                     />
                   </div>
                   <p
@@ -323,13 +323,13 @@ export const MeetTheMakersSection = () => {
             ))}
           </div>
 
-          {/* Line + Rob Sorenson vineyard quality block — same headshot size as winemakers, name + title under circle */}
+          {/* Line + Rob Sorenson vineyard quality block — title on 2 lines, headshot closer to copy */}
           <div className="mt-16 md:mt-20 w-full max-w-5xl border-t border-[#B8956A] pt-10 md:pt-12 flex justify-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex flex-col sm:flex-row items-center gap-8 md:gap-10 max-w-3xl"
+              className="flex flex-col sm:flex-row items-center gap-6 md:gap-8 max-w-3xl"
             >
               <div className="flex-shrink-0 flex flex-col items-center text-center sm:items-start sm:text-left">
                 <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full overflow-hidden ring-2 ring-[#E8E4DC]">
@@ -338,17 +338,19 @@ export const MeetTheMakersSection = () => {
                     alt={robSorensonData.name}
                     fill
                     className="object-cover object-top"
-                    sizes="(max-width: 640px) 112px, (max-width: 768px) 128px, 144px"
+                    sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, 288px"
                   />
                 </div>
                 <p
-                  className="mt-4 text-[#2A2A2A] font-medium text-sm md:text-base"
+                  className="mt-3 text-[#2A2A2A] font-medium text-sm md:text-base"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
                   {robSorensonData.name}
                 </p>
-                <p className="text-[#425a4d] text-xs md:text-sm mt-0.5 uppercase tracking-wider">
-                  {robSorensonData.title}
+                <p className="text-[#425a4d] text-xs md:text-sm mt-0.5 uppercase tracking-wider max-w-[10rem] sm:max-w-none leading-tight">
+                  Director of North Coast
+                  <br />
+                  Estate Vineyards
                 </p>
               </div>
               <div className="flex-1 min-w-0 text-left max-w-xl mx-auto sm:mx-0">

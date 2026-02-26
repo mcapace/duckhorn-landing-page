@@ -93,7 +93,7 @@ export const Perspective = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="pt-10 mt-10 flex flex-col sm:flex-row items-end justify-end gap-6"
+            className="pt-6 mt-6 flex flex-col sm:flex-row items-end justify-end gap-6"
           >
             <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden flex-shrink-0 bg-[#E8E4DC]">
               <Image

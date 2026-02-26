@@ -19,7 +19,8 @@ export const Hero = () => {
           src="/images/Duckhorn-Digital-Edits-Hero2-Parallax.jpg"
           alt="The Duckhorn Collection"
           fill
-          className="object-cover object-top"
+          className="object-cover object-center"
+          style={{ objectPosition: "center 38%" }}
           priority
           sizes="100vw"
           unoptimized
