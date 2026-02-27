@@ -124,17 +124,20 @@ export const MeetTheMakersSection = () => {
           </p>
 
           {/* 5 winemaker circles — horizontal scroll on mobile (no empty space), flex on larger */}
-          <div className="mt-12 md:mt-16 w-full overflow-x-auto overflow-y-hidden scrollbar-hide -mx-6 px-6 sm:mx-0 sm:px-0 sm:overflow-visible">
-            <div className="flex gap-8 sm:flex-wrap sm:justify-center sm:gap-8 md:gap-10 lg:gap-12 min-w-0 w-max sm:w-full mx-auto sm:mx-0">
-              {winemakers.map((maker, index) => (
-                <motion.div
-                  key={maker.slug}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.06 }}
-                  className="flex flex-col items-center text-center flex-shrink-0 w-[140px] sm:w-auto"
-                >
+          <div className="mt-12 md:mt-16 w-full sm:block">
+            <div className="relative -mx-6 px-6 sm:mx-0 sm:px-0">
+              <div className="relative">
+                <div className="overflow-x-auto overflow-y-hidden scrollbar-hide sm:overflow-visible">
+                  <div className="flex gap-8 sm:flex-wrap sm:justify-center sm:gap-8 md:gap-10 lg:gap-12 min-w-0 w-max sm:w-full mx-auto sm:mx-0">
+                    {winemakers.map((maker, index) => (
+                      <motion.div
+                        key={maker.slug}
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.06 }}
+                        className="flex flex-col items-center text-center flex-shrink-0 w-[140px] sm:w-auto"
+                      >
                 <button
                   type="button"
                   onClick={() => setSelectedWinemaker(maker)}
@@ -161,6 +164,15 @@ export const MeetTheMakersSection = () => {
                 </button>
               </motion.div>
             ))}
+                  </div>
+                </div>
+                {/* Mobile: right-edge fade (over scroll row only) */}
+                <div className="sm:hidden absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none" aria-hidden />
+              </div>
+              <p className="sm:hidden mt-3 text-center text-[#425a4d] text-xs font-medium flex items-center justify-center gap-1.5" aria-hidden>
+                <span>Swipe for more</span>
+                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+              </p>
             </div>
           </div>
 
@@ -290,8 +302,11 @@ export const MeetTheMakersSection = () => {
           </div>
 
           {/* Five estate bottle cards — horizontal scroll on mobile (no empty space), flex on larger */}
-          <div id="wines" className="mt-12 md:mt-16 w-full max-w-5xl overflow-x-auto overflow-y-hidden scrollbar-hide -mx-6 px-6 sm:mx-0 sm:px-0 sm:overflow-visible scroll-mt-24">
-            <div className="flex gap-4 sm:flex-wrap sm:justify-between sm:gap-6 w-max sm:w-full min-w-0">
+          <div id="wines" className="mt-12 md:mt-16 w-full max-w-5xl scroll-mt-24">
+            <div className="relative -mx-6 px-6 sm:mx-0 sm:px-0">
+              <div className="relative">
+                <div className="overflow-x-auto overflow-y-hidden scrollbar-hide sm:overflow-visible">
+                  <div className="flex gap-4 sm:flex-wrap sm:justify-between sm:gap-6 w-max sm:w-full min-w-0">
             {ESTATE_BOTTLES.map((estate, index) => (
               <motion.div
                 key={estate.id}
@@ -326,6 +341,15 @@ export const MeetTheMakersSection = () => {
                 </Link>
               </motion.div>
             ))}
+                  </div>
+                </div>
+                {/* Mobile: right-edge fade (over scroll row only) */}
+                <div className="sm:hidden absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none" aria-hidden />
+              </div>
+              <p className="sm:hidden mt-3 text-center text-[#425a4d] text-xs font-medium flex items-center justify-center gap-1.5" aria-hidden>
+                <span>Swipe for more</span>
+                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+              </p>
             </div>
           </div>
 
