@@ -49,21 +49,20 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
 
   return (
     <section className="scroll-mt-20 min-h-screen bg-white">
-      {/* Hero - immersive, full bleed with parallax; extend into safe area to avoid black corner on mobile */}
+      {/* Hero - full bleed with parallax */}
       <motion.div
         ref={heroRef}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative w-full min-h-[82vh] md:min-h-[88vh] overflow-hidden bg-[#1a1a1a]"
-        style={{ marginTop: 'calc(-1 * env(safe-area-inset-top, 0px))', paddingTop: 'env(safe-area-inset-top, 0px)' }}
+        className="relative w-full min-h-[82vh] md:min-h-[88vh] overflow-hidden"
       >
-        {/* Back link - below safe area */}
+        {/* Back link */}
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.4 }}
-          className="absolute top-0 left-0 right-0 z-20 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 pt-[max(5rem,calc(env(safe-area-inset-top,0px)+1rem))] sm:pt-28"
+          className="absolute top-0 left-0 right-0 z-20 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 pt-24 sm:pt-28"
         >
           <Link
             href="/#featured-wines"
@@ -75,15 +74,13 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             Back to Featured Wines
           </Link>
         </motion.div>
-        <motion.div className="absolute inset-0 overflow-hidden" style={{ y: heroY }}>
-          <Image
+        <motion.div className="absolute inset-0 w-full h-full overflow-hidden" style={{ y: heroY }}>
+          {/* Native img to avoid Next/Image placeholder or wrapper that can show a black box */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src={image}
-            alt={name}
-            fill
-            className="object-cover object-center max-sm:object-top scale-105"
-            sizes="100vw"
-            priority
-            quality={90}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover object-center max-sm:object-top scale-105"
           />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
