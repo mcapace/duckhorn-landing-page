@@ -300,7 +300,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                   sizes="(max-width: 1024px) 100vw, 1400px"
                 />
                 {/* Desktop only: text overlay at bottom — brought up a bit */}
-                <div className="hidden md:block absolute inset-x-0 bottom-0 min-h-[40%] pt-[18%] pb-6 px-4 sm:px-6 flex flex-col justify-end bg-gradient-to-t from-white via-white/85 to-transparent">
+                <div className="hidden md:block absolute inset-x-0 bottom-0 min-h-[50%] pt-[28%] pb-8 px-4 sm:px-6 flex flex-col justify-end bg-gradient-to-t from-white via-white/85 to-transparent">
                   <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-2 w-full">
                     {wines.map((wine, i) => (
                       <motion.div
