@@ -31,10 +31,11 @@ interface WineryChapter {
   galleryImages?: string[];
   section1?: { heading: string; body: string };
   section2?: { heading: string; body: string };
+  logoImage?: string;
 }
 
 export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
-  const { name, tagline, image, heroDescription, bottleImage, wines, winemaker, galleryImages, section1, section2 } = chapter;
+  const { name, tagline, image, heroDescription, bottleImage, wines, winemaker, galleryImages, section1, section2, logoImage } = chapter;
   const [showQaModal, setShowQaModal] = useState(false);
   const isGalleryLayout = galleryImages && galleryImages.length > 0;
   const isDuckhorn = chapter.id === "duckhorn";
@@ -97,15 +98,45 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             >
               The Duckhorn Collection
             </motion.p>
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-white uppercase"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              {name}
-            </motion.h1>
+            {logoImage ? (
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="mb-4"
+              >
+                <Image
+                  src={logoImage}
+                  alt={name}
+                  width={320}
+                  height={80}
+                  className="max-w-[240px] sm:max-w-[280px] md:max-w-[320px] h-auto object-contain object-left drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]"
+                  priority
+                  unoptimized
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                    const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = "block";
+                  }}
+                />
+                <h1
+                  className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-white uppercase hidden"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  {name}
+                </h1>
+              </motion.div>
+            ) : (
+              <motion.h1
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight text-white uppercase"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                {name}
+              </motion.h1>
+            )}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

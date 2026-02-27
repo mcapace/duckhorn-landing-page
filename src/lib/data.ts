@@ -434,6 +434,7 @@ export const wineries = [
     name: "KOSTA BROWNE",
     tagline: "The Art of Site",
     image: "/images/edited-images/KostaBrownePage-Hero-Edit.jpg",
+    logoImage: "/images/kosta-browne-logo-white.png", // Place white Kosta Browne logo at public/images/kosta-browne-logo-white.png
     heroDescription:
       "Kosta Browne approaches Pinot Noir as a mosaic of singular sites—each block, clone, and exposure vinified independently to preserve nuance. Native ferments and temperature-disciplined cellar work reveal the subtleties of soil, fog patterns, and coastal influence. The result is a portfolio defined by precision and depth: powerful yet balanced Pinots with luminous fruit, fine structure, and unmistakable site signatures.",
     bottleImage: "/images/edited-images/KostaBrownePage-Bottles-Edit.jpg",
