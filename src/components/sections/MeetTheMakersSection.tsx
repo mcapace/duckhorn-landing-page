@@ -123,8 +123,8 @@ export const MeetTheMakersSection = () => {
             A conversation with the winemakers who shape the wines
           </p>
 
-          {/* 5 winemaker circles */}
-          <div className="mt-12 md:mt-16 w-full flex flex-wrap justify-center gap-8 md:gap-10 lg:gap-12">
+          {/* 5 winemaker circles — 2-col grid on mobile, flex wrap on larger */}
+          <div className="mt-12 md:mt-16 w-full grid grid-cols-2 gap-6 sm:flex sm:flex-wrap sm:justify-center sm:gap-8 md:gap-10 lg:gap-12">
             {winemakers.map((maker, index) => (
               <motion.div
                 key={maker.slug}
@@ -287,8 +287,8 @@ export const MeetTheMakersSection = () => {
             </p>
           </div>
 
-          {/* Five estate bottle cards — same width as video box above (max-w-5xl) */}
-          <div id="wines" className="mt-12 md:mt-16 w-full max-w-5xl flex flex-wrap justify-between gap-4 sm:gap-6 scroll-mt-24">
+          {/* Five estate bottle cards — 2-col grid on mobile, flex on larger */}
+          <div id="wines" className="mt-12 md:mt-16 w-full max-w-5xl grid grid-cols-2 gap-4 sm:flex sm:flex-wrap sm:justify-between sm:gap-6 scroll-mt-24">
             {ESTATE_BOTTLES.map((estate, index) => (
               <motion.div
                 key={estate.id}
@@ -296,42 +296,44 @@ export const MeetTheMakersSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.06 }}
-                className="flex flex-col items-center flex-1 min-w-0"
-                style={{ minWidth: "140px", maxWidth: "220px" }}
+                className="flex flex-col items-center w-full sm:flex-1 sm:min-w-0 sm:max-w-[220px] sm:min-w-[140px]"
               >
                 <Link
                   href={`/wineries/${estate.id}`}
                   className="group flex flex-col items-center w-full"
                 >
-                  <div className="relative w-full h-[340px] sm:h-[400px] rounded-2xl overflow-hidden bg-[#E8E4DC] shadow-md group-hover:shadow-lg transition-shadow">
+                  <div className="relative w-full aspect-[3/4] min-h-[200px] sm:h-[340px] sm:min-h-0 md:h-[400px] rounded-xl sm:rounded-2xl overflow-hidden bg-[#E8E4DC] shadow-md group-hover:shadow-lg transition-shadow">
                     <Image
                       src={estate.image}
                       alt={estate.name}
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 140px, 220px"
+                      className="object-cover object-bottom"
+                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 140px, 220px"
                     />
                     <span
-                      className="absolute bottom-0 left-0 right-0 py-3 text-center text-[#B8956A] font-medium text-sm tracking-wide group-hover:underline bg-black/70 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+                      className="absolute bottom-0 left-0 right-0 py-2 sm:py-3 text-center text-[#B8956A] font-medium text-xs sm:text-sm tracking-wide group-hover:underline bg-black/70 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
                       style={{ fontFamily: "var(--font-serif)" }}
                     >
                       EXPLORE →
                     </span>
                   </div>
+                  <p className="mt-2 sm:mt-3 text-[#2A2A2A] font-medium text-sm text-center sm:sr-only" style={{ fontFamily: "var(--font-serif)" }}>
+                    {estate.name}
+                  </p>
                 </Link>
               </motion.div>
             ))}
           </div>
 
-          {/* Line + Rob Sorenson vineyard quality block — title on 2 lines, headshot closer to copy */}
+          {/* Line + Rob Sorenson vineyard quality block — centered on mobile */}
           <div className="mt-16 md:mt-20 w-full max-w-5xl border-t border-[#B8956A] pt-10 md:pt-12 flex justify-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex flex-col sm:flex-row items-center gap-6 md:gap-8 max-w-3xl"
+              className="flex flex-col sm:flex-row items-center gap-6 md:gap-8 max-w-3xl w-full"
             >
-              <div className="flex-shrink-0 flex flex-col items-center text-center sm:items-start sm:text-left">
+              <div className="flex-shrink-0 flex flex-col items-center text-center">
                 <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full overflow-hidden ring-2 ring-[#E8E4DC]">
                   <Image
                     src={robSorensonData.portraitImage}
@@ -353,7 +355,7 @@ export const MeetTheMakersSection = () => {
                   Estate Vineyards
                 </p>
               </div>
-              <div className="flex-1 min-w-0 text-left max-w-xl mx-auto sm:mx-0">
+              <div className="flex-1 min-w-0 text-center sm:text-left max-w-xl mx-auto sm:mx-0 px-2 sm:px-0">
                 <h3
                   className="text-2xl md:text-3xl text-[#2A2A2A] italic"
                   style={{ fontFamily: "var(--font-serif)" }}

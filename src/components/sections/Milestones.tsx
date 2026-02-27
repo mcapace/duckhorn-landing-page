@@ -70,7 +70,7 @@ export const Milestones = () => {
           </p>
         </motion.div>
 
-        {/* Vertical timeline - line segments only between bubbles; full width of content for alignment */}
+        {/* Vertical timeline — stacked on mobile (year on top, then card), row on desktop */}
         <div className="relative w-full">
           <div className="space-y-0 w-full">
             {milestones.map((milestone, index) => (
@@ -80,12 +80,12 @@ export const Milestones = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: index * 0.04 }}
-                className="relative flex w-full gap-6 md:gap-10 py-6 md:py-8 first:pt-0 last:pb-0"
+                className="relative flex flex-col md:flex-row w-full gap-4 md:gap-10 py-6 md:py-8 first:pt-0 last:pb-0"
               >
-                {/* Year node or map icon - bigger golden circle */}
-                <div className="flex-shrink-0 flex flex-col items-center justify-center w-[160px] md:w-[180px]">
+                {/* Year node or map icon — centered on mobile, left column on desktop */}
+                <div className="flex flex-shrink-0 flex-col items-center justify-center w-full md:w-[180px]">
                   <div
-                    className={`relative z-10 w-28 h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center text-lg md:text-xl font-semibold tabular-nums ${
+                    className={`relative z-10 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center text-base sm:text-lg md:text-xl font-semibold tabular-nums ${
                       milestone.highlight
                         ? "bg-[#B8956A] text-white ring-4 ring-[#B8956A]/40"
                         : "bg-[#B8956A] text-white ring-2 ring-white/20"
@@ -93,22 +93,22 @@ export const Milestones = () => {
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
                     {"bubbleIcon" in milestone && milestone.bubbleIcon === "map" ? (
-                      <svg className="w-10 h-10 md:w-12 md:h-12 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" />
                       </svg>
                     ) : milestone.year.length <= 4 ? (
                       milestone.year
                     ) : (
-                      <span className="text-base md:text-lg leading-tight text-center px-1">
+                      <span className="text-sm sm:text-base md:text-lg leading-tight text-center px-1">
                         {milestone.year}
                       </span>
                     )}
                   </div>
                 </div>
 
-                {/* Content box - same width constraint as site (max-w-5xl); no brand name; larger headline */}
+                {/* Content box — full width on mobile */}
                 <div
-                  className={`flex-1 min-w-0 min-h-[200px] md:min-h-[240px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col ${
+                  className={`flex-1 min-w-0 min-h-[180px] md:min-h-[240px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col touch-manipulation ${
                     milestone.highlight
                       ? "bg-[#4d6a55] border border-[#B8956A]/30"
                       : "bg-[#4d6a55] border border-white/10"
@@ -131,18 +131,18 @@ export const Milestones = () => {
                         />
                       </div>
                     )}
-                    <div className="p-5 md:p-6 flex-1 flex flex-col justify-center">
+                    <div className="p-4 sm:p-5 md:p-6 flex-1 flex flex-col justify-center">
                       <h3
-                        className="text-xl md:text-2xl text-white/95 italic"
+                        className="text-lg sm:text-xl md:text-2xl text-white/95 italic"
                         style={{ fontFamily: "var(--font-serif)" }}
                       >
                         {milestone.title}
                       </h3>
-                      <p className="text-white/90 text-sm md:text-base leading-relaxed mt-3">
+                      <p className="text-white/90 text-sm md:text-base leading-relaxed mt-2 sm:mt-3">
                         {milestone.description}
                       </p>
                       {milestone.awardLabel && (
-                        <div className="mt-4 text-[#D4B896] text-sm font-medium uppercase tracking-wider">
+                        <div className="mt-3 sm:mt-4 text-[#D4B896] text-sm font-medium uppercase tracking-wider">
                           {milestone.awardLabel}
                         </div>
                       )}
@@ -151,11 +151,11 @@ export const Milestones = () => {
                 </div>
               </motion.div>
               {index < milestones.length - 1 && (
-                <div className="flex w-full gap-6 md:gap-10 -my-6 md:-my-8">
-                  <div className="w-[160px] md:w-[180px] flex justify-center flex-shrink-0">
-                    <div className="w-px h-12 md:h-16 bg-[#B8956A]/50" />
+                <div className="flex flex-col md:flex-row w-full gap-2 md:gap-10 -my-4 md:-my-8">
+                  <div className="w-full md:w-[180px] flex justify-center flex-shrink-0">
+                    <div className="w-px h-8 md:h-16 bg-[#B8956A]/50 mx-auto md:mx-0" />
                   </div>
-                  <div className="flex-1 min-w-0" />
+                  <div className="hidden md:block flex-1 min-w-0" />
                 </div>
               )}
               </Fragment>

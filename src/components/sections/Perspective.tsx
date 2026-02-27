@@ -93,7 +93,7 @@ export const Perspective = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="pt-6 mt-6 flex flex-col sm:flex-row items-end justify-end gap-6"
+            className="pt-6 mt-6 flex flex-col sm:flex-row items-center justify-center sm:items-end sm:justify-end gap-6"
           >
             <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden flex-shrink-0 bg-[#E8E4DC]">
               <Image
@@ -104,13 +104,13 @@ export const Perspective = () => {
                 sizes="112px"
               />
             </div>
-            <div className="flex flex-col items-start text-left">
+            <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
               <Image
                 src={perspectiveContent.ceoSignatureImage}
                 alt=""
                 width={160}
                 height={48}
-                className="h-10 w-auto object-contain object-left"
+                className="h-10 w-auto object-contain object-center sm:object-left"
               />
               <p
                 className="text-lg font-medium text-[#2A2A2A] mt-2"
