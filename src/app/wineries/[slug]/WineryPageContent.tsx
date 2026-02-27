@@ -204,11 +204,11 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                   alt={name}
                   width={1200}
                   height={1600}
-                  className="w-full h-auto block object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
+                  className="w-full h-auto block object-contain object-top drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
                   sizes="(max-width: 1024px) 100vw, 1400px"
                 />
-                {/* Text overlay on right side — narrow strip with gradient so bottles stay visible */}
-                <div className="absolute right-0 top-0 bottom-0 w-[85%] max-w-[420px] min-w-[240px] flex flex-col justify-center py-8 sm:py-10 lg:py-12 pl-10 pr-6 sm:pl-12 sm:pr-10 bg-[linear-gradient(to_left,rgba(255,255,255,0.97)_0%,rgba(255,255,255,0.85)_40%,rgba(255,255,255,0.25)_70%,transparent_100%)]">
+                {/* Desktop: text overlay on right. Mobile: no overlay — text block below */}
+                <div className="hidden md:block absolute right-0 top-0 bottom-0 w-[85%] max-w-[420px] min-w-[240px] flex flex-col justify-center py-8 lg:py-12 pl-10 pr-6 sm:pl-12 sm:pr-10 bg-[linear-gradient(to_left,rgba(255,255,255,0.97)_0%,rgba(255,255,255,0.85)_40%,rgba(255,255,255,0.25)_70%,transparent_100%)]">
                   <div className="space-y-6 lg:space-y-8">
                     {wines.map((wine, i) => (
                       <motion.div
@@ -229,6 +229,25 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                   </div>
                 </div>
               </div>
+              {/* Mobile: wine list below image (no overlay) */}
+              <div className="md:hidden mt-6 px-4 space-y-5">
+                {wines.map((wine, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.06 }}
+                  >
+                    <h4 className="text-base font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
+                      {wine.name}
+                    </h4>
+                    <p className="text-[#3D3D3D] text-sm mt-1.5 leading-relaxed">
+                      {wine.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           ) : (
           <motion.div
@@ -238,7 +257,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="mb-20 md:mb-24"
           >
-            {/* Single image with text overlay on top — same width as winemaker section */}
+            {/* Desktop: image with text overlay at bottom. Mobile: image then text block below */}
             <div className="relative w-full">
               <div className="relative w-full">
                 <Image
@@ -246,12 +265,12 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                   alt={name}
                   width={1200}
                   height={720}
-                  className="w-full h-auto block object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
+                  className="w-full h-auto block object-contain object-top drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
                   sizes="(max-width: 1024px) 100vw, 1400px"
                 />
-                {/* Text overlay: five blocks over lower part of image — closer to bottle */}
-                <div className="absolute inset-x-0 bottom-0 min-h-[32%] pt-[10%] pb-4 px-4 sm:px-6 flex flex-col justify-end bg-gradient-to-t from-white via-white/85 to-transparent">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-2 w-full">
+                {/* Desktop only: text overlay at bottom */}
+                <div className="hidden md:block absolute inset-x-0 bottom-0 min-h-[32%] pt-[10%] pb-4 px-4 sm:px-6 flex flex-col justify-end bg-gradient-to-t from-white via-white/85 to-transparent">
+                  <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-2 w-full">
                     {wines.map((wine, i) => (
                       <motion.div
                         key={i}
@@ -269,6 +288,25 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                     ))}
                   </div>
                 </div>
+              </div>
+            </div>
+            {/* Mobile: wine list below image in a clean card (no overlay) */}
+            <div className="md:hidden mt-4 px-4 pb-2">
+              <div className="grid grid-cols-1 gap-5 rounded-xl bg-[#FAFAF8] border border-[#E8E4DC] p-5">
+                {wines.map((wine, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.05 }}
+                  >
+                    <h4 className="text-sm font-semibold text-[#425a4d]" style={{ fontFamily: "var(--font-serif)" }}>
+                      {wine.name}
+                    </h4>
+                    <p className="text-[#3D3D3D] text-xs mt-1.5 leading-relaxed">{wine.description}</p>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </motion.div>
