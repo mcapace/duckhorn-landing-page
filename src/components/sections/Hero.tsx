@@ -13,9 +13,11 @@ export const Hero = () => {
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]); // A taller hero image would allow a larger range (e.g. 25–30%) for stronger effect
 
   return (
-    <section ref={sectionRef} className="relative w-full overflow-hidden bg-[#2A2A2A] pt-16 sm:pt-20">
-      {/* Mobile: shorter hero, focal point centered; desktop: full viewport */}
-      <div className="relative min-h-[70svh] min-h-[70dvh] sm:min-h-[100svh] sm:min-h-[100dvh] sm:min-h-screen">
+    <section
+      ref={sectionRef}
+      className="relative w-full overflow-hidden bg-[#2A2A2A] pt-16 sm:pt-20 min-h-[70svh] min-h-[70dvh] sm:min-h-[100svh] sm:min-h-[100dvh] sm:min-h-screen"
+    >
+      <div className="relative min-h-full w-full">
         <motion.div className="absolute inset-0" style={{ y: heroY }}>
           <Image
             src="/images/Duckhorn-Digital-Edits-Hero2-Parallax.jpg"
