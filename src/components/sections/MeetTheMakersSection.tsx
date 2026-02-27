@@ -123,17 +123,18 @@ export const MeetTheMakersSection = () => {
             A conversation with the winemakers who shape the wines
           </p>
 
-          {/* 5 winemaker circles — 2-col grid on mobile, flex wrap on larger */}
-          <div className="mt-12 md:mt-16 w-full grid grid-cols-2 gap-6 sm:flex sm:flex-wrap sm:justify-center sm:gap-8 md:gap-10 lg:gap-12">
-            {winemakers.map((maker, index) => (
-              <motion.div
-                key={maker.slug}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.06 }}
-                className="flex flex-col items-center text-center"
-              >
+          {/* 5 winemaker circles — horizontal scroll on mobile (no empty space), flex on larger */}
+          <div className="mt-12 md:mt-16 w-full overflow-x-auto overflow-y-hidden scrollbar-hide -mx-6 px-6 sm:mx-0 sm:px-0 sm:overflow-visible">
+            <div className="flex gap-8 sm:flex-wrap sm:justify-center sm:gap-8 md:gap-10 lg:gap-12 min-w-0 w-max sm:w-full mx-auto sm:mx-0">
+              {winemakers.map((maker, index) => (
+                <motion.div
+                  key={maker.slug}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.06 }}
+                  className="flex flex-col items-center text-center flex-shrink-0 w-[140px] sm:w-auto"
+                >
                 <button
                   type="button"
                   onClick={() => setSelectedWinemaker(maker)}
@@ -160,6 +161,7 @@ export const MeetTheMakersSection = () => {
                 </button>
               </motion.div>
             ))}
+            </div>
           </div>
 
           {/* Winemaker popup modal — full Q&A */}
@@ -287,8 +289,9 @@ export const MeetTheMakersSection = () => {
             </p>
           </div>
 
-          {/* Five estate bottle cards — 2-col grid on mobile, flex on larger */}
-          <div id="wines" className="mt-12 md:mt-16 w-full max-w-5xl grid grid-cols-2 gap-4 sm:flex sm:flex-wrap sm:justify-between sm:gap-6 scroll-mt-24">
+          {/* Five estate bottle cards — horizontal scroll on mobile (no empty space), flex on larger */}
+          <div id="wines" className="mt-12 md:mt-16 w-full max-w-5xl overflow-x-auto overflow-y-hidden scrollbar-hide -mx-6 px-6 sm:mx-0 sm:px-0 sm:overflow-visible scroll-mt-24">
+            <div className="flex gap-4 sm:flex-wrap sm:justify-between sm:gap-6 w-max sm:w-full min-w-0">
             {ESTATE_BOTTLES.map((estate, index) => (
               <motion.div
                 key={estate.id}
@@ -296,7 +299,7 @@ export const MeetTheMakersSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.06 }}
-                className="flex flex-col items-center w-full sm:flex-1 sm:min-w-0 sm:max-w-[220px] sm:min-w-[140px]"
+                className="flex flex-col items-center flex-shrink-0 w-[160px] sm:flex-1 sm:min-w-0 sm:max-w-[220px] sm:min-w-[140px] sm:w-auto"
               >
                 <Link
                   href={`/wineries/${estate.id}`}
@@ -323,6 +326,7 @@ export const MeetTheMakersSection = () => {
                 </Link>
               </motion.div>
             ))}
+            </div>
           </div>
 
           {/* Line + Rob Sorenson vineyard quality block — centered on mobile */}
