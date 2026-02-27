@@ -106,6 +106,16 @@ export const Milestones = () => {
                   </div>
                 </div>
 
+                {/* Vertical line from bubble to content — mobile: short segment below bubble */}
+                <div className="flex md:hidden justify-center flex-shrink-0">
+                  <div className="w-px h-6 bg-[#B8956A]/50" aria-hidden />
+                </div>
+
+                {/* Vertical line from bubble to content — desktop only */}
+                <div className="hidden md:flex flex-shrink-0 w-2 justify-center self-stretch min-h-[200px]">
+                  <div className="w-px bg-[#B8956A]/50 self-stretch min-h-[120px]" aria-hidden />
+                </div>
+
                 {/* Content box — full width on mobile */}
                 <div
                   className={`flex-1 min-w-0 min-h-[180px] md:min-h-[240px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col touch-manipulation ${
