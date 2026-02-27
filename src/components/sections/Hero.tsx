@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const HERO_IMAGE = "/images/Duckhorn-Digital-Edits-Hero2-Parallax.jpg";
+const HERO_IMAGE_MOBILE = "/images/Edited%20images/Duckhorn-Digital%20Edits-MOBILE.jpg";
 
 export const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -24,11 +25,19 @@ export const Hero = () => {
           className="absolute inset-0 w-full h-full"
           style={{ y: heroY }}
         >
+          {/* Mobile: optimized hero image */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={HERO_IMAGE_MOBILE}
+            alt="The Duckhorn Collection"
+            className="absolute inset-0 w-full h-full object-cover object-center md:hidden"
+          />
+          {/* Desktop: main hero image */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={HERO_IMAGE}
             alt="The Duckhorn Collection"
-            className="absolute inset-0 w-full h-full object-cover object-center sm:object-[center_38%]"
+            className="absolute inset-0 w-full h-full object-cover object-center object-[center_38%] hidden md:block"
           />
         </motion.div>
       </div>
