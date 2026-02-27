@@ -65,7 +65,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
           className="absolute top-0 left-0 right-0 z-20 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 pt-24 sm:pt-28"
         >
           <Link
-            href="/#featured-wines"
+            href="/#wines"
             className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white transition-colors py-2 px-3 -ml-3 rounded-lg hover:bg-white/10"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
