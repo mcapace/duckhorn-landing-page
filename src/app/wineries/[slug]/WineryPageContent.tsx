@@ -199,14 +199,17 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
               className="mb-20 md:mb-24"
             >
               <div className="relative w-full">
-                <Image
-                  src={bottleImage}
-                  alt={name}
-                  width={1200}
-                  height={1600}
-                  className="w-full h-auto block object-contain object-top drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)]"
-                  sizes="(max-width: 1024px) 100vw, 1400px"
-                />
+                {/* Mobile: center and show bottles larger; desktop: full width */}
+                <div className="md:block flex justify-center overflow-hidden">
+                  <Image
+                    src={bottleImage}
+                    alt={name}
+                    width={1200}
+                    height={1600}
+                    className="w-full h-auto block object-contain object-top drop-shadow-[0_16px_32px_rgba(0,0,0,0.08)] max-md:max-w-[85vw] max-md:mx-auto max-md:scale-110"
+                    sizes="(max-width: 768px) 85vw, (max-width: 1024px) 100vw, 1400px"
+                  />
+                </div>
                 {/* Desktop: text overlay on right. Mobile: no overlay — text block below */}
                 <div className="hidden md:block absolute right-0 top-0 bottom-0 w-[85%] max-w-[420px] min-w-[240px] flex flex-col justify-center py-8 lg:py-12 pl-10 pr-6 sm:pl-12 sm:pr-10 bg-[linear-gradient(to_left,rgba(255,255,255,0.97)_0%,rgba(255,255,255,0.85)_40%,rgba(255,255,255,0.25)_70%,transparent_100%)]">
                   <div className="space-y-6 lg:space-y-8">
