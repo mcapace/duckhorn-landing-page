@@ -1,6 +1,12 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Fira_Sans } from "next/font/google";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-script",
@@ -21,6 +27,9 @@ export const metadata: Metadata = {
   title: "The Duckhorn Collection | Wine Spectator",
   description:
     "Crafting Timeless Wines From Iconic Terroirs. Celebrating 50 Years of Napa Valley Heritage.",
+  icons: {
+    icon: "/images/WSFavIcon.ico",
+  },
 };
 
 export default function RootLayout({
