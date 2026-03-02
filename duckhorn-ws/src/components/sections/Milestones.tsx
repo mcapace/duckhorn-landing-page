@@ -126,20 +126,23 @@ export const Milestones = () => {
                 >
                   <div className="flex flex-col md:flex-row flex-1 min-h-0">
                     {milestone.image && (
-                      <div className="relative w-full md:w-64 lg:w-72 flex-shrink-0 aspect-[4/3] md:aspect-square overflow-hidden">
+                      <div className="relative w-full md:w-64 lg:w-72 flex-shrink-0 min-w-0 aspect-[4/3] md:aspect-square overflow-hidden rounded-l-xl">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={milestone.image}
                           alt={milestone.title}
-                          className={`absolute inset-0 w-full h-full ${
-                            "imageFit" in milestone && milestone.imageFit === "contain"
-                              ? "object-contain object-top"
-                              : "imagePosition" in milestone && milestone.imagePosition === "top"
-                                ? "object-cover object-top"
-                                : "imagePosition" in milestone && milestone.imagePosition === "left"
-                                  ? "object-cover object-left"
-                                  : "object-cover object-center"
-                          }`}
+                          className="absolute inset-0 w-full h-full block m-0 object-cover"
+                          style={
+                            "imageObjectPosition" in milestone && typeof (milestone as { imageObjectPosition?: string }).imageObjectPosition === "string"
+                              ? { objectPosition: (milestone as { imageObjectPosition: string }).imageObjectPosition }
+                              : "imageFit" in milestone && milestone.imageFit === "contain"
+                                ? { objectFit: "contain", objectPosition: "top" }
+                                : "imagePosition" in milestone && milestone.imagePosition === "top"
+                                  ? { objectPosition: "center top" }
+                                  : "imagePosition" in milestone && milestone.imagePosition === "left"
+                                    ? { objectPosition: "left center" }
+                                    : { objectPosition: "center center" }
+                          }
                         />
                       </div>
                     )}
