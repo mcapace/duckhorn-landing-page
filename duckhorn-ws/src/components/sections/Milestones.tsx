@@ -167,7 +167,7 @@ export const Milestones = () => {
               {index < milestones.length - 1 && (
                 <div className="flex flex-col md:flex-row w-full gap-2 md:gap-10 -my-4 md:-my-8">
                   <div className="w-full md:w-[180px] flex justify-center flex-shrink-0">
-                    <div className="w-2 md:w-2" />
+                    <div className="w-px h-8 md:h-16 bg-[#B8956A]/50 mx-auto md:mx-0" aria-hidden />
                   </div>
                   <div className="hidden md:block flex-1 min-w-0" />
                 </div>
