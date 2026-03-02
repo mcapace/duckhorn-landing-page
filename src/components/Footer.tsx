@@ -17,7 +17,7 @@ export const Footer = () => {
           <div className="w-full max-w-3xl h-px bg-[#B8956A] mx-auto mb-12 md:mb-14" aria-hidden />
 
           {/* Two logos side by side */}
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-6">
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
             <Image
               src="/images/WSlogoWhite-stroke (2) (4) (5).png"
               alt="Wine Spectator"
@@ -32,14 +32,6 @@ export const Footer = () => {
               className="h-8 md:h-10 w-auto object-contain"
             />
           </div>
-
-          {/* Tagline */}
-          <p
-            className="text-white/90 text-sm md:text-base italic"
-            style={{ fontFamily: "var(--font-script)" }}
-          >
-            Defining American Fine Wine — Sponsored Special Feature
-          </p>
         </motion.div>
       </div>
     </footer>
