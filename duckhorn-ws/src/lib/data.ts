@@ -295,6 +295,8 @@ export const milestones = [
       "California's great wine regions form the foundation of the Collection. From the valley floor to coastal ridgelines and mountain slopes, each estate reflects a different facet of California terroir, connected through a shared standard of excellence.",
     winery: "Collection",
     image: "/images/New%20timeline%20images/Milestones-Map-Edit.jpg",
+    imageFit: "contain",
+    imageSize: "large",
   },
   {
     year: "2025",

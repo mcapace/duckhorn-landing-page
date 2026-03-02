@@ -118,7 +118,7 @@ export const Milestones = () => {
 
                 {/* Content box — full width on mobile */}
                 <div
-                  className={`flex-1 min-w-0 min-h-[220px] md:min-h-[300px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col touch-manipulation ${
+                  className={`flex-1 min-w-0 min-h-[240px] md:min-h-[340px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col touch-manipulation ${
                     milestone.highlight
                       ? "bg-[#4d6a55] border border-[#B8956A]/30"
                       : "bg-[#4d6a55] border border-white/10"
@@ -126,7 +126,13 @@ export const Milestones = () => {
                 >
                   <div className="flex flex-col md:flex-row flex-1 min-h-0">
                     {milestone.image && (
-                      <div className="relative w-full md:w-64 lg:w-80 flex-shrink-0 min-w-0 aspect-[4/3] md:aspect-[3/4] overflow-hidden rounded-l-xl">
+                      <div
+                        className={`relative flex-shrink-0 min-w-0 overflow-hidden rounded-l-xl ${
+                          "imageSize" in milestone && (milestone as { imageSize?: string }).imageSize === "large"
+                            ? "w-full md:w-80 lg:w-96 aspect-[4/3] md:aspect-[4/5]"
+                            : "w-full md:w-64 lg:w-80 aspect-[4/3] md:aspect-[3/4]"
+                        }`}
+                      >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={milestone.image}
@@ -136,7 +142,7 @@ export const Milestones = () => {
                             "imageObjectPosition" in milestone && typeof (milestone as { imageObjectPosition?: string }).imageObjectPosition === "string"
                               ? { objectPosition: (milestone as { imageObjectPosition: string }).imageObjectPosition }
                               : "imageFit" in milestone && milestone.imageFit === "contain"
-                                ? { objectFit: "contain", objectPosition: "top" }
+                                ? { objectFit: "contain", objectPosition: "center center" }
                                 : "imagePosition" in milestone && milestone.imagePosition === "top"
                                   ? { objectPosition: "center top" }
                                   : "imagePosition" in milestone && milestone.imagePosition === "left"
