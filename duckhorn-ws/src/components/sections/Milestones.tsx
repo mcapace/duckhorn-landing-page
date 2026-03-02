@@ -80,7 +80,7 @@ export const Milestones = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: index * 0.04 }}
-                className="relative flex flex-col md:flex-row w-full gap-4 md:gap-10 py-6 md:py-8 first:pt-0 last:pb-0"
+                className="relative flex flex-col md:flex-row w-full gap-4 md:gap-4 py-6 md:py-8 first:pt-0 last:pb-0"
               >
                 {/* Year node or map icon — centered on mobile, left column on desktop */}
                 <div className="flex flex-shrink-0 flex-col items-center justify-center w-full md:w-[180px]">
@@ -106,15 +106,12 @@ export const Milestones = () => {
                   </div>
                 </div>
 
-                {/* Spacer: no vertical line between bubble and content */}
-                <div className="flex-shrink-0 w-2 hidden md:block" aria-hidden />
-
-                {/* Content box — full width on mobile */}
+                {/* Content box — full width on mobile, no left border so no line next to box */}
                 <div
-                  className={`flex-1 min-w-0 min-h-[240px] md:min-h-[340px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col touch-manipulation ${
+                  className={`flex-1 min-w-0 min-h-[260px] md:min-h-[380px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col touch-manipulation border-t border-r border-b border-l-0 ${
                     milestone.highlight
-                      ? "bg-[#4d6a55] border border-[#B8956A]/30"
-                      : "bg-[#4d6a55] border border-white/10"
+                      ? "bg-[#4d6a55] border-[#B8956A]/30"
+                      : "bg-[#4d6a55] border-white/10"
                   }`}
                 >
                   <div className="flex flex-col md:flex-row flex-1 min-h-0">
@@ -123,7 +120,7 @@ export const Milestones = () => {
                         className={`relative flex-shrink-0 min-w-0 overflow-hidden rounded-l-xl ${
                           "imageSize" in milestone && (milestone as { imageSize?: string }).imageSize === "large"
                             ? "w-full md:w-80 lg:w-96 aspect-[4/3] md:aspect-[2/3]"
-                            : "w-full md:w-64 lg:w-80 aspect-[4/3] md:aspect-[3/4]"
+                            : "w-full md:w-72 lg:w-80 aspect-[4/3] md:aspect-[2/3]"
                         }`}
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
