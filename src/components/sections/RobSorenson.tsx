@@ -39,41 +39,16 @@ export const RobSorenson = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
       </motion.div>
 
-      {/* Copy below hero: intro, then name + title, then portrait + context */}
+      {/* Copy below hero: headshot, name, title, context, intro */}
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-base md:text-lg text-[#3D3D3D] leading-relaxed max-w-3xl mb-6"
-        >
-          {robSorensonData.intro}
-        </motion.p>
+        {/* 1. Headshot 2. Name 3. Title 4. Context 5. Intro */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-16 md:mb-24"
         >
-          <h2
-            className="text-3xl md:text-4xl text-[#2A2A2A] tracking-tight"
-            style={{ fontFamily: "var(--font-serif)" }}
-          >
-            {robSorensonData.name}
-          </h2>
-          <p className="mt-2 text-[#A07D4E] font-medium text-lg italic" style={{ fontFamily: "var(--font-script)" }}>
-            {robSorensonData.title}
-          </p>
-        </motion.div>
-
-        {/* Portrait + context */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-24 md:mb-32">
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col items-center lg:items-start"
-          >
+          <div className="flex flex-col items-center lg:items-start max-w-2xl">
             <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden ring-4 ring-white shadow-xl flex-shrink-0">
               <Image
                 src={robSorensonData.portraitImage}
@@ -83,25 +58,26 @@ export const RobSorenson = () => {
                 sizes="224px"
               />
             </div>
-            <div className="mt-8 w-full max-w-md text-center lg:text-left">
-              <h3
-                className="text-xl md:text-2xl text-[#2A2A2A]"
-                style={{ fontFamily: "var(--font-serif)" }}
-              >
-                {robSorensonData.name}
-              </h3>
-              <p className="text-[#A07D4E] font-medium mt-1 text-sm">
-                {robSorensonData.title}
-              </p>
-              <p
-                className="mt-5 text-base md:text-lg text-[#3D3D3D] italic leading-relaxed"
-                style={{ fontFamily: "var(--font-script)" }}
-              >
-                {robSorensonData.context}
-              </p>
-            </div>
-          </motion.div>
-        </div>
+            <h2
+              className="mt-8 text-3xl md:text-4xl text-[#2A2A2A] tracking-tight"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              {robSorensonData.name}
+            </h2>
+            <p className="mt-2 text-[#A07D4E] font-medium text-lg italic" style={{ fontFamily: "var(--font-script)" }}>
+              {robSorensonData.title}
+            </p>
+            <p
+              className="mt-5 text-base md:text-lg text-[#3D3D3D] italic leading-relaxed"
+              style={{ fontFamily: "var(--font-script)" }}
+            >
+              {robSorensonData.context}
+            </p>
+            <p className="mt-6 text-base md:text-lg text-[#3D3D3D] leading-relaxed">
+              {robSorensonData.intro}
+            </p>
+          </div>
+        </motion.div>
 
         {/* Q&A - same accordion style as winemaker chapters */}
         <motion.div
