@@ -11,14 +11,13 @@ const MEET_THE_MAKERS_VIDEO_SRC = "/images/bottles/WS%20TDC-Winemaker%20Video.mp
 const THE_COLLECTION_VIDEO_SRC = "/images/bottles/WS%20Bottle%20Pan.mp4";
 const OVERLAY_HIDE_LAST_SECONDS = 7;
 
-// Five estates bottle cards (order matches mock); images in public/images/bottles new
-// URL-encode space (%20) and parentheses (%28 %29) so the path resolves correctly
+// Five estates bottle cards — larger bottle images from public/images/larger bottle images
 const ESTATE_BOTTLES = [
-  { id: "duckhorn", name: "Duckhorn", image: "/images/bottles%20new/Duckhorn-Bottle-Edit%20%281%29.jpg" },
-  { id: "kosta-browne", name: "Kosta Browne", image: "/images/bottles%20new/KostaBrowne-Bottle-Edit%20%281%29.jpg" },
-  { id: "goldeneye", name: "Goldeneye", image: "/images/bottles%20new/Goldeneye-Bottle-Edit%20%281%29.jpg" },
-  { id: "calera", name: "Calera", image: "/images/bottles%20new/Calera-Bottle-Edit%20%281%29.jpg" },
-  { id: "sonoma-cutrer", name: "Sonoma-Cutrer", image: "/images/bottles%20new/SonomaCutrer-Bottle-Edit%20%281%29.jpg" },
+  { id: "duckhorn", name: "Duckhorn", image: "/images/larger%20bottle%20images/Duckhorn-Bottle-Edit-new.jpg" },
+  { id: "kosta-browne", name: "Kosta Browne", image: "/images/larger%20bottle%20images/KostaBrowne-Bottle-Edit2.jpg" },
+  { id: "goldeneye", name: "Goldeneye", image: "/images/larger%20bottle%20images/Goldeneye-Bottle-Edit2.jpg" },
+  { id: "calera", name: "Calera", image: "/images/larger%20bottle%20images/Calera-Bottle-Edit2.jpg" },
+  { id: "sonoma-cutrer", name: "Sonoma-Cutrer", image: "/images/larger%20bottle%20images/SonomaCutrer-Bottle-Edit2.jpg" },
 ] as const;
 
 const WINERY_NAME_TO_SLUG: Record<string, string> = {
@@ -314,19 +313,19 @@ export const MeetTheMakersSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.06 }}
-                className="flex flex-col items-center flex-shrink-0 w-[160px] sm:flex-1 sm:min-w-0 sm:max-w-[220px] sm:min-w-[140px] sm:w-auto"
+                className="flex flex-col items-center flex-shrink-0 w-[200px] sm:flex-1 sm:min-w-0 sm:max-w-[280px] sm:min-w-[180px] sm:w-auto"
               >
                 <Link
                   href={`/wineries/${estate.id}`}
                   className="group flex flex-col items-center w-full"
                 >
-                  <div className="relative w-full aspect-[3/4] min-h-[200px] sm:h-[340px] sm:min-h-0 md:h-[400px] rounded-xl sm:rounded-2xl overflow-hidden bg-[#E8E4DC] shadow-md group-hover:shadow-lg transition-shadow">
+                  <div className="relative w-full aspect-[3/4] min-h-[240px] sm:h-[420px] sm:min-h-0 md:h-[500px] rounded-xl sm:rounded-2xl overflow-hidden bg-[#E8E4DC] shadow-md group-hover:shadow-lg transition-shadow">
                     <Image
                       src={estate.image}
                       alt={estate.name}
                       fill
                       className="object-cover object-bottom"
-                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 140px, 220px"
+                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 180px, 280px"
                     />
                     <span
                       className="absolute bottom-0 left-0 right-0 py-2 sm:py-3 text-center text-[#B8956A] font-medium text-xs sm:text-sm tracking-wide group-hover:underline bg-black/70 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
