@@ -106,15 +106,8 @@ export const Milestones = () => {
                   </div>
                 </div>
 
-                {/* Vertical line from bubble to content — mobile: short segment below bubble */}
-                <div className="flex md:hidden justify-center flex-shrink-0">
-                  <div className="w-px h-6 bg-[#B8956A]/50" aria-hidden />
-                </div>
-
-                {/* Vertical line from bubble to content — desktop only */}
-                <div className="hidden md:flex flex-shrink-0 w-2 justify-center self-stretch min-h-[200px]">
-                  <div className="w-px bg-[#B8956A]/50 self-stretch min-h-[120px]" aria-hidden />
-                </div>
+                {/* Spacer: no vertical line between bubble and content */}
+                <div className="flex-shrink-0 w-2 hidden md:block" aria-hidden />
 
                 {/* Content box — full width on mobile */}
                 <div
@@ -129,7 +122,7 @@ export const Milestones = () => {
                       <div
                         className={`relative flex-shrink-0 min-w-0 overflow-hidden rounded-l-xl ${
                           "imageSize" in milestone && (milestone as { imageSize?: string }).imageSize === "large"
-                            ? "w-full md:w-80 lg:w-96 aspect-[4/3] md:aspect-[4/5]"
+                            ? "w-full md:w-80 lg:w-96 aspect-[4/3] md:aspect-[2/3]"
                             : "w-full md:w-64 lg:w-80 aspect-[4/3] md:aspect-[3/4]"
                         }`}
                       >
@@ -174,7 +167,7 @@ export const Milestones = () => {
               {index < milestones.length - 1 && (
                 <div className="flex flex-col md:flex-row w-full gap-2 md:gap-10 -my-4 md:-my-8">
                   <div className="w-full md:w-[180px] flex justify-center flex-shrink-0">
-                    <div className="w-px h-8 md:h-16 bg-[#B8956A]/50 mx-auto md:mx-0" />
+                    <div className="w-2 md:w-2" />
                   </div>
                   <div className="hidden md:block flex-1 min-w-0" />
                 </div>
