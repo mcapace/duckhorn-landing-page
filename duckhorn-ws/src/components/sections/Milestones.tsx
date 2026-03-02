@@ -136,7 +136,9 @@ export const Milestones = () => {
                               ? "object-contain object-top"
                               : "imagePosition" in milestone && milestone.imagePosition === "top"
                                 ? "object-cover object-top"
-                                : "object-cover object-center"
+                                : "imagePosition" in milestone && milestone.imagePosition === "left"
+                                  ? "object-cover object-left"
+                                  : "object-cover object-center"
                           }`}
                         />
                       </div>
