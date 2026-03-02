@@ -118,7 +118,7 @@ export const Milestones = () => {
 
                 {/* Content box — full width on mobile */}
                 <div
-                  className={`flex-1 min-w-0 min-h-[180px] md:min-h-[240px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col touch-manipulation ${
+                  className={`flex-1 min-w-0 min-h-[220px] md:min-h-[300px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col touch-manipulation ${
                     milestone.highlight
                       ? "bg-[#4d6a55] border border-[#B8956A]/30"
                       : "bg-[#4d6a55] border border-white/10"
@@ -126,7 +126,7 @@ export const Milestones = () => {
                 >
                   <div className="flex flex-col md:flex-row flex-1 min-h-0">
                     {milestone.image && (
-                      <div className="relative w-full md:w-64 lg:w-72 flex-shrink-0 min-w-0 aspect-[4/3] md:aspect-square overflow-hidden rounded-l-xl">
+                      <div className="relative w-full md:w-64 lg:w-80 flex-shrink-0 min-w-0 aspect-[4/3] md:aspect-[3/4] overflow-hidden rounded-l-xl">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={milestone.image}
