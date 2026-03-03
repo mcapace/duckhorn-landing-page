@@ -117,7 +117,7 @@ export const Milestones = () => {
                       <div
                         className={`relative flex-shrink-0 min-w-0 overflow-hidden rounded-l-xl bg-[#445d4f] ${
                           "imageSize" in milestone && (milestone as { imageSize?: string }).imageSize === "large"
-                            ? "w-full md:w-80 lg:w-96 aspect-[4/3] md:aspect-[3/5]"
+                            ? "w-full md:w-80 lg:w-96 aspect-[4/3] md:aspect-[2/5]"
                             : "w-full md:w-72 lg:w-80 aspect-[4/3] md:aspect-[2/3]"
                         }`}
                       >
@@ -126,23 +126,13 @@ export const Milestones = () => {
                           src={milestone.image}
                           alt={milestone.title}
                           className="absolute inset-0 w-full h-full block m-0"
-                          style={(() => {
-                            const m = milestone as {
-                              imageObjectPosition?: string;
-                              imagePosition?: string;
-                              imageFit?: string;
-                            };
-                            if (m.imageObjectPosition) {
-                              return { objectFit: "cover" as const, objectPosition: m.imageObjectPosition };
-                            }
-                            if (m.imagePosition === "left") {
-                              return { objectFit: "cover" as const, objectPosition: "left center" };
-                            }
-                            if (m.imageFit === "contain") {
-                              return { objectFit: "contain" as const, objectPosition: "center center" };
-                            }
-                            return { objectFit: "contain" as const, objectPosition: "center center" };
-                          })()}
+                          style={
+                            milestone.year === "2013"
+                              ? { objectFit: "cover", objectPosition: "25% center" }
+                              : "imageFit" in milestone && (milestone as { imageFit?: string }).imageFit === "contain"
+                                ? { objectFit: "contain", objectPosition: "center center" }
+                                : { objectFit: "contain", objectPosition: "center center" }
+                          }
                         />
                       </div>
                     )}
@@ -166,10 +156,8 @@ export const Milestones = () => {
                 </div>
               </motion.div>
               {index < milestones.length - 1 && (
-                <div className="flex flex-col md:flex-row w-full gap-2 md:gap-10 -my-4 md:-my-8">
-                  <div className="w-full md:w-[180px] flex justify-center flex-shrink-0">
-                    <div className="w-px h-8 md:h-16 bg-[#B8956A]/50 mx-auto md:mx-0" aria-hidden />
-                  </div>
+                <div className="flex flex-col md:flex-row w-full -my-4 md:-my-8">
+                  <div className="w-full md:w-[180px] flex-shrink-0 py-3 md:py-4" />
                   <div className="hidden md:block flex-1 min-w-0" />
                 </div>
               )}
