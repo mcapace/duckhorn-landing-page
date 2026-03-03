@@ -80,7 +80,7 @@ export const Milestones = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: index * 0.04 }}
-                className="relative flex flex-col md:flex-row w-full gap-4 md:gap-0 py-6 md:py-8 first:pt-0 last:pb-0"
+                className="timeline-row-v2 relative flex flex-col md:flex-row w-full gap-4 md:gap-0 py-6 md:py-8 first:pt-0 last:pb-0"
               >
                 {/* Year node or map icon — centered on mobile, left column on desktop */}
                 <div className="flex flex-shrink-0 flex-col items-center justify-center w-full md:w-[180px]">
