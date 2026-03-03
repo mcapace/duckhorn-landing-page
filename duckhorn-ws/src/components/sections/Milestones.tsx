@@ -7,7 +7,7 @@ import { milestones } from "@/lib/data";
 
 export const Milestones = () => {
   return (
-    <section id="milestones" className="py-20 md:py-28 bg-[#425a4d] scroll-mt-20">
+    <section id="milestones" data-timeline-updated="true" className="py-20 md:py-28 bg-[#425a4d] scroll-mt-20">
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <div className="w-full max-w-5xl mx-auto">
         {/* 50 Years header: logo left, divider, headline right (match lockup design) */}
@@ -128,7 +128,7 @@ export const Milestones = () => {
                           className="absolute inset-0 w-full h-full block m-0"
                           style={
                             milestone.year === "2013"
-                              ? { objectFit: "cover", objectPosition: "25% center" }
+                              ? { objectFit: "cover", objectPosition: "25% 50%" }
                               : "imageFit" in milestone && (milestone as { imageFit?: string }).imageFit === "contain"
                                 ? { objectFit: "contain", objectPosition: "center center" }
                                 : { objectFit: "contain", objectPosition: "center center" }
