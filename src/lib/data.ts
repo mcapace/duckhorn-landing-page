@@ -273,9 +273,6 @@ export const milestones = [
       "Calera founder Josh Jensen is recognized as a defining voice in American Pinot Noir, reinforcing the Collection's role in shaping Pinot's evolution.",
     winery: "Calera",
     image: "/images/New%20timeline%20images/Milestones-JoshJensen-Edit.jpg",
-    imagePosition: "left",
-    // Crop out left margin in image file so content is full-bleed like other timeline images
-    imageObjectPosition: "20% 50%",
   },
   {
     year: "2017",
