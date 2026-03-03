@@ -274,6 +274,7 @@ export const milestones = [
     winery: "Calera",
     image: "/images/New%20timeline%20images/Milestones-JoshJensen-Edit.jpg",
     imageFit: "contain",
+    imageAspect: "3/4",
   },
   {
     year: "2017",
@@ -294,6 +295,7 @@ export const milestones = [
     winery: "Collection",
     image: "/images/New%20timeline%20images/Milestones-Map-Edit.jpg",
     imageFit: "contain",
+    imageAspect: "4/3",
   },
   {
     year: "2025",

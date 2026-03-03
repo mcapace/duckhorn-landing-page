@@ -114,19 +114,33 @@ export const Milestones = () => {
                 >
                   <div className="flex flex-col md:flex-row flex-1 min-h-0">
                     {milestone.image && (
-                      <div className="relative flex-shrink-0 min-w-0 w-full md:w-72 lg:w-80 aspect-[4/3] md:aspect-[3/4] overflow-hidden rounded-l-xl bg-[#4d6a55]">
+                      <div
+                        className={`relative flex-shrink-0 min-w-0 w-full md:w-72 lg:w-80 overflow-hidden rounded-l-xl bg-[#4d6a55] ${
+                          "imageAspect" in milestone && (milestone as { imageAspect?: string }).imageAspect
+                            ? ""
+                            : "aspect-[4/3] md:aspect-[3/4]"
+                        }`}
+                        style={
+                          "imageAspect" in milestone && (milestone as { imageAspect?: string }).imageAspect
+                            ? { aspectRatio: (milestone as { imageAspect: string }).imageAspect }
+                            : undefined
+                        }
+                      >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={milestone.image}
                           alt={milestone.title}
-                          className="absolute inset-0 w-full h-full block m-0 object-cover"
-                          style={
-                            "imageFit" in milestone && (milestone as { imageFit?: string }).imageFit === "contain"
-                              ? { objectFit: "contain", objectPosition: "center center" }
-                              : "imageObjectPosition" in milestone
-                                ? { objectPosition: (milestone as { imageObjectPosition?: string }).imageObjectPosition }
-                                : { objectPosition: "center center" }
-                          }
+                          className="absolute inset-0 w-full h-full block m-0"
+                          style={{
+                            objectFit:
+                              "imageFit" in milestone && (milestone as { imageFit?: string }).imageFit === "contain"
+                                ? "contain"
+                                : "cover",
+                            objectPosition:
+                              "imageObjectPosition" in milestone
+                                ? (milestone as { imageObjectPosition?: string }).imageObjectPosition
+                                : "center center",
+                          }}
                         />
                       </div>
                     )}
