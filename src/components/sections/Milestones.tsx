@@ -114,13 +114,7 @@ export const Milestones = () => {
                 >
                   <div className="flex flex-col md:flex-row flex-1 min-h-0">
                     {milestone.image && (
-                      <div
-                        className={`relative flex-shrink-0 min-w-0 overflow-hidden rounded-l-xl bg-[#4d6a55] ${
-                          "imageSize" in milestone && (milestone as { imageSize?: string }).imageSize === "large"
-                            ? "w-full md:w-80 lg:w-96 aspect-[4/3] md:aspect-[3/5]"
-                            : "w-full md:w-72 lg:w-80 aspect-[4/3] md:aspect-[3/4]"
-                        }`}
-                      >
+                      <div className="relative flex-shrink-0 min-w-0 w-full md:w-72 lg:w-80 aspect-[4/3] md:aspect-[3/4] overflow-hidden rounded-l-xl bg-[#4d6a55]">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={milestone.image}
