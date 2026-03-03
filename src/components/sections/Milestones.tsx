@@ -108,33 +108,19 @@ export const Milestones = () => {
 
                 {/* Content box — full width on mobile, no left border so no line next to box */}
                 <div
-                  className={`flex-1 min-w-0 min-h-[260px] md:min-h-[340px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col touch-manipulation ${
-                    milestone.highlight
-                      ? "bg-[#4d6a55] border border-[#B8956A]/30"
-                      : "bg-[#4d6a55] border border-white/10"
+                  className={`flex-1 min-w-0 min-h-[280px] md:min-h-[360px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col touch-manipulation bg-[#4d6a55] ${
+                    milestone.highlight ? "border border-[#B8956A]/30" : "border border-white/10"
                   }`}
                 >
                   <div className="flex flex-col md:flex-row flex-1 min-h-0">
                     {milestone.image && (
-                      <div
-                        className={`relative flex-shrink-0 min-w-0 overflow-hidden rounded-l-xl bg-[#445d4f] ${
-                          "imageSize" in milestone && (milestone as { imageSize?: string }).imageSize === "large"
-                            ? "w-full md:w-80 lg:w-96 aspect-[4/3] md:aspect-[3/5]"
-                            : "w-full md:w-72 lg:w-80 aspect-[4/3] md:aspect-[3/4]"
-                        }`}
-                      >
+                      <div className="relative flex-shrink-0 min-w-0 w-full md:w-72 lg:w-80 aspect-[4/3] md:aspect-[3/4] overflow-hidden rounded-l-xl bg-[#4d6a55]">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={milestone.image}
                           alt={milestone.title}
-                          className="absolute inset-0 w-full h-full block m-0 object-cover"
-                          style={
-                            milestone.year === "2013"
-                              ? { objectPosition: "20% center" }
-                              : "imageFit" in milestone && (milestone as { imageFit?: string }).imageFit === "contain"
-                                ? { objectFit: "contain", objectPosition: "center center" }
-                                : { objectPosition: "center center" }
-                          }
+                          className="absolute inset-0 w-full h-full block m-0 object-contain"
+                          style={{ objectPosition: "center center" }}
                         />
                       </div>
                     )}
