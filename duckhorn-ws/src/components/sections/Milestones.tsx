@@ -7,7 +7,7 @@ import { milestones } from "@/lib/data";
 
 export const Milestones = () => {
   return (
-    <section id="milestones" data-timeline-updated="true" className="py-20 md:py-28 bg-[#425a4d] scroll-mt-20">
+    <section id="milestones" className="py-20 md:py-28 bg-[#425a4d] scroll-mt-20">
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <div className="w-full max-w-5xl mx-auto">
         {/* 50 Years header: logo left, divider, headline right (match lockup design) */}
@@ -80,7 +80,7 @@ export const Milestones = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: index * 0.04 }}
-                className="timeline-row-v2 relative flex flex-col md:flex-row w-full gap-4 md:gap-0 py-6 md:py-8 first:pt-0 last:pb-0"
+                className="relative flex flex-col md:flex-row w-full gap-4 md:gap-6 py-6 md:py-8 first:pt-0 last:pb-0"
               >
                 {/* Year node or map icon — centered on mobile, left column on desktop */}
                 <div className="flex flex-shrink-0 flex-col items-center justify-center w-full md:w-[180px]">
@@ -108,8 +108,10 @@ export const Milestones = () => {
 
                 {/* Content box — full width on mobile, no left border so no line next to box */}
                 <div
-                  className={`flex-1 min-w-0 min-h-[260px] md:min-h-[380px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col touch-manipulation border-0 ${
-                    milestone.highlight ? "bg-[#4d6a55] ring-2 ring-[#B8956A]/30 ring-inset" : "bg-[#4d6a55]"
+                  className={`flex-1 min-w-0 min-h-[260px] md:min-h-[340px] rounded-xl overflow-hidden transition-all duration-300 flex flex-col touch-manipulation ${
+                    milestone.highlight
+                      ? "bg-[#4d6a55] border border-[#B8956A]/30"
+                      : "bg-[#4d6a55] border border-white/10"
                   }`}
                 >
                   <div className="flex flex-col md:flex-row flex-1 min-h-0">
@@ -117,21 +119,21 @@ export const Milestones = () => {
                       <div
                         className={`relative flex-shrink-0 min-w-0 overflow-hidden rounded-l-xl bg-[#445d4f] ${
                           "imageSize" in milestone && (milestone as { imageSize?: string }).imageSize === "large"
-                            ? "w-full md:w-80 lg:w-96 aspect-[4/3] md:aspect-[2/5]"
-                            : "w-full md:w-72 lg:w-80 aspect-[4/3] md:aspect-[2/3]"
+                            ? "w-full md:w-80 lg:w-96 aspect-[4/3] md:aspect-[3/5]"
+                            : "w-full md:w-72 lg:w-80 aspect-[4/3] md:aspect-[3/4]"
                         }`}
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={milestone.image}
                           alt={milestone.title}
-                          className="absolute inset-0 w-full h-full block m-0"
+                          className="absolute inset-0 w-full h-full block m-0 object-cover"
                           style={
                             milestone.year === "2013"
-                              ? { objectFit: "cover", objectPosition: "25% 50%" }
+                              ? { objectPosition: "20% center" }
                               : "imageFit" in milestone && (milestone as { imageFit?: string }).imageFit === "contain"
                                 ? { objectFit: "contain", objectPosition: "center center" }
-                                : { objectFit: "contain", objectPosition: "center center" }
+                                : { objectPosition: "center center" }
                           }
                         />
                       </div>
@@ -156,8 +158,10 @@ export const Milestones = () => {
                 </div>
               </motion.div>
               {index < milestones.length - 1 && (
-                <div className="flex flex-col md:flex-row w-full -my-4 md:-my-8">
-                  <div className="w-full md:w-[180px] flex-shrink-0 py-3 md:py-4" />
+                <div className="flex flex-col md:flex-row w-full gap-2 md:gap-6 -my-4 md:-my-8">
+                  <div className="w-full md:w-[180px] flex justify-center flex-shrink-0">
+                    <div className="w-px h-8 md:h-12 bg-[#B8956A]/40 mx-auto md:mx-0" aria-hidden />
+                  </div>
                   <div className="hidden md:block flex-1 min-w-0" />
                 </div>
               )}
