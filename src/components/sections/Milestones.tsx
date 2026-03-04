@@ -126,22 +126,39 @@ export const Milestones = () => {
                             : undefined
                         }
                       >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={milestone.image}
-                          alt={milestone.title}
-                          className="absolute inset-0 w-full h-full block m-0"
-                          style={{
+                        {(() => {
+                          const imgStyle = {
                             objectFit:
                               "imageFit" in milestone && (milestone as { imageFit?: string }).imageFit === "contain"
-                                ? "contain"
-                                : "cover",
+                              ? "contain"
+                              : "cover",
                             objectPosition:
                               "imageObjectPosition" in milestone
                                 ? (milestone as { imageObjectPosition?: string }).imageObjectPosition
                                 : "center center",
-                          }}
-                        />
+                          } as const;
+                          const desktopSrc = "imageDesktop" in milestone ? (milestone as { imageDesktop?: string }).imageDesktop : null;
+                          return (
+                            <>
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={milestone.image}
+                                alt={milestone.title}
+                                className={`absolute inset-0 w-full h-full block m-0 ${desktopSrc ? "md:hidden" : ""}`}
+                                style={imgStyle}
+                              />
+                              {desktopSrc && (
+                                /* eslint-disable-next-line @next/next/no-img-element */
+                                <img
+                                  src={desktopSrc}
+                                  alt={milestone.title}
+                                  className="absolute inset-0 w-full h-full block m-0 hidden md:block"
+                                  style={imgStyle}
+                                />
+                              )}
+                            </>
+                          );
+                        })()}
                       </div>
                     )}
                     <div className="p-4 sm:p-5 md:p-6 flex-1 flex flex-col justify-center">
