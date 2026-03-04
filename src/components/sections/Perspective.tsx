@@ -50,7 +50,7 @@ export const Perspective = () => {
           transition={{ delay: 0.1 }}
           className="flex justify-center mb-16"
         >
-          <div className="w-full max-w-5xl grid grid-cols-3 gap-3 md:gap-4 overflow-hidden rounded-sm">
+          <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 overflow-hidden rounded-sm">
             {perspectiveImages.map((img, i) => (
               <motion.div
                 key={img.src}
@@ -68,7 +68,7 @@ export const Perspective = () => {
                   className={`object-cover transition-transform duration-700 hover:scale-105 ${
                     i === 2 ? "object-[center_55%]" : "object-center"
                   }`}
-                  sizes="(max-width: 768px) 33vw, 280px"
+                  sizes="(max-width: 768px) 100vw, 280px"
                 />
               </motion.div>
             ))}
