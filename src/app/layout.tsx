@@ -30,6 +30,20 @@ export const metadata: Metadata = {
   icons: {
     icon: "/images/WSFavIcon.ico",
   },
+  openGraph: {
+    title: "The Duckhorn Collection | Wine Spectator",
+    description:
+      "Crafting Timeless Wines From Iconic Terroirs. Celebrating 50 Years of Napa Valley Heritage.",
+    images: ["/images/new-downloads/Intro.jpg"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Duckhorn Collection | Wine Spectator",
+    description:
+      "Crafting Timeless Wines From Iconic Terroirs. Celebrating 50 Years of Napa Valley Heritage.",
+    images: ["/images/new-downloads/Intro.jpg"],
+  },
 };
 
 export default function RootLayout({
