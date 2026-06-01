@@ -1,20 +1,12 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
-import { perspectiveContent, perspectiveImages } from "@/lib/data";
+import { perspectiveContent } from "@/lib/data";
 
 export const Perspective = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const img0Y = useTransform(scrollYProgress, [0, 0.4], [24, -8]);
-
   return (
-    <section ref={sectionRef} id="perspective" className="pt-20 md:pt-28 pb-12 md:pb-16 bg-white scroll-mt-20">
+    <section id="perspective" className="pt-20 md:pt-28 pb-12 md:pb-16 bg-white scroll-mt-20">
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -42,7 +34,6 @@ export const Perspective = () => {
           </p>
         </motion.div>
 
-        {/* 3 images - equal height; same parallax for all so none are clipped */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,28 +41,15 @@ export const Perspective = () => {
           transition={{ delay: 0.1 }}
           className="flex justify-center mb-16"
         >
-          <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 overflow-hidden rounded-sm">
-            {perspectiveImages.map((img, i) => (
-              <motion.div
-                key={img.src}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.05 * i }}
-                style={{ y: img0Y }}
-                className="relative aspect-[4/3] overflow-hidden rounded-sm min-h-0"
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className={`object-cover transition-transform duration-700 hover:scale-105 ${
-                    i === 2 ? "object-[center_55%]" : "object-center"
-                  }`}
-                  sizes="(max-width: 768px) 100vw, 280px"
-                />
-              </motion.div>
-            ))}
+          <div className="w-full max-w-5xl relative aspect-video overflow-hidden rounded-sm">
+            <iframe
+              src="https://cdn.jwplayer.com/players/mokhLqg0-9SK0pNl2.html"
+              title="The Pinnacle of American Fine Wine"
+              className="absolute top-0 left-0 w-full h-full"
+              frameBorder="0"
+              scrolling="auto"
+              allowFullScreen
+            />
           </div>
         </motion.div>
 

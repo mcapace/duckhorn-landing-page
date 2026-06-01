@@ -332,13 +332,6 @@ This feature highlights five of our wineries and the people and philosophies beh
   founderImage: "/images/Dan-Duckhorn-during-harvest.jpg",
 };
 
-// Three images below "The Duckhorn Perspective" title (order: harvest, vineyard, barrel/winery)
-export const perspectiveImages = [
-  { src: "/images/DV-Harvest---9.25.25-29.jpg", alt: "Harvest at Duckhorn" },
-  { src: "/images/Computers-027.jpg", alt: "Vineyard landscape" },
-  { src: "/images/edited-images/Intro2-Edit.jpg", alt: "Barrel room" },
-];
-
 export const robSorensonData = {
   name: "Rob Sorenson",
   title: "Director of North Coast Estate Vineyards",
