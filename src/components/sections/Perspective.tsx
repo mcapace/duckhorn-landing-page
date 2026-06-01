@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { perspectiveContent } from "@/lib/data";
+import { PerspectiveVideo } from "@/components/sections/PerspectiveVideo";
 
 export const Perspective = () => {
   return (
@@ -41,16 +42,7 @@ export const Perspective = () => {
           transition={{ delay: 0.1 }}
           className="flex justify-center mb-16"
         >
-          <div className="w-full max-w-5xl relative aspect-video overflow-hidden rounded-sm">
-            <iframe
-              src="https://cdn.jwplayer.com/players/mokhLqg0-9SK0pNl2.html"
-              title="The Pinnacle of American Fine Wine"
-              className="absolute top-0 left-0 w-full h-full"
-              frameBorder="0"
-              scrolling="auto"
-              allowFullScreen
-            />
-          </div>
+          <PerspectiveVideo />
         </motion.div>
 
         {/* CEO letter */}
