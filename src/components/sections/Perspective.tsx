@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { perspectiveContent } from "@/lib/data";
+import { ShopCollectionButton } from "@/components/ui/ShopCollectionButton";
 
 export const Perspective = () => {
   return (
@@ -35,11 +36,21 @@ export const Perspective = () => {
         </motion.div>
 
         <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          className="flex justify-center mb-8"
+        >
+          <ShopCollectionButton />
+        </motion.div>
+
+        <motion.div
+          id="video"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ delay: 0.1 }}
-          className="flex justify-center mb-16"
+          className="flex justify-center mb-16 scroll-mt-24"
         >
           <div className="w-full max-w-5xl relative aspect-video overflow-hidden rounded-sm">
             <iframe

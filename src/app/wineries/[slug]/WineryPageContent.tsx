@@ -32,10 +32,11 @@ interface WineryChapter {
   section1?: { heading: string; body: string };
   section2?: { heading: string; body: string };
   logoImage?: string;
+  websiteUrl?: string;
 }
 
 export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
-  const { name, tagline, image, heroDescription, bottleImage, wines, winemaker, galleryImages, section1, section2, logoImage } = chapter;
+  const { name, tagline, image, heroDescription, bottleImage, wines, winemaker, galleryImages, section1, section2, logoImage, websiteUrl } = chapter;
   const [showQaModal, setShowQaModal] = useState(false);
   const isGalleryLayout = galleryImages && galleryImages.length > 0;
   const isDuckhorn = chapter.id === "duckhorn";
@@ -159,6 +160,19 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
           <p className="text-lg md:text-xl text-[#3D3D3D] leading-[1.8]">
             {heroDescription}
           </p>
+          {websiteUrl && (
+            <div className="mt-8 flex justify-center sm:justify-start">
+              <a
+                href={websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#425a4d] text-white text-sm font-medium uppercase tracking-wider hover:bg-[#2D4636] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] rounded-md"
+              >
+                Learn More
+                <span aria-hidden>→</span>
+              </a>
+            </div>
+          )}
         </motion.div>
       </div>
 

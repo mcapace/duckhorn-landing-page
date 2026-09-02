@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { winemakers, robSorensonData } from "@/lib/data";
+import { ShopCollectionButton } from "@/components/ui/ShopCollectionButton";
 
 // Self-hosted winemaker video (in public folder — no JW license needed)
 const MEET_THE_MAKERS_VIDEO_SRC = "/images/bottles/WS%20TDC-Winemaker%20Video.mp4";
@@ -298,6 +299,9 @@ export const MeetTheMakersSection = () => {
             >
               Five Estates. One pursuit of excellence.
             </p>
+            <div className="mt-6 flex justify-center">
+              <ShopCollectionButton />
+            </div>
           </div>
 
           {/* Five estate bottle cards — horizontal scroll on mobile (no empty space), flex on larger */}

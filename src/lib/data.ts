@@ -401,6 +401,7 @@ export const wineries = [
     id: "duckhorn",
     name: "DUCKHORN VINEYARDS",
     tagline: "Five Decades In. Still Defining What's Next.",
+    websiteUrl: "https://www.duckhorn.com/",
     image: "/images/edited-images/DuckhornPage-Hero-Edit.jpg",
     heroDescription:
       "DUCKHORN VINEYARDS has shaped Napa Valley's modern identity for half a century. Its approach unites estate rigor, an unbroken winemaking lineage, and a hospitality culture defined by genuine warmth—shaped early on by Dan and Margaret Duckhorn's admiration for Bordeaux and their conviction that Merlot could thrive in Napa. From Merlot to Sauvignon Blanc and Cabernet, the wines reflect intention, balance, and a respect for detail that begins in the vineyard and carries through every touchpoint of the guest experience.",
@@ -430,6 +431,7 @@ export const wineries = [
     id: "kosta-browne",
     name: "KOSTA BROWNE",
     tagline: "The Art of Site",
+    websiteUrl: "https://kostabrowne.com/",
     image: "/images/edited-images/KostaBrownePage-Hero-Edit.jpg",
     logoImage: "/images/kosta-browne-logo-white.png", // Place white Kosta Browne logo at public/images/kosta-browne-logo-white.png
     heroDescription:
@@ -454,6 +456,7 @@ export const wineries = [
     id: "calera",
     name: "CALERA",
     tagline: "Mountain Purity & Limestone Precision",
+    websiteUrl: "https://www.calerawine.com/",
     image: "/images/edited-images/CaleraPage-Hero-Edit.jpg",
     bottleImage: "/images/edited-images/CaleraPage-Bottle-Edit.jpg",
     heroDescription:
@@ -470,6 +473,7 @@ export const wineries = [
     id: "goldeneye",
     name: "GOLDENEYE",
     tagline: "The Voice of Anderson Valley",
+    websiteUrl: "https://www.goldeneyewinery.com/",
     image: "/images/edited-images/GoldeneyePage-Hero-Edit.jpg",
     bottleImage: "/images/edited-images/GoldeneyePage-Bottle-Edit.jpg",
     heroDescription:
@@ -482,6 +486,7 @@ export const wineries = [
     id: "sonoma-cutrer",
     name: "SONOMA-CUTRER",
     tagline: "Crisp by Design",
+    websiteUrl: "https://www.sonomacutrer.com/",
     image: "/images/edited-images/SonomaCutrer-PageHero-Edit.jpg",
     bottleImage: "/images/edited-images/SonomaCutrerPage-Bottle-Edit.jpg",
     heroDescription:
