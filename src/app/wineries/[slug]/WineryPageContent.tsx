@@ -144,6 +144,30 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
             >
               {tagline}
             </motion.p>
+            {websiteUrl && (
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.65, duration: 0.6 }}
+                className="mt-8"
+              >
+                <a
+                  href={websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-3 border border-white/50 bg-white/5 backdrop-blur-sm px-7 py-3.5 text-[11px] md:text-xs font-medium uppercase tracking-[0.28em] text-white transition-all duration-500 hover:border-[#B8956A] hover:bg-white/10 hover:tracking-[0.32em]"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  Learn More
+                  <span
+                    aria-hidden
+                    className="inline-block transition-transform duration-500 group-hover:translate-x-1 text-[#B8956A]"
+                  >
+                    →
+                  </span>
+                </a>
+              </motion.div>
+            )}
           </div>
         </div>
       </motion.div>
@@ -160,19 +184,6 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
           <p className="text-lg md:text-xl text-[#3D3D3D] leading-[1.8]">
             {heroDescription}
           </p>
-          {websiteUrl && (
-            <div className="mt-8 flex justify-center sm:justify-start">
-              <a
-                href={websiteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#425a4d] text-white text-sm font-medium uppercase tracking-wider hover:bg-[#2D4636] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] rounded-md"
-              >
-                Learn More
-                <span aria-hidden>→</span>
-              </a>
-            </div>
-          )}
         </motion.div>
       </div>
 
