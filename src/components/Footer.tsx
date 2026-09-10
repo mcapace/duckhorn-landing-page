@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { SHOP_URL } from "@/components/ui/ShopCollectionButton";
+import { ShopCollectionButton } from "@/components/ui/ShopCollectionButton";
 
 export const Footer = () => {
   return (
@@ -17,15 +17,9 @@ export const Footer = () => {
           {/* Gold separator line */}
           <div className="w-full max-w-3xl h-px bg-[#B8956A] mx-auto mb-12 md:mb-14" aria-hidden />
 
-          <a
-            href={SHOP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 mb-12 md:mb-14 border border-white/80 text-white text-sm font-medium uppercase tracking-wider hover:bg-white hover:text-[#425a4d] transition-colors rounded-md"
-          >
-            Shop the Collection
-            <span aria-hidden>→</span>
-          </a>
+          <div className="mb-12 md:mb-14">
+            <ShopCollectionButton variant="footer" />
+          </div>
 
           {/* Two logos side by side */}
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
