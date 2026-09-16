@@ -35,34 +35,36 @@ export const Perspective = () => {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          className="flex justify-center mb-8"
-        >
-          <ShopCollectionButton />
-        </motion.div>
+        {/* Anchor includes shop CTA so /#video lands with the button visible above the player */}
+        <div id="video" className="scroll-mt-28 mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            className="flex justify-center mb-8"
+          >
+            <ShopCollectionButton />
+          </motion.div>
 
-        <motion.div
-          id="video"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ delay: 0.1 }}
-          className="flex justify-center mb-16 scroll-mt-24"
-        >
-          <div className="w-full max-w-5xl relative aspect-video overflow-hidden rounded-sm">
-            <iframe
-              src="https://cdn.jwplayer.com/players/mokhLqg0-9SK0pNl2.html"
-              title="The Pinnacle of American Fine Wine"
-              className="absolute top-0 left-0 w-full h-full"
-              frameBorder="0"
-              scrolling="auto"
-              allowFullScreen
-            />
-          </div>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ delay: 0.1 }}
+            className="flex justify-center"
+          >
+            <div className="w-full max-w-5xl relative aspect-video overflow-hidden rounded-sm">
+              <iframe
+                src="https://cdn.jwplayer.com/players/mokhLqg0-9SK0pNl2.html"
+                title="The Pinnacle of American Fine Wine"
+                className="absolute top-0 left-0 w-full h-full"
+                frameBorder="0"
+                scrolling="auto"
+                allowFullScreen
+              />
+            </div>
+          </motion.div>
+        </div>
 
         {/* CEO letter */}
         <motion.div
