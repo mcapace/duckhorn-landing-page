@@ -158,7 +158,7 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                   className="group inline-flex items-center gap-3 border border-white/50 bg-white/5 backdrop-blur-sm px-7 py-3.5 text-[11px] md:text-xs font-medium uppercase tracking-[0.28em] text-white transition-all duration-500 hover:border-[#B8956A] hover:bg-white/10 hover:tracking-[0.32em]"
                   style={{ fontFamily: "var(--font-serif)" }}
                 >
-                  Learn More
+                  {isDuckhorn ? "Shop Now" : "Learn More"}
                   <span
                     aria-hidden
                     className="inline-block transition-transform duration-500 group-hover:translate-x-1 text-[#B8956A]"
@@ -166,6 +166,11 @@ export function WineryPageContent({ chapter }: { chapter: WineryChapter }) {
                     →
                   </span>
                 </a>
+                {isDuckhorn && (
+                  <p className="mt-4 max-w-md text-sm text-white/85 leading-relaxed">
+                    Use Code DV50Years to become a Duckhorn Vineyards club member for a day and receive 15% off your next purchase.
+                  </p>
+                )}
               </motion.div>
             )}
           </div>
